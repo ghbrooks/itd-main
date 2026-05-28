@@ -1,0 +1,284 @@
+---
+import Logo from '~/components/brand/Logo.astro';
+import { primaryNav } from '~/lib/navigation';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<header class="site-header">
+  <div class="site-header__inner container-wide">
+    <a href="/" class="site-header__brand" aria-label="Home">
+      <Logo height={36} />
+    </a>
+
+    <nav class="site-header__nav" aria-label="Primary">
+      <ul>
+        {primaryNav.map((item) => {
+          const isActive = currentPath === item.href || currentPath.startsWith(`${item.href}/`);
+          return (
+            <li class={item.children ? 'has-children' : ''}>
+              <a href={item.href} class={isActive ? 'is-active' : ''}>
+                {item.label}
+                {item.children && (
+                  <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                    <path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+              </a>
+              {item.children && (
+                <div class="megamenu">
+                  <div class="megamenu__inner">
+                    <div class="megamenu__lead">
+                      <p class="eyebrow eyebrow-rule">{item.label}</p>
+                      <p class="megamenu__lead-text">{item.description ?? `Explore ${item.label.toLowerCase()}.`}</p>
+                      <a href={item.href} class="link-anim text-sm">See all →</a>
+                    </div>
+                    <ul class="megamenu__list">
+                      {item.children.map((child) => (
+                        <li>
+                          <a href={child.href}>
+                            <span>{child.label}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+
+    <div class="site-header__cta">
+      <a href="/contact" class="btn btn--primary btn--mini">
+        Tell us your challenge
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M3 7h8m-3-3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <button class="site-header__burger" aria-label="Open menu" aria-expanded="false" data-mobile-toggle>
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="site-header__mobile" data-mobile-panel hidden>
+    <ul>
+      {primaryNav.map((item) => (
+        <li>
+          <a href={item.href}>{item.label}</a>
+          {item.children && (
+            <ul>
+              {item.children.map((child) => (
+                <li><a href={child.href}>{child.label}</a></li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+      <li class="mt-3">
+        <a href="/contact" class="btn btn--primary">Tell us your challenge</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in oklab, var(--c-bg) 88%, transparent);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--c-rule);
+  }
+  .site-header__inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 2rem;
+    height: 76px;
+  }
+  .site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    transition: transform 200ms var(--ease-out-soft);
+  }
+  .site-header__brand:hover { transform: translateY(-1px); }
+
+  .site-header__nav {
+    justify-self: center;
+  }
+  .site-header__nav > ul {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .site-header__nav li { position: relative; }
+  .site-header__nav > ul > li > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.55rem 0.85rem;
+    border-radius: 8px;
+    color: var(--c-text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 180ms var(--ease-out-soft), background 180ms var(--ease-out-soft);
+  }
+  .site-header__nav > ul > li > a:hover,
+  .site-header__nav > ul > li > a.is-active {
+    color: var(--c-deep);
+    background: var(--c-tint);
+  }
+
+  /* Mega-menu */
+  .megamenu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    transform: translateY(6px);
+    width: max-content;
+    min-width: 380px;
+    max-width: min(560px, calc(100vw - 2.5rem));
+    background: var(--c-bg);
+    border: 1px solid var(--c-rule);
+    border-radius: 14px;
+    box-shadow: 0 30px 60px -28px rgba(1, 33, 92, 0.28);
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 240ms var(--ease-out-soft),
+      opacity 240ms var(--ease-out-soft);
+  }
+  /* Right-align dropdowns for items in the right half of the nav,
+     so they don't overflow the viewport */
+  .site-header__nav > ul > li:nth-last-child(-n+3) .megamenu {
+    left: auto;
+    right: 0;
+  }
+  .has-children:hover > .megamenu,
+  .has-children:focus-within > .megamenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .megamenu__inner {
+    display: grid;
+    grid-template-columns: minmax(140px, 1fr) minmax(180px, 1.4fr);
+    gap: 1.5rem;
+  }
+  .megamenu__lead-text {
+    color: var(--c-muted);
+    font-size: 0.9rem;
+    margin: 0.4rem 0 1rem;
+    max-width: 22ch;
+  }
+  .megamenu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.15rem 1rem;
+  }
+  .megamenu__list a {
+    display: block;
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+    color: var(--c-text);
+    font-size: 0.9rem;
+    transition: background 180ms var(--ease-out-soft), color 180ms var(--ease-out-soft);
+  }
+  .megamenu__list a:hover {
+    background: var(--c-tint);
+    color: var(--c-deep);
+  }
+
+  .site-header__cta { display: none; }
+  @media (min-width: 1024px) {
+    .site-header__cta { display: inline-flex; }
+  }
+
+  .site-header__burger {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    justify-self: end;
+    border-radius: 8px;
+    transition: background 180ms var(--ease-out-soft);
+  }
+  .site-header__burger:hover { background: var(--c-tint); }
+  .site-header__burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--c-deep);
+    border-radius: 2px;
+    transition: transform 200ms var(--ease-out-soft);
+  }
+
+  @media (min-width: 1024px) {
+    .site-header__burger { display: none; }
+  }
+  @media (max-width: 1023px) {
+    .site-header__nav { display: none; }
+    .site-header__inner { grid-template-columns: auto auto; justify-content: space-between; }
+  }
+
+  .site-header__mobile {
+    border-top: 1px solid var(--c-rule);
+    padding: 1.25rem;
+    background: var(--c-bg);
+  }
+  .site-header__mobile ul { list-style: none; margin: 0; padding: 0; }
+  .site-header__mobile > ul > li { padding: 0.5rem 0; border-bottom: 1px solid var(--c-rule); }
+  .site-header__mobile > ul > li:last-child { border-bottom: 0; }
+  .site-header__mobile a {
+    display: block;
+    padding: 0.4rem 0;
+    color: var(--c-text);
+    font-weight: 500;
+  }
+  .site-header__mobile ul ul {
+    margin-left: 1rem;
+    margin-top: 0.25rem;
+  }
+  .site-header__mobile ul ul a {
+    color: var(--c-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 0.3rem 0;
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('[data-mobile-toggle]') as HTMLButtonElement | null;
+  const panel = document.querySelector('[data-mobile-panel]') as HTMLElement | null;
+  if (toggle && panel) {
+    toggle.addEventListener('click', () => {
+      const open = panel.hasAttribute('hidden');
+      if (open) {
+        panel.removeAttribute('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+      } else {
+        panel.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>

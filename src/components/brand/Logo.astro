@@ -1,0 +1,36 @@
+---
+type Props = {
+  variant?: 'full' | 'mark';
+  height?: number;
+  ariaLabel?: string;
+  class?: string;
+};
+const {
+  variant = 'full',
+  height = 44,
+  ariaLabel = 'itD — International Training and Development',
+  class: className = '',
+} = Astro.props;
+---
+{variant === 'full' ? (
+  <span class={`inline-flex items-center gap-3 ${className}`.trim()} aria-label={ariaLabel}>
+    <img
+      src="/logo.svg"
+      alt=""
+      height={height}
+      style={`height:${height}px;width:auto;display:block;`}
+      loading="eager"
+      decoding="async"
+    />
+  </span>
+) : (
+  <img
+    src="/logo.svg"
+    alt={ariaLabel}
+    height={height}
+    style={`height:${height}px;width:auto;display:block;`}
+    loading="eager"
+    decoding="async"
+    class={className}
+  />
+)}

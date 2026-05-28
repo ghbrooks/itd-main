@@ -1,0 +1,39 @@
+---
+type Props = {
+  tone?: 'info' | 'note' | 'highlight';
+  title?: string;
+};
+const { tone = 'info', title } = Astro.props;
+---
+<aside class={`callout callout--${tone}`}>
+  {title && <strong class="callout__title">{title}</strong>}
+  <slot />
+</aside>
+
+<style>
+  .callout {
+    padding: 1.5rem 1.75rem;
+    border-radius: 12px;
+    background: var(--c-tint);
+    border-left: 3px solid var(--c-blue);
+    color: var(--c-text);
+  }
+  .callout--note {
+    background: var(--c-bg-alt);
+    border-color: var(--c-mid);
+  }
+  .callout--highlight {
+    background: linear-gradient(135deg, var(--c-deep) 0%, #042863 100%);
+    color: white;
+    border-color: var(--c-sky);
+  }
+  .callout__title {
+    display: block;
+    font-family: var(--font-display);
+    color: var(--c-deep);
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .callout--highlight .callout__title { color: white; }
+</style>

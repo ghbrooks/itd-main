@@ -1,0 +1,46 @@
+---
+import '~/styles/globals.css';
+import { buildTitle, absoluteUrl, type SeoProps } from '~/lib/seo';
+import { site } from '~/lib/site';
+
+type Props = SeoProps;
+
+const {
+  title,
+  description,
+  canonical,
+  image = site.defaultOgImage,
+  noindex = false,
+  type = 'website',
+} = Astro.props;
+
+const fullTitle = buildTitle(title);
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, site.url).toString();
+const ogImage = absoluteUrl(image);
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<meta property="og:type" content={type} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content={site.longName} />
+<meta property="og:locale" content="en_GB" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<meta name="theme-color" content="#01215C" />

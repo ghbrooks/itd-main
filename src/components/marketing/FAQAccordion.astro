@@ -1,0 +1,85 @@
+---
+type Props = {
+  faqs: { q: string; a: string }[];
+  heading?: string;
+};
+const { faqs, heading } = Astro.props;
+---
+<div class="faqs">
+  {heading && <h2 class="faqs__heading">{heading}</h2>}
+  <div class="faqs__list">
+    {faqs.map((item, idx) => (
+      <details class="faq" open={idx === 0}>
+        <summary>
+          <span>{item.q}</span>
+          <span class="faq__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20">
+              <path d="M5 10h10M10 5v10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </summary>
+        <div class="faq__body">
+          <p>{item.a}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</div>
+
+<style>
+  .faqs__heading {
+    font-size: var(--text-2xl);
+    margin-bottom: 2rem;
+  }
+  .faqs__list {
+    border-top: 1px solid var(--c-rule);
+  }
+  .faq {
+    border-bottom: 1px solid var(--c-rule);
+  }
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+    font-weight: 600;
+    color: var(--c-deep);
+    letter-spacing: -0.01em;
+    transition: color 200ms var(--ease-out-soft);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:hover { color: var(--c-blue); }
+
+  .faq__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; height: 36px;
+    border-radius: 999px;
+    border: 1px solid var(--c-rule);
+    color: var(--c-deep);
+    flex-shrink: 0;
+    transition: transform 280ms var(--ease-out-soft), background 200ms var(--ease-out-soft);
+  }
+  .faq[open] .faq__icon {
+    transform: rotate(45deg);
+    background: var(--c-deep);
+    color: white;
+    border-color: var(--c-deep);
+  }
+
+  .faq__body {
+    padding: 0 0 1.75rem;
+    max-width: 64ch;
+  }
+  .faq__body p {
+    color: var(--c-text);
+    line-height: 1.65;
+    margin: 0;
+  }
+</style>

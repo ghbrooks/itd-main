@@ -1,0 +1,233 @@
+---
+import Logo from '~/components/brand/Logo.astro';
+import { footerNav } from '~/lib/navigation';
+import { site } from '~/lib/site';
+
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="container-wide">
+      <div class="site-footer__cta">
+        <p class="eyebrow eyebrow-rule" style="color: rgba(255,255,255,0.7);">Start the conversation</p>
+        <h2 class="site-footer__cta-title">
+          Tell us the challenge.<br />
+          <span style="color: var(--c-sky);">We’ll design the training.</span>
+        </h2>
+        <p class="site-footer__cta-lede">
+          One short conversation. We’ll listen, ask the awkward questions, and tell you honestly whether we can help — and how.
+        </p>
+        <div class="site-footer__cta-actions">
+          <a href="/contact" class="btn btn--primary">
+            Get in touch
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+              <path d="M3 7h8m-3-3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href={`mailto:${site.email}`} class="site-footer__cta-link">{site.email}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__main container-wide">
+    <div class="site-footer__brand">
+      <Logo height={42} />
+      <p class="site-footer__tagline">
+        {site.longName}. Soft-skills training that sticks. Since {site.founded}.
+      </p>
+      <dl class="site-footer__meta">
+        <div>
+          <dt>Rated</dt>
+          <dd><strong>{site.rating.value}★</strong> over {site.rating.count}+ reviews</dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+        </div>
+        <div>
+          <dt>LinkedIn</dt>
+          <dd><a href={site.social.linkedin} rel="noopener">linkedin.com/company/itd-uk</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <nav class="site-footer__cols" aria-label="Footer">
+      {footerNav.map((col) => (
+        <div>
+          <h3>{col.heading}</h3>
+          <ul>
+            {col.items.map((item) => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  </div>
+
+  <div class="site-footer__bar container-wide">
+    <p>&copy; {site.founded}–{year} {site.longName}. All rights reserved.</p>
+    <ul>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/cookies">Cookies</a></li>
+      <li><a href="/terms">Terms</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: linear-gradient(180deg, #051739 0%, var(--c-deep) 100%);
+    color: rgba(255, 255, 255, 0.78);
+    position: relative;
+    overflow: hidden;
+  }
+  .site-footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(900px 400px at 80% 0%, rgba(2, 132, 213, 0.18), transparent 60%),
+      radial-gradient(700px 350px at -10% 30%, rgba(162, 221, 248, 0.06), transparent 60%);
+    pointer-events: none;
+  }
+  .site-footer > * { position: relative; }
+
+  .site-footer__top {
+    padding: 4.5rem 0 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .site-footer__cta {
+    max-width: 64ch;
+  }
+  .site-footer__cta-title {
+    color: white;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin: 0.6rem 0 1rem;
+    font-weight: 600;
+  }
+  .site-footer__cta-lede {
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 52ch;
+    margin-bottom: 1.5rem;
+  }
+  .site-footer__cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .site-footer__cta-actions .btn--primary {
+    background: white;
+    color: var(--c-deep);
+    box-shadow: 0 14px 32px -10px rgba(0, 0, 0, 0.4);
+  }
+  .site-footer__cta-actions .btn--primary:hover {
+    background: var(--c-sky);
+    color: var(--c-deep);
+  }
+  .site-footer__cta-link {
+    color: var(--c-sky);
+    border-bottom: 1px solid rgba(162, 221, 248, 0.4);
+    padding-bottom: 2px;
+    font-weight: 500;
+  }
+  .site-footer__cta-link:hover { color: white; border-color: white; }
+
+  .site-footer__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 0 2.5rem;
+  }
+  @media (min-width: 1024px) {
+    .site-footer__main {
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+    }
+  }
+
+  .site-footer__brand img {
+    filter: brightness(0) invert(1);
+  }
+  .site-footer__tagline {
+    margin: 1rem 0 1.5rem;
+    max-width: 32ch;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .site-footer__meta {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .site-footer__meta div {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+  .site-footer__meta dt {
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+    padding-top: 2px;
+  }
+  .site-footer__meta dd { margin: 0; color: rgba(255, 255, 255, 0.85); }
+  .site-footer__meta a { color: var(--c-sky); }
+  .site-footer__meta a:hover { color: white; }
+
+  .site-footer__cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .site-footer__cols { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 1280px) {
+    .site-footer__cols { grid-template-columns: repeat(5, 1fr); }
+  }
+
+  .site-footer__cols h3 {
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+  }
+  .site-footer__cols ul { list-style: none; margin: 0; padding: 0; }
+  .site-footer__cols li { margin-bottom: 0.4rem; }
+  .site-footer__cols a {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 0.9rem;
+    transition: color 180ms var(--ease-out-soft);
+  }
+  .site-footer__cols a:hover { color: var(--c-sky); }
+
+  .site-footer__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem 0 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.825rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .site-footer__bar ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
+  .site-footer__bar a { color: rgba(255, 255, 255, 0.6); }
+  .site-footer__bar a:hover { color: white; }
+</style>

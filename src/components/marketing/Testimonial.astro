@@ -1,0 +1,96 @@
+---
+type Props = {
+  quote: string;
+  author: string;
+  role?: string;
+  organisation?: string;
+  rating?: number;
+  layout?: 'inline' | 'feature';
+};
+const { quote, author, role, organisation, rating = 5, layout = 'inline' } = Astro.props;
+const stars = Array.from({ length: 5 }, (_, i) => i < rating);
+---
+<figure class={`testimonial testimonial--${layout}`} itemscope itemtype="https://schema.org/Review">
+  <div class="testimonial__rating" aria-label={`Rated ${rating} out of 5`}>
+    {stars.map((filled) => (
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 1l2.18 4.42 4.88.71-3.53 3.44.83 4.86L8 12.13 3.64 14.43l.83-4.86L.94 6.13l4.88-.71z"
+              fill={filled ? 'currentColor' : 'none'}
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linejoin="round"/>
+      </svg>
+    ))}
+  </div>
+  <blockquote itemprop="reviewBody">
+    <p>{quote}</p>
+  </blockquote>
+  <figcaption itemprop="author" itemscope itemtype="https://schema.org/Person">
+    <span class="testimonial__author" itemprop="name">{author}</span>
+    {(role || organisation) && (
+      <span class="testimonial__role">
+        {role}{role && organisation ? ', ' : ''}{organisation}
+      </span>
+    )}
+  </figcaption>
+  <meta itemprop="reviewRating" content={String(rating)} />
+</figure>
+
+<style>
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.75rem;
+    background: var(--c-bg);
+    border: 1px solid var(--c-rule);
+    border-radius: 14px;
+    height: 100%;
+    margin: 0;
+  }
+  .testimonial--feature {
+    padding: 2.5rem 2.5rem 2.25rem;
+    background:
+      linear-gradient(180deg, var(--c-tint) 0%, var(--c-bg) 80%);
+    border-color: rgba(2, 132, 213, 0.18);
+  }
+  .testimonial__rating {
+    display: inline-flex;
+    gap: 2px;
+    color: var(--c-blue);
+  }
+  .testimonial blockquote {
+    margin: 0;
+    flex: 1;
+  }
+  .testimonial blockquote p {
+    margin: 0;
+    color: var(--c-text);
+    font-size: 1.05rem;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+  .testimonial--feature blockquote p {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 1.8vw, 1.65rem);
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    color: var(--c-deep);
+  }
+  .testimonial figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--c-rule);
+  }
+  .testimonial__author {
+    font-weight: 600;
+    color: var(--c-deep);
+    font-size: 0.95rem;
+  }
+  .testimonial__role {
+    color: var(--c-muted);
+    font-size: 0.825rem;
+  }
+</style>

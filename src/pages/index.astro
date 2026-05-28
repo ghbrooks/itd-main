@@ -1,0 +1,378 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Section from '~/components/layout/Section.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import ClientLogoStrip from '~/components/marketing/ClientLogoStrip.astro';
+import CourseCard from '~/components/marketing/CourseCard.astro';
+import CaseStudyCard from '~/components/marketing/CaseStudyCard.astro';
+import SectorCard from '~/components/marketing/SectorCard.astro';
+import Testimonial from '~/components/marketing/Testimonial.astro';
+import ReviewSummary from '~/components/marketing/ReviewSummary.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { site } from '~/lib/site';
+
+const reviews = (await getCollection('reviews')).slice(0, 4);
+const caseStudies = (await getCollection('caseStudies')).sort(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
+);
+const featured = caseStudies[0];
+const otherStudies = caseStudies.slice(1, 3);
+
+const categories = [
+  {
+    title: 'Sales',
+    href: '/sales-training',
+    outcome: 'Consultative B2B selling that wins long-cycle work — discovery, objection handling, follow-up.',
+    eyebrow: 'Eight courses',
+  },
+  {
+    title: 'Presentation',
+    href: '/presentation-skills-training',
+    outcome: 'Filmed presentation training for the pitches and panels that actually decide things.',
+    eyebrow: 'Six courses',
+  },
+  {
+    title: 'Communication',
+    href: '/communication-training',
+    outcome: 'Be heard without being harsh. Write to be read. Disagree without losing the relationship.',
+    eyebrow: 'Five courses',
+  },
+  {
+    title: 'Leadership',
+    href: '/leadership-training',
+    outcome: 'Lead teams people choose to stay on. Practical, jargon-free, built for real conditions.',
+    eyebrow: 'Six courses',
+  },
+  {
+    title: 'Nudge for Lawyers',
+    href: '/nudge-training-for-lawyers',
+    outcome: 'Behavioural science applied to legal practice. Built with magic-circle firms.',
+    eyebrow: 'Specialist',
+  },
+  {
+    title: 'ITD Work Styles',
+    href: '/itd-work-styles-model-training',
+    outcome: 'Our own team model — twenty years in the making. Know how your team really works.',
+    eyebrow: 'Specialist',
+  },
+];
+
+const sectors = [
+  { title: 'Law', href: '/market-sector-specific-training#law', description: 'Magic-circle, silver-circle, mid-market and boutique firms.', count: 9 },
+  { title: 'Charity', href: '/market-sector-specific-training#charity', description: 'From the household-name charities to specialist research bodies.', count: 7 },
+  { title: 'Financial services', href: '/market-sector-specific-training#finance', description: 'Banking, insurance, asset management. Sharp on regulation, sharper on people.', count: 8 },
+  { title: 'Technology', href: '/market-sector-specific-training#tech', description: 'Hyper-growth SaaS, scale-ups, enterprise software — sales and presentation.', count: 8 },
+  { title: 'Hospitality', href: '/market-sector-specific-training#hospitality', description: 'Commercial leadership and front-of-house excellence across major brands.', count: 6 },
+  { title: 'Public sector', href: '/market-sector-specific-training#public', description: 'Central government, regulators, and arm’s-length bodies.', count: 7 },
+];
+---
+
+<BaseLayout
+  title={`${site.longName} — Soft-skills training that sticks`}
+  description={site.description}
+>
+  <!-- HERO -->
+  <Hero
+    eyebrow="Soft-skills training since 1999"
+    title="Soft-skills training that sticks."
+    lead="Sharper sales, calmer leadership, presentations people actually remember. We work with the world’s most demanding teams — and we leave them better than we found them."
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+    secondaryCta={{ label: 'See the courses', href: '/soft-skills-training' }}
+    variant="home"
+    meta={[
+      { label: 'Founded', value: '1999' },
+      { label: 'Reviews', value: `${site.rating.value}★ over ${site.rating.count}+` },
+      { label: 'Delivered', value: 'In-person · Virtual' },
+      { label: 'Sectors', value: 'Law · Tech · Charity · more' },
+    ]}
+  >
+    <div class="hero-extras">
+      <ReviewSummary />
+    </div>
+  </Hero>
+
+  <!-- CLIENT LOGO STRIP -->
+  <ClientLogoStrip heading="In-house at" />
+
+  <!-- VALUE PROPS -->
+  <Section size="md" tone="default">
+    <div class="container-wide">
+      <header class="props-head">
+        <p class="eyebrow eyebrow-rule">Why teams keep coming back</p>
+        <h2>Three things our clients tell us, over and over.</h2>
+      </header>
+      <div class="props">
+        <article class="prop">
+          <div class="prop__num"><span>01</span></div>
+          <h3>It is built around your situation, not ours.</h3>
+          <p>Every course starts with conversations — with you, and with people who’ll be in the room. We arrive with material that already looks like your firm.</p>
+        </article>
+        <article class="prop">
+          <div class="prop__num"><span>02</span></div>
+          <h3>It is practical to the point of awkwardness.</h3>
+          <p>We don’t hand out frameworks and hope. We coach live, on real situations, with feedback that is direct but never bruising. Reps, not theory.</p>
+        </article>
+        <article class="prop">
+          <div class="prop__num"><span>03</span></div>
+          <h3>It is still working six months later.</h3>
+          <p>The test isn’t the day, it’s the quarter after. We design for what people actually do at their desks, with their teams, after the training ends.</p>
+        </article>
+      </div>
+    </div>
+  </Section>
+
+  <!-- COURSES -->
+  <Section size="md" tone="alt">
+    <div class="container-wide">
+      <header class="grid-head">
+        <div>
+          <p class="eyebrow eyebrow-rule">Training</p>
+          <h2>The courses, by category.</h2>
+        </div>
+        <a href="/soft-skills-training" class="link-anim">All courses →</a>
+      </header>
+      <div class="course-grid">
+        {categories.map((cat, idx) => (
+          <CourseCard
+            href={cat.href}
+            title={cat.title}
+            outcome={cat.outcome}
+            category={cat.eyebrow}
+            size={idx === 0 ? 'feature' : 'default'}
+          />
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- FEATURED CASE STUDY -->
+  {featured && (
+    <Section size="md" tone="default">
+      <div class="container-wide">
+        <header class="grid-head">
+          <div>
+            <p class="eyebrow eyebrow-rule">Case studies</p>
+            <h2>How it lands in the real world.</h2>
+          </div>
+          <a href="/case-studies" class="link-anim">All case studies →</a>
+        </header>
+        <div class="case-grid">
+          <CaseStudyCard
+            href={`/${featured.slug}`}
+            client={featured.data.client}
+            sector={featured.data.sector}
+            title={featured.data.title}
+            excerpt={featured.data.challenge.slice(0, 180) + (featured.data.challenge.length > 180 ? '…' : '')}
+            size="feature"
+          />
+          <div class="case-grid__side">
+            {otherStudies.map((cs) => (
+              <CaseStudyCard
+                href={`/${cs.slug}`}
+                client={cs.data.client}
+                sector={cs.data.sector}
+                title={cs.data.title}
+                excerpt={cs.data.outcome.slice(0, 130) + (cs.data.outcome.length > 130 ? '…' : '')}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <!-- REVIEWS -->
+  <Section size="md" tone="alt">
+    <div class="container-wide">
+      <header class="grid-head">
+        <div>
+          <p class="eyebrow eyebrow-rule">Reviews</p>
+          <h2>
+            <span class="display tabular">{site.rating.value}★</span> over
+            <span class="display tabular">{site.rating.count}+</span> reviews.
+          </h2>
+        </div>
+        <a href="/reviews" class="link-anim">Read them all →</a>
+      </header>
+      <div class="review-grid">
+        {reviews.map((r, idx) => (
+          <Testimonial
+            quote={r.data.quote}
+            author={r.data.author}
+            organisation={r.data.organisation}
+            rating={r.data.rating}
+            layout={idx === 0 ? 'feature' : 'inline'}
+          />
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- SECTORS -->
+  <Section size="md" tone="default">
+    <div class="container-wide">
+      <header class="grid-head">
+        <div>
+          <p class="eyebrow eyebrow-rule">Sectors</p>
+          <h2>We know your industry — usually painfully well.</h2>
+        </div>
+        <a href="/market-sector-specific-training" class="link-anim">All sectors →</a>
+      </header>
+      <div class="sector-grid">
+        {sectors.map((s) => (
+          <SectorCard href={s.href} title={s.title} description={s.description} count={s.count} />
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- FINAL CTA -->
+  <CTAPanel
+    eyebrow="One short conversation"
+    title="Tell us the challenge. We’ll tell you honestly whether we can help."
+    lead="Most engagements start with a half-hour call. No slides, no pitch — we listen, ask the awkward questions, and come back with a proposal you can actually use."
+    primary={{ label: 'Get in touch', href: '/contact' }}
+    secondary={{ label: 'See training fees', href: '/training-fees' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .hero-extras {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  /* Props */
+  .props-head { max-width: 60ch; margin-bottom: 3rem; }
+  .props-head h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-top: 0.85rem;
+    letter-spacing: -0.025em;
+  }
+  .props {
+    display: grid;
+    gap: 2.5rem;
+  }
+  @media (min-width: 800px) {
+    .props { grid-template-columns: repeat(3, 1fr); }
+  }
+  .prop {
+    position: relative;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--c-rule);
+  }
+  .prop__num {
+    font-family: var(--font-display);
+    color: var(--c-blue);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+  }
+  .prop__num span {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--c-blue);
+    border-radius: 999px;
+    font-variant-numeric: tabular-nums;
+  }
+  .prop h3 {
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin: 0 0 0.65rem;
+    color: var(--c-deep);
+  }
+  .prop p {
+    color: var(--c-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 36ch;
+  }
+
+  /* Grid heads */
+  .grid-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .grid-head h2 {
+    margin: 0.6rem 0 0;
+    font-size: clamp(1.85rem, 3.2vw, 2.85rem);
+    letter-spacing: -0.025em;
+    max-width: 22ch;
+  }
+
+  /* Course grid — first card spans 2 cols on wide screens (feature) */
+  .course-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 720px) {
+    .course-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .course-grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-flow: dense;
+    }
+    .course-grid > :first-child {
+      grid-column: span 2;
+    }
+  }
+
+  /* Case studies — feature card + side stack */
+  .case-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 1024px) {
+    .case-grid {
+      grid-template-columns: 1.4fr 1fr;
+    }
+  }
+  .case-grid__side {
+    display: grid;
+    gap: 1rem;
+  }
+
+  /* Review grid — feature + 3 inline */
+  .review-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 800px) {
+    .review-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1100px) {
+    .review-grid {
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+    }
+    .review-grid > :first-child {
+      grid-row: span 1;
+    }
+  }
+
+  /* Sector grid */
+  .sector-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 700px) {
+    .sector-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .sector-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

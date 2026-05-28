@@ -1,0 +1,44 @@
+---
+type Props = {
+  quote: string;
+  author?: string;
+  organisation?: string;
+};
+const { quote, author, organisation } = Astro.props;
+---
+<figure class="pq">
+  <blockquote>
+    <p class="pullquote">{quote}</p>
+  </blockquote>
+  {(author || organisation) && (
+    <figcaption>
+      {author && <span class="pq__author">{author}</span>}
+      {organisation && <span class="pq__org">{organisation}</span>}
+    </figcaption>
+  )}
+</figure>
+
+<style>
+  .pq {
+    margin: 0;
+    padding: 2.5rem 0;
+    border-block: 1px solid var(--c-rule);
+  }
+  .pq blockquote { margin: 0; }
+  .pq__author,
+  .pq__org {
+    display: inline;
+  }
+  .pq figcaption {
+    margin-top: 1.25rem;
+    font-size: 0.825rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--c-muted);
+    font-weight: 600;
+  }
+  .pq__author + .pq__org::before {
+    content: ' · ';
+    opacity: 0.5;
+  }
+</style>

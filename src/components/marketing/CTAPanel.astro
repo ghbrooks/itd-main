@@ -1,0 +1,110 @@
+---
+type Props = {
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+  primary?: { label: string; href: string };
+  secondary?: { label: string; href: string };
+  tone?: 'tint' | 'deep' | 'bg';
+};
+const {
+  eyebrow,
+  title,
+  lead,
+  primary,
+  secondary,
+  tone = 'tint',
+} = Astro.props;
+---
+<aside class={`cta-panel cta-panel--${tone}`}>
+  <div class="cta-panel__inner container-wide">
+    <div class="cta-panel__copy">
+      {eyebrow && <p class="eyebrow eyebrow-rule">{eyebrow}</p>}
+      <h2>{title}</h2>
+      {lead && <p class="cta-panel__lead">{lead}</p>}
+    </div>
+    {(primary || secondary) && (
+      <div class="cta-panel__actions">
+        {primary && (
+          <a href={primary.href} class="btn btn--primary">
+            {primary.label}
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+              <path d="M3 7h8m-3-3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        )}
+        {secondary && (
+          <a href={secondary.href} class="btn btn--ghost">{secondary.label}</a>
+        )}
+      </div>
+    )}
+  </div>
+</aside>
+
+<style>
+  .cta-panel {
+    padding: clamp(3rem, 6vw, 5.5rem) 0;
+  }
+  .cta-panel--tint { background: var(--c-tint); }
+  .cta-panel--bg { background: var(--c-bg); }
+  .cta-panel--deep {
+    background: linear-gradient(135deg, var(--c-deep) 0%, #042863 100%);
+    color: white;
+  }
+  .cta-panel--deep h2 { color: white; }
+  .cta-panel--deep .cta-panel__lead { color: rgba(255, 255, 255, 0.8); }
+  .cta-panel--deep .btn--primary {
+    background: white;
+    color: var(--c-deep);
+  }
+  .cta-panel--deep .btn--primary:hover {
+    background: var(--c-sky);
+    color: var(--c-deep);
+  }
+  .cta-panel--deep .btn--ghost {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: white;
+  }
+  .cta-panel--deep .btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: white;
+    color: white;
+  }
+  .cta-panel--deep .eyebrow { color: var(--c-sky); }
+
+  .cta-panel__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: end;
+  }
+  @media (min-width: 900px) {
+    .cta-panel__inner {
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+    }
+  }
+  .cta-panel h2 {
+    font-size: clamp(1.85rem, 3.2vw, 2.85rem);
+    margin: 0.65rem 0 0.85rem;
+    max-width: 22ch;
+    letter-spacing: -0.02em;
+  }
+  .cta-panel__lead {
+    color: var(--c-muted);
+    font-size: 1.1rem;
+    line-height: 1.55;
+    max-width: 56ch;
+    margin: 0;
+  }
+  .cta-panel__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  @media (min-width: 900px) {
+    .cta-panel__actions { justify-content: flex-end; }
+  }
+</style>

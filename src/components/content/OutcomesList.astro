@@ -1,0 +1,51 @@
+---
+type Props = {
+  items: string[];
+  title?: string;
+};
+const { items, title = 'You leave with' } = Astro.props;
+---
+<div class="outcomes">
+  <h3>{title}</h3>
+  <ul>
+    {items.map((item) => (
+      <li>
+        <span class="outcomes__check" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .outcomes h3 {
+    font-size: 1.25rem;
+    margin: 0 0 1.25rem;
+  }
+  .outcomes ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+  .outcomes li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 0.85rem;
+    align-items: start;
+    line-height: 1.55;
+  }
+  .outcomes__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    border-radius: 999px;
+    background: var(--c-tint);
+    color: var(--c-blue);
+    margin-top: 1px;
+  }
+</style>

@@ -1,0 +1,49 @@
+---
+import BaseHead from '~/components/seo/BaseHead.astro';
+import JsonLd from '~/components/seo/JsonLd.astro';
+import SiteHeader from '~/components/layout/SiteHeader.astro';
+import SiteFooter from '~/components/layout/SiteFooter.astro';
+import { organizationSchema, websiteSchema } from '~/lib/schema';
+import type { SeoProps } from '~/lib/seo';
+
+type Props = SeoProps & {
+  schemas?: Record<string, unknown>[];
+};
+const { schemas = [], ...seo } = Astro.props;
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <BaseHead {...seo} />
+    <JsonLd data={organizationSchema()} />
+    <JsonLd data={websiteSchema()} />
+    {schemas.map((s) => <JsonLd data={s} />)}
+    <slot name="head" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <SiteHeader />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter />
+
+    <style>
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -40px;
+        background: var(--c-deep);
+        color: white;
+        padding: 0.5rem 0.85rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        z-index: 100;
+        transition: top 150ms var(--ease-out-soft);
+      }
+      .skip-link:focus {
+        top: 0.75rem;
+      }
+    </style>
+  </body>
+</html>

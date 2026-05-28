@@ -1,0 +1,346 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import ReviewSummary from '~/components/marketing/ReviewSummary.astro';
+import AgendaList from '~/components/content/AgendaList.astro';
+import OutcomesList from '~/components/content/OutcomesList.astro';
+import FAQAccordion from '~/components/marketing/FAQAccordion.astro';
+import Testimonial from '~/components/marketing/Testimonial.astro';
+import CourseCard from '~/components/marketing/CourseCard.astro';
+import CaseStudyCard from '~/components/marketing/CaseStudyCard.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { courseSchema, breadcrumbSchema, faqSchema } from '~/lib/schema';
+import { site } from '~/lib/site';
+
+type Course = Awaited<ReturnType<typeof getCollection<'courses'>>>[number];
+
+type Props = {
+  course: Course;
+};
+
+const { course } = Astro.props;
+const { data } = course;
+
+const allCourses = await getCollection('courses');
+const allCaseStudies = await getCollection('caseStudies');
+const allReviews = await getCollection('reviews');
+
+const related = (data.relatedCourses ?? [])
+  .map((slug) => allCourses.find((c) => c.slug === slug))
+  .filter((c): c is Course => Boolean(c));
+
+const relatedStudies = (data.relatedCaseStudies ?? [])
+  .map((slug) => allCaseStudies.find((c) => c.slug === slug))
+  .filter((c): c is NonNullable<typeof allCaseStudies[number]> => Boolean(c));
+
+const courseReviews = allReviews
+  .filter((r) => r.data.courseSlug === course.slug)
+  .slice(0, 3);
+
+const url = `${site.url}/${course.slug}`;
+const schemas = [
+  courseSchema({
+    name: data.title,
+    description: data.summary,
+    url,
+    duration: data.duration,
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Training', url: '/soft-skills-training' },
+    { name: data.title, url: `/${course.slug}` },
+  ]),
+  ...(data.faqs && data.faqs.length > 0 ? [faqSchema(data.faqs)] : []),
+];
+---
+
+<BaseLayout
+  title={data.seo.title}
+  description={data.seo.description}
+  type="article"
+  schemas={schemas}
+>
+  <Hero
+    eyebrow={data.eyebrow ?? 'Training'}
+    title={data.outcome}
+    lead={data.summary}
+    variant="course"
+    primaryCta={{ label: 'Discuss this course', href: '/contact' }}
+    secondaryCta={{ label: 'See all courses', href: '/soft-skills-training' }}
+    meta={[
+      { label: 'Duration', value: data.duration },
+      { label: 'Mode', value: data.mode.map((m) => m === 'virtual' ? 'Virtual' : 'In-person').join(' · ') },
+      { label: 'For', value: data.category.replace('-', ' ') },
+    ]}
+  >
+    <div class="course-hero-extras">
+      <ReviewSummary />
+    </div>
+  </Hero>
+
+  <Section size="md" tone="default">
+    <div class="container-wide course-body">
+      <aside class="course-body__sticky">
+        <div class="course-stat">
+          <p class="eyebrow eyebrow-rule">Course summary</p>
+          <h2 class="course-stat__title">{data.title}</h2>
+          <dl>
+            <div>
+              <dt>Audience</dt>
+              <dd>{data.audience}</dd>
+            </div>
+            <div>
+              <dt>Duration</dt>
+              <dd>{data.duration}</dd>
+            </div>
+            <div>
+              <dt>Delivery</dt>
+              <dd>{data.mode.map((m) => m === 'virtual' ? 'Virtual' : 'In-person').join(' · ')}</dd>
+            </div>
+          </dl>
+          <a href="/contact" class="btn btn--primary">
+            Discuss this course
+            <svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7h8m-3-3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </aside>
+
+      <div class="course-body__main">
+        <div class="prose">
+          <slot />
+        </div>
+
+        <div class="course-grid-two">
+          <OutcomesList items={data.outcomes} />
+          <AgendaList items={data.agenda} />
+        </div>
+
+        {data.methodology && (
+          <div class="course-methodology">
+            <p class="eyebrow eyebrow-rule">How we run it</p>
+            <p>{data.methodology}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </Section>
+
+  {courseReviews.length > 0 && (
+    <Section size="md" tone="alt">
+      <div class="container-wide">
+        <header class="course-section-head">
+          <p class="eyebrow eyebrow-rule">In their words</p>
+          <h2>What participants tell us afterwards.</h2>
+        </header>
+        <div class="course-reviews">
+          {courseReviews.map((r) => (
+            <Testimonial
+              quote={r.data.quote}
+              author={r.data.author}
+              organisation={r.data.organisation}
+              rating={r.data.rating}
+            />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  {relatedStudies.length > 0 && (
+    <Section size="md" tone="default">
+      <div class="container-wide">
+        <header class="course-section-head">
+          <p class="eyebrow eyebrow-rule">Case studies</p>
+          <h2>How it lands.</h2>
+        </header>
+        <div class="course-related-studies">
+          {relatedStudies.map((cs) => (
+            <CaseStudyCard
+              href={`/${cs.slug}`}
+              client={cs.data.client}
+              sector={cs.data.sector}
+              title={cs.data.title}
+              excerpt={cs.data.outcome.slice(0, 160) + (cs.data.outcome.length > 160 ? '…' : '')}
+            />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  {data.faqs && data.faqs.length > 0 && (
+    <Section size="md" tone="alt">
+      <div class="container-wide course-faq-wrap">
+        <header class="course-section-head">
+          <p class="eyebrow eyebrow-rule">FAQs</p>
+          <h2>The questions we usually get.</h2>
+        </header>
+        <FAQAccordion faqs={data.faqs} />
+      </div>
+    </Section>
+  )}
+
+  {related.length > 0 && (
+    <Section size="md" tone="default">
+      <div class="container-wide">
+        <header class="course-section-head">
+          <p class="eyebrow eyebrow-rule">Related training</p>
+          <h2>You might also need.</h2>
+        </header>
+        <div class="course-related-grid">
+          {related.map((c) => (
+            <CourseCard
+              href={`/${c.slug}`}
+              title={c.data.title}
+              outcome={c.data.outcome}
+              category={c.data.category}
+              duration={c.data.duration}
+            />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <CTAPanel
+    eyebrow="Start the conversation"
+    title={`Want this course built for your team?`}
+    lead="Every engagement starts with a short call. We listen, ask the awkward questions, and come back with a proposal you can use."
+    primary={{ label: 'Get in touch', href: '/contact' }}
+    secondary={{ label: 'See training fees', href: '/training-fees' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .course-hero-extras { margin-top: 1.5rem; }
+
+  .course-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 1024px) {
+    .course-body {
+      grid-template-columns: 320px 1fr;
+      gap: 4rem;
+    }
+  }
+  .course-body__sticky {
+    position: relative;
+  }
+  @media (min-width: 1024px) {
+    .course-body__sticky {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      max-height: calc(100vh - 120px);
+    }
+  }
+
+  .course-stat {
+    padding: 1.75rem;
+    background: var(--c-bg);
+    border: 1px solid var(--c-rule);
+    border-radius: 14px;
+  }
+  .course-stat__title {
+    font-size: 1.35rem;
+    margin: 0.6rem 0 1.25rem;
+  }
+  .course-stat dl {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--c-rule);
+  }
+  .course-stat dl div {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1rem;
+  }
+  .course-stat dt {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--c-muted);
+    font-weight: 600;
+    padding-top: 2px;
+  }
+  .course-stat dd {
+    margin: 0;
+    color: var(--c-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .course-stat .btn { width: 100%; justify-content: center; }
+
+  .course-body__main { max-width: 56rem; }
+  .course-body__main > * + * { margin-top: 3rem; }
+
+  .course-grid-two {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 700px) {
+    .course-grid-two { grid-template-columns: 1fr 1fr; }
+  }
+
+  .course-methodology {
+    padding: 1.75rem 2rem;
+    background: var(--c-tint);
+    border-radius: 14px;
+    border-left: 3px solid var(--c-blue);
+  }
+  .course-methodology p:last-child {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin: 0.5rem 0 0;
+    max-width: 64ch;
+  }
+
+  .course-section-head {
+    max-width: 56ch;
+    margin-bottom: 2.5rem;
+  }
+  .course-section-head h2 {
+    margin: 0.6rem 0 0;
+    font-size: clamp(1.85rem, 3.2vw, 2.85rem);
+  }
+
+  .course-reviews {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 800px) {
+    .course-reviews { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .course-related-studies {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 1024px) {
+    .course-related-studies { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .course-faq-wrap { max-width: 920px; }
+
+  .course-related-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 700px) {
+    .course-related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .course-related-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

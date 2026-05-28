@@ -1,0 +1,225 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import PullQuote from '~/components/marketing/PullQuote.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import CourseCard from '~/components/marketing/CourseCard.astro';
+import { articleSchema, breadcrumbSchema } from '~/lib/schema';
+import { site } from '~/lib/site';
+
+type CaseStudy = Awaited<ReturnType<typeof getCollection<'caseStudies'>>>[number];
+type Course = Awaited<ReturnType<typeof getCollection<'courses'>>>[number];
+
+type Props = { study: CaseStudy };
+const { study } = Astro.props;
+const { data } = study;
+
+const allCourses = await getCollection('courses');
+const relatedCourse: Course | undefined = allCourses.find(
+  (c) => c.slug === data.courseSlug,
+);
+
+const url = `${site.url}/${study.slug}`;
+const schemas = [
+  articleSchema({
+    headline: data.title,
+    description: data.seo.description,
+    url,
+    publishedDate: data.publishedDate,
+    author: site.founder,
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Case studies', url: '/case-studies' },
+    { name: data.client, url: `/${study.slug}` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={data.seo.title}
+  description={data.seo.description}
+  type="article"
+  schemas={schemas}
+>
+  <Hero
+    eyebrow={`Case study · ${data.sector}`}
+    title={data.title}
+    variant="case-study"
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+    secondaryCta={{ label: 'See all case studies', href: '/case-studies' }}
+    meta={[
+      { label: 'Client', value: data.client },
+      { label: 'Sector', value: data.sector },
+      { label: 'Course', value: relatedCourse?.data.title ?? data.courseSlug },
+    ]}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-wide cs-grid">
+      <div class="cs-grid__main">
+        <article class="cs-article">
+          <div class="cs-block">
+            <p class="eyebrow eyebrow-rule">Challenge</p>
+            <h2>The brief.</h2>
+            <p>{data.challenge}</p>
+          </div>
+
+          <div class="cs-block">
+            <p class="eyebrow eyebrow-rule">Approach</p>
+            <h2>What we did.</h2>
+            <p>{data.approach}</p>
+          </div>
+
+          {data.testimonial && (
+            <PullQuote
+              quote={data.testimonial.quote}
+              author={data.testimonial.author}
+              organisation={data.client}
+            />
+          )}
+
+          <div class="cs-block">
+            <p class="eyebrow eyebrow-rule">Outcome</p>
+            <h2>What changed.</h2>
+            <p>{data.outcome}</p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="cs-grid__side">
+        <div class="cs-side-card">
+          <p class="eyebrow eyebrow-rule">The course</p>
+          {relatedCourse ? (
+            <>
+              <h3>{relatedCourse.data.title}</h3>
+              <p>{relatedCourse.data.outcome}</p>
+              <a href={`/${relatedCourse.slug}`} class="btn btn--ghost">View course</a>
+            </>
+          ) : (
+            <p>{data.courseSlug}</p>
+          )}
+        </div>
+
+        <dl class="cs-meta">
+          <div>
+            <dt>Client</dt>
+            <dd>{data.client}</dd>
+          </div>
+          <div>
+            <dt>Sector</dt>
+            <dd>{data.sector}</dd>
+          </div>
+          <div>
+            <dt>Published</dt>
+            <dd>{data.publishedDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Different challenge, same approach"
+    title="Your team isn’t Clifford Chance. Good — neither is the next one."
+    lead="Every engagement starts with conversations and ends with a course built for the room it’s about to walk into."
+    primary={{ label: 'Tell us your challenge', href: '/contact' }}
+    secondary={{ label: 'More case studies', href: '/case-studies' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .cs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 1024px) {
+    .cs-grid { grid-template-columns: 1fr 320px; gap: 4rem; }
+  }
+  .cs-grid__main { max-width: 70ch; }
+
+  .cs-article > * + * { margin-top: 3rem; }
+  .cs-block h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    margin: 0.6rem 0 1rem;
+    letter-spacing: -0.02em;
+  }
+  .cs-block p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--c-text);
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .cs-grid__side {
+    display: grid;
+    gap: 1.5rem;
+    align-self: start;
+  }
+  @media (min-width: 1024px) {
+    .cs-grid__side {
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  .cs-side-card {
+    padding: 1.75rem;
+    background:
+      linear-gradient(135deg, var(--c-deep) 0%, #042863 100%);
+    color: white;
+    border-radius: 14px;
+  }
+  .cs-side-card .eyebrow { color: var(--c-sky); }
+  .cs-side-card h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin: 0.55rem 0 0.85rem;
+  }
+  .cs-side-card p {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0 0 1.5rem;
+  }
+  .cs-side-card .btn {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.25);
+    color: white;
+  }
+  .cs-side-card .btn:hover {
+    background: white;
+    color: var(--c-deep);
+    border-color: white;
+  }
+
+  .cs-meta {
+    display: grid;
+    gap: 0.85rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--c-bg);
+    border: 1px solid var(--c-rule);
+    border-radius: 14px;
+    margin: 0;
+  }
+  .cs-meta div {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+  .cs-meta dt {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--c-muted);
+    font-weight: 600;
+    padding-top: 2px;
+  }
+  .cs-meta dd { margin: 0; color: var(--c-deep); }
+</style>

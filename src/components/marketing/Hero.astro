@@ -1,0 +1,174 @@
+---
+type Props = {
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  variant?: 'home' | 'page' | 'course' | 'case-study';
+  meta?: { label: string; value: string }[];
+};
+const {
+  eyebrow,
+  title,
+  lead,
+  primaryCta,
+  secondaryCta,
+  variant = 'page',
+  meta,
+} = Astro.props;
+---
+<section class={`hero hero--${variant}`}>
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+  </div>
+
+  <div class="container-wide hero__inner">
+    {eyebrow && (
+      <p class="eyebrow eyebrow-rule reveal reveal-1">{eyebrow}</p>
+    )}
+
+    <h1 class="hero__title reveal reveal-2">
+      <slot name="title">{title}</slot>
+    </h1>
+
+    {lead && (
+      <p class="hero__lead reveal reveal-3">{lead}</p>
+    )}
+
+    {(primaryCta || secondaryCta) && (
+      <div class="hero__actions reveal reveal-4">
+        {primaryCta && (
+          <a href={primaryCta.href} class="btn btn--primary">
+            {primaryCta.label}
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+              <path d="M3 7h8m-3-3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        )}
+        {secondaryCta && (
+          <a href={secondaryCta.href} class="btn btn--ghost">{secondaryCta.label}</a>
+        )}
+      </div>
+    )}
+
+    {meta && meta.length > 0 && (
+      <dl class="hero__meta reveal reveal-5">
+        {meta.map((m) => (
+          <div>
+            <dt>{m.label}</dt>
+            <dd>{m.value}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
+
+    <slot />
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero--home { padding: clamp(4rem, 9vw, 8rem) 0 clamp(3rem, 6vw, 5rem); }
+  .hero--page { padding: clamp(4rem, 8vw, 7rem) 0 clamp(2.5rem, 5vw, 4rem); }
+  .hero--course,
+  .hero--case-study { padding: clamp(4rem, 8vw, 7rem) 0 clamp(2.5rem, 5vw, 4rem); }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(180deg, var(--c-bg-alt) 0%, var(--c-bg) 100%);
+  }
+  .hero__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(1, 33, 92, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(1, 33, 92, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 80%);
+  }
+  .hero__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.55;
+  }
+  .hero__glow--1 {
+    width: 480px; height: 480px;
+    background: var(--c-sky);
+    top: -180px; right: -120px;
+    opacity: 0.45;
+  }
+  .hero__glow--2 {
+    width: 380px; height: 380px;
+    background: rgba(2, 132, 213, 0.35);
+    bottom: -120px; left: -80px;
+    opacity: 0.35;
+  }
+
+  .hero__inner {
+    position: relative;
+    max-width: 980px;
+  }
+  .hero__title {
+    font-size: clamp(2.5rem, 6.5vw, 5.25rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    color: var(--c-deep);
+    margin: 1.25rem 0 1.5rem;
+    max-width: 18ch;
+    font-weight: 600;
+  }
+  .hero--home .hero__title {
+    font-size: clamp(2.6rem, 7vw, 5.5rem);
+    max-width: 16ch;
+  }
+  .hero__lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    line-height: 1.5;
+    color: var(--c-muted);
+    max-width: 56ch;
+    margin: 0 0 2rem;
+  }
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .hero__meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem 2rem;
+    margin: 3rem 0 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--c-rule);
+    max-width: 720px;
+  }
+  .hero__meta div { display: flex; flex-direction: column; gap: 0.25rem; }
+  .hero__meta dt {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--c-muted);
+    font-weight: 600;
+  }
+  .hero__meta dd {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--c-deep);
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+</style>

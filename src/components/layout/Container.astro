@@ -1,0 +1,12 @@
+---
+type Props = {
+  size?: 'wide' | 'narrow' | 'prose';
+  as?: keyof HTMLElementTagNameMap;
+  class?: string;
+};
+const { size = 'wide', as: Tag = 'div', class: className = '' } = Astro.props;
+const sizeClass = size === 'wide' ? 'container-wide' : size === 'narrow' ? 'container-narrow' : 'container-prose';
+---
+<Tag class={`${sizeClass} ${className}`.trim()}>
+  <slot />
+</Tag>

@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import CourseLayout from '~/layouts/CourseLayout.astro';
+import CaseStudyLayout from '~/layouts/CaseStudyLayout.astro';
+
+export async function getStaticPaths() {
+  const courses = await getCollection('courses');
+  const caseStudies = await getCollection('caseStudies');
+
+  const coursePaths = courses.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { kind: 'course' as const, entry },
+  }));
+
+  const studyPaths = caseStudies.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { kind: 'caseStudy' as const, entry },
+  }));
+
+  return [...coursePaths, ...studyPaths];
+}
+
+const { kind, entry } = Astro.props;
+const { Content } = await render(entry);
+---
+{kind === 'course' ? (
+  <CourseLayout course={entry}>
+    <Content />
+  </CourseLayout>
+) : (
+  <CaseStudyLayout study={entry} />
+)}

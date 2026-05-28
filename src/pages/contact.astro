@@ -1,0 +1,284 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Section from '~/components/layout/Section.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import ReviewSummary from '~/components/marketing/ReviewSummary.astro';
+import { site } from '~/lib/site';
+import { breadcrumbSchema } from '~/lib/schema';
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Contact us"
+  description="Tell us your challenge. One short conversation. We'll listen, ask the awkward questions, and tell you honestly whether we can help."
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="One short conversation"
+    title="Tell us the challenge. We’ll design the training."
+    lead="No slides, no pitch. We listen first, ask the questions most consultancies don’t, and come back with a proposal you can use — or an honest no."
+    variant="page"
+  >
+    <div class="contact-hero-extras">
+      <ReviewSummary />
+    </div>
+  </Hero>
+
+  <Section size="md" tone="default">
+    <div class="container-wide contact-grid">
+      <form class="contact-form" action="#" method="post" novalidate>
+        <p class="eyebrow eyebrow-rule">Send a message</p>
+        <h2>Where would you like training to land?</h2>
+
+        <div class="contact-field-row">
+          <label class="contact-field">
+            <span>Your name</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label class="contact-field">
+            <span>Work email</span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+        </div>
+
+        <div class="contact-field-row">
+          <label class="contact-field">
+            <span>Organisation</span>
+            <input type="text" name="organisation" autocomplete="organization" required />
+          </label>
+          <label class="contact-field">
+            <span>Your role</span>
+            <input type="text" name="role" required />
+          </label>
+        </div>
+
+        <label class="contact-field">
+          <span>What challenge would you like training to solve?</span>
+          <textarea name="challenge" rows="5" placeholder="Tell us the situation — team size, what's not working, what would good look like." required></textarea>
+        </label>
+
+        <fieldset class="contact-field contact-radio">
+          <legend>Preferred contact method</legend>
+          <label><input type="radio" name="contactMethod" value="email" checked /> <span>Email</span></label>
+          <label><input type="radio" name="contactMethod" value="phone" /> <span>Phone</span></label>
+        </fieldset>
+
+        <label class="contact-field contact-field--optional">
+          <span>How did you hear about us? <em>(optional)</em></span>
+          <input type="text" name="source" />
+        </label>
+
+        <!-- Honeypot — hidden from humans -->
+        <div class="contact-honeypot" aria-hidden="true">
+          <label>If you are a human, leave this field blank.
+            <input type="text" name="hp_field" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
+
+        <div class="contact-actions">
+          <button type="submit" class="btn btn--primary">
+            Send message
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+              <path d="M3 7h8m-3-3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <p class="contact-actions__note">We aim to respond within one working day.</p>
+        </div>
+      </form>
+
+      <aside class="contact-aside">
+        <div class="contact-aside__block">
+          <p class="eyebrow eyebrow-rule">Direct</p>
+          <a href={`mailto:${site.email}`} class="contact-aside__link">{site.email}</a>
+          <a href={`tel:${site.phone.replace(/\s+/g, '')}`} class="contact-aside__link">{site.phone}</a>
+        </div>
+
+        <div class="contact-aside__block">
+          <p class="eyebrow eyebrow-rule">What happens next</p>
+          <ol>
+            <li><strong>Within a day.</strong> We come back with a short reply — a few questions, or a time to talk.</li>
+            <li><strong>A 30-minute call.</strong> We listen. No slides, no pitch. Most calls end with us telling you what we’d do, not selling you on it.</li>
+            <li><strong>A proposal.</strong> Built around your team, your situation, your budget. Often a single page.</li>
+          </ol>
+        </div>
+
+        <div class="contact-aside__block">
+          <p class="eyebrow eyebrow-rule">In a hurry?</p>
+          <p class="contact-aside__copy">If your training is in the next two weeks, mention it in the message. We keep capacity for short-notice work where we can.</p>
+        </div>
+      </aside>
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .contact-hero-extras { margin-top: 1.5rem; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: 1.4fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .contact-form {
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    background: var(--c-bg);
+    border: 1px solid var(--c-rule);
+    border-radius: 18px;
+    box-shadow: 0 30px 60px -40px rgba(1, 33, 92, 0.18);
+  }
+  .contact-form h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    margin: 0.6rem 0 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-field-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  @media (min-width: 600px) {
+    .contact-field-row { grid-template-columns: 1fr 1fr; }
+  }
+
+  .contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+  .contact-field > span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--c-deep);
+    letter-spacing: 0.02em;
+  }
+  .contact-field--optional em { font-style: normal; color: var(--c-muted); font-weight: 400; }
+  .contact-field input,
+  .contact-field textarea {
+    padding: 0.85rem 0.95rem;
+    border: 1px solid var(--c-rule);
+    border-radius: 10px;
+    background: var(--c-bg-alt);
+    color: var(--c-text);
+    font-family: inherit;
+    font-size: 1rem;
+    transition:
+      border-color 180ms var(--ease-out-soft),
+      background 180ms var(--ease-out-soft),
+      box-shadow 180ms var(--ease-out-soft);
+  }
+  .contact-field textarea { resize: vertical; min-height: 130px; }
+  .contact-field input:focus,
+  .contact-field textarea:focus {
+    outline: none;
+    border-color: var(--c-blue);
+    background: var(--c-bg);
+    box-shadow: 0 0 0 4px rgba(2, 132, 213, 0.15);
+  }
+
+  .contact-radio {
+    border: 0;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  .contact-radio legend {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--c-deep);
+    margin-bottom: 0.65rem;
+  }
+  .contact-radio label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1.5rem;
+    color: var(--c-text);
+  }
+  .contact-radio input[type='radio'] {
+    accent-color: var(--c-deep);
+    width: 16px; height: 16px;
+  }
+
+  .contact-honeypot {
+    position: absolute;
+    left: -9999px;
+    visibility: hidden;
+  }
+
+  .contact-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--c-rule);
+  }
+  .contact-actions__note {
+    color: var(--c-muted);
+    font-size: 0.875rem;
+    margin: 0;
+  }
+
+  .contact-aside { display: grid; gap: 1.5rem; align-self: start; }
+  .contact-aside__block {
+    padding: 1.75rem;
+    background: var(--c-tint);
+    border-radius: 14px;
+  }
+  .contact-aside__link {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--c-deep);
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    margin-top: 0.4rem;
+  }
+  .contact-aside__link:hover { color: var(--c-blue); }
+  .contact-aside__block ol {
+    padding-left: 0;
+    margin: 0.75rem 0 0;
+    list-style: none;
+    counter-reset: ca;
+  }
+  .contact-aside__block ol li {
+    counter-increment: ca;
+    padding: 0.85rem 0;
+    border-top: 1px solid rgba(213, 222, 232, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--c-text);
+  }
+  .contact-aside__block ol li::before {
+    content: counter(ca, decimal-leading-zero);
+    display: inline-block;
+    color: var(--c-blue);
+    font-family: var(--font-display);
+    font-weight: 600;
+    margin-right: 0.5rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .contact-aside__block ol li:first-child { border-top: 0; padding-top: 0.3rem; }
+  .contact-aside__copy {
+    margin: 0.75rem 0 0;
+    color: var(--c-text);
+    line-height: 1.55;
+    font-size: 0.95rem;
+  }
+</style>
