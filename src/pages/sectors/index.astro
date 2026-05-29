@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+
+const sectors = (await getCollection('sectors')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title),
+);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Sectors', url: '/sectors' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Sectors | Industry-specific soft-skills training"
+  description="Training tailored to your sector — from law firms and financial services to pharma, charity, media, manufacturing, maritime and the public sector."
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="Sectors"
+    title="Training tailored to your sector."
+    lead="Every industry has its own pressures, language and communication challenges. Our programmes are designed to speak directly to the realities of your working environment."
+    variant="page"
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-wide sector-grid">
+      {sectors.map((s) => (
+        <a href={`/${s.slug}`} class="sector-card">
+          <h3>{s.data.title}</h3>
+          <p>{s.data.summary}</p>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Your sector, your room"
+    title="Tell us what your team is up against."
+    primary={{ label: 'Start the conversation', href: '/contact' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .sector-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .sector-card {
+    display: block;
+    padding: 1.75rem;
+    background: var(--c-bg);
+    border: 1px solid var(--c-rule);
+    border-radius: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .sector-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--c-deep);
+  }
+  .sector-card h3 {
+    color: var(--c-deep);
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.75rem;
+  }
+  .sector-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--c-text);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

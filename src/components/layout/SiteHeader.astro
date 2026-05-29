@@ -7,7 +7,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 <header class="site-header">
   <div class="site-header__inner container-wide">
     <a href="/" class="site-header__brand" aria-label="Home">
-      <Logo height={36} />
+      <Logo height={108} />
     </a>
 
     <nav class="site-header__nav" aria-label="Primary">
@@ -100,8 +100,9 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     grid-template-columns: auto 1fr auto auto;
     align-items: center;
     gap: 2rem;
-    height: 76px;
+    min-height: 132px;
   }
+  .site-header__inner > * { align-self: center; }
   .site-header__brand {
     display: inline-flex;
     align-items: center;

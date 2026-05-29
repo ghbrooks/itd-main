@@ -1,0 +1,86 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import FAQAccordion from '~/components/marketing/FAQAccordion.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema, faqSchema } from '~/lib/schema';
+
+const faqs = [
+  {
+    q: 'What soft skills training does ITD offer?',
+    a: 'ITD offers a comprehensive range of soft skills training including communication skills, leadership, management, presentation skills, sales training, nudge training, project management, personal development, team training and more. All our training is tailored to your specific needs.',
+  },
+  {
+    q: 'Do you deliver training virtually?',
+    a: 'Yes, we have been delivering virtual training since 2009. We use Zoom or your preferred virtual platform. Our virtual sessions are highly interactive and practical, using breakout rooms, polls and collaborative exercises.',
+  },
+  {
+    q: 'How do you tailor training to our needs?',
+    a: 'We start with a discussion about your needs, challenges and objectives. We then design the training content to address your specific situation. This might include using your real work scenarios, case studies from your industry, and exercises relevant to your day-to-day challenges.',
+  },
+  {
+    q: 'What are your training fees?',
+    a: 'Our fees are competitive and we discuss and negotiate these with you to make sure they fit your expectations and budget. We offer daily rates, hourly rates and project fees. We also offer fee matching, budget matching and early bird discounts.',
+  },
+  {
+    q: 'Which countries do you work in?',
+    a: 'We have delivered training in over 30 countries worldwide including the UK, USA, Canada, Australia, India, Hong Kong, Singapore, UAE, and across Europe. We work both in-person and virtually.',
+  },
+  {
+    q: 'How long are your training sessions?',
+    a: 'Our training sessions can range from short bite-size sessions (60-90 minutes) to half-day, full-day or multi-day programmes. We will design the duration to suit your needs and the learning objectives.',
+  },
+  {
+    q: 'Do you offer one-to-one coaching?',
+    a: 'Yes, we offer one-to-one coaching across many of our areas including presentation skills, leadership and personal development. Coaching can be a great complement to group training or a standalone development option.',
+  },
+  {
+    q: 'How do I book training with ITD?',
+    a: 'Get in touch via our contact form, email or phone. We will arrange a discussion to understand your needs and then send you a tailored proposal. Once you are happy with the proposal, we will book in the dates.',
+  },
+  {
+    q: 'Can you train large groups?',
+    a: 'Yes, we work with groups of all sizes from small intimate workshops to large conferences. For larger groups we use techniques to ensure everyone is engaged and learning.',
+  },
+  {
+    q: 'Do you provide training materials?',
+    a: 'Yes, all our training programmes include comprehensive participant materials. These typically include workbooks, frameworks, exercises and follow-up resources to help participants apply their learning.',
+  },
+];
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'FAQs', url: '/faqs' },
+  ]),
+  faqSchema(faqs),
+];
+---
+
+<BaseLayout
+  title="FAQs | Frequently asked questions about ITD training"
+  description="Answers to common questions about ITD's soft skills training — formats, fees, delivery, countries we work in, and how to book."
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="Frequently asked questions"
+    title="Quick answers about training with ITD"
+    lead="Common questions about formats, fees, delivery and what to expect."
+    variant="page"
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-narrow">
+      <FAQAccordion faqs={faqs} />
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Still got questions?"
+    title="Ask us directly."
+    primary={{ label: 'Get in touch', href: '/contact' }}
+    tone="deep"
+  />
+</BaseLayout>

@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+
+type Location = Awaited<ReturnType<typeof getCollection<'locations'>>>[number];
+type Props = { location: Location };
+const { location } = Astro.props;
+const { data } = location;
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Where we train', url: '/where-have-itd-trained-in-the-world' },
+    { name: data.title, url: `/${location.slug}` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={data.seo.title}
+  description={data.seo.description}
+  schemas={schemas}
+>
+  <Hero
+    eyebrow={`Training · ${data.country}`}
+    title={data.title}
+    lead={data.summary}
+    variant="page"
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-narrow prose">
+      <slot />
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Training, your way"
+    title="Tell us what your team needs and where."
+    lead="In-person, virtual, or a blend — we’ll design the format that fits."
+    primary={{ label: 'Start the conversation', href: '/contact' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(h2) {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    letter-spacing: -0.02em;
+    margin: 2.5rem 0 1rem;
+  }
+  .prose :global(p) {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 0 0 1rem;
+  }
+  .prose :global(ul) { padding-left: 1.25rem; margin: 0 0 1.25rem; }
+  .prose :global(li) { margin: 0.35rem 0; line-height: 1.55; }
+</style>

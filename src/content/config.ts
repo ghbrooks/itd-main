@@ -109,4 +109,17 @@ const reviews = defineCollection({
   }),
 });
 
-export const collections = { courses, caseStudies, sectors, blog, reviews };
+const locations = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    country: z.string(),
+    summary: z.string(),
+    seo: z.object({
+      title: z.string(),
+      description: z.string(),
+    }),
+  }),
+});
+
+export const collections = { courses, caseStudies, sectors, blog, reviews, locations };

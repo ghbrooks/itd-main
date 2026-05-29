@@ -1,0 +1,152 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+import { site } from '~/lib/site';
+
+const sections = [
+  {
+    heading: 'Solving Your Challenges with Soft Skills Training',
+    body: 'We cover a wide range of subject areas within the soft skills or business skills training space. Our clients are a wide range of organisations in terms of size, market and location. We design and deliver training in-person and virtually. Both have high impact. Our first virtual training session was in 2009.',
+  },
+  {
+    heading: 'Tailored to Your Needs',
+    body: 'We always tailor our training to the client needs. One of the things that makes us different is how we deliver our staff training. Some training companies just deliver the same content to everyone, but we work much harder because we tailor the content to suit the needs and challenges of the participants in the room.',
+  },
+  {
+    heading: 'Workshop Style with Interaction',
+    body: 'Most of our staff training offerings are delivered in a workshop style so that the participants are looking at their work during the training. Practical to help with day-to-day situations and challenges.',
+  },
+  {
+    heading: 'Global Reach',
+    body: "We've worked with many people from across the world on all sorts of projects. In 32 countries and with thousands of people. During the lockdown with Covid-19 we delivered virtual training to people in many countries including Australia, China, Singapore, UAE, USA, Canada and across Europe.",
+  },
+  {
+    heading: 'Keeping It Fresh',
+    body: 'Keeping it fresh with the latest research is the ITD way. We are constantly developing frameworks and ideas into our own intellectual property to bring the most up-to-date and effective training approaches to our clients.',
+  },
+  {
+    heading: 'Participant Reviews',
+    body: 'Participant reviews are crucial to our development and success. We take feedback seriously and use it to continually improve our training programmes. Our results are excellent and speak for themselves.',
+  },
+];
+
+const training = [
+  'Sales training & consultancy',
+  'Communication skills training',
+  'Management training',
+  'Leadership training',
+  'Team building training',
+  'Presentation skills training',
+  'Customer service training',
+  'Personal efficiency training',
+  'Nudge training',
+  'Time management training',
+  'Project management training',
+];
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'About ITD', url: '/about' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="About ITD | International Training & Development"
+  description="ITD, International Training & Development, was born in 2002. We provide innovative soft skills training which helps organisations and their people solve their challenges."
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="About ITD"
+    title="About ITD"
+    lead="International Training & Development — innovative soft skills training since 2002."
+    variant="page"
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-narrow">
+      <p class="lead">
+        ITD, International Training & Development, was born in {site.founded}. Our aim is to provide
+        innovative soft skills training which helps organisations and their people solve their
+        challenges.
+      </p>
+
+      {sections.map((s) => (
+        <div class="about-block">
+          <h2>{s.heading}</h2>
+          <p>{s.body}</p>
+        </div>
+      ))}
+
+      <div class="about-block">
+        <h2>What We Train</h2>
+        <ul class="training-list">
+          {training.map((t) => <li>{t}</li>)}
+        </ul>
+      </div>
+
+      <div class="about-block">
+        <h2>Charitable Donations</h2>
+        <p>
+          Since 2015 we have sent donations to the Born Free charity. Born Free is dedicated to
+          keeping wildlife in the wild and we are proud to support their important work.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Twenty-five years in"
+    title="Tell us what your team is working on."
+    lead="Every engagement starts with a conversation about the room the training is about to walk into."
+    primary={{ label: 'Start the conversation', href: '/contact' }}
+    secondary={{ label: 'See case studies', href: '/case-studies' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .lead {
+    font-size: 1.2rem;
+    line-height: 1.55;
+    color: var(--c-deep);
+    margin: 0 0 3rem;
+  }
+  .about-block { margin: 2.5rem 0; }
+  .about-block h2 {
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem;
+  }
+  .about-block p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .training-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.65rem 1.5rem;
+  }
+  .training-list li {
+    font-size: 0.95rem;
+    color: var(--c-deep);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .training-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--c-muted);
+    font-weight: 700;
+  }
+</style>

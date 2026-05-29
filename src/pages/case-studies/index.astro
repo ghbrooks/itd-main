@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+
+const studies = (await getCollection('caseStudies')).sort(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
+);
+
+// Group by sector
+const bySector = new Map<string, typeof studies>();
+for (const s of studies) {
+  const sec = s.data.sector;
+  const arr = bySector.get(sec) ?? [];
+  arr.push(s);
+  bySector.set(sec, arr);
+}
+const sectorOrder = [...bySector.keys()].sort();
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Case studies', url: '/case-studies' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Case studies | ITD soft-skills training"
+  description="Real-world soft skills training case studies from ITD, working with magic-circle law firms, FTSE clients, charities and global corporates."
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="Case studies"
+    title="Training that actually changed something."
+    lead={`${studies.length} engagements across law, financial services, charity, pharma, media, technology and more.`}
+    variant="page"
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-wide">
+      {sectorOrder.map((sec) => (
+        <div class="sector-group">
+          <h2>{sec}</h2>
+          <ul class="case-list">
+            {(bySector.get(sec) ?? []).map((s) => (
+              <li>
+                <a href={`/${s.slug}`}>
+                  <span class="title">{s.data.title}</span>
+                  <span class="client">{s.data.client}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Different team, same approach"
+    title="Tell us what your team is working on."
+    primary={{ label: 'Start the conversation', href: '/contact' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .sector-group { margin: 0 0 3rem; }
+  .sector-group h2 {
+    font-size: clamp(1.4rem, 2vw, 1.75rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 2px solid var(--c-deep);
+    color: var(--c-deep);
+  }
+  .case-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.65rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .case-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.85rem 1.15rem;
+    background: var(--c-bg);
+    border: 1px solid var(--c-rule);
+    border-radius: 8px;
+    color: var(--c-deep);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: border-color 0.15s ease;
+  }
+  .case-list a:hover { border-color: var(--c-deep); }
+  .case-list .title { font-weight: 500; flex: 1; min-width: 0; }
+  .case-list .client {
+    font-size: 0.8rem;
+    color: var(--c-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+</style>

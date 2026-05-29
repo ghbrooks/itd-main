@@ -1,0 +1,125 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CourseCard from '~/components/marketing/CourseCard.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+
+type Sector = Awaited<ReturnType<typeof getCollection<'sectors'>>>[number];
+type Props = { sector: Sector };
+const { sector } = Astro.props;
+const { data } = sector;
+
+const allCourses = await getCollection('courses');
+const relevantCourses = (data.relevantCourses ?? [])
+  .map((s) => allCourses.find((c) => c.slug === s))
+  .filter((c): c is (typeof allCourses)[number] => Boolean(c));
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Sectors', url: '/sectors' },
+    { name: data.title, url: `/${sector.slug}` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={data.seo.title}
+  description={data.seo.description}
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="Sector"
+    title={data.title}
+    lead={data.summary}
+    variant="page"
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-narrow prose">
+      <slot />
+    </div>
+  </Section>
+
+  {relevantCourses.length > 0 && (
+    <Section size="md" tone="alt">
+      <div class="container-wide">
+        <h2 class="section-title">Relevant courses</h2>
+        <div class="course-grid">
+          {relevantCourses.map((c) => (
+            <CourseCard
+              title={c.data.title}
+              outcome={c.data.outcome}
+              href={`/${c.slug}`}
+              category={c.data.category}
+              duration={c.data.duration}
+            />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  {data.namedClients && data.namedClients.length > 0 && (
+    <Section size="md" tone="default">
+      <div class="container-wide">
+        <h2 class="section-title">Selected clients in this sector</h2>
+        <ul class="client-list">
+          {data.namedClients.map((c) => <li>{c}</li>)}
+        </ul>
+      </div>
+    </Section>
+  )}
+
+  <CTAPanel
+    eyebrow="Same approach, different room"
+    title="Tell us what your sector is wrestling with."
+    lead="Every engagement starts with a conversation about the room the training is about to walk into."
+    primary={{ label: 'Start the conversation', href: '/contact' }}
+    secondary={{ label: 'See case studies', href: '/case-studies' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(h2) {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    letter-spacing: -0.02em;
+    margin: 2.5rem 0 1rem;
+  }
+  .prose :global(p) {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 0 0 1rem;
+  }
+  .prose :global(ul) { padding-left: 1.25rem; margin: 0 0 1.25rem; }
+  .prose :global(li) { margin: 0.35rem 0; line-height: 1.55; }
+
+  .section-title {
+    font-size: clamp(1.4rem, 2vw, 1.85rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 2rem;
+  }
+  .course-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .client-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.65rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .client-list li {
+    color: var(--c-deep);
+    font-weight: 500;
+  }
+</style>

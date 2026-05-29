@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
+);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Blog | Insights on soft-skills training"
+  description="Thinking, frameworks and practical advice from the ITD team — twenty-five years of training people who do demanding work."
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="Blog"
+    title="Insights on soft-skills training"
+    lead="Thinking, frameworks and practical advice from the people who design and deliver the training."
+    variant="page"
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-wide post-grid">
+      {posts.map((p) => (
+        <a href={`/blog/${p.slug}`} class="post-card">
+          <p class="eyebrow eyebrow-rule">{p.data.category}</p>
+          <h3>{p.data.title}</h3>
+          <p class="excerpt">{p.data.description}</p>
+          <p class="meta">
+            {p.data.author} ·{' '}
+            {p.data.publishedDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}
+          </p>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Reading turned into doing"
+    title="Talk to us about what your team needs."
+    primary={{ label: 'Start the conversation', href: '/contact' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .post-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .post-card {
+    display: block;
+    padding: 2rem;
+    background: var(--c-bg);
+    border: 1px solid var(--c-rule);
+    border-radius: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .post-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--c-deep);
+  }
+  .post-card h3 {
+    color: var(--c-deep);
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+    margin: 0.5rem 0 0.85rem;
+  }
+  .post-card .excerpt {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--c-text);
+    margin: 0 0 1.5rem;
+  }
+  .post-card .meta {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--c-muted);
+    margin: 0;
+  }
+</style>
