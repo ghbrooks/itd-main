@@ -121,6 +121,16 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     padding: 0;
   }
   .site-header__nav li { position: relative; }
+  /* Invisible hover bridge — covers the 6px gap between the trigger and the
+     megamenu so the cursor doesn't lose :hover in transit. */
+  .has-children::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
   .site-header__nav > ul > li > a {
     display: inline-flex;
     align-items: center;

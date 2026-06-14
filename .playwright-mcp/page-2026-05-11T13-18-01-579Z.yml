@@ -1,0 +1,544 @@
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic "itD — International Training and Development" [ref=e6]
+      - button "Open menu" [expanded] [active] [ref=e7] [cursor=pointer]
+    - list [ref=e482]:
+      - listitem [ref=e483]:
+        - link "Training" [ref=e484] [cursor=pointer]:
+          - /url: /soft-skills-training
+        - list [ref=e485]:
+          - listitem [ref=e486]:
+            - link "Sales" [ref=e487] [cursor=pointer]:
+              - /url: /sales-training
+          - listitem [ref=e488]:
+            - link "Communication" [ref=e489] [cursor=pointer]:
+              - /url: /communication-training
+          - listitem [ref=e490]:
+            - link "Presentation" [ref=e491] [cursor=pointer]:
+              - /url: /presentation-skills-training
+          - listitem [ref=e492]:
+            - link "Leadership" [ref=e493] [cursor=pointer]:
+              - /url: /leadership-training
+          - listitem [ref=e494]:
+            - link "Management" [ref=e495] [cursor=pointer]:
+              - /url: /management-training
+          - listitem [ref=e496]:
+            - link "Personal development" [ref=e497] [cursor=pointer]:
+              - /url: /personal-development-training
+          - listitem [ref=e498]:
+            - link "Nudge for Lawyers" [ref=e499] [cursor=pointer]:
+              - /url: /nudge-training-for-lawyers
+          - listitem [ref=e500]:
+            - link "ITD Work Styles" [ref=e501] [cursor=pointer]:
+              - /url: /itd-work-styles-model-training
+      - listitem [ref=e502]:
+        - link "Sectors" [ref=e503] [cursor=pointer]:
+          - /url: /market-sector-specific-training
+      - listitem [ref=e504]:
+        - link "Case studies" [ref=e505] [cursor=pointer]:
+          - /url: /case-studies
+      - listitem [ref=e506]:
+        - link "Approach" [ref=e507] [cursor=pointer]:
+          - /url: /approach
+        - list [ref=e508]:
+          - listitem [ref=e509]:
+            - link "Tailored training" [ref=e510] [cursor=pointer]:
+              - /url: /tailored-training
+          - listitem [ref=e511]:
+            - link "Asynchronous training" [ref=e512] [cursor=pointer]:
+              - /url: /asynchronous-training
+          - listitem [ref=e513]:
+            - link "Public open courses" [ref=e514] [cursor=pointer]:
+              - /url: /public-open-training-courses
+          - listitem [ref=e515]:
+            - link "Training fees" [ref=e516] [cursor=pointer]:
+              - /url: /training-fees
+      - listitem [ref=e517]:
+        - link "Resources" [ref=e518] [cursor=pointer]:
+          - /url: /resources
+        - list [ref=e519]:
+          - listitem [ref=e520]:
+            - link "Free downloads" [ref=e521] [cursor=pointer]:
+              - /url: /free-downloads
+          - listitem [ref=e522]:
+            - link "Blog" [ref=e523] [cursor=pointer]:
+              - /url: /category/blog
+          - listitem [ref=e524]:
+            - link "Reviews" [ref=e525] [cursor=pointer]:
+              - /url: /reviews
+          - listitem [ref=e526]:
+            - link "Keynote speaker" [ref=e527] [cursor=pointer]:
+              - /url: /keynote-speaker
+      - listitem [ref=e528]:
+        - link "Contact" [ref=e529] [cursor=pointer]:
+          - /url: /contact
+      - listitem [ref=e530]:
+        - link "Tell us your challenge" [ref=e531] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e11]:
+    - generic [ref=e17]:
+      - paragraph [ref=e18]: Soft-skills training since 1999
+      - heading "Soft-skills training that sticks." [level=1] [ref=e19]
+      - paragraph [ref=e20]: Sharper sales, calmer leadership, presentations people actually remember. We work with the world’s most demanding teams — and we leave them better than we found them.
+      - generic [ref=e21]:
+        - link "Tell us your challenge" [ref=e22] [cursor=pointer]:
+          - /url: /contact
+          - text: Tell us your challenge
+          - img [ref=e23]
+        - link "See the courses" [ref=e25] [cursor=pointer]:
+          - /url: /soft-skills-training
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - term [ref=e28]: Founded
+          - definition [ref=e29]: "1999"
+        - generic [ref=e30]:
+          - term [ref=e31]: Reviews
+          - definition [ref=e32]: 4.8★ over 220+
+        - generic [ref=e33]:
+          - term [ref=e34]: Delivered
+          - definition [ref=e35]: In-person · Virtual
+        - generic [ref=e36]:
+          - term [ref=e37]: Sectors
+          - definition [ref=e38]: Law · Tech · Charity · more
+      - link "Rated 4.8 out of 5 across 220+ reviews" [ref=e40] [cursor=pointer]:
+        - /url: /reviews
+        - generic [ref=e41]:
+          - img [ref=e43]
+          - img [ref=e46]
+          - img [ref=e49]
+          - img [ref=e52]
+          - img [ref=e55]
+        - generic [ref=e57]:
+          - strong [ref=e58]: "4.8"
+          - generic [ref=e59]:
+            - text: over
+            - strong [ref=e60]: 220+
+            - text: reviews
+    - generic [ref=e62]:
+      - paragraph [ref=e63]: In-house at
+      - list [ref=e64]:
+        - listitem [ref=e65]: Clifford Chance
+        - listitem [ref=e66]: Cancer Research UK
+        - listitem [ref=e67]: Hilton
+        - listitem [ref=e68]: Workday
+        - listitem [ref=e69]: SSE
+        - listitem [ref=e70]: The Charity Commission
+        - listitem [ref=e71]: Malvern Panalytical
+        - listitem [ref=e72]: Corpag
+        - listitem [ref=e73]: IAM RoadSmart
+        - listitem [ref=e74]: Sinosky
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - paragraph [ref=e78]: Why teams keep coming back
+        - heading "Three things our clients tell us, over and over." [level=2] [ref=e79]
+      - generic [ref=e80]:
+        - article [ref=e81]:
+          - generic [ref=e83]: "01"
+          - heading "It is built around your situation, not ours." [level=3] [ref=e84]
+          - paragraph [ref=e85]: Every course starts with conversations — with you, and with people who’ll be in the room. We arrive with material that already looks like your firm.
+        - article [ref=e86]:
+          - generic [ref=e88]: "02"
+          - heading "It is practical to the point of awkwardness." [level=3] [ref=e89]
+          - paragraph [ref=e90]: We don’t hand out frameworks and hope. We coach live, on real situations, with feedback that is direct but never bruising. Reps, not theory.
+        - article [ref=e91]:
+          - generic [ref=e93]: "03"
+          - heading "It is still working six months later." [level=3] [ref=e94]
+          - paragraph [ref=e95]: The test isn’t the day, it’s the quarter after. We design for what people actually do at their desks, with their teams, after the training ends.
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - paragraph [ref=e100]: Training
+          - heading "The courses, by category." [level=2] [ref=e101]
+        - link "All courses →" [ref=e102] [cursor=pointer]:
+          - /url: /soft-skills-training
+      - generic [ref=e103]:
+        - link "Eight courses Sales Consultative B2B selling that wins long-cycle work — discovery, objection handling, follow-up." [ref=e104] [cursor=pointer]:
+          - /url: /sales-training
+          - generic [ref=e105]:
+            - paragraph [ref=e106]: Eight courses
+            - heading "Sales" [level=3] [ref=e107]
+            - paragraph [ref=e108]: Consultative B2B selling that wins long-cycle work — discovery, objection handling, follow-up.
+            - img [ref=e111]
+        - link "Six courses Presentation Filmed presentation training for the pitches and panels that actually decide things." [ref=e113] [cursor=pointer]:
+          - /url: /presentation-skills-training
+          - generic [ref=e114]:
+            - paragraph [ref=e115]: Six courses
+            - heading "Presentation" [level=3] [ref=e116]
+            - paragraph [ref=e117]: Filmed presentation training for the pitches and panels that actually decide things.
+            - img [ref=e120]
+        - link "Five courses Communication Be heard without being harsh. Write to be read. Disagree without losing the relationship." [ref=e122] [cursor=pointer]:
+          - /url: /communication-training
+          - generic [ref=e123]:
+            - paragraph [ref=e124]: Five courses
+            - heading "Communication" [level=3] [ref=e125]
+            - paragraph [ref=e126]: Be heard without being harsh. Write to be read. Disagree without losing the relationship.
+            - img [ref=e129]
+        - link "Six courses Leadership Lead teams people choose to stay on. Practical, jargon-free, built for real conditions." [ref=e131] [cursor=pointer]:
+          - /url: /leadership-training
+          - generic [ref=e132]:
+            - paragraph [ref=e133]: Six courses
+            - heading "Leadership" [level=3] [ref=e134]
+            - paragraph [ref=e135]: Lead teams people choose to stay on. Practical, jargon-free, built for real conditions.
+            - img [ref=e138]
+        - link "Specialist Nudge for Lawyers Behavioural science applied to legal practice. Built with magic-circle firms." [ref=e140] [cursor=pointer]:
+          - /url: /nudge-training-for-lawyers
+          - generic [ref=e141]:
+            - paragraph [ref=e142]: Specialist
+            - heading "Nudge for Lawyers" [level=3] [ref=e143]
+            - paragraph [ref=e144]: Behavioural science applied to legal practice. Built with magic-circle firms.
+            - img [ref=e147]
+        - link "Specialist ITD Work Styles Our own team model — twenty years in the making. Know how your team really works." [ref=e149] [cursor=pointer]:
+          - /url: /itd-work-styles-model-training
+          - generic [ref=e150]:
+            - paragraph [ref=e151]: Specialist
+            - heading "ITD Work Styles" [level=3] [ref=e152]
+            - paragraph [ref=e153]: Our own team model — twenty years in the making. Know how your team really works.
+            - img [ref=e156]
+    - generic [ref=e159]:
+      - generic [ref=e160]:
+        - generic [ref=e161]:
+          - paragraph [ref=e162]: Case studies
+          - heading "How it lands in the real world." [level=2] [ref=e163]
+        - link "All case studies →" [ref=e164] [cursor=pointer]:
+          - /url: /case-studies
+      - generic [ref=e165]:
+        - link "Hilton Hospitality Pimp My Slides — virtual presentation training across Hilton EMEA Hilton’s commercial leadership across EMEA had moved permanently to remote-first internal pitching — but the deck-and-talk format hadn’t caught up. Sales conversion on virtual pitc… Read the case study" [ref=e166] [cursor=pointer]:
+          - /url: /case-study-virtual-presenting-pimp-my-slides-hilton
+          - generic [ref=e167]:
+            - generic [ref=e168]: Hilton
+            - generic [ref=e169]: Hospitality
+          - heading "Pimp My Slides — virtual presentation training across Hilton EMEA" [level=3] [ref=e170]
+          - paragraph [ref=e171]: Hilton’s commercial leadership across EMEA had moved permanently to remote-first internal pitching — but the deck-and-talk format hadn’t caught up. Sales conversion on virtual pitc…
+          - generic [ref=e172]:
+            - generic [ref=e173]: Read the case study
+            - img [ref=e174]
+        - generic [ref=e176]:
+          - link "Clifford Chance Law Holding ground at the negotiating table — assertiveness for senior associates at Clifford Chance Twelve months later, six of the eight cohort members had been promoted or were in the partnership pipeline. More immediately, inte… Read the case study" [ref=e177] [cursor=pointer]:
+            - /url: /case-study-assertiveness-training-clifford-chance
+            - generic [ref=e178]:
+              - generic [ref=e179]: Clifford Chance
+              - generic [ref=e180]: Law
+            - heading "Holding ground at the negotiating table — assertiveness for senior associates at Clifford Chance" [level=3] [ref=e181]
+            - paragraph [ref=e182]: Twelve months later, six of the eight cohort members had been promoted or were in the partnership pipeline. More immediately, inte…
+            - generic [ref=e183]:
+              - generic [ref=e184]: Read the case study
+              - img [ref=e185]
+          - link "Cancer Research UK Charity Presenting with impact — translating science for non-scientists at Cancer Research UK In a follow-up survey four months later, every participant reported applying the techniques in at least three real presentations. … Read the case study" [ref=e187] [cursor=pointer]:
+            - /url: /case-study-presenting-with-impact-training-cruk
+            - generic [ref=e188]:
+              - generic [ref=e189]: Cancer Research UK
+              - generic [ref=e190]: Charity
+            - heading "Presenting with impact — translating science for non-scientists at Cancer Research UK" [level=3] [ref=e191]
+            - paragraph [ref=e192]: In a follow-up survey four months later, every participant reported applying the techniques in at least three real presentations. …
+            - generic [ref=e193]:
+              - generic [ref=e194]: Read the case study
+              - img [ref=e195]
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - paragraph [ref=e201]: Reviews
+          - heading "4.8★ over 220+ reviews." [level=2] [ref=e202]
+        - link "Read them all →" [ref=e203] [cursor=pointer]:
+          - /url: /reviews
+      - generic [ref=e204]:
+        - figure "Research translation lead Cancer Research UK" [ref=e205]:
+          - generic "Rated 5 out of 5" [ref=e206]:
+            - img [ref=e207]
+            - img [ref=e209]
+            - img [ref=e211]
+            - img [ref=e213]
+            - img [ref=e215]
+          - blockquote [ref=e217]:
+            - paragraph [ref=e218]: The first presentation course I've done where I actually came out with a different way of working — not just notes I'd never look at again.
+          - generic [ref=e219]:
+            - generic [ref=e220]: Research translation lead
+            - generic [ref=e221]: Cancer Research UK
+        - figure "Senior associate Clifford Chance" [ref=e222]:
+          - generic "Rated 5 out of 5" [ref=e223]:
+            - img [ref=e224]
+            - img [ref=e226]
+            - img [ref=e228]
+            - img [ref=e230]
+            - img [ref=e232]
+          - blockquote [ref=e234]:
+            - paragraph [ref=e235]: Best training I've done in fifteen years at the firm. Practical, candid, pitched at exactly the right level.
+          - generic [ref=e236]:
+            - generic [ref=e237]: Senior associate
+            - generic [ref=e238]: Clifford Chance
+        - figure "Commercial director Hilton EMEA" [ref=e239]:
+          - generic "Rated 5 out of 5" [ref=e240]:
+            - img [ref=e241]
+            - img [ref=e243]
+            - img [ref=e245]
+            - img [ref=e247]
+            - img [ref=e249]
+          - blockquote [ref=e251]:
+            - paragraph [ref=e252]: We came in expecting a slide-design course. We left with a different way of thinking about the whole pitch.
+          - generic [ref=e253]:
+            - generic [ref=e254]: Commercial director
+            - generic [ref=e255]: Hilton EMEA
+        - figure "Director SSE" [ref=e256]:
+          - generic "Rated 5 out of 5" [ref=e257]:
+            - img [ref=e258]
+            - img [ref=e260]
+            - img [ref=e262]
+            - img [ref=e264]
+            - img [ref=e266]
+          - blockquote [ref=e268]:
+            - paragraph [ref=e269]: Genuinely good training is rare. This was that. Twelve months on, my team still uses the language we learnt that day.
+          - generic [ref=e270]:
+            - generic [ref=e271]: Director
+            - generic [ref=e272]: SSE
+    - generic [ref=e274]:
+      - generic [ref=e275]:
+        - generic [ref=e276]:
+          - paragraph [ref=e277]: Sectors
+          - heading "We know your industry — usually painfully well." [level=2] [ref=e278]
+        - link "All sectors →" [ref=e279] [cursor=pointer]:
+          - /url: /market-sector-specific-training
+      - generic [ref=e280]:
+        - link "Law 9 courses Magic-circle, silver-circle, mid-market and boutique firms. Explore" [ref=e281] [cursor=pointer]:
+          - /url: /market-sector-specific-training#law
+          - generic [ref=e282]:
+            - heading "Law" [level=3] [ref=e283]
+            - generic [ref=e284]: 9 courses
+          - paragraph [ref=e285]: Magic-circle, silver-circle, mid-market and boutique firms.
+          - generic [ref=e286]:
+            - text: Explore
+            - img [ref=e287]
+        - link "Charity 7 courses From the household-name charities to specialist research bodies. Explore" [ref=e289] [cursor=pointer]:
+          - /url: /market-sector-specific-training#charity
+          - generic [ref=e290]:
+            - heading "Charity" [level=3] [ref=e291]
+            - generic [ref=e292]: 7 courses
+          - paragraph [ref=e293]: From the household-name charities to specialist research bodies.
+          - generic [ref=e294]:
+            - text: Explore
+            - img [ref=e295]
+        - link "Financial services 8 courses Banking, insurance, asset management. Sharp on regulation, sharper on people. Explore" [ref=e297] [cursor=pointer]:
+          - /url: /market-sector-specific-training#finance
+          - generic [ref=e298]:
+            - heading "Financial services" [level=3] [ref=e299]
+            - generic [ref=e300]: 8 courses
+          - paragraph [ref=e301]: Banking, insurance, asset management. Sharp on regulation, sharper on people.
+          - generic [ref=e302]:
+            - text: Explore
+            - img [ref=e303]
+        - link "Technology 8 courses Hyper-growth SaaS, scale-ups, enterprise software — sales and presentation. Explore" [ref=e305] [cursor=pointer]:
+          - /url: /market-sector-specific-training#tech
+          - generic [ref=e306]:
+            - heading "Technology" [level=3] [ref=e307]
+            - generic [ref=e308]: 8 courses
+          - paragraph [ref=e309]: Hyper-growth SaaS, scale-ups, enterprise software — sales and presentation.
+          - generic [ref=e310]:
+            - text: Explore
+            - img [ref=e311]
+        - link "Hospitality 6 courses Commercial leadership and front-of-house excellence across major brands. Explore" [ref=e313] [cursor=pointer]:
+          - /url: /market-sector-specific-training#hospitality
+          - generic [ref=e314]:
+            - heading "Hospitality" [level=3] [ref=e315]
+            - generic [ref=e316]: 6 courses
+          - paragraph [ref=e317]: Commercial leadership and front-of-house excellence across major brands.
+          - generic [ref=e318]:
+            - text: Explore
+            - img [ref=e319]
+        - link "Public sector 7 courses Central government, regulators, and arm’s-length bodies. Explore" [ref=e321] [cursor=pointer]:
+          - /url: /market-sector-specific-training#public
+          - generic [ref=e322]:
+            - heading "Public sector" [level=3] [ref=e323]
+            - generic [ref=e324]: 7 courses
+          - paragraph [ref=e325]: Central government, regulators, and arm’s-length bodies.
+          - generic [ref=e326]:
+            - text: Explore
+            - img [ref=e327]
+    - complementary [ref=e329]:
+      - generic [ref=e330]:
+        - generic [ref=e331]:
+          - paragraph [ref=e332]: One short conversation
+          - heading "Tell us the challenge. We’ll tell you honestly whether we can help." [level=2] [ref=e333]
+          - paragraph [ref=e334]: Most engagements start with a half-hour call. No slides, no pitch — we listen, ask the awkward questions, and come back with a proposal you can actually use.
+        - generic [ref=e335]:
+          - link "Get in touch" [ref=e336] [cursor=pointer]:
+            - /url: /contact
+            - text: Get in touch
+            - img [ref=e337]
+          - link "See training fees" [ref=e339] [cursor=pointer]:
+            - /url: /training-fees
+  - contentinfo [ref=e340]:
+    - generic [ref=e343]:
+      - paragraph [ref=e344]: Start the conversation
+      - heading "Tell us the challenge. We’ll design the training." [level=2] [ref=e345]:
+        - text: Tell us the challenge.
+        - text: We’ll design the training.
+      - paragraph [ref=e346]: One short conversation. We’ll listen, ask the awkward questions, and tell you honestly whether we can help — and how.
+      - generic [ref=e347]:
+        - link "Get in touch" [ref=e348] [cursor=pointer]:
+          - /url: /contact
+          - text: Get in touch
+          - img [ref=e349]
+        - link "hello@itd.com" [ref=e351] [cursor=pointer]:
+          - /url: mailto:hello@itd.com
+    - generic [ref=e352]:
+      - generic [ref=e353]:
+        - generic "itD — International Training and Development" [ref=e354]
+        - paragraph [ref=e355]: International Training and Development. Soft-skills training that sticks. Since 1999.
+        - generic [ref=e356]:
+          - generic [ref=e357]:
+            - term [ref=e358]: Rated
+            - definition [ref=e359]:
+              - strong [ref=e360]: 4.8★
+              - text: over 220+ reviews
+          - generic [ref=e361]:
+            - term [ref=e362]: Email
+            - definition [ref=e363]:
+              - link "hello@itd.com" [ref=e364] [cursor=pointer]:
+                - /url: mailto:hello@itd.com
+          - generic [ref=e365]:
+            - term [ref=e366]: LinkedIn
+            - definition [ref=e367]:
+              - link "linkedin.com/company/itd-uk" [ref=e368] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/itd-uk
+      - navigation "Footer" [ref=e369]:
+        - generic [ref=e370]:
+          - heading "Sales" [level=3] [ref=e371]
+          - list [ref=e372]:
+            - listitem [ref=e373]:
+              - link "Sales training" [ref=e374] [cursor=pointer]:
+                - /url: /sales-training
+            - listitem [ref=e375]:
+              - link "Advanced sales" [ref=e376] [cursor=pointer]:
+                - /url: /advanced-sales-training
+            - listitem [ref=e377]:
+              - link "Telesales" [ref=e378] [cursor=pointer]:
+                - /url: /telesales-training
+            - listitem [ref=e379]:
+              - link "Account management" [ref=e380] [cursor=pointer]:
+                - /url: /account-management-training
+            - listitem [ref=e381]:
+              - link "Key account management" [ref=e382] [cursor=pointer]:
+                - /url: /key-account-management-training
+            - listitem [ref=e383]:
+              - link "Sales management" [ref=e384] [cursor=pointer]:
+                - /url: /sales-management-training
+            - listitem [ref=e385]:
+              - link "Client care" [ref=e386] [cursor=pointer]:
+                - /url: /client-care-training
+        - generic [ref=e387]:
+          - heading "Communication" [level=3] [ref=e388]
+          - list [ref=e389]:
+            - listitem [ref=e390]:
+              - link "Communication" [ref=e391] [cursor=pointer]:
+                - /url: /communication-training
+            - listitem [ref=e392]:
+              - link "Written communication" [ref=e393] [cursor=pointer]:
+                - /url: /written-communication-training
+            - listitem [ref=e394]:
+              - link "Assertiveness" [ref=e395] [cursor=pointer]:
+                - /url: /assertiveness-training
+            - listitem [ref=e396]:
+              - link "Presentation skills" [ref=e397] [cursor=pointer]:
+                - /url: /presentation-skills-training
+            - listitem [ref=e398]:
+              - link "Virtual presentation" [ref=e399] [cursor=pointer]:
+                - /url: /virtual-presentation-skills-training-2
+            - listitem [ref=e400]:
+              - link "Pimp My Slides" [ref=e401] [cursor=pointer]:
+                - /url: /pimp-my-slides
+        - generic [ref=e402]:
+          - heading "Leadership & management" [level=3] [ref=e403]
+          - list [ref=e404]:
+            - listitem [ref=e405]:
+              - link "Leadership" [ref=e406] [cursor=pointer]:
+                - /url: /leadership-training
+            - listitem [ref=e407]:
+              - link "Management" [ref=e408] [cursor=pointer]:
+                - /url: /management-training
+            - listitem [ref=e409]:
+              - link "People management" [ref=e410] [cursor=pointer]:
+                - /url: /people-management-training
+            - listitem [ref=e411]:
+              - link "Managing upwards" [ref=e412] [cursor=pointer]:
+                - /url: /managing-upwards-training
+            - listitem [ref=e413]:
+              - link "Executive coaching" [ref=e414] [cursor=pointer]:
+                - /url: /executive-coaching
+        - generic [ref=e415]:
+          - heading "Specialist" [level=3] [ref=e416]
+          - list [ref=e417]:
+            - listitem [ref=e418]:
+              - link "Nudge training" [ref=e419] [cursor=pointer]:
+                - /url: /nudge-training
+            - listitem [ref=e420]:
+              - link "Nudge for Lawyers" [ref=e421] [cursor=pointer]:
+                - /url: /nudge-training-for-lawyers
+            - listitem [ref=e422]:
+              - link "ITD Work Styles" [ref=e423] [cursor=pointer]:
+                - /url: /itd-work-styles-model-training
+            - listitem [ref=e424]:
+              - link "D&I" [ref=e425] [cursor=pointer]:
+                - /url: /diversity-inclusion-training
+            - listitem [ref=e426]:
+              - link "Project management" [ref=e427] [cursor=pointer]:
+                - /url: /project-management-training
+            - listitem [ref=e428]:
+              - link "Finance" [ref=e429] [cursor=pointer]:
+                - /url: /finance-training
+        - generic [ref=e430]:
+          - heading "Company" [level=3] [ref=e431]
+          - list [ref=e432]:
+            - listitem [ref=e433]:
+              - link "Approach" [ref=e434] [cursor=pointer]:
+                - /url: /approach
+            - listitem [ref=e435]:
+              - link "Sectors" [ref=e436] [cursor=pointer]:
+                - /url: /market-sector-specific-training
+            - listitem [ref=e437]:
+              - link "Case studies" [ref=e438] [cursor=pointer]:
+                - /url: /case-studies
+            - listitem [ref=e439]:
+              - link "Reviews" [ref=e440] [cursor=pointer]:
+                - /url: /reviews
+            - listitem [ref=e441]:
+              - link "Keynote speaker" [ref=e442] [cursor=pointer]:
+                - /url: /keynote-speaker
+            - listitem [ref=e443]:
+              - link "Free downloads" [ref=e444] [cursor=pointer]:
+                - /url: /free-downloads
+            - listitem [ref=e445]:
+              - link "Training fees" [ref=e446] [cursor=pointer]:
+                - /url: /training-fees
+            - listitem [ref=e447]:
+              - link "Contact" [ref=e448] [cursor=pointer]:
+                - /url: /contact
+    - generic [ref=e449]:
+      - paragraph [ref=e450]: © 1999–2026 International Training and Development. All rights reserved.
+      - list [ref=e451]:
+        - listitem [ref=e452]:
+          - link "Privacy" [ref=e453] [cursor=pointer]:
+            - /url: /privacy
+        - listitem [ref=e454]:
+          - link "Cookies" [ref=e455] [cursor=pointer]:
+            - /url: /cookies
+        - listitem [ref=e456]:
+          - link "Terms" [ref=e457] [cursor=pointer]:
+            - /url: /terms
+  - generic [ref=e460]:
+    - button "Menu" [ref=e461]:
+      - img [ref=e463]
+      - generic: Menu
+    - button "Inspect" [ref=e467]:
+      - img [ref=e469]
+      - generic: Inspect
+    - button "Audit" [ref=e471]:
+      - generic [ref=e472]:
+        - img [ref=e473]
+        - img [ref=e533]
+      - generic: Audit
+    - button "Settings" [ref=e476]:
+      - img [ref=e478]
+      - generic: Settings
