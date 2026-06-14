@@ -103,3 +103,4 @@ public/
 - Tailwind v4 uses CSS-first config in `globals.css` (no `tailwind.config.ts`).
 - Content collections use `type: 'content'` (legacy mode) — slug is auto-derived from filename. Don't add `slug:` to frontmatter; it's reserved.
 - 95% of CSS is in scoped `<style>` blocks per component; Tailwind is for ad-hoc utilities and `@theme` tokens.
+# itd-main
