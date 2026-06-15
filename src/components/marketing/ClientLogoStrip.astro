@@ -1,23 +1,36 @@
 ---
-import { site } from '~/lib/site';
+import fs from 'node:fs';
+import path from 'node:path';
 
 type Props = {
   heading?: string;
-  clients?: readonly string[];
   tone?: 'light' | 'dark';
 };
-const {
-  heading = 'Trusted by teams at',
-  clients = site.namedClients,
-  tone = 'light',
-} = Astro.props;
+const { heading = 'Trusted by teams at', tone = 'light' } = Astro.props;
+
+const dir = path.resolve('public/images/clients');
+const files = fs
+  .readdirSync(dir)
+  .filter((f) => /\.(png|webp|jpe?g|svg)$/i.test(f))
+  .sort();
+
+const logos = files.map((file) => {
+  const base = file.replace(/\.[^.]+$/, '');
+  const alt = base
+    .split('-')
+    .map((w) => (w.length <= 3 ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1)))
+    .join(' ');
+  return { src: `/images/clients/${file}`, alt };
+});
 ---
 <section class={`logo-strip logo-strip--${tone}`}>
   <div class="container-wide">
     <p class="eyebrow eyebrow-rule logo-strip__eyebrow">{heading}</p>
     <ul class="logo-strip__list">
-      {clients.map((client) => (
-        <li><span class="logo-strip__name">{client}</span></li>
+      {logos.map((logo) => (
+        <li>
+          <img src={logo.src} alt={logo.alt} loading="lazy" decoding="async" />
+        </li>
       ))}
     </ul>
   </div>
@@ -35,7 +48,7 @@ const {
     color: rgba(255, 255, 255, 0.85);
   }
   .logo-strip__eyebrow {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     color: var(--c-mid);
   }
   .logo-strip--dark .logo-strip__eyebrow {
@@ -45,29 +58,40 @@ const {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 2rem;
     align-items: center;
+    justify-items: center;
   }
-  @media (min-width: 768px) {
-    .logo-strip__list { gap: 0.5rem 3.5rem; }
+  @media (min-width: 640px) {
+    .logo-strip__list { grid-template-columns: repeat(4, 1fr); }
   }
-  .logo-strip__name {
-    font-family: var(--font-display);
-    font-size: clamp(1rem, 1.4vw, 1.35rem);
-    font-weight: 600;
-    color: var(--c-deep);
-    letter-spacing: -0.01em;
-    opacity: 0.78;
-    transition: opacity 220ms var(--ease-out-soft);
-    white-space: nowrap;
+  @media (min-width: 1024px) {
+    .logo-strip__list {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2.25rem 2.75rem;
+    }
   }
-  .logo-strip--dark .logo-strip__name {
-    color: white;
-    opacity: 0.85;
+  .logo-strip__list img {
+    max-height: 44px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.72;
+    transition: opacity 220ms var(--ease-out-soft), filter 220ms var(--ease-out-soft);
   }
-  .logo-strip__list li:hover .logo-strip__name {
+  .logo-strip__list li:hover img {
+    opacity: 1;
+    filter: grayscale(0);
+  }
+  .logo-strip--dark .logo-strip__list img {
+    filter: grayscale(100%) brightness(0) invert(1);
+    opacity: 0.8;
+  }
+  .logo-strip--dark .logo-strip__list li:hover img {
     opacity: 1;
   }
 </style>
