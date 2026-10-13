@@ -7,6 +7,7 @@ challenge: 'British Gas wanted to apply nudge and behavioural science to improve
 approach: 'ITD delivered nudge training for British Gas teams, covering practical applications of behavioural science in energy customer communications.'
 outcome: 'Nudge-informed customer communications showed improved response rates and customer satisfaction.'
 publishedDate: 2024-01-15
+subject: 'Nudge'
 seo:
   title: 'Nudge Training | ITD Case Study'
   description: 'Nudge Training. British Gas wanted to apply nudge and behavioural science to improve customer communications and service uptake.'

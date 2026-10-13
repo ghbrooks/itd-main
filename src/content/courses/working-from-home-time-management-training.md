@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: setting boundaries with colleagues and family'
   - 'Confidence and capability in: maintaining motivation and focus'
   - 'Confidence and capability in: balancing flexibility with productivity'
+image: '../../assets/images/courses/working-from-home-time-management-training.webp'
+imageAlt: 'working from home training'
 seo:
   title: 'Working From Home Time Management Training'
   description: 'Working From Home Time Management Training from ITD. Manage your time effectively when working from home.'

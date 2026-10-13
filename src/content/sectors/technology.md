@@ -3,6 +3,8 @@ title: 'Technology'
 summary: 'The technology sector moves at extraordinary pace, and the ability to communicate clearly, influence stakeholders, and lead diverse teams has never been more important. ITD works with technology companies ranging from early-stage start-ups to global enterprises, developing the soft skills that turn brilliant technologists into effective leaders and communicators. Our programmes bridge the gap between technical expertise and the interpersonal capabilities that drive commercial success.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/technology.webp'
+imageAlt: 'technology training'
 seo:
   title: 'Technology Sector Training | ITD'
   description: 'ITD delivers soft skills training for technology companies, helping developers, engineers, and tech leaders communicate, collaborate, and lead more effectively.'

@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: monitoring without micromanaging'
   - 'Confidence and capability in: giving feedback on delegated work'
   - 'Confidence and capability in: building trust through delegation'
+image: '../../assets/images/courses/delegation-skills-training-lawyers.webp'
+imageAlt: 'Delegation-skills-for-lawyers-training'
 seo:
   title: 'Delegation Skills Training for Lawyers'
   description: 'Delegation Skills Training for Lawyers from ITD. Delegate effectively to develop junior lawyers and manage your workload.'

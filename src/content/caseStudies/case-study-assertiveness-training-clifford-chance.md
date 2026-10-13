@@ -11,6 +11,9 @@ testimonial:
   quote: '“The most useful day’s training I’ve done in fifteen years at the firm. Practical, candid, and pitched at exactly the right level for senior people.”'
   author: 'Senior associate, Clifford Chance'
 publishedDate: 2024-07-12
+image: '../../assets/images/caseStudies/case-study-assertiveness-training-clifford-chance.webp'
+imageAlt: 'Holding ground at the negotiating table — assertiveness for senior associates at Clifford Chance'
+subject: 'Assertiveness'
 seo:
   title: 'Case study — Assertiveness training at Clifford Chance'
   description: 'How a tailored assertiveness programme helped a cohort of senior associates at Clifford Chance hold ground in difficult negotiations — and progress to partnership.'

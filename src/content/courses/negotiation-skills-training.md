@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: creating value in negotiations'
   - 'Confidence and capability in: handling deadlocks'
   - 'Confidence and capability in: closing and implementing agreements'
+image: '../../assets/images/courses/negotiation-skills-training.webp'
+imageAlt: 'negotiation skills training'
 seo:
   title: 'Negotiation Skills Training'
   description: 'Negotiation Skills Training from ITD. Develop effective negotiation skills for commercial and professional contexts.'

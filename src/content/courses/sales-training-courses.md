@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: account and territory management'
   - 'Confidence and capability in: sales management development'
   - 'Confidence and capability in: custom programmes for your team'
+image: '../../assets/images/courses/sales-training-courses.webp'
+imageAlt: 'sales training courses'
 seo:
   title: 'Sales Training Courses'
   description: 'Sales Training Courses from ITD. A comprehensive range of sales training courses tailored to your needs.'

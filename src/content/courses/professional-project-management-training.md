@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: advanced stakeholder management'
   - 'Confidence and capability in: change control and governance'
   - 'Confidence and capability in: leadership in project environments'
+image: '../../assets/images/courses/professional-project-management-training.webp'
+imageAlt: 'professional project management training'
 seo:
   title: 'Professional Project Management Training'
   description: 'Professional Project Management Training from ITD. Advanced project management for experienced professionals.'

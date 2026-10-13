@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: practical exercises and activities'
   - 'Confidence and capability in: supporting resources and materials'
   - 'Confidence and capability in: can be combined with live sessions'
+image: '../../assets/images/courses/asynchronous-training.webp'
+imageAlt: 'asynchronous training'
 seo:
   title: 'Asynchronous Training'
   description: 'Asynchronous Training from ITD. Self-paced learning that fits around your schedule.'

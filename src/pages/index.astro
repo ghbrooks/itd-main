@@ -1,90 +1,64 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Section from '~/components/layout/Section.astro';
 import Hero from '~/components/marketing/Hero.astro';
 import ClientLogoStrip from '~/components/marketing/ClientLogoStrip.astro';
 import CourseCard from '~/components/marketing/CourseCard.astro';
 import CaseStudyCard from '~/components/marketing/CaseStudyCard.astro';
-import SectorCard from '~/components/marketing/SectorCard.astro';
 import Testimonial from '~/components/marketing/Testimonial.astro';
 import ReviewSummary from '~/components/marketing/ReviewSummary.astro';
 import CTAPanel from '~/components/marketing/CTAPanel.astro';
 import { site } from '~/lib/site';
+import { trainingGroups, coachingLinks, nudgeLinks } from '~/lib/training';
+import { getFeaturedReviews, getReviewStats } from '~/lib/reviews';
 
-const reviews = (await getCollection('reviews')).slice(0, 4);
+const stats = await getReviewStats();
+const reviews = await getFeaturedReviews(4);
+
 const caseStudies = (await getCollection('caseStudies')).sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
 );
-const featured = caseStudies[0];
-const otherStudies = caseStudies.slice(1, 3);
+// Lead with a named, recognisable client rather than "Corporate Client".
+const featured = caseStudies.find((c) => !/corporate client|law firm$/i.test(c.data.client)) ?? caseStudies[0];
+const otherStudies = caseStudies.filter((c) => c.slug !== featured?.slug && !/corporate client|law firm$/i.test(c.data.client)).slice(0, 2);
 
+const courseCount = (await getCollection('courses')).length;
 const categories = [
-  {
-    title: 'Sales',
-    href: '/sales-training',
-    outcome: 'Consultative B2B selling that wins long-cycle work — discovery, objection handling, follow-up.',
-    eyebrow: 'Eight courses',
-  },
-  {
-    title: 'Presentation',
-    href: '/presentation-skills-training',
-    outcome: 'Filmed presentation training for the pitches and panels that actually decide things.',
-    eyebrow: 'Six courses',
-  },
-  {
-    title: 'Communication',
-    href: '/communication-training',
-    outcome: 'Be heard without being harsh. Write to be read. Disagree without losing the relationship.',
-    eyebrow: 'Five courses',
-  },
-  {
-    title: 'Leadership',
-    href: '/leadership-training',
-    outcome: 'Lead teams people choose to stay on. Practical, jargon-free, built for real conditions.',
-    eyebrow: 'Six courses',
-  },
-  {
-    title: 'Nudge for Lawyers',
-    href: '/nudge-training-for-lawyers',
-    outcome: 'Behavioural science applied to legal practice. Built with magic-circle firms.',
-    eyebrow: 'Specialist',
-  },
-  {
-    title: 'ITD Work Styles',
-    href: '/itd-work-styles-model-training',
-    outcome: 'Our own team model — twenty years in the making. Know how your team really works.',
-    eyebrow: 'Specialist',
-  },
+  ...trainingGroups.map((g) => ({
+    title: g.label,
+    href: `/training#${g.id}`,
+    outcome: g.blurb,
+    eyebrow: `${g.courses.length} courses`,
+  })),
+  { title: 'Coaching', href: '/coaching', outcome: 'One-to-one development for leaders, specialists and sales managers. Confidential and built around your goals.', eyebrow: `${coachingLinks.length} options` },
+  { title: 'Nudge', href: '/nudge-training', outcome: 'Behavioural science you can use on Monday morning. Training, design and consultancy.', eyebrow: `${nudgeLinks.length} courses` },
 ];
 
-const sectors = [
-  { title: 'Law', href: '/market-sector-specific-training#law', description: 'Magic-circle, silver-circle, mid-market and boutique firms.', count: 9 },
-  { title: 'Charity', href: '/market-sector-specific-training#charity', description: 'From the household-name charities to specialist research bodies.', count: 7 },
-  { title: 'Financial services', href: '/market-sector-specific-training#finance', description: 'Banking, insurance, asset management. Sharp on regulation, sharper on people.', count: 8 },
-  { title: 'Technology', href: '/market-sector-specific-training#tech', description: 'Hyper-growth SaaS, scale-ups, enterprise software — sales and presentation.', count: 8 },
-  { title: 'Hospitality', href: '/market-sector-specific-training#hospitality', description: 'Commercial leadership and front-of-house excellence across major brands.', count: 6 },
-  { title: 'Public sector', href: '/market-sector-specific-training#public', description: 'Central government, regulators, and arm’s-length bodies.', count: 7 },
-];
+const FEATURED_SECTORS = ['law-firm-training', 'financial-services', 'pharma-biotech', 'charity', 'technology', 'local-government'];
+const allSectors = await getCollection('sectors');
+const sectors = FEATURED_SECTORS.map((s) => allSectors.find((x) => x.slug === s)).filter((s): s is NonNullable<typeof s> => Boolean(s));
+const sectorStudyCount = (title: string) => caseStudies.filter((c) => c.data.sector.toLowerCase() === title.toLowerCase().replace(/ firms?$/, '')).length;
 ---
 
 <BaseLayout
-  title={`${site.longName} — Soft-skills training that sticks`}
+  title={`${site.longName} — Soft skills training that sticks`}
   description={site.description}
 >
   <!-- HERO -->
   <Hero
-    eyebrow="Soft-skills training since 1999"
-    title="Soft-skills training that sticks."
-    lead="Sharper sales, calmer leadership, presentations people actually remember. We work with the world’s most demanding teams — and we leave them better than we found them."
+    eyebrow={`Soft skills training since ${site.founded}`}
+    title="Soft skills training that sticks."
+    lead="Sharper sales, calmer leadership, presentations people actually remember. Tailored to the people in the room, delivered virtually or in person, in more than thirty countries."
     primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
-    secondaryCta={{ label: 'See the courses', href: '/soft-skills-training' }}
+    secondaryCta={{ label: 'See the courses', href: '/training' }}
     variant="home"
     meta={[
-      { label: 'Founded', value: '1999' },
-      { label: 'Reviews', value: `${site.rating.value}★ over ${site.rating.count}+` },
-      { label: 'Delivered', value: 'In-person · Virtual' },
-      { label: 'Sectors', value: 'Law · Tech · Charity · more' },
+      { label: 'Founded', value: String(site.founded) },
+      { label: 'Reviews', value: `${stats.average}★ from ${stats.count}` },
+      { label: 'Delivered', value: 'In person · Virtual' },
+      { label: 'Courses', value: `${courseCount}+` },
     ]}
   >
     <div class="hero-extras">
@@ -106,17 +80,17 @@ const sectors = [
         <article class="prop">
           <div class="prop__num"><span>01</span></div>
           <h3>It is built around your situation, not ours.</h3>
-          <p>Every course starts with conversations — with you, and with people who’ll be in the room. We arrive with material that already looks like your firm.</p>
+          <p>Every course starts with conversations, with you and with the people who will be in the room. We arrive with material that already looks like your organisation.</p>
         </article>
         <article class="prop">
           <div class="prop__num"><span>02</span></div>
           <h3>It is practical to the point of awkwardness.</h3>
-          <p>We don’t hand out frameworks and hope. We coach live, on real situations, with feedback that is direct but never bruising. Reps, not theory.</p>
+          <p>We don't hand out frameworks and hope. We coach live, on real situations, with feedback that is direct but never bruising. Reps, not theory.</p>
         </article>
         <article class="prop">
           <div class="prop__num"><span>03</span></div>
           <h3>It is still working six months later.</h3>
-          <p>The test isn’t the day, it’s the quarter after. We design for what people actually do at their desks, with their teams, after the training ends.</p>
+          <p>The test isn't the day, it's the quarter after. We design for what people actually do at their desks, with their teams, after the training ends.</p>
         </article>
       </div>
     </div>
@@ -128,9 +102,9 @@ const sectors = [
       <header class="grid-head">
         <div>
           <p class="eyebrow eyebrow-rule">Training</p>
-          <h2>The courses, by category.</h2>
+          <h2>The courses, by subject area.</h2>
         </div>
-        <a href="/soft-skills-training" class="link-anim">All courses →</a>
+        <a href="/training" class="link-anim">All courses →</a>
       </header>
       <div class="course-grid">
         {categories.map((cat, idx) => (
@@ -155,13 +129,13 @@ const sectors = [
             <p class="eyebrow eyebrow-rule">Case studies</p>
             <h2>How it lands in the real world.</h2>
           </div>
-          <a href="/case-studies" class="link-anim">All case studies →</a>
+          <a href="/case-studies" class="link-anim">All {caseStudies.length} case studies →</a>
         </header>
         <div class="case-grid">
           <CaseStudyCard
             href={`/${featured.slug}`}
             client={featured.data.client}
-            sector={featured.data.sector}
+            sector={featured.data.subject}
             title={featured.data.title}
             excerpt={featured.data.challenge.slice(0, 180) + (featured.data.challenge.length > 180 ? '…' : '')}
             size="feature"
@@ -171,7 +145,7 @@ const sectors = [
               <CaseStudyCard
                 href={`/${cs.slug}`}
                 client={cs.data.client}
-                sector={cs.data.sector}
+                sector={cs.data.subject}
                 title={cs.data.title}
                 excerpt={cs.data.outcome.slice(0, 130) + (cs.data.outcome.length > 130 ? '…' : '')}
               />
@@ -189,8 +163,8 @@ const sectors = [
         <div>
           <p class="eyebrow eyebrow-rule">Reviews</p>
           <h2>
-            <span class="display tabular">{site.rating.value}★</span> over
-            <span class="display tabular">{site.rating.count}+</span> reviews.
+            <span class="display tabular">{stats.average}★</span> from
+            <span class="display tabular">{stats.count}</span> reviews.
           </h2>
         </div>
         <a href="/reviews" class="link-anim">Read them all →</a>
@@ -198,6 +172,7 @@ const sectors = [
       <div class="review-grid">
         {reviews.map((r, idx) => (
           <Testimonial
+            title={r.data.title}
             quote={r.data.quote}
             author={r.data.author}
             organisation={r.data.organisation}
@@ -215,14 +190,25 @@ const sectors = [
       <header class="grid-head">
         <div>
           <p class="eyebrow eyebrow-rule">Sectors</p>
-          <h2>We know your industry — usually painfully well.</h2>
+          <h2>We know your industry. Usually painfully well.</h2>
         </div>
-        <a href="/market-sector-specific-training" class="link-anim">All sectors →</a>
+        <a href="/sectors" class="link-anim">All sectors →</a>
       </header>
       <div class="sector-grid">
-        {sectors.map((s) => (
-          <SectorCard href={s.href} title={s.title} description={s.description} count={s.count} />
-        ))}
+        {sectors.map((s) => {
+          const n = sectorStudyCount(s.data.title);
+          return (
+            <a href={`/${s.slug}`} class="sector-tile card">
+              <div class="sector-tile__media">
+                {s.data.image && <Image src={s.data.image} alt={s.data.imageAlt ?? ''} widths={[420, 640]} sizes="(max-width: 700px) 100vw, 33vw" loading="lazy" />}
+              </div>
+              <div class="sector-tile__body">
+                <h3>{s.data.title}</h3>
+                {n > 0 && <span>{n} case {n === 1 ? 'study' : 'studies'}</span>}
+              </div>
+            </a>
+          );
+        })}
       </div>
     </div>
   </Section>
@@ -230,8 +216,8 @@ const sectors = [
   <!-- FINAL CTA -->
   <CTAPanel
     eyebrow="One short conversation"
-    title="Tell us the challenge. We’ll tell you honestly whether we can help."
-    lead="Most engagements start with a half-hour call. No slides, no pitch — we listen, ask the awkward questions, and come back with a proposal you can actually use."
+    title="Tell us the challenge. We'll tell you honestly whether we can help."
+    lead="Most engagements start with a half-hour call. No slides, no pitch. We listen, ask the awkward questions, and come back with a proposal you can actually use."
     primary={{ label: 'Get in touch', href: '/contact' }}
     secondary={{ label: 'See training fees', href: '/training-fees' }}
     tone="deep"
@@ -254,18 +240,9 @@ const sectors = [
     margin-top: 0.85rem;
     letter-spacing: -0.025em;
   }
-  .props {
-    display: grid;
-    gap: 2.5rem;
-  }
-  @media (min-width: 800px) {
-    .props { grid-template-columns: repeat(3, 1fr); }
-  }
-  .prop {
-    position: relative;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--c-rule);
-  }
+  .props { display: grid; gap: 2.5rem; }
+  @media (min-width: 800px) { .props { grid-template-columns: repeat(3, 1fr); } }
+  .prop { position: relative; padding-top: 1.5rem; border-top: 1px solid var(--c-rule); }
   .prop__num {
     font-family: var(--font-display);
     color: var(--c-blue);
@@ -281,18 +258,8 @@ const sectors = [
     border-radius: 999px;
     font-variant-numeric: tabular-nums;
   }
-  .prop h3 {
-    font-size: 1.35rem;
-    line-height: 1.2;
-    margin: 0 0 0.65rem;
-    color: var(--c-deep);
-  }
-  .prop p {
-    color: var(--c-muted);
-    line-height: 1.6;
-    margin: 0;
-    max-width: 36ch;
-  }
+  .prop h3 { font-size: 1.35rem; line-height: 1.2; margin: 0 0 0.65rem; color: var(--c-deep); }
+  .prop p { color: var(--c-muted); line-height: 1.6; margin: 0; max-width: 36ch; }
 
   /* Grid heads */
   .grid-head {
@@ -311,68 +278,32 @@ const sectors = [
   }
 
   /* Course grid — first card spans 2 cols on wide screens (feature) */
-  .course-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 720px) {
-    .course-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+  .course-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .course-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1024px) {
-    .course-grid {
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-flow: dense;
-    }
-    .course-grid > :first-child {
-      grid-column: span 2;
-    }
+    .course-grid { grid-template-columns: repeat(3, 1fr); grid-auto-flow: dense; }
+    .course-grid > :first-child { grid-column: span 2; }
   }
 
   /* Case studies — feature card + side stack */
-  .case-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 1024px) {
-    .case-grid {
-      grid-template-columns: 1.4fr 1fr;
-    }
-  }
-  .case-grid__side {
-    display: grid;
-    gap: 1rem;
-  }
+  .case-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 1024px) { .case-grid { grid-template-columns: 1.4fr 1fr; } }
+  .case-grid__side { display: grid; gap: 1rem; }
 
   /* Review grid — feature + 3 inline */
-  .review-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 800px) {
-    .review-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (min-width: 1100px) {
-    .review-grid {
-      grid-template-columns: 1.4fr repeat(3, 1fr);
-    }
-    .review-grid > :first-child {
-      grid-row: span 1;
-    }
-  }
+  .review-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 800px) { .review-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .review-grid { grid-template-columns: 1.4fr repeat(3, 1fr); } }
 
-  /* Sector grid */
-  .sector-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 700px) {
-    .sector-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (min-width: 1024px) {
-    .sector-grid { grid-template-columns: repeat(3, 1fr); }
-  }
+  /* Sector tiles with imagery */
+  .sector-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 700px) { .sector-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .sector-grid { grid-template-columns: repeat(3, 1fr); } }
+  .sector-tile { display: block; color: inherit; text-decoration: none; }
+  .sector-tile__media { aspect-ratio: 16 / 9; background: var(--c-tint); overflow: hidden; }
+  .sector-tile__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 600ms var(--ease-out-soft); }
+  .sector-tile:hover .sector-tile__media img { transform: scale(1.04); }
+  .sector-tile__body { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem 1.1rem; }
+  .sector-tile h3 { font-size: 1.2rem; color: var(--c-deep); margin: 0; letter-spacing: -0.01em; }
+  .sector-tile__body span { font-size: 0.72rem; color: var(--c-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 </style>

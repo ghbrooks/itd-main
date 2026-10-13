@@ -7,6 +7,9 @@ challenge: 'Clarke Willmott needed to help their staff manage time effectively w
 approach: 'ITD delivered working from home time management training covering structure, boundaries, digital discipline and maintaining productivity.'
 outcome: 'Staff reported improved productivity and better work-life balance when working from home.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-wfh-time-management-training-clarke-willmott.webp'
+imageAlt: 'WFH Time Management Training'
+subject: 'Time Management'
 seo:
   title: 'WFH Time Management Training | ITD Case Study'
   description: 'WFH Time Management Training. Clarke Willmott needed to help their staff manage time effectively while working from home.'

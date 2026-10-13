@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: cross-cultural communication awareness'
   - 'Confidence and capability in: stakeholder communication strategies'
   - 'Confidence and capability in: building rapport and trust'
+image: '../../assets/images/courses/professional-business-communication-training.webp'
+imageAlt: 'professional business communication training'
 seo:
   title: 'Professional Business Communication Training'
   description: 'Professional Business Communication Training from ITD. Develop professional communication skills across all business contexts.'

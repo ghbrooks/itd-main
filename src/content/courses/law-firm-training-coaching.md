@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: skills development programmes'
   - 'Confidence and capability in: leadership development tracks'
   - 'Confidence and capability in: measurable outcomes'
+image: '../../assets/images/courses/law-firm-training-coaching.webp'
+imageAlt: 'Law Firm Training Courses'
 seo:
   title: 'Law Firm Training Courses'
   description: 'Law Firm Training Courses from ITD. Training and coaching programmes designed for law firm environments.'

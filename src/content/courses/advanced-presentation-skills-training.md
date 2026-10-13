@@ -23,6 +23,8 @@ outcomes:
 relatedCourses:
   - 'presenting-with-impact-training'
   - 'presentation-training-for-leaders'
+image: '../../assets/images/courses/advanced-presentation-skills-training.webp'
+imageAlt: 'advanced presentation skills training workshop'
 seo:
   title: 'Advanced Presentation Skills Training'
   description: 'Advanced Presentation Skills Training from ITD. Take your presenting skills to the next level with advanced techniques.'

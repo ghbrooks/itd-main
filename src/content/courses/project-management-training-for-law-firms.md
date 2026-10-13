@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: budgeting and cost management'
   - 'Confidence and capability in: team coordination on matters'
   - 'Confidence and capability in: technology tools for legal pm'
+image: '../../assets/images/courses/project-management-training-for-law-firms.webp'
+imageAlt: 'Project Management Training for Law Firms'
 seo:
   title: 'Project Management Training for Law Firms'
   description: 'Project Management Training for Law Firms from ITD. Project management skills tailored for legal professionals.'

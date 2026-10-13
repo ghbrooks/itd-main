@@ -7,6 +7,9 @@ challenge: 'Gilead needed to develop their sales managers'' abilities to coach, 
 approach: 'ITD delivered sales management training covering coaching for performance, pipeline management, team motivation and performance reviews.'
 outcome: 'Sales managers reported improved coaching skills and their teams showed measurable improvement in sales performance.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-sales-management-training-gilead.webp'
+imageAlt: 'Sales Management Training'
+subject: 'Sales Management'
 seo:
   title: 'Sales Management Training | ITD Case Study'
   description: 'Sales Management Training. Gilead needed to develop their sales managers'' abilities to coach, motivate and lead their sales teams effectively.'

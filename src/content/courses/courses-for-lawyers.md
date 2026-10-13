@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: personal development and wellbeing'
   - 'Confidence and capability in: leadership and management'
   - 'Confidence and capability in: client-facing skills'
+image: '../../assets/images/courses/courses-for-lawyers.webp'
+imageAlt: 'courses for lawyers'
 seo:
   title: 'Courses for Lawyers'
   description: 'Courses for Lawyers from ITD. A comprehensive range of training courses for legal professionals.'

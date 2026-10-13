@@ -10,6 +10,9 @@ testimonial:
   quote: 'The session really helped our team see change as an opportunity rather than a threat.'
   author: 'HR Director, Corporate Client'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/embracing-change-case-study.webp'
+imageAlt: 'Embracing Change'
+subject: 'Communication Skills'
 seo:
   title: 'Embracing Change | ITD Case Study'
   description: 'Embracing Change. The organisation was going through a period of significant change and needed to help staff adapt to new ways of working.'

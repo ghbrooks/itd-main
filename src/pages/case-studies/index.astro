@@ -7,18 +7,22 @@ import CTAPanel from '~/components/marketing/CTAPanel.astro';
 import { breadcrumbSchema } from '~/lib/schema';
 
 const studies = (await getCollection('caseStudies')).sort(
-  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime() || a.data.client.localeCompare(b.data.client),
 );
 
-// Group by sector
-const bySector = new Map<string, typeof studies>();
+// Default view: grouped by subject area, largest groups first.
+const bySubject = new Map<string, typeof studies>();
 for (const s of studies) {
-  const sec = s.data.sector;
-  const arr = bySector.get(sec) ?? [];
+  const arr = bySubject.get(s.data.subject) ?? [];
   arr.push(s);
-  bySector.set(sec, arr);
+  bySubject.set(s.data.subject, arr);
 }
-const sectorOrder = [...bySector.keys()].sort();
+const subjects = [...bySubject.entries()].sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
+
+const sectors = [...new Set(studies.map((s) => s.data.sector))].sort();
+const clients = [...new Set(studies.map((s) => s.data.client))].sort();
+
+const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 const schemas = [
   breadcrumbSchema([
@@ -27,37 +31,83 @@ const schemas = [
   ]),
 ];
 ---
-
 <BaseLayout
-  title="Case studies | ITD soft-skills training"
-  description="Real-world soft skills training case studies from ITD, working with magic-circle law firms, FTSE clients, charities and global corporates."
+  title="Case studies — soft skills training that changed something"
+  description={`${studies.length} training case studies grouped by subject area: what the client needed, what we did and what changed. Law firms, pharma, charities, technology and more.`}
   schemas={schemas}
 >
   <Hero
     eyebrow="Case studies"
     title="Training that actually changed something."
-    lead={`${studies.length} engagements across law, financial services, charity, pharma, media, technology and more.`}
+    lead={`${studies.length} engagements, grouped by subject area. Filter by sector or client, or search for a course.`}
     variant="page"
     primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
   />
 
   <Section size="md" tone="default">
     <div class="container-wide">
-      {sectorOrder.map((sec) => (
-        <div class="sector-group">
-          <h2>{sec}</h2>
-          <ul class="case-list">
-            {(bySector.get(sec) ?? []).map((s) => (
-              <li>
-                <a href={`/${s.slug}`}>
-                  <span class="title">{s.data.title}</span>
-                  <span class="client">{s.data.client}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+      <div class="cs-filters" data-cs-filters>
+        <div class="cs-filters__row">
+          <label>
+            <span>Subject area</span>
+            <select data-filter="subject">
+              <option value="">All subjects ({studies.length})</option>
+              {subjects.map(([s, arr]) => <option value={s}>{s} ({arr.length})</option>)}
+            </select>
+          </label>
+          <label>
+            <span>Sector</span>
+            <select data-filter="sector">
+              <option value="">All sectors</option>
+              {sectors.map((s) => <option value={s}>{s}</option>)}
+            </select>
+          </label>
+          <label>
+            <span>Client</span>
+            <select data-filter="client">
+              <option value="">All clients</option>
+              {clients.map((c) => <option value={c}>{c}</option>)}
+            </select>
+          </label>
+          <label class="cs-filters__search">
+            <span>Search</span>
+            <input type="search" placeholder="Course, client, keyword…" data-filter="q" />
+          </label>
         </div>
-      ))}
+        <div class="cs-filters__meta">
+          <p aria-live="polite">Showing <strong data-count>{studies.length}</strong> of {studies.length}</p>
+          <button type="button" class="cs-filters__reset" data-reset hidden>Clear filters</button>
+        </div>
+      </div>
+
+      <nav class="cs-jump" aria-label="Subject areas">
+        {subjects.map(([s, arr]) => <a href={`#${slugify(s)}`} data-jump={s}>{s} <span>{arr.length}</span></a>)}
+      </nav>
+
+      <div data-cs-groups>
+        {subjects.map(([subject, arr]) => (
+          <section class="cs-group" id={slugify(subject)} data-group={subject}>
+            <h2>{subject} <span data-group-count>{arr.length}</span></h2>
+            <ul class="cs-list">
+              {arr.map((s) => (
+                <li
+                  data-subject={subject}
+                  data-sector={s.data.sector}
+                  data-client={s.data.client}
+                  data-text={`${s.data.title} ${s.data.client} ${s.data.sector} ${s.data.challenge}`.toLowerCase()}
+                >
+                  <a href={`/${s.slug}`}>
+                    <span class="cs-list__client">{s.data.client}</span>
+                    <span class="cs-list__title">{s.data.title}</span>
+                    <span class="cs-list__sector">{s.data.sector}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+      <p class="cs-empty" data-empty hidden>No case studies match those filters.</p>
     </div>
   </Section>
 
@@ -70,8 +120,87 @@ const schemas = [
 </BaseLayout>
 
 <style>
-  .sector-group { margin: 0 0 3rem; }
-  .sector-group h2 {
+  .cs-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .cs-filters__row { display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; }
+  .cs-filters label { display: flex; flex-direction: column; gap: 0.35rem; min-width: 170px; }
+  .cs-filters__search { flex: 1; min-width: 220px; }
+  .cs-filters label span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--c-muted);
+    font-weight: 600;
+  }
+  .cs-filters select,
+  .cs-filters input {
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--c-rule);
+    border-radius: 10px;
+    background: var(--c-bg);
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--c-text);
+    max-width: 100%;
+  }
+  .cs-filters select:focus,
+  .cs-filters input:focus {
+    outline: none;
+    border-color: var(--c-blue);
+    box-shadow: 0 0 0 4px rgba(2, 132, 213, 0.15);
+  }
+  .cs-filters__meta { display: flex; align-items: center; gap: 1rem; }
+  .cs-filters__meta p { margin: 0; color: var(--c-muted); font-size: 0.9rem; }
+  .cs-filters__meta strong { color: var(--c-deep); }
+  .cs-filters__reset {
+    background: none;
+    border: 1px solid var(--c-rule);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    font: inherit;
+    font-size: 0.8rem;
+    color: var(--c-deep);
+    cursor: pointer;
+  }
+  .cs-filters__reset:hover { border-color: var(--c-deep); background: var(--c-tint); }
+
+  .cs-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--c-rule);
+  }
+  .cs-jump a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--c-rule);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--c-deep);
+    background: var(--c-bg);
+    transition: border-color 160ms var(--ease-out-soft), background 160ms var(--ease-out-soft);
+  }
+  .cs-jump a:hover { border-color: var(--c-deep); background: var(--c-tint); }
+  .cs-jump a[hidden] { display: none; }
+  .cs-jump span { font-size: 0.68rem; color: var(--c-muted); font-variant-numeric: tabular-nums; }
+
+  .cs-group { margin: 0 0 3rem; scroll-margin-top: 120px; }
+  .cs-group[hidden] { display: none; }
+  .cs-group h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
     font-size: clamp(1.4rem, 2vw, 1.75rem);
     letter-spacing: -0.02em;
     margin: 0 0 1.25rem;
@@ -79,35 +208,104 @@ const schemas = [
     border-bottom: 2px solid var(--c-deep);
     color: var(--c-deep);
   }
-  .case-list {
+  .cs-group h2 span {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--c-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .cs-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
     gap: 0.65rem;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
-  .case-list a {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    padding: 0.85rem 1.15rem;
+  .cs-list li[hidden] { display: none; }
+  .cs-list a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'client sector' 'title sector';
+    gap: 0.15rem 1rem;
+    align-items: center;
+    padding: 0.9rem 1.15rem;
     background: var(--c-bg);
     border: 1px solid var(--c-rule);
-    border-radius: 8px;
+    border-radius: 10px;
     color: var(--c-deep);
     text-decoration: none;
-    font-size: 0.95rem;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+    height: 100%;
   }
-  .case-list a:hover { border-color: var(--c-deep); }
-  .case-list .title { font-weight: 500; flex: 1; min-width: 0; }
-  .case-list .client {
-    font-size: 0.8rem;
-    color: var(--c-muted);
+  .cs-list a:hover { border-color: var(--c-deep); transform: translateY(-1px); }
+  .cs-list__client { grid-area: client; font-weight: 600; font-size: 0.95rem; }
+  .cs-list__title { grid-area: title; font-size: 0.88rem; color: var(--c-muted); }
+  .cs-list__sector {
+    grid-area: sector;
+    font-size: 0.68rem;
+    color: var(--c-mid);
+    background: var(--c-tint);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     white-space: nowrap;
+    font-weight: 600;
   }
+  .cs-empty { color: var(--c-muted); padding: 3rem 0; text-align: center; }
 </style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-cs-filters]');
+  const groupsEl = document.querySelector<HTMLElement>('[data-cs-groups]');
+  if (root && groupsEl) {
+    const groups = [...groupsEl.querySelectorAll<HTMLElement>('[data-group]')];
+    const jumps = [...document.querySelectorAll<HTMLAnchorElement>('[data-jump]')];
+    const count = root.querySelector<HTMLElement>('[data-count]');
+    const reset = root.querySelector<HTMLButtonElement>('[data-reset]');
+    const empty = document.querySelector<HTMLElement>('[data-empty]');
+    const sel = (k: string) => root.querySelector<HTMLSelectElement | HTMLInputElement>(`[data-filter="${k}"]`);
+    const subject = sel('subject'), sector = sel('sector'), client = sel('client'), q = sel('q');
+
+    const apply = () => {
+      const s = subject?.value ?? '', se = sector?.value ?? '', c = client?.value ?? '';
+      const needle = (q?.value ?? '').trim().toLowerCase();
+      let total = 0;
+      for (const g of groups) {
+        let shown = 0;
+        for (const li of g.querySelectorAll<HTMLLIElement>('li')) {
+          const ok =
+            (!s || li.dataset.subject === s) &&
+            (!se || li.dataset.sector === se) &&
+            (!c || li.dataset.client === c) &&
+            (!needle || (li.dataset.text ?? '').includes(needle));
+          li.hidden = !ok;
+          if (ok) shown++;
+        }
+        g.hidden = shown === 0;
+        const gc = g.querySelector('[data-group-count]');
+        if (gc) gc.textContent = String(shown);
+        const jump = jumps.find((j) => j.dataset.jump === g.dataset.group);
+        if (jump) jump.hidden = shown === 0;
+        total += shown;
+      }
+      if (count) count.textContent = String(total);
+      if (empty) empty.hidden = total > 0;
+      if (reset) reset.hidden = !(s || se || c || needle);
+    };
+
+    const params = new URLSearchParams(location.search);
+    for (const [k, el] of [['subject', subject], ['sector', sector], ['client', client]] as const) {
+      if (el && params.get(k)) el.value = params.get(k) ?? '';
+    }
+    [subject, sector, client].forEach((el) => el?.addEventListener('change', apply));
+    q?.addEventListener('input', apply);
+    reset?.addEventListener('click', () => {
+      [subject, sector, client, q].forEach((el) => { if (el) el.value = ''; });
+      apply();
+    });
+    apply();
+  }
+</script>

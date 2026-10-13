@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: influencing without authority'
   - 'Confidence and capability in: managing expectations'
   - 'Confidence and capability in: building visibility and credibility'
+image: '../../assets/images/courses/managing-upwards-training.webp'
+imageAlt: 'managing upwards training'
 seo:
   title: 'Managing Upwards Training'
   description: 'Managing Upwards Training from ITD. Learn to manage your relationship with senior leaders effectively.'

@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: accountability check-ins'
   - 'Confidence and capability in: tips and resources'
   - 'Confidence and capability in: complements formal training'
+image: '../../assets/images/courses/whatsapp-workcoach.webp'
+imageAlt: 'whatsapp workcoach'
 seo:
   title: 'WhatsApp WorkCoach'
   description: 'WhatsApp WorkCoach from ITD. On-demand coaching and support via WhatsApp for busy professionals.'

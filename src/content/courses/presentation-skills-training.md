@@ -39,11 +39,13 @@ faqs:
     a: 'Yes — and most often is. We routinely build the practice slot around real material the team is taking out the following week.'
   - q: 'In-person or virtual?'
     a: 'Both work; the energy is different but the learning is comparable. For wholly virtual teams we have a dedicated virtual presentation course that goes deeper on camera, lighting and audio.'
+image: '../../assets/images/courses/presentation-skills-training.webp'
+imageAlt: 'Presentation Skills Training'
 seo:
   title: 'Presentation Skills Training — practical, filmed, results in a day'
   description: 'Filmed presentation skills training for client-facing teams. Sharper opens, cleaner structure, calmer delivery. In-person or virtual. Trusted by Clifford Chance, CRUK, Hilton.'
 ---
 
-We’ve been running presentation skills training since 1999 — and the courses we run today look almost nothing like the ones we ran in year one. The technology changed. Audiences changed. What stays the same is the bit that actually decides how a presentation lands: the human at the front.
+We’ve been running presentation skills training since 2002 — and the courses we run today look almost nothing like the ones we ran in year one. The technology changed. Audiences changed. What stays the same is the bit that actually decides how a presentation lands: the human at the front.
 
 Most presentation training tries to fix posture or breathing. Useful, but not where pitches are won. Pitches are won and lost in the first minute, in the structure of the argument, and in how the presenter handles the inevitable interruption. That’s where we focus.

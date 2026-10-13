@@ -25,6 +25,8 @@ relatedCourses:
 faqs:
   - q: 'Is it credible inside law firms?'
     a: 'Built and refined inside them. Our Nudge for Lawyers programme has been delivered to magic-circle and silver-circle firms across the UK and Europe.'
+image: '../../assets/images/courses/nudge-training-for-lawyers.webp'
+imageAlt: 'nudge training for lawyers'
 seo:
   title: 'Nudge Training for Lawyers — behavioural science applied to legal practice'
   description: 'Specialist nudge training for senior associates and partners. Pitches, negotiations, client conversations. Used by major commercial law firms.'

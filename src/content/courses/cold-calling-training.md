@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: getting past gatekeepers'
   - 'Confidence and capability in: managing rejection positively'
   - 'Confidence and capability in: converting cold calls to meetings'
+image: '../../assets/images/courses/cold-calling-training.webp'
+imageAlt: 'cold calling training'
 seo:
   title: 'Cold Calling Training'
   description: 'Cold Calling Training from ITD. Master the art of cold calling to generate new business opportunities.'

@@ -4,6 +4,7 @@ description: 'Leadership and management are often used interchangeably, but they
 author: 'ITD Team'
 publishedDate: '2024-04-10'
 category: 'Leadership'
+draft: true
 seo:
   title: 'Leadership vs Management: Understanding the Difference | ITD Blog'
   description: 'Explore the key differences between leadership and management, and learn why the best organisations need both. Insights from ITD''s training experts.'

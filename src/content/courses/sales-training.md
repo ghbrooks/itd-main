@@ -28,6 +28,8 @@ relatedCourses:
 faqs:
   - q: 'Is this for hard or soft sales?'
     a: 'Soft — consultative B2B selling. We don’t teach scripted closes or high-pressure tactics. They don’t work in long-cycle, relationship-based markets, which is most of our clients.'
+image: '../../assets/images/courses/sales-training.webp'
+imageAlt: 'sales training'
 seo:
   title: 'Sales Training — consultative B2B sales that actually closes'
   description: 'Consultative sales training for B2B professionals. Discovery, objection handling, follow-up, close. In-person or virtual.'

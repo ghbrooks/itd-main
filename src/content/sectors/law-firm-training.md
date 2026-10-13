@@ -3,6 +3,8 @@ title: 'Law Firms'
 summary: 'In an increasingly competitive legal market, technical legal expertise is table stakes. The firms that thrive are those whose lawyers can build deep client relationships, lead high-performing teams, and present their advice with clarity and conviction. ITD has extensive experience working with law firms of all sizes, from global practices to specialist boutiques, developing the soft skills that complement legal excellence and drive commercial growth.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/law-firm-training.webp'
+imageAlt: 'Law firm training workshops'
 seo:
   title: 'Law Firm Training | ITD'
   description: 'ITD provides soft skills training for law firms, developing the client relationship, leadership, and business development skills that drive success in legal practice.'

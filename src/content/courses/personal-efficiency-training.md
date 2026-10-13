@@ -23,6 +23,8 @@ outcomes:
 relatedCourses:
   - 'personal-efficiency-course'
   - 'time-management-training'
+image: '../../assets/images/courses/personal-efficiency-training.webp'
+imageAlt: 'Personal-Efficiency-Training-Workshop'
 seo:
   title: 'Personal Efficiency Training'
   description: 'Personal Efficiency Training from ITD. Maximise your productivity and manage your time effectively.'

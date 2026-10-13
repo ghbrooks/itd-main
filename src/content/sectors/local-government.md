@@ -3,6 +3,8 @@ title: 'Local Government'
 summary: 'Local government organisations serve some of the most diverse communities in the country, and their staff need outstanding interpersonal skills to manage competing demands, deliver services effectively, and engage meaningfully with elected members and residents alike. ITD has a strong track record of supporting councils and public-sector bodies with training that develops confident, capable leaders and communicators at every level.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/local-government.webp'
+imageAlt: 'local government'
 seo:
   title: 'Local Government Training | ITD'
   description: 'ITD delivers soft skills training for local government organisations, helping councils and public bodies develop leadership, communication, and service delivery skills.'

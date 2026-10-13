@@ -7,6 +7,9 @@ challenge: 'Norgine''s senior leaders needed to deliver more inspiring and impac
 approach: 'ITD delivered leadership presentation training combining executive presence, storytelling and engaging delivery for senior leaders.'
 outcome: 'Leadership presentations became noticeably more engaging, with teams reporting feeling more inspired and connected to the company vision.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-leadership-presentations-norgine.webp'
+imageAlt: 'Leadership Presentation Training'
+subject: 'Leadership'
 seo:
   title: 'Leadership Presentation Training | ITD Case Study'
   description: 'Leadership Presentation Training. Norgine''s senior leaders needed to deliver more inspiring and impactful presentations to motivate their global teams.'

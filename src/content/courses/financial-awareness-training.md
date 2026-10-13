@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: key financial ratios and metrics'
   - 'Confidence and capability in: commercial decision-making'
   - 'Confidence and capability in: communicating financial information'
+image: '../../assets/images/courses/financial-awareness-training.webp'
+imageAlt: 'Financial Awareness Training'
 seo:
   title: 'Financial Awareness Training'
   description: 'Financial Awareness Training from ITD. Build financial literacy for non-finance professionals.'

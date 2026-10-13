@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: workflow optimisation'
   - 'Confidence and capability in: digital productivity tools'
   - 'Confidence and capability in: creating your efficiency plan'
+image: '../../assets/images/courses/personal-efficiency-course.webp'
+imageAlt: 'personal efficiency course'
 seo:
   title: 'Personal Efficiency Course'
   description: 'Personal Efficiency Course from ITD. A structured course to improve your personal efficiency and output.'

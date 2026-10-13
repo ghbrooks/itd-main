@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: building rapport by phone'
   - 'Confidence and capability in: overcoming telephone objections'
   - 'Confidence and capability in: closing techniques for phone sales'
+image: '../../assets/images/courses/telesales-training.webp'
+imageAlt: 'telesales training'
 seo:
   title: 'Telesales Training'
   description: 'Telesales Training from ITD. Develop effective telephone sales skills for prospecting and closing.'

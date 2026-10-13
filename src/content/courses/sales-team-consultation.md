@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: skills gap analysis'
   - 'Confidence and capability in: development planning'
   - 'Confidence and capability in: implementation support'
+image: '../../assets/images/courses/sales-team-consultation.webp'
+imageAlt: 'sales team consultation'
 seo:
   title: 'Sales Team Consultation'
   description: 'Sales Team Consultation from ITD. A consultancy approach to improving your sales team''s performance.'

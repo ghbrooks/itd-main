@@ -3,6 +3,8 @@ title: 'Financial Services'
 summary: 'The financial services sector demands exceptional interpersonal skills. Whether your teams are managing client portfolios, navigating regulatory conversations, or leading through periods of rapid change, the ability to communicate with clarity and confidence is critical. ITD has extensive experience working with banks, insurers, asset managers, and fintech firms to develop the soft skills that underpin commercial success and regulatory credibility.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/financial-services.webp'
+imageAlt: 'Financial Services'
 seo:
   title: 'Financial Services Training | ITD'
   description: 'ITD delivers tailored soft skills training for the financial services sector, covering banking, insurance, asset management, and fintech organisations.'

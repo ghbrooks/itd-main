@@ -10,6 +10,7 @@ testimonial:
   quote: 'Essential training for any client-facing lawyer. Our team handles difficult situations much more confidently now.'
   author: 'Partner, Fieldfisher'
 publishedDate: 2024-01-15
+subject: 'Client Care'
 seo:
   title: 'Handling Distressed Clients | ITD Case Study'
   description: 'Handling Distressed Clients. Fieldfisher needed to equip their lawyers with skills to handle distressed or emotional clients sensitively and professi'

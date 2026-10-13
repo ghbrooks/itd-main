@@ -24,6 +24,8 @@ relatedCourses:
   - 'virtual-teamwork-training'
   - 'virtual-presentation-skills-training-2'
   - 'presenting-with-impact-virtually-training'
+image: '../../assets/images/courses/virtual-training.webp'
+imageAlt: 'Virtual Training'
 seo:
   title: 'Virtual Training'
   description: 'High-impact virtual soft skills training from ITD. Interactive sessions via Zoom or your preferred platform. Delivering virtually since 2009.'

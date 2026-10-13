@@ -7,6 +7,9 @@ challenge: 'The Trust needed to improve the quality of visitor interactions and 
 approach: 'ITD delivered visitor and contact care training covering first impressions, telephone techniques, handling difficult situations and maintaining professionalism.'
 outcome: 'Reception teams reported increased confidence and visitor satisfaction improved measurably across the Trust''s schools.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-visitor-contact-care-training-catholic-multi-academy-trust.webp'
+imageAlt: 'Visitor & Contact Care Training'
+subject: 'Customer Service'
 seo:
   title: 'Visitor & Contact Care Training | ITD Case Study'
   description: 'Visitor & Contact Care Training. The Trust needed to improve the quality of visitor interactions and telephone handling across multiple school reception '

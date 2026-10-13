@@ -7,6 +7,7 @@ challenge: 'The Charity Aid Foundation needed to improve time management across 
 approach: 'ITD delivered time management training tailored to the charity sector, covering prioritisation, managing interruptions and achieving more with less.'
 outcome: 'The team reported improved productivity, with better ability to focus on their most impactful work.'
 publishedDate: 2024-01-15
+subject: 'Time Management'
 seo:
   title: 'Time Management Training | ITD Case Study'
   description: 'Time Management Training. The Charity Aid Foundation needed to improve time management across their team to handle growing demands with limited re'

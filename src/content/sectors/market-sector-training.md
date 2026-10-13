@@ -3,6 +3,8 @@ title: 'Market Sector Training'
 summary: 'For over two decades, ITD has partnered with organisations across virtually every market sector to deliver high-impact soft skills training. We understand that a one-size-fits-all approach simply does not work when the day-to-day challenges faced by a financial services team differ so markedly from those encountered by a local government department or a maritime crew. That is why every programme we design begins with a thorough understanding of your sector, your people, and the outcomes you need to achieve.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/market-sector-training.webp'
+imageAlt: 'market sector training'
 seo:
   title: 'Market Sector Training | ITD'
   description: 'ITD delivers tailored soft skills training across a wide range of market sectors. Discover how our programmes are adapted to meet the unique demands of your industry.'

@@ -3,6 +3,8 @@ title: 'Manufacturing'
 summary: 'Manufacturing organisations succeed when their people work together effectively, communicate clearly, and take ownership of quality and continuous improvement. ITD partners with manufacturers across a wide range of sub-sectors to develop the leadership and interpersonal skills that translate directly into better operational performance. From team leaders on the production line to senior operations directors, we help manufacturing professionals become more confident and capable communicators and leaders.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/manufacturing.webp'
+imageAlt: 'manufacturing'
 seo:
   title: 'Manufacturing Sector Training | ITD'
   description: 'ITD delivers soft skills training for manufacturing organisations, developing leadership, team communication, and continuous improvement skills across the production environment.'

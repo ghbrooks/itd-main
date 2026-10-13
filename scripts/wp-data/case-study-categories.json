@@ -1,0 +1,802 @@
+{
+ "embracing-change-case-study": {
+  "title": "Embracing Change",
+  "client": "Corporate Client",
+  "category": "Communication Skills Training"
+ },
+ "change-management-case-study": {
+  "title": "Change Management Training",
+  "client": "Corporate Client",
+  "category": "Management Training"
+ },
+ "practical-people-manager-training-case-study": {
+  "title": "Practical People Manager Training",
+  "client": "Corporate Client",
+  "category": "People Management Training"
+ },
+ "bespoke-communication-training-case-study": {
+  "title": "Bespoke Communication Training",
+  "client": "Corporate Client",
+  "category": "Communication Skills Training"
+ },
+ "effective-delegation-in-transactions-case-study": {
+  "title": "Effective Delegation in Transactions",
+  "client": "Law Firm",
+  "category": "Delegation Skills Training"
+ },
+ "lawyer-management-training-case-study": {
+  "title": "Lawyer Management Training",
+  "client": "Law Firm",
+  "category": "Management Training"
+ },
+ "law-firm-management-training-case-study": {
+  "title": "Law Firm Management Training",
+  "client": "Law Firm",
+  "category": "Management Training"
+ },
+ "virtual-project-management-training-case-study-lawscot": {
+  "title": "Virtual Project Management Training",
+  "client": "LawScot",
+  "category": "Project Planning & Management Training"
+ },
+ "virtual-management-training-case-study-tma-consultants": {
+  "title": "Virtual Management Training",
+  "client": "TMA Consultants",
+  "category": "Management Training"
+ },
+ "written-communication-skills-training-case-study-kast": {
+  "title": "Written Communication Training",
+  "client": "KAST",
+  "category": "Written Communication Training"
+ },
+ "whole-team-teamworking-sidley": {
+  "title": "Whole Team Teamworking",
+  "client": "Sidley Austin",
+  "category": "Teamworking Training"
+ },
+ "teamworking-management-team-norgine": {
+  "title": "Teamworking — Management Team",
+  "client": "Norgine",
+  "category": "Teamworking Training"
+ },
+ "teamworking-creative-session-osborne-clarke": {
+  "title": "Teamworking Creative Session",
+  "client": "Osborne Clarke",
+  "category": "Teamworking Training"
+ },
+ "charity-communications-training-case-study-gstt": {
+  "title": "Charity Communications Training",
+  "client": "GSTT",
+  "category": "Communication Skills Training"
+ },
+ "case-study-nudge-training-follow-up-trilegal": {
+  "title": "Nudge Training Follow Up",
+  "client": "Trilegal",
+  "category": "Nudge Training"
+ },
+ "case-study-nudge-training-seminar-ee": {
+  "title": "Nudge Training Seminar",
+  "client": "EE",
+  "category": "Nudge Training"
+ },
+ "case-study-finance-training-appello": {
+  "title": "Finance Training",
+  "client": "Appello",
+  "category": "Finance For Non Finance Training"
+ },
+ "case-study-written-communication-training-barts-charity": {
+  "title": "Written Communication Training",
+  "client": "Barts Charity",
+  "category": "Written Communication Training"
+ },
+ "case-study-personality-at-work-pankhurst-trust": {
+  "title": "Personality at Work",
+  "client": "Pankhurst Trust",
+  "category": "Personality At Work Training"
+ },
+ "virtual-written-communications-skills-case-study-jcw-group": {
+  "title": "Virtual Written Communications Skills",
+  "client": "JCW Group",
+  "category": "Written Communication Training"
+ },
+ "case-study-management-communication-skills-marbocote": {
+  "title": "Management Communication Skills",
+  "client": "Marbocote",
+  "category": "Communication Skills Training"
+ },
+ "case-study-virtual-written-communication-skills-marbocote": {
+  "title": "Virtual Written Communication Skills",
+  "client": "Marbocote",
+  "category": "Written Communication Training"
+ },
+ "personal-efficiency-coaching-case-study": {
+  "title": "Personal Efficiency Coaching",
+  "client": "Corporate Client",
+  "category": "Coaching Projects"
+ },
+ "case-study-nudge-training-for-lawyers-trilegal": {
+  "title": "Nudge Training for Lawyers",
+  "client": "Trilegal",
+  "category": "Nudge Training"
+ },
+ "case-study-personality-at-work-allan-mcdougall": {
+  "title": "Personality At Work",
+  "client": "Allan McDougall",
+  "category": "Personality At Work Training"
+ },
+ "case-study-presenting-a-webinar-van-bael-bellis": {
+  "title": "Presenting a Webinar",
+  "client": "Van Bael & Bellis",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-management-training-and-coaching-ista": {
+  "title": "Management Training and Coaching",
+  "client": "ISTA",
+  "category": "Management Training"
+ },
+ "case-study-nudge-training-campaign-design-ee": {
+  "title": "Nudge Training Campaign Design",
+  "client": "EE",
+  "category": "Nudge Training"
+ },
+ "case-study-networking-training-clarke-willmott": {
+  "title": "Networking Training",
+  "client": "Clarke Willmott",
+  "category": "Networking Training"
+ },
+ "case-study-personal-brand-networking-for-lawyers-reed-smith": {
+  "title": "Personal Brand & Networking",
+  "client": "Reed Smith",
+  "category": "Networking Training"
+ },
+ "case-study-virtual-presenting-pimp-my-slides-hilton": {
+  "title": "Virtual Presenting / Pimp My Slides",
+  "client": "Hilton",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-virtual-written-communication-skills-meridian": {
+  "title": "Online Written Communication Skills",
+  "client": "Meridian",
+  "category": "Written Communication Training"
+ },
+ "case-study-nudge-training-world-bank-group": {
+  "title": "Nudge Training Workshop",
+  "client": "World Bank Group",
+  "category": "Nudge Training"
+ },
+ "case-study-fee-negotiation-training-van-bael-bellis": {
+  "title": "Fee Negotiation Training",
+  "client": "Van Bael & Bellis",
+  "category": "Fee Negotiation Training"
+ },
+ "case-study-personal-efficiency-training-rma-associates": {
+  "title": "Personal Efficiency Training",
+  "client": "RMA Associates",
+  "category": "Personal Efficiency Training"
+ },
+ "case-study-management-training-atp-media": {
+  "title": "Management Training",
+  "client": "ATP Media",
+  "category": "Management Training"
+ },
+ "case-study-written-communication-skills-commvault": {
+  "title": "Written Communication Skills",
+  "client": "Commvault",
+  "category": "Written Communication Training"
+ },
+ "case-study-developing-confidence-in-communication-clarke-willmott": {
+  "title": "Developing Confidence in Communication",
+  "client": "Clarke Willmott",
+  "category": "Communication Skills Training"
+ },
+ "case-study-delegation-skills-for-associates-reed-smith": {
+  "title": "Delegation Skills for Associates",
+  "client": "Reed Smith",
+  "category": "Delegation Skills Training"
+ },
+ "case-study-nudge-training-richmond-and-wandsworth-councils": {
+  "title": "Nudge Training",
+  "client": "Richmond and Wandsworth Councils",
+  "category": "Nudge Training"
+ },
+ "case-study-finance-simulation-for-partners-vwv": {
+  "title": "Finance Training for Partners",
+  "client": "VWV",
+  "category": "Fee Negotiation Training"
+ },
+ "case-study-delegation-skills-for-lawyers-reed-smith": {
+  "title": "Delegation Skills for Lawyers",
+  "client": "Reed Smith",
+  "category": "Delegation Skills Training"
+ },
+ "commvault-virtual-written-communication-skills-training": {
+  "title": "Virtual Written Communication Skills Training",
+  "client": "Commvault",
+  "category": "Written Communication Training"
+ },
+ "case-study-presenting-with-impact-webinar-pepsico": {
+  "title": "Presenting with Impact Webinar",
+  "client": "PepsiCo",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-visitor-contact-care-training-catholic-multi-academy-trust": {
+  "title": "Visitor & Contact Care Training",
+  "client": "Catholic Multi Academy Trust",
+  "category": "Customer Service Training"
+ },
+ "case-study-client-care-training-lyons-bowe": {
+  "title": "Client Care Training",
+  "client": "Lyons Bowe",
+  "category": "Client Care Training"
+ },
+ "case-study-unconscious-bias-microaggression-training-workshop-kayak": {
+  "title": "Unconscious Bias & Microaggression Training",
+  "client": "KAYAK",
+  "category": "Diversity, Equality & Inclusion Training"
+ },
+ "case-study-communication-presentation-workshop-gstt-foundation": {
+  "title": "Communication & Presentation Workshop",
+  "client": "GSTT Foundation",
+  "category": "Communication Skills Training"
+ },
+ "case-study-virtual-presentation-skills-malvern-panalytical-global": {
+  "title": "Virtual Presentation Skills",
+  "client": "Malvern Panalytical",
+  "category": "Virtual Presentation Skills Training"
+ },
+ "case-study-personality-communication-at-work-trilegal": {
+  "title": "Personality & Communication At Work",
+  "client": "Trilegal",
+  "category": "Personality At Work Training"
+ },
+ "case-study-sales-training-norgine": {
+  "title": "Sales Training",
+  "client": "Norgine",
+  "category": "Sales Training"
+ },
+ "case-study-sales-management-training-gilead": {
+  "title": "Sales Management Training",
+  "client": "Gilead",
+  "category": "Sales Management Training"
+ },
+ "case-study-sales-management-training-sse": {
+  "title": "Sales Management Training",
+  "client": "SSE",
+  "category": "Sales Management Training"
+ },
+ "case-study-personal-awareness-clifford-chance": {
+  "title": "Personal Awareness Training",
+  "client": "Clifford Chance",
+  "category": "Personality At Work Training"
+ },
+ "case-study-basic-sales-training-1-to1-yunex-traffic": {
+  "title": "Basic Sales Training",
+  "client": "Yunex Traffic",
+  "category": "Sales Training"
+ },
+ "case-study-virtual-presentation-skills-scanova-india": {
+  "title": "Virtual Presentation Skills",
+  "client": "Scanova India",
+  "category": "Virtual Presentation Skills Training"
+ },
+ "case-study-territory-account-management-cellmark-chemicals": {
+  "title": "Territory Account Management",
+  "client": "CellMark Chemicals",
+  "category": "Sales Training"
+ },
+ "case-study-presenting-in-a-sales-call-british-airways": {
+  "title": "Presenting in a Sales Call",
+  "client": "British Airways",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-personality-at-work-orbis": {
+  "title": "Personality at Work",
+  "client": "Orbis",
+  "category": "Personality At Work Training"
+ },
+ "case-study-prospecting-for-new-clients-impact": {
+  "title": "Prospecting for New Clients",
+  "client": "ImPACT",
+  "category": "Sales Training"
+ },
+ "case-study-personality-at-work-dentons-dubai": {
+  "title": "Personality at Work",
+  "client": "Dentons Dubai",
+  "category": "Personality At Work Training"
+ },
+ "case-study-presenting-with-impact-virtually-werfen": {
+  "title": "Presenting With Impact Virtually",
+  "client": "Werfen",
+  "category": "Virtual Presentation Skills Training"
+ },
+ "case-study-one-to-one-virtual-presentation-skills-training-totsa": {
+  "title": "One to One Virtual Presentation Skills Training",
+  "client": "TOTSA",
+  "category": "Presentation Skills Training"
+ },
+ "account-manager-sales-training-case-study": {
+  "title": "Account Manager Sales Training",
+  "client": "Corporate Client",
+  "category": "Sales Training"
+ },
+ "case-study-large-group-virtual-presentation-skills-training-radboudumc": {
+  "title": "Large Group Virtual Presentation Skills Training",
+  "client": "Radboudumc",
+  "category": "Virtual Presentation Skills Training"
+ },
+ "case-study-virtual-presentation-skills-training-haman-scandinavia": {
+  "title": "Virtual Presentation Skills Training",
+  "client": "Haman Scandinavia",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-taking-instructions-training-vardags": {
+  "title": "Taking Instructions Training",
+  "client": "Vardags",
+  "category": "Taking Witness Statements Training"
+ },
+ "case-study-virtual-presentation-skills-training-unversity-of-derby": {
+  "title": "Virtual Presentation Skills Training",
+  "client": "University of Derby",
+  "category": "Virtual Presentation Skills Training"
+ },
+ "case-study-written-communication-skills-training-university-of-derby": {
+  "title": "Written Communication Skills Training",
+  "client": "University of Derby",
+  "category": "Written Communication Training"
+ },
+ "case-study-time-management-training-cadwalader": {
+  "title": "Time Management Training",
+  "client": "Cadwalader",
+  "category": "Time Management Training"
+ },
+ "case-study-personal-efficiency-coaching-oxford-advanced-surfaces": {
+  "title": "Personal Efficiency Coaching",
+  "client": "Oxford Advanced Surfaces",
+  "category": "Coaching Projects"
+ },
+ "case-study-people-management-training-carr-lyons": {
+  "title": "People Management Training",
+  "client": "Carr Lyons",
+  "category": "People Management Training"
+ },
+ "case-study-personal-efficiency-training-topdrill": {
+  "title": "Personal Efficiency Training",
+  "client": "Topdrill",
+  "category": "Personal Efficiency Training"
+ },
+ "case-study-consultancy-project-ovl-group": {
+  "title": "Consultancy Project",
+  "client": "OVL Group",
+  "category": "Consultancy Projects"
+ },
+ "case-study-telephone-prospecting-training-par": {
+  "title": "Telephone Prospecting Training",
+  "client": "PAR",
+  "category": "Telephone Sales Training"
+ },
+ "case-study-telephone-sales-training-forfarmers": {
+  "title": "Telephone Sales Training",
+  "client": "ForFarmers",
+  "category": "Telephone Sales Training"
+ },
+ "case-study-written-communication-skills-training-iam-roadsmart": {
+  "title": "Written Communication Skills Training",
+  "client": "IAM RoadSmart",
+  "category": "Written Communication Training"
+ },
+ "case-study-consultancy-sales-training-edmiston": {
+  "title": "Consultancy Sales Training",
+  "client": "Edmiston",
+  "category": "Consultative Sales Training"
+ },
+ "case-study-telephone-sales-training-red": {
+  "title": "Telephone Sales Training",
+  "client": "RED",
+  "category": "Telephone Sales Training"
+ },
+ "case-study-professional-business-communication-clifford-chance": {
+  "title": "Professional Business Communication",
+  "client": "Clifford Chance",
+  "category": "Communication Skills Training"
+ },
+ "case-study-personal-efficiency-training-newton": {
+  "title": "Personal Efficiency Training",
+  "client": "Newton",
+  "category": "Personal Efficiency Training"
+ },
+ "case-study-personal-efficiency-training-nspcc": {
+  "title": "Personal Efficiency Training",
+  "client": "NSPCC",
+  "category": "Personal Efficiency Training"
+ },
+ "case-study-resilience-training-reed-smith": {
+  "title": "Resilience Training",
+  "client": "Reed Smith",
+  "category": "Communication Skills Training"
+ },
+ "case-study-virtual-presentation-skills-training-clifford-chance": {
+  "title": "Virtual Presentation Skills Training",
+  "client": "Clifford Chance",
+  "category": "Virtual Presentation Skills Training"
+ },
+ "case-study-communicating-in-a-virtual-world-corpag": {
+  "title": "Communicating in a Virtual World",
+  "client": "Corpag",
+  "category": "Communication Skills Training"
+ },
+ "case-study-virtual-presentation-skills-training-workday": {
+  "title": "Virtual Presentation Skills Training",
+  "client": "Workday",
+  "category": "Virtual Presentation Skills Training"
+ },
+ "case-study-virtual-presenting-training-charity-commission": {
+  "title": "Virtual Presenting Training",
+  "client": "Charity Commission",
+  "category": "Virtual Presentation Skills Training"
+ },
+ "case-study-virtual-presentation-training-sinosky": {
+  "title": "Virtual Presentation Training",
+  "client": "Sinosky",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-virtual-presentation-skills-for-sales-sse": {
+  "title": "Virtual Presentation Skills for Sales",
+  "client": "SSE",
+  "category": "Virtual Presentation Skills Training"
+ },
+ "case-study-presenting-with-impact-training-cruk": {
+  "title": "Presenting with Impact Training",
+  "client": "CRUK",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-written-communication-training-lexfield": {
+  "title": "Written Communication Training",
+  "client": "Lexfield",
+  "category": "Written Communication Training"
+ },
+ "case-study-one-to-one-coaching-training-monckton-chambers": {
+  "title": "One to One Coaching / Training",
+  "client": "Monckton Chambers",
+  "category": "Coaching Projects"
+ },
+ "case-study-personality-at-work-trilegal": {
+  "title": "Personality at Work",
+  "client": "Trilegal",
+  "category": "Personality At Work Training"
+ },
+ "case-study-working-for-multiple-lawyers-wragge-co": {
+  "title": "Working for Multiple Lawyers",
+  "client": "Wragge & Co",
+  "category": "Communication Skills Training"
+ },
+ "case-study-delegation-communication-skills-sidley": {
+  "title": "Delegation & Communication Skills",
+  "client": "Sidley Austin",
+  "category": "Delegation Skills Training"
+ },
+ "case-study-handling-distressed-clients-fieldfisher": {
+  "title": "Handling Distressed Clients",
+  "client": "Fieldfisher",
+  "category": "Client Care Training"
+ },
+ "time-and-work-management-training-case-study": {
+  "title": "Time and Work Management Training",
+  "client": "Freshfields",
+  "category": "Time Management Training"
+ },
+ "case-study-management-training-orrick": {
+  "title": "Management Training",
+  "client": "Orrick",
+  "category": "Management Training"
+ },
+ "case-study-engaging-influencing-when-presenting-latham-watkins": {
+  "title": "Engaging & Influencing When Presenting",
+  "client": "Latham & Watkins",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-taking-witness-statements-hugh-james": {
+  "title": "Taking Witness Statements",
+  "client": "Hugh James",
+  "category": "Taking Witness Statements Training"
+ },
+ "case-study-project-planning-training-higgs-sons": {
+  "title": "Project Planning Training",
+  "client": "Higgs & Sons",
+  "category": "Project Planning & Management Training"
+ },
+ "case-study-planning-managing-legal-work-burges-salmon": {
+  "title": "Planning & Managing Legal Work",
+  "client": "Burges Salmon",
+  "category": "Project Planning & Management Training"
+ },
+ "case-study-project-management-training-baker-mckenzie": {
+  "title": "Project Management Training",
+  "client": "Baker McKenzie",
+  "category": "Project Planning & Management Training"
+ },
+ "case-study-fee-negotiation-skills-training-kingsley-napley": {
+  "title": "Fee Negotiation Skills Training",
+  "client": "Kingsley Napley",
+  "category": "Fee Negotiation Training"
+ },
+ "case-study-negotiation-skills-training-shearman-sterling": {
+  "title": "Negotiation Skills Training",
+  "client": "Shearman & Sterling",
+  "category": "Negotiation Training"
+ },
+ "case-study-negotiation-skills-for-lawyers-osborne-clarke": {
+  "title": "Negotiation Skills for Lawyers",
+  "client": "Osborne Clarke",
+  "category": "Negotiation Training"
+ },
+ "time-management-associates-case-study": {
+  "title": "Time Management Training for Associates",
+  "client": "Law Firm",
+  "category": "Time Management Training"
+ },
+ "time-management-training-for-lawyers-case-study": {
+  "title": "Time Management Training for Lawyers",
+  "client": "Law Firm",
+  "category": "Time Management Training"
+ },
+ "time-management-training-for-junior-lawyers-case-study": {
+  "title": "Time Management Training for Junior Lawyers",
+  "client": "Law Firm",
+  "category": "Time Management Training"
+ },
+ "time-management-for-trainee-lawyers-case-study": {
+  "title": "Time Management for Trainee Lawyers",
+  "client": "Law Firm",
+  "category": "Time Management Training"
+ },
+ "case-study-delegation-skills-for-lawyers-vardags": {
+  "title": "Delegation Skills for Lawyers",
+  "client": "Vardags",
+  "category": "Delegation Skills Training"
+ },
+ "case-study-delegation-skills-for-senior-lawyers-srz": {
+  "title": "Delegation Skills for Senior Lawyers",
+  "client": "SRZ",
+  "category": "Delegation Skills Training"
+ },
+ "case-study-large-group-session-on-personality-dentons": {
+  "title": "Large Group Session on Personality",
+  "client": "Dentons",
+  "category": "Personality At Work Training"
+ },
+ "case-study-nudge-training-deschutes-county": {
+  "title": "Nudge Training",
+  "client": "Deschutes County",
+  "category": "Nudge Training"
+ },
+ "case-study-motivation-management-fox-williams": {
+  "title": "Motivation Management",
+  "client": "Fox Williams",
+  "category": "Management Training"
+ },
+ "case-study-impact-and-influence-watson-farley-williams": {
+  "title": "Impact and Influence Training",
+  "client": "Watson Farley Williams",
+  "category": "Impact & Influence Training"
+ },
+ "case-study-supervisor-skills-clarke-willmott": {
+  "title": "Supervisor Skills",
+  "client": "Clarke Willmott",
+  "category": "Supervisor Training"
+ },
+ "case-study-mentoring-training-osborne-clarke": {
+  "title": "Mentoring Training",
+  "client": "Osborne Clarke",
+  "category": "Mentoring Training"
+ },
+ "case-study-advanced-presentation-skills-dentons": {
+  "title": "Advanced Presentation Skills Training",
+  "client": "Dentons",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-coaching-skills-training-norgine": {
+  "title": "Coaching Skills Training",
+  "client": "Norgine",
+  "category": "Coaching Training"
+ },
+ "case-study-assertiveness-training-clifford-chance": {
+  "title": "Assertiveness Training",
+  "client": "Clifford Chance",
+  "category": "Assertiveness Training"
+ },
+ "case-study-project-management-training-clyde-co": {
+  "title": "Project Management Training",
+  "client": "Clyde & Co",
+  "category": "Project Planning & Management Training"
+ },
+ "case-study-people-management-training-gilead": {
+  "title": "People Management Training",
+  "client": "Gilead",
+  "category": "People Management Training"
+ },
+ "case-study-how-to-manage-people-cambridge-cognition": {
+  "title": "Managing People Training Programme",
+  "client": "Cambridge Cognition",
+  "category": "People Management Training"
+ },
+ "case-study-leadership-presentations-norgine": {
+  "title": "Leadership Presentation Training",
+  "client": "Norgine",
+  "category": "Leadership Training"
+ },
+ "case-study-managing-virtual-matrix-team-hitachi": {
+  "title": "Managing Virtual / Matrix Team",
+  "client": "Hitachi",
+  "category": "Management Training"
+ },
+ "case-study-consultative-sales-gilead": {
+  "title": "Consultative Sales",
+  "client": "Gilead",
+  "category": "Consultative Sales Training"
+ },
+ "case-study-project-planning-management-bird-bird": {
+  "title": "Project Planning & Management",
+  "client": "Bird & Bird",
+  "category": "Project Planning & Management Training"
+ },
+ "case-study-team-building-gilead": {
+  "title": "Team Building",
+  "client": "Gilead",
+  "category": "Teamworking Training"
+ },
+ "case-study-virtual-team-working-gilead": {
+  "title": "Virtual Team Working",
+  "client": "Gilead",
+  "category": "Teamworking Training"
+ },
+ "case-study-advanced-negotiating-for-sales-lundbeck": {
+  "title": "Advanced Negotiating for Sales",
+  "client": "Lundbeck",
+  "category": "Advanced Sales Negotiation Training"
+ },
+ "case-study-leadership-training-global-collect": {
+  "title": "Leadership Training",
+  "client": "Global Collect",
+  "category": "Leadership Training"
+ },
+ "case-study-team-leader-training-global-collect": {
+  "title": "Team Leader Training",
+  "client": "Global Collect",
+  "category": "Team Leader Training"
+ },
+ "case-study-mentoring-training-clarke-willmott": {
+  "title": "Mentoring Training",
+  "client": "Clarke Willmott",
+  "category": "Mentoring Training"
+ },
+ "case-study-constructing-a-presentation-positively-uk": {
+  "title": "Constructing a Presentation Training",
+  "client": "Positively UK",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-sales-management-training-norgine": {
+  "title": "Sales Management Training",
+  "client": "Norgine",
+  "category": "Sales Management Training"
+ },
+ "case-study-presentation-skills-training-gilead": {
+  "title": "Presentation Skills Training",
+  "client": "Gilead",
+  "category": "Presentation Skills Training"
+ },
+ "case-study-customer-service-training-clifford-chance": {
+  "title": "Customer Service Training",
+  "client": "Clifford Chance",
+  "category": "Customer Service Training"
+ },
+ "case-study-team-working-training-cambridge-cognition": {
+  "title": "Team Working Training",
+  "client": "Cambridge Cognition",
+  "category": "Teamworking Training"
+ },
+ "time-management-training-case-study": {
+  "title": "Time Management Training",
+  "client": "Charity Aid Foundation",
+  "category": "Time Management Training"
+ },
+ "case-study-finance-for-non-finance-gilead": {
+  "title": "Finance for Non Finance Training",
+  "client": "Gilead",
+  "category": "Finance For Non Finance Training"
+ },
+ "case-study-telephone-sales-torquil-clark": {
+  "title": "Telephone Sales",
+  "client": "Torquil Clark",
+  "category": "Telephone Sales Training"
+ },
+ "case-study-business-development-dentons": {
+  "title": "Business Development Training",
+  "client": "Dentons",
+  "category": "Business Development Training"
+ },
+ "case-study-director-level-personal-efficiency-training-know-history": {
+  "title": "Director Personal Efficiency Training",
+  "client": "Know History",
+  "category": "Personal Efficiency Training"
+ },
+ "case-study-wfh-time-management-training-clarke-willmott": {
+  "title": "WFH Time Management Training",
+  "client": "Clarke Willmott",
+  "category": "Time Management Training"
+ },
+ "case-study-training-consultancy-project-sse": {
+  "title": "Training Consultancy Project",
+  "client": "SSE",
+  "category": "Consultancy Projects"
+ },
+ "case-study-senior-team-consultancy-kingsley-napley": {
+  "title": "Senior Management Team Consultancy",
+  "client": "Kingsley Napley",
+  "category": "Consultancy Projects"
+ },
+ "case-study-consultancy-project-gilead": {
+  "title": "Consultancy Project",
+  "client": "Gilead",
+  "category": "Consultancy Projects"
+ },
+ "case-study-consultancy-project-emtec": {
+  "title": "Consultancy Project",
+  "client": "Emtec",
+  "category": "Consultancy Projects"
+ },
+ "case-study-one-to-one-career-coaching-kingsley-napley": {
+  "title": "One to One Career Coaching",
+  "client": "Kingsley Napley",
+  "category": "Executive Coaching"
+ },
+ "case-study-problem-solving-decision-making-reed-smith": {
+  "title": "Problem Solving & Decision Making",
+  "client": "Reed Smith",
+  "category": "Problem Solving & Decision Making Training"
+ },
+ "case-study-assertiveness-training-mayer-brown": {
+  "title": "Assertiveness Training",
+  "client": "Mayer Brown",
+  "category": "Assertiveness Training"
+ },
+ "case-study-project-management-course-kingsley-napley": {
+  "title": "Project Management Course",
+  "client": "Kingsley Napley",
+  "category": "Project Planning & Management Training"
+ },
+ "microaggression-training-law-firm-case-study-vbb": {
+  "title": "Microaggression Training Workshop",
+  "client": "Van Bael & Bellis",
+  "category": "Diversity, Equality & Inclusion Training"
+ },
+ "case-study-personality-at-work-conference-training-clarke-willmott": {
+  "title": "Personality at Work Conference",
+  "client": "Clarke Willmott",
+  "category": "Personality At Work Training"
+ },
+ "nudge-training-case-study-sgi": {
+  "title": "Nudge Training",
+  "client": "SGI",
+  "category": "Nudge Training"
+ },
+ "nudge-training-case-study-clifford-chance": {
+  "title": "Nudge Training",
+  "client": "Clifford Chance",
+  "category": "Nudge Training"
+ },
+ "case-study-nudge-training-british-gas": {
+  "title": "Nudge Training",
+  "client": "British Gas",
+  "category": "Nudge Training"
+ },
+ "case-study-nudge-training-hackney-borough-council": {
+  "title": "Nudge Training",
+  "client": "Hackney Borough Council",
+  "category": "Nudge Training"
+ },
+ "nudge-training-case-study-test-valley-borough-council": {
+  "title": "Nudge Training",
+  "client": "Test Valley Borough Council",
+  "category": "Nudge Training"
+ }
+}

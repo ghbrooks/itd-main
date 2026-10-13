@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: clarity and concision in business writing'
   - 'Confidence and capability in: formatting for readability'
   - 'Confidence and capability in: common writing pitfalls to avoid'
+image: '../../assets/images/courses/business-writing-course.webp'
+imageAlt: 'business writing course'
 seo:
   title: 'Business Writing Course'
   description: 'Business Writing Course from ITD. Master the art of clear, professional business writing.'

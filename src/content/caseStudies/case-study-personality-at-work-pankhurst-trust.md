@@ -7,6 +7,9 @@ challenge: 'Pankhurst Trust wanted to improve team dynamics by helping staff und
 approach: 'ITD delivered a Personality at Work session helping participants understand their own and colleagues'' working styles and communication preferences.'
 outcome: 'The team reported improved understanding of each other and more effective collaboration across different working styles.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-personality-at-work-pankhurst-trust.webp'
+imageAlt: 'Personality at Work'
+subject: 'Personality at Work'
 seo:
   title: 'Personality at Work | ITD Case Study'
   description: 'Personality at Work. Pankhurst Trust wanted to improve team dynamics by helping staff understand different personality types and communicatio'

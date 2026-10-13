@@ -4,33 +4,37 @@ import CourseLayout from '~/layouts/CourseLayout.astro';
 import CaseStudyLayout from '~/layouts/CaseStudyLayout.astro';
 import SectorLayout from '~/layouts/SectorLayout.astro';
 import LocationLayout from '~/layouts/LocationLayout.astro';
+import PageLayout from '~/layouts/PageLayout.astro';
 
+/**
+ * Single catch-all for every content collection that lives at the site root.
+ * Slugs must be unique across collections; a clash is reported at build time
+ * rather than silently picking a winner.
+ */
 export async function getStaticPaths() {
-  const [courses, caseStudies, sectors, locations] = await Promise.all([
+  const [courses, caseStudies, sectors, locations, pages] = await Promise.all([
     getCollection('courses'),
     getCollection('caseStudies'),
     getCollection('sectors'),
     getCollection('locations'),
+    getCollection('pages'),
   ]);
 
-  return [
-    ...courses.map((entry) => ({
-      params: { slug: entry.slug },
-      props: { kind: 'course' as const, entry },
-    })),
-    ...caseStudies.map((entry) => ({
-      params: { slug: entry.slug },
-      props: { kind: 'caseStudy' as const, entry },
-    })),
-    ...sectors.map((entry) => ({
-      params: { slug: entry.slug },
-      props: { kind: 'sector' as const, entry },
-    })),
-    ...locations.map((entry) => ({
-      params: { slug: entry.slug },
-      props: { kind: 'location' as const, entry },
-    })),
+  const paths = [
+    ...courses.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'course' as const, entry } })),
+    ...caseStudies.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'caseStudy' as const, entry } })),
+    ...sectors.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'sector' as const, entry } })),
+    ...locations.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'location' as const, entry } })),
+    ...pages.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'page' as const, entry } })),
   ];
+
+  const seen = new Map<string, string>();
+  for (const p of paths) {
+    const prev = seen.get(p.params.slug);
+    if (prev) throw new Error(`Duplicate slug "/${p.params.slug}" in collections ${prev} and ${p.props.kind}`);
+    seen.set(p.params.slug, p.props.kind);
+  }
+  return paths;
 }
 
 const { kind, entry } = Astro.props;
@@ -51,4 +55,9 @@ const { Content } = await render(entry);
   <LocationLayout location={entry}>
     <Content />
   </LocationLayout>
+)}
+{kind === 'page' && (
+  <PageLayout page={entry}>
+    <Content />
+  </PageLayout>
 )}

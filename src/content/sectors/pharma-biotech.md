@@ -3,6 +3,8 @@ title: 'Pharma / Biotech'
 summary: 'The pharmaceutical and biotechnology industries are driven by scientific excellence, but commercial success depends equally on the ability to communicate, influence, and lead. From presenting clinical trial data to regulators, to managing cross-functional drug development teams, to engaging with healthcare professionals and payers, soft skills play a critical role at every stage of the product lifecycle. ITD has deep experience supporting pharma and biotech organisations with training that helps scientific professionals become confident, compelling communicators and leaders.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/pharma-biotech.webp'
+imageAlt: 'Pharmaceutical / Biotech'
 seo:
   title: 'Pharma & Biotech Training | ITD'
   description: 'ITD provides soft skills training for pharmaceutical and biotech companies, supporting scientific leaders with communication, presentation, and leadership development.'

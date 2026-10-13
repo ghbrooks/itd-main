@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: trust and accountability frameworks'
   - 'Confidence and capability in: supporting wellbeing and isolation'
   - 'Confidence and capability in: tools and technology for remote management'
+image: '../../assets/images/courses/managing-remote-employees-training.webp'
+imageAlt: 'managing remote employees training'
 seo:
   title: 'Managing Remote Employees Training'
   description: 'Managing Remote Employees Training from ITD. Develop the skills to manage remote workers productively and supportively.'

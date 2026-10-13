@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: creating project plans'
   - 'Confidence and capability in: risk management basics'
   - 'Confidence and capability in: stakeholder communication'
+image: '../../assets/images/courses/introduction-to-project-management.webp'
+imageAlt: 'introduction to project management'
 seo:
   title: 'Introduction to Project Management'
   description: 'Introduction to Project Management from ITD. A practical introduction to project management fundamentals.'

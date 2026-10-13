@@ -10,6 +10,9 @@ testimonial:
   quote: 'The training was perfectly tailored to our sector. Our team''s selling approach has genuinely improved.'
   author: 'Sales Director, Norgine'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-sales-training-norgine.webp'
+imageAlt: 'Sales Training'
+subject: 'Sales'
 seo:
   title: 'Sales Training | ITD Case Study'
   description: 'Sales Training. Norgine needed to develop their sales team''s consultative selling skills in the pharmaceutical sector.'

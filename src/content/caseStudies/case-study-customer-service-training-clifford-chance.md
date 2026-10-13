@@ -10,6 +10,9 @@ testimonial:
   quote: 'Our support teams now deliver consistently excellent service. The training made a real difference.'
   author: 'Head of Operations, Clifford Chance'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-customer-service-training-clifford-chance.webp'
+imageAlt: 'Customer Service Training'
+subject: 'Customer Service'
 seo:
   title: 'Customer Service Training | ITD Case Study'
   description: 'Customer Service Training. Clifford Chance wanted to enhance client service standards across their support staff.'

@@ -10,6 +10,7 @@ testimonial:
   quote: 'A genuinely different and thought-provoking approach to business development. Our lawyers loved it.'
   author: 'Head of BD, Clifford Chance'
 publishedDate: 2024-01-15
+subject: 'Nudge'
 seo:
   title: 'Nudge Training | ITD Case Study'
   description: 'Nudge Training. Clifford Chance wanted to introduce nudge and behavioural science concepts to their professional development programme.'

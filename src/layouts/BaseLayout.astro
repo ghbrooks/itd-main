@@ -5,17 +5,19 @@ import SiteHeader from '~/components/layout/SiteHeader.astro';
 import SiteFooter from '~/components/layout/SiteFooter.astro';
 import { organizationSchema, websiteSchema } from '~/lib/schema';
 import type { SeoProps } from '~/lib/seo';
+import { getReviewStats } from '~/lib/reviews';
 
 type Props = SeoProps & {
   schemas?: Record<string, unknown>[];
 };
 const { schemas = [], ...seo } = Astro.props;
+const reviewStats = await getReviewStats();
 ---
 <!doctype html>
 <html lang="en-GB">
   <head>
     <BaseHead {...seo} />
-    <JsonLd data={organizationSchema()} />
+    <JsonLd data={organizationSchema(reviewStats)} />
     <JsonLd data={websiteSchema()} />
     {schemas.map((s) => <JsonLd data={s} />)}
     <slot name="head" />
@@ -32,7 +34,7 @@ const { schemas = [], ...seo } = Astro.props;
       .skip-link {
         position: absolute;
         left: 1rem;
-        top: -40px;
+        top: -100px;
         background: var(--c-deep);
         color: white;
         padding: 0.5rem 0.85rem;

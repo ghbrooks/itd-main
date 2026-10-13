@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: impact of bias on decisions'
   - 'Confidence and capability in: strategies to reduce bias'
   - 'Confidence and capability in: creating an inclusive culture'
+image: '../../assets/images/courses/unconscious-bias-training.webp'
+imageAlt: 'unconscious bias training'
 seo:
   title: 'Unconscious Bias Training'
   description: 'Unconscious Bias Training from ITD. Recognise and mitigate unconscious bias in the workplace.'

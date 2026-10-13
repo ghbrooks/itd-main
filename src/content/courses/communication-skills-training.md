@@ -22,6 +22,8 @@ relatedCourses:
   - 'written-communication-skills-training'
   - 'professional-business-communication-training'
   - 'developing-confidence-in-communication'
+image: '../../assets/images/courses/communication-skills-training.webp'
+imageAlt: 'communication training'
 seo:
   title: 'Communication Skills Training'
   description: 'Dynamic, practical communication skills training tailored to your needs. Build confidence, clarity and impact. Virtual and in-person delivery from ITD.'

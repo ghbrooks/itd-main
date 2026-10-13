@@ -7,6 +7,9 @@ challenge: 'Gilead needed to improve presentation skills across their medical an
 approach: 'ITD delivered presentation skills training covering structure, delivery, visual aids and handling questions in a scientific context.'
 outcome: 'Presentation quality improved significantly across the organisation, with positive feedback from healthcare professional audiences.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-presentation-skills-training-gilead.webp'
+imageAlt: 'Presentation Skills Training'
+subject: 'Presentation Skills'
 seo:
   title: 'Presentation Skills Training | ITD Case Study'
   description: 'Presentation Skills Training. Gilead needed to improve presentation skills across their medical and commercial teams.'

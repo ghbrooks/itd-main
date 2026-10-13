@@ -2,27 +2,39 @@ import { site } from './site';
 
 type Json = Record<string, unknown>;
 
-export function organizationSchema(): Json {
+export function organizationSchema(rating?: { average: number; count: number }): Json {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: site.longName,
     alternateName: site.name,
+    legalName: site.legalName,
     url: site.url,
     logo: `${site.url}/logo.svg`,
+    email: site.email,
+    telephone: site.phone,
     foundingDate: String(site.founded),
     founder: {
       '@type': 'Person',
       name: site.founder,
+      url: `${site.url}/about-martin-chapman`,
+    },
+    address: {
+      '@type': 'PostalAddress',
+      ...site.address,
     },
     sameAs: Object.values(site.social),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: site.rating.value,
-      reviewCount: site.rating.count,
-      bestRating: 5,
-      worstRating: 1,
-    },
+    ...(rating && rating.count > 0
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: rating.average,
+            reviewCount: rating.count,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : {}),
   };
 }
 

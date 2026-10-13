@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: feedback and development preferences'
   - 'Confidence and capability in: technology and workplace flexibility'
   - 'Confidence and capability in: building a multigenerational team culture'
+image: '../../assets/images/courses/managing-gen-z-training.webp'
+imageAlt: 'managing gen z training'
 seo:
   title: 'Managing Gen Z Training'
   description: 'Managing Gen Z Training from ITD. Understand and engage with Gen Z employees effectively.'

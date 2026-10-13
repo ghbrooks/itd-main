@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: choice architecture for public services'
   - 'Confidence and capability in: measuring public sector nudge outcomes'
   - 'Confidence and capability in: ethical frameworks for government nudge'
+image: '../../assets/images/courses/nudge-theory-examples-public-sector.webp'
+imageAlt: 'Nudge Theory Examples'
 seo:
   title: 'Nudge Theory Examples Public Sector'
   description: 'Nudge Theory Examples Public Sector from ITD. Nudge theory applications and case studies from the public sector.'

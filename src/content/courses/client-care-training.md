@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: managing client expectations'
   - 'Confidence and capability in: handling difficult client situations'
   - 'Confidence and capability in: building long-term client relationships'
+image: '../../assets/images/courses/client-care-training.webp'
+imageAlt: 'client care training'
 seo:
   title: 'Client Care Training'
   description: 'Client Care Training from ITD. Develop the skills to provide outstanding client care.'

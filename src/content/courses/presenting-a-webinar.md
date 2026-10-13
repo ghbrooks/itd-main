@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: managing webinar technology'
   - 'Confidence and capability in: handling q&a effectively'
   - 'Confidence and capability in: measuring webinar success'
+image: '../../assets/images/courses/presenting-a-webinar.webp'
+imageAlt: 'Presenting a webinar'
 seo:
   title: 'Presenting a Webinar'
   description: 'Presenting a Webinar from ITD. Develop the specific skills needed to deliver compelling webinars.'

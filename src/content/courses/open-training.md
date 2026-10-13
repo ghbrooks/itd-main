@@ -17,6 +17,8 @@ agenda:
   - 'Wrap-up and next steps'
 outcomes:
   - 'Practical skills you can apply immediately'
+image: '../../assets/images/courses/open-training.webp'
+imageAlt: 'open training'
 seo:
   title: 'Open Training Courses'
   description: 'Open training courses from ITD for individual participants. Join our scheduled public workshops on soft skills topics.'

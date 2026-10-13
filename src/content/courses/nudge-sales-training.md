@@ -22,6 +22,8 @@ outcomes:
   - 'Confidence and capability in: ethical influence in sales'
 relatedCourses:
   - 'nudge-training'
+image: '../../assets/images/courses/nudge-sales-training.webp'
+imageAlt: 'Nudge Sales Training'
 seo:
   title: 'Nudge Sales Training'
   description: 'Nudge Sales Training from ITD. Apply behavioural science principles to your sales approach.'

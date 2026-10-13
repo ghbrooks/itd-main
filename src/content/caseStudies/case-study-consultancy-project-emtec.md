@@ -7,6 +7,7 @@ challenge: 'Emtec needed consultancy support to review their training and develo
 approach: 'ITD conducted a thorough needs analysis and provided a comprehensive training and development strategy aligned with Emtec''s business goals.'
 outcome: 'Emtec implemented the recommended training strategy, seeing improved staff development and retention.'
 publishedDate: 2024-01-15
+subject: 'Consultancy'
 seo:
   title: 'Consultancy Project | ITD Case Study'
   description: 'Consultancy Project. Emtec needed consultancy support to review their training and development approach and recommend improvements.'

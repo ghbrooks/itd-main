@@ -3,6 +3,8 @@ title: 'Media'
 summary: 'The media industry thrives on creativity, speed, and the ability to tell compelling stories. Behind every successful campaign, broadcast, or publication is a team of people who need to collaborate under pressure, manage demanding clients, and lead creative talent effectively. ITD works with media organisations including broadcasters, publishers, advertising agencies, and digital media companies to develop the interpersonal skills that enable creative teams to do their best work and deliver outstanding results for clients.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/media.webp'
+imageAlt: 'Media sector training'
 seo:
   title: 'Media Sector Training | ITD'
   description: 'ITD delivers soft skills training for media organisations, helping creative and commercial teams improve leadership, collaboration, and client communication.'

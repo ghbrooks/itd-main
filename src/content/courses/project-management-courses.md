@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: stakeholder and risk management'
   - 'Confidence and capability in: agile and traditional approaches'
   - 'Confidence and capability in: sector-specific project management'
+image: '../../assets/images/courses/project-management-courses.webp'
+imageAlt: 'Project Management Courses'
 seo:
   title: 'Project Management Courses'
   description: 'Project Management Courses from ITD. A range of project management courses for all experience levels.'

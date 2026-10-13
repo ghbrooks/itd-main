@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: expert facilitators'
   - 'Confidence and capability in: flexible scheduling'
   - 'Confidence and capability in: all soft skills subjects available'
+image: '../../assets/images/courses/online-training-business-skills.webp'
+imageAlt: 'online training'
 seo:
   title: 'Online Training'
   description: 'Online Training from ITD. Business skills training delivered through engaging online formats.'

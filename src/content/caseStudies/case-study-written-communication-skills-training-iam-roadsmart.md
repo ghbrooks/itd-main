@@ -2,11 +2,12 @@
 title: 'Written Communication Skills Training'
 client: 'IAM RoadSmart'
 sector: 'General Business'
-courseSlug: 'leadership-training'
+courseSlug: 'written-communication-skills-training'
 challenge: 'IAM RoadSmart needed to improve the quality and consistency of written communications to their members and stakeholders.'
 approach: 'ITD delivered written communication skills training covering audience-focused writing, structure and professional tone.'
 outcome: 'Writing quality improved across the organisation, with more consistent and engaging member communications.'
 publishedDate: 2024-01-15
+subject: 'Written Communication'
 seo:
   title: 'Written Communication Skills Training | ITD Case Study'
   description: 'Written Communication Skills Training. IAM RoadSmart needed to improve the quality and consistency of written communications to their members and stakeholders.'

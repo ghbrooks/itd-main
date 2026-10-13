@@ -21,6 +21,8 @@ relatedCourses:
   - 'teamwork-collaboration-training'
   - 'virtual-teamwork-training'
   - 'team-leadership-training'
+image: '../../assets/images/courses/team-training.webp'
+imageAlt: 'Team Training'
 seo:
   title: 'Team Training'
   description: 'Team training and teamwork workshops to build collaboration, trust and high performance. Virtual and in-person, tailored to your team''s needs.'

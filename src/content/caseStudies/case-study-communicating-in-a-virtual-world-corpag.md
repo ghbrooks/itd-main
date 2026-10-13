@@ -7,6 +7,9 @@ challenge: 'Corpag needed to adapt their communication practices for an increasi
 approach: 'ITD delivered training on communicating effectively in a virtual world, covering video calls, written communication and maintaining relationships remotely.'
 outcome: 'The team adapted successfully to virtual communication, maintaining strong client relationships despite reduced face-to-face contact.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-communicating-in-a-virtual-world-corpag.webp'
+imageAlt: 'Communicating in a Virtual World'
+subject: 'Communication Skills'
 seo:
   title: 'Communicating in a Virtual World | ITD Case Study'
   description: 'Communicating in a Virtual World. Corpag needed to adapt their communication practices for an increasingly virtual working environment.'

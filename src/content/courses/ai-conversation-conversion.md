@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: data-driven selling strategies'
   - 'Confidence and capability in: technology tools for sales'
   - 'Confidence and capability in: human skills enhanced by ai'
+image: '../../assets/images/courses/ai-conversation-conversion.webp'
+imageAlt: 'Conversation Conversion'
 seo:
   title: 'AI Conversation Conversion'
   description: 'AI Conversation Conversion from ITD. Use AI-informed techniques to improve sales conversation outcomes.'

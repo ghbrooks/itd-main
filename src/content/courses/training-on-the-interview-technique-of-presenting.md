@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: managing nerves in high-stakes settings'
   - 'Confidence and capability in: answering follow-up questions'
   - 'Confidence and capability in: practice with realistic feedback'
+image: '../../assets/images/courses/training-on-the-interview-technique-of-presenting.webp'
+imageAlt: 'Training on the Interview Technique of Presenting'
 seo:
   title: 'Interview Presentation Training'
   description: 'Interview Presentation Training from ITD. Prepare to present effectively in job interview and assessment scenarios.'

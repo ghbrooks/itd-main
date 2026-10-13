@@ -4,6 +4,7 @@ description: 'How do you know whether your sales training investment is paying o
 author: 'ITD Team'
 publishedDate: '2024-07-08'
 category: 'Sales Training'
+draft: true
 seo:
   title: 'Measuring the ROI of Sales Training | ITD Blog'
   description: 'A practical guide to measuring the return on investment of sales training programmes. Learn which metrics matter and how to build a compelling business case.'

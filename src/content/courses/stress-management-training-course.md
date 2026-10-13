@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: building personal resilience'
   - 'Confidence and capability in: creating a stress management plan'
   - 'Confidence and capability in: supporting colleagues under stress'
+image: '../../assets/images/courses/stress-management-training-course.webp'
+imageAlt: 'Stress management training'
 seo:
   title: 'Stress Management Training'
   description: 'Stress Management Training from ITD. Develop strategies to manage stress and maintain wellbeing at work.'

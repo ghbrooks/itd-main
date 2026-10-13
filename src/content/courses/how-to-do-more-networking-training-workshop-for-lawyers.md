@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: following up effectively'
   - 'Confidence and capability in: building a referral network'
   - 'Confidence and capability in: networking at events and conferences'
+image: '../../assets/images/courses/how-to-do-more-networking-training-workshop-for-lawyers.webp'
+imageAlt: 'How to do more networking for lawyers'
 seo:
   title: 'Networking Training for Lawyers'
   description: 'Networking Training for Lawyers from ITD. Practical networking skills for business development in legal practice.'

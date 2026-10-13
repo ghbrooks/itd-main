@@ -22,6 +22,8 @@ outcomes:
   - 'Confidence and capability in: strategic account planning'
 relatedCourses:
   - 'basic-sales-training'
+image: '../../assets/images/courses/advanced-sales-training.webp'
+imageAlt: 'advanced sales training'
 seo:
   title: 'Advanced Sales Training'
   description: 'Advanced Sales Training from ITD. Take your sales skills to the next level with advanced techniques.'

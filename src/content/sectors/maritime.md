@@ -3,6 +3,8 @@ title: 'Maritime'
 summary: 'The maritime industry is a global, safety-critical sector where clear communication and effective leadership can be the difference between a routine operation and a serious incident. ITD works with shipping companies, port authorities, classification societies, and maritime service providers to develop the interpersonal skills that support safe operations, strong team performance, and effective stakeholder management. Our programmes are designed to address the unique challenges of leading and communicating in a maritime environment.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/maritime.webp'
+imageAlt: 'Maritime soft skills training'
 seo:
   title: 'Maritime Training | ITD'
   description: 'ITD delivers soft skills training for the maritime industry, supporting shipping companies, port authorities, and maritime organisations with leadership and communication development.'

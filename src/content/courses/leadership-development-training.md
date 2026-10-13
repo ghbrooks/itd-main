@@ -23,6 +23,8 @@ outcomes:
 relatedCourses:
   - 'virtual-leadership-training-practical-bite-sized-sessions'
   - 'team-leadership-training'
+image: '../../assets/images/courses/leadership-development-training.webp'
+imageAlt: 'leadership development training workshops'
 seo:
   title: 'Leadership Development Training'
   description: 'Leadership Development Training from ITD. A comprehensive programme to develop your leadership capabilities.'

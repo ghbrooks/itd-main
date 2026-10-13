@@ -10,6 +10,7 @@ testimonial:
   quote: 'Practical, relevant and immediately useful. Our lawyers are now much better at managing their workloads.'
   author: 'Professional Development Manager, Cadwalader'
 publishedDate: 2024-01-15
+subject: 'Time Management'
 seo:
   title: 'Time Management Training | ITD Case Study'
   description: 'Time Management Training. Cadwalader needed to help their lawyers manage time more effectively in a demanding international law firm environment.'

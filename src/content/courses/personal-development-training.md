@@ -24,6 +24,8 @@ relatedCourses:
   - 'personality-at-work-training'
   - 'personal-efficiency-training'
   - 'time-management-training'
+image: '../../assets/images/courses/personal-development-training.webp'
+imageAlt: 'personal development training'
 seo:
   title: 'Personal Development Training'
   description: 'Personal development training workshops covering assertiveness, time management, resilience, confidence and more. All practical, workshop-style sessions.'

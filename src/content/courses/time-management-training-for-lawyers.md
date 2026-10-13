@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: delegation within legal teams'
   - 'Confidence and capability in: managing deadlines and court timetables'
   - 'Confidence and capability in: technology tools for legal time management'
+image: '../../assets/images/courses/time-management-training-for-lawyers.webp'
+imageAlt: 'Time Management Training Associates - Case Study'
 seo:
   title: 'Time Management Training for Lawyers'
   description: 'Time Management Training for Lawyers from ITD. Time management techniques tailored to the demands of legal practice.'

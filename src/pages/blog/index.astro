@@ -1,14 +1,19 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Hero from '~/components/marketing/Hero.astro';
 import Section from '~/components/layout/Section.astro';
 import CTAPanel from '~/components/marketing/CTAPanel.astro';
 import { breadcrumbSchema } from '~/lib/schema';
 
-const posts = (await getCollection('blog')).sort(
+// All published posts, newest first — the order the client asked for.
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime(),
 );
+const [latest, ...rest] = posts;
+
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const schemas = [
   breadcrumbSchema([
@@ -17,32 +22,55 @@ const schemas = [
   ]),
 ];
 ---
-
 <BaseLayout
-  title="Blog | Insights on soft-skills training"
-  description="Thinking, frameworks and practical advice from the ITD team — twenty-five years of training people who do demanding work."
+  title="Blog — practical thinking on soft skills training"
+  description="Practical articles from ITD on communication, presenting, management, personal efficiency, Nudge and virtual training. Written by the people who design and deliver the training."
   schemas={schemas}
 >
   <Hero
     eyebrow="Blog"
-    title="Insights on soft-skills training"
-    lead="Thinking, frameworks and practical advice from the people who design and deliver the training."
+    title="Practical thinking, from the training room."
+    lead={`${posts.length} articles on the subjects we train, newest first. Ideas you can use before you ever book a course.`}
     variant="page"
   />
 
   <Section size="md" tone="default">
-    <div class="container-wide post-grid">
-      {posts.map((p) => (
-        <a href={`/blog/${p.slug}`} class="post-card">
-          <p class="eyebrow eyebrow-rule">{p.data.category}</p>
-          <h3>{p.data.title}</h3>
-          <p class="excerpt">{p.data.description}</p>
-          <p class="meta">
-            {p.data.author} ·{' '}
-            {p.data.publishedDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}
-          </p>
+    <div class="container-wide">
+      {latest && (
+        <a href={`/blog/${latest.slug}`} class="post-feature card">
+          <div class="post-feature__media">
+            {latest.data.image && (
+              <Image src={latest.data.image} alt={latest.data.imageAlt ?? ''} widths={[640, 960, 1280]} sizes="(max-width: 900px) 100vw, 55vw" loading="eager" />
+            )}
+          </div>
+          <div class="post-feature__body">
+            <p class="eyebrow eyebrow-rule">Latest · {latest.data.category}</p>
+            <h2>{latest.data.title}</h2>
+            <p class="post-feature__excerpt">{latest.data.description}</p>
+            <p class="post-meta"><time datetime={latest.data.publishedDate.toISOString().slice(0, 10)}>{fmt(latest.data.publishedDate)}</time> · {latest.data.author}</p>
+          </div>
         </a>
-      ))}
+      )}
+
+      <div class="post-grid">
+        {rest.map((p) => (
+          <a href={`/blog/${p.slug}`} class="post-card card">
+            <div class="post-card__media">
+              {p.data.image ? (
+                <Image src={p.data.image} alt={p.data.imageAlt ?? ''} widths={[420, 640, 900]} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" loading="lazy" />
+              ) : (
+                <div class="post-card__placeholder" aria-hidden="true"></div>
+              )}
+            </div>
+            <div class="post-card__body">
+              <p class="eyebrow">{p.data.category}</p>
+              <h3>{p.data.title}</h3>
+              <p class="excerpt">{p.data.description}</p>
+              <p class="post-meta"><time datetime={p.data.publishedDate.toISOString().slice(0, 10)}>{fmt(p.data.publishedDate)}</time></p>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   </Section>
 
@@ -55,39 +83,47 @@ const schemas = [
 </BaseLayout>
 
 <style>
+  .post-feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: inherit;
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+  }
+  @media (min-width: 900px) { .post-feature { grid-template-columns: 1.2fr 1fr; } }
+  .post-feature__media { aspect-ratio: 16 / 10; background: var(--c-tint); overflow: hidden; }
+  .post-feature__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .post-feature__body { padding: clamp(1.5rem, 3vw, 2.5rem); display: flex; flex-direction: column; justify-content: center; }
+  .post-feature h2 { margin: 0.75rem 0 0.85rem; font-size: clamp(1.6rem, 2.8vw, 2.4rem); letter-spacing: -0.025em; color: var(--c-deep); }
+  .post-feature__excerpt { color: var(--c-muted); line-height: 1.55; margin: 0 0 1.25rem; }
+
   .post-grid {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
   }
-  .post-card {
-    display: block;
-    padding: 2rem;
-    background: var(--c-bg);
-    border: 1px solid var(--c-rule);
-    border-radius: 14px;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.15s ease, border-color 0.15s ease;
-  }
-  .post-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--c-deep);
-  }
-  .post-card h3 {
-    color: var(--c-deep);
-    font-size: 1.3rem;
-    letter-spacing: -0.01em;
-    margin: 0.5rem 0 0.85rem;
-  }
+  @media (min-width: 700px) { .post-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .post-grid { grid-template-columns: repeat(3, 1fr); } }
+  .post-card { display: flex; flex-direction: column; color: inherit; text-decoration: none; height: 100%; }
+  .post-card__media { aspect-ratio: 16 / 10; background: var(--c-tint); overflow: hidden; }
+  .post-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 600ms var(--ease-out-soft); }
+  .post-card:hover .post-card__media img { transform: scale(1.04); }
+  .post-card__placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, var(--c-tint), var(--c-sky)); }
+  .post-card__body { padding: 1.4rem 1.5rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+  .post-card h3 { color: var(--c-deep); font-size: 1.25rem; letter-spacing: -0.01em; margin: 0.5rem 0 0.75rem; line-height: 1.2; }
   .post-card .excerpt {
     font-size: 0.95rem;
     line-height: 1.55;
-    color: var(--c-text);
-    margin: 0 0 1.5rem;
+    color: var(--c-muted);
+    margin: 0 0 1.25rem;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-  .post-card .meta {
-    font-size: 0.8rem;
+  .post-meta {
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--c-muted);

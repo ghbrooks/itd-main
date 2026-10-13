@@ -10,6 +10,9 @@ testimonial:
   quote: 'Perfect for our scientists moving into management. Practical, relevant and very well delivered.'
   author: 'CEO, Cambridge Cognition'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-how-to-manage-people-cambridge-cognition.webp'
+imageAlt: 'Managing People Training Programme'
+subject: 'People Management'
 seo:
   title: 'Managing People Training Programme | ITD Case Study'
   description: 'Managing People Training Programme. Cambridge Cognition needed to develop management skills in their scientists and specialists who had moved into people ma'

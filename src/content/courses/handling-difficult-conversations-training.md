@@ -22,6 +22,8 @@ outcomes:
   - 'Confidence and capability in: follow-up and maintaining relationships'
 relatedCourses:
   - 'developing-confidence-in-communication'
+image: '../../assets/images/courses/handling-difficult-conversations-training.webp'
+imageAlt: 'Difficult Conversations Training'
 seo:
   title: 'Difficult Conversations Training'
   description: 'Difficult Conversations Training from ITD. Learn to handle difficult conversations with confidence and empathy.'

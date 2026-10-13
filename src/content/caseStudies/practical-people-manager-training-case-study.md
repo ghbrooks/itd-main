@@ -7,6 +7,9 @@ challenge: 'Newly promoted managers needed practical skills to handle day-to-day
 approach: 'ITD created a hands-on people management programme covering performance conversations, delegation, motivation and handling difficult situations.'
 outcome: 'The new managers reported feeling much more confident in their roles, with a measurable improvement in team engagement scores.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/practical-people-manager-training-case-study.webp'
+imageAlt: 'Rainbow Nursery'
+subject: 'People Management'
 seo:
   title: 'Practical People Manager Training | ITD Case Study'
   description: 'Practical People Manager Training. Newly promoted managers needed practical skills to handle day-to-day people management challenges effectively.'

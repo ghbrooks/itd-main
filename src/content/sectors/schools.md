@@ -3,6 +3,8 @@ title: 'Schools'
 summary: 'Schools are dynamic, demanding workplaces where effective communication and strong leadership have a direct impact on student outcomes. ITD works with primary and secondary schools, academy trusts, and independent schools to develop the soft skills of teachers, senior leaders, and support staff. Our programmes are designed to be practical, time-efficient, and directly relevant to the challenges that school professionals face every day.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/schools.webp'
+imageAlt: 'Schools training'
 seo:
   title: 'Schools Training | ITD'
   description: 'ITD delivers soft skills training for schools, supporting teachers, senior leaders, and support staff with communication, leadership, and professional development.'

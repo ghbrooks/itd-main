@@ -20,6 +20,8 @@ outcomes:
 relatedCourses:
   - 'sales-training'
   - 'sales-motivation-training'
+image: '../../assets/images/courses/sales-management-training.webp'
+imageAlt: 'Sales Management Training'
 seo:
   title: 'Sales Management Training'
   description: 'Sales management training to help sales leaders build, motivate and develop high-performing teams. Practical and tailored to your organisation.'

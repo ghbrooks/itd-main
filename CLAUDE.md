@@ -27,29 +27,35 @@ npx astro check      # type + content-schema validation
 src/
   content/
     config.ts                # Zod schemas — the data contract
-    courses/*.md             # 139 entries
+    courses/*.md             # 154 entries (15 new ones flagged needsReview)
     caseStudies/*.md         # 160 entries
     sectors/*.md             # 16 entries
     locations/*.md           # 41 entries
-    blog/*.md                # 8 entries
-    reviews/*.json           # 17 entries
+    blog/*.md                # 36 entries (28 from WordPress + 8 drafts)
+    reviews/*.json           # 373 entries, all from WordPress Site Reviews
+    pages/*.md               # standalone pages: fees, policies, Martin Chapman, privacy
   layouts/
     BaseLayout.astro         # head + header + footer + JSON-LD
     CourseLayout.astro       # course detail (existing pattern)
     CaseStudyLayout.astro    # case study detail
     SectorLayout.astro       # sector detail
     LocationLayout.astro     # location detail
+    PageLayout.astro         # `pages` collection (prose or person layout)
   pages/
     index.astro              # homepage
-    [slug].astro             # catch-all: courses, case studies, sectors, locations
+    [slug].astro             # catch-all: courses, case studies, sectors, locations, pages
+    training.astro           # hub: every course grouped by subject area
+    coaching.astro           # hub: coaching options
+    reviews.astro            # all reviews with subject/year/search filter
+    work-styles-model-questionnaire.astro  # 40-statement quiz scored in the browser
     about.astro
     contact.astro
     faqs.astro
     404.astro
     blog/index.astro
     blog/[slug].astro
-    case-studies/index.astro
-    sectors/index.astro
+    case-studies/index.astro # grouped by subject, filterable by sector/client
+    sectors/index.astro      # image cards
   components/
     layout/                  # Container, Section, SiteHeader, SiteFooter
     marketing/               # Hero, CourseCard, CaseStudyCard, CTAPanel, FAQAccordion, …
@@ -57,10 +63,14 @@ src/
     seo/                     # BaseHead, JsonLd
     brand/Logo.astro
   lib/
-    site.ts                  # company info — name, phone, address, founded
-    navigation.ts            # primary nav + footer columns
+    site.ts                  # company info — name, phone, address, founded, form endpoint
+    training.ts              # the sitemap: subject groups → course slugs (drives nav, /training, filters)
+    navigation.ts            # primary nav (derived from training.ts) + footer + legal links
+    reviews.ts               # review helpers: stats, per-course, featured
     seo.ts                   # title/canonical helpers + SeoProps type
-    schema.ts                # JSON-LD builders (organization, article, breadcrumb, course, faq, review)
+    schema.ts                # JSON-LD builders (organization, article, breadcrumb, course, faq, review, person)
+  data/work-styles.ts        # questionnaire statements + style descriptions
+  assets/images/{courses,sectors,blog,pages,caseStudies}/*.webp  # hero images from WP, optimised by astro:assets
   styles/globals.css         # Tailwind v4 @theme + base + utilities
 public/
   favicon.svg
@@ -68,8 +78,13 @@ public/
   robots.txt
   images/clients/*           # 20 client logo files (PNG/WebP)
 scripts/
-  migrate-content.ts         # one-off WordPress → Astro migration (preserved for reference)
+  migrate-content.ts         # first-pass WordPress → Astro migration (preserved for reference)
+  migrate-wp-extras.mjs      # second pass: blog posts, reviews, pages, images, case-study subjects (idempotent)
+  fetch-wp-images.mjs        # pulls featured images from the live WP media library into src/assets/images
+  make-brand-assets.mjs      # regenerates public/og-default.png and apple-touch-icon.png
+  make-portable.mjs          # post-build: relative URLs for GitHub Pages / file://
   old-data/                  # snapshot of the prior Next.js intermediate's data
+  wp-data/                   # sanitised JSON snapshot of the WordPress tables the second pass reads
 ```
 
 ## Content collections (`src/content/config.ts`)
@@ -78,34 +93,41 @@ Every collection has a strict Zod schema. **Adding new entries**: drop a file in
 
 | Collection | Type | Key fields | Routed at |
 |---|---|---|---|
-| `courses` | markdown | `title, category(enum), outcome, summary, duration, mode[], audience, agenda[], outcomes[], seo` | `/[slug]` |
-| `caseStudies` | markdown | `title, client, sector, courseSlug, challenge, approach, outcome, publishedDate, seo` | `/[slug]` |
-| `sectors` | markdown | `title, summary, namedClients[], relevantCourses[], seo` | `/[slug]` |
+| `courses` | markdown | `title, category(enum), outcome, summary, duration, mode[], audience, agenda[], outcomes[], image?, needsReview?, seo` | `/[slug]` |
+| `caseStudies` | markdown | `title, client, sector, subject, courseSlug, challenge, approach, outcome, image?, publishedDate, seo` | `/[slug]` |
+| `sectors` | markdown | `title, summary, namedClients[], relevantCourses[], image?, seo` | `/[slug]` |
 | `locations` | markdown | `title, country, summary, seo` | `/[slug]` |
-| `blog` | markdown | `title, description, author, publishedDate, category, seo` | `/blog/[slug]` |
-| `reviews` | JSON data | `quote, author, role?, organisation?, courseSlug?, rating(1–5), publishedDate` | embedded |
+| `blog` | markdown | `title, description, author, publishedDate, category, tags[], image?, draft?, seo` | `/blog/[slug]` |
+| `reviews` | JSON data | `title?, quote, author, organisation?, courseSlug?, subject?, rating(1–5), publishedDate, sourceId?` | `/reviews` + embedded |
+| `pages` | markdown | `title, eyebrow?, description, image?, updatedDate?, layout(prose|person), seo` | `/[slug]` |
+
+Images are referenced relative to the markdown file (`image: '../../assets/images/sectors/law.webp'`) and go through `astro:assets`, so `<Image>` emits responsive WebP at build time.
 
 The category enum in `courses` is: `sales | communication | presentation | leadership | management | personal-development | specialist | format`.
 
 ## Routing model
 
-`src/pages/[slug].astro` is the single catch-all for courses, case studies, sectors, and locations. It calls `getStaticPaths()` against all four collections and dispatches to the right layout based on the `kind` prop. Adding a new course/case-study/sector/location automatically gets a route and shows up in the sitemap.
+`src/pages/[slug].astro` is the single catch-all for courses, case studies, sectors, locations and pages. It calls `getStaticPaths()` against all five collections, fails the build on a duplicate slug, and dispatches to the right layout based on the `kind` prop. Adding an entry automatically gets a route and shows up in the sitemap.
 
-Blog posts are routed separately via `src/pages/blog/[slug].astro`.
+Blog posts are routed separately via `src/pages/blog/[slug].astro`; entries with `draft: true` are excluded everywhere.
+
+**The navigation is data.** `src/lib/training.ts` holds the agreed sitemap (subject group → course slugs with the client's labels). `navigation.ts`, the Training mega-menu, `/training`, the homepage category cards and the course breadcrumbs all read from it. `/training` throws at build time if a slug there does not resolve to a course.
+
+**Legacy URLs.** `astro.config.mjs` carries `redirects` for the old WordPress paths (blog posts lived at `/slug`, reviews at `/training-reviews`, etc.). Static output turns these into meta-refresh stubs; they are filtered out of the sitemap.
 
 ## SEO
 
-- Every collection entry requires a `seo: { title, description }` block. `BaseLayout` reads these and renders title + meta + OG + Twitter cards via `src/components/seo/BaseHead.astro`.
-- JSON-LD: `Organization` and `WebSite` are emitted on every page from `BaseLayout`. Per-page schemas (`articleSchema`, `breadcrumbSchema`, `courseSchema`, `faqSchema`, `reviewSchema`) are passed via the `schemas` prop and built by helpers in `src/lib/schema.ts`.
-- Canonicals derive from `Astro.url` unless overridden.
+- Every collection entry requires a `seo: { title, description }` block. `BaseLayout` reads these and renders title + meta + OG + Twitter cards via `src/components/seo/BaseHead.astro`. Pass `image` to use the entry's hero as the OG image.
+- JSON-LD: `Organization` (with `AggregateRating` computed from the reviews collection) and `WebSite` are emitted on every page from `BaseLayout`. Per-page schemas (`articleSchema`, `breadcrumbSchema`, `courseSchema`, `faqSchema`, `reviewSchema`, `personSchema`) are passed via the `schemas` prop and built by helpers in `src/lib/schema.ts`.
+- Canonicals derive from `Astro.url` unless overridden. `site.url` in `site.ts` and `site` in `astro.config.mjs` must agree (`https://itd.com`, no www).
 - Sitemap is auto-built by `@astrojs/sitemap` and surfaced at `/sitemap-index.xml`.
 
 ## Company info (`src/lib/site.ts`)
 
 Single source of truth for company-level facts. Update this and the change propagates to schema, footer, contact, and OG.
 
-- `url: https://www.itd.com`
-- `founded: 2002`
+- `url: https://itd.com`
+- `founded: 2002` (the only year that should appear in "since …" copy)
 - `email: info@itd.com`
 - `phone: +44 (0)800 804 8086` (freephone), `phoneDirect: +44 (0)1608 676705`
 - Postal: PO Box 282, Chipping Norton, Oxfordshire OX7 9EE
@@ -125,11 +147,10 @@ This site replaces a WordPress installation (Spacious theme) previously running 
 
 ## Things still deferred
 
-- **Contact form backend**: form posts to nothing. Wire to a Cloudflare Worker or Formspree-style relay.
-- **Analytics**: no script tag added. Drop Plausible into `BaseHead.astro`.
-- **Redirects**: the WP site has historical URLs (case-study category prefixes, blog categories) that may not all match new slugs. A `public/_redirects` file or hosting-platform redirect config should be generated from the WP `redirection_items` table.
-- **Real images**: only client logos exist. Course/case-study/blog hero imagery is not yet sourced. The schemas accept optional image fields ready to receive them.
-- **OG image**: `/og-default.png` is referenced but not yet present in `public/`.
+- **Contact form backend**: set `PUBLIC_FORM_ENDPOINT` (see `.env.example`) to a Formspree/Worker URL. Until then the form falls back to a `mailto:` submission.
+- **Analytics**: no script tag added. Drop Plausible into `BaseHead.astro` and update `/privacy` accordingly.
+- **Host-level 301s**: the meta-refresh redirect stubs should become real redirects once the site leaves GitHub Pages.
+- **Content sign-off**: see `CONTENT_AUDIT.md` for the 15 new courses, 8 draft posts and pages written without a WordPress source.
 
 ## Adding things
 
@@ -139,6 +160,12 @@ This site replaces a WordPress installation (Spacious theme) previously running 
 
 **A new sector or location**: drop into `src/content/sectors/` or `src/content/locations/`. Routed via `[slug].astro`.
 
-**A new blog post**: drop into `src/content/blog/`. Routed via `/blog/[slug]`.
+**A new blog post**: drop into `src/content/blog/`. Routed via `/blog/[slug]`. Use `draft: true` to keep it out of the build.
+
+**A new review**: drop a JSON file into `src/content/reviews/` with `quote, author, rating, publishedDate` and ideally `subject` + `courseSlug`. The rating badge, footer and schema recompute automatically.
+
+**A new standalone page** (policy, person, long-form): drop into `src/content/pages/` with `layout: 'prose'` or `'person'`. Routed at `/[slug]`.
+
+**Changing the menu**: edit `src/lib/training.ts` (subject groups) or `navigation.ts` (everything else). Labels there are the client's wording.
 
 **A new top-level page**: add an `.astro` file to `src/pages/`. Use `BaseLayout` and pass `title`, `description`, optionally `schemas`.

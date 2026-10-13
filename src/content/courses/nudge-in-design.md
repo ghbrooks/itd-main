@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: default effects and framing'
   - 'Confidence and capability in: user experience and nudge'
   - 'Confidence and capability in: ethical considerations in nudge design'
+image: '../../assets/images/courses/nudge-in-design.webp'
+imageAlt: 'nudge in design training'
 seo:
   title: 'Nudge in Design Training'
   description: 'Nudge in Design Training from ITD. Apply nudge principles to product design, service design and UX.'

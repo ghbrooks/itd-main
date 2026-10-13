@@ -23,6 +23,8 @@ relatedCourses:
   - 'people-management-training'
   - 'virtual-management-training'
   - 'how-to-manage-people'
+image: '../../assets/images/courses/management-training.webp'
+imageAlt: 'management training'
 seo:
   title: 'Management Training'
   description: 'Practical management training based on years of experience. From people management to performance coaching. Virtual and in-person, tailored to your needs.'

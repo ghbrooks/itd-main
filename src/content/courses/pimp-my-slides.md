@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: reducing text and increasing impact'
   - 'Confidence and capability in: using images and graphics effectively'
   - 'Confidence and capability in: template creation and brand consistency'
+image: '../../assets/images/courses/pimp-my-slides.webp'
+imageAlt: 'Pimp my Slides training'
 seo:
   title: 'Pimp My Slides Training'
   description: 'Pimp My Slides Training from ITD. Transform your slides from forgettable to unforgettable.'

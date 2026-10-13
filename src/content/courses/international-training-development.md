@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: cross-cultural expertise'
   - 'Confidence and capability in: virtual and in-person options'
   - 'Confidence and capability in: multilingual team support'
+image: '../../assets/images/courses/international-training-development.webp'
+imageAlt: 'international training and development'
 seo:
   title: 'International Training and Development'
   description: 'International Training and Development from ITD. Learn about ITD''s international training and development capabilities.'

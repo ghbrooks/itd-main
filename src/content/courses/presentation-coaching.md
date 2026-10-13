@@ -23,6 +23,8 @@ outcomes:
 relatedCourses:
   - 'presentation-skills-coaching'
   - 'presenting-with-impact-virtually-coaching'
+image: '../../assets/images/courses/presentation-coaching.webp'
+imageAlt: 'presentation coaching'
 seo:
   title: 'Presentation Coaching'
   description: 'Presentation Coaching from ITD. One-to-one coaching to develop your presenting skills.'

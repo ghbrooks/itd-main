@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: time and activity management'
   - 'Confidence and capability in: route planning and efficiency'
   - 'Confidence and capability in: measuring territory performance'
+image: '../../assets/images/courses/territory-management-training.webp'
+imageAlt: 'territory management training'
 seo:
   title: 'Territory Management Training'
   description: 'Territory Management Training from ITD. Optimise your sales territory for maximum results.'

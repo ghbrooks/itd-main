@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: platform features and tools'
   - 'Confidence and capability in: managing virtual group dynamics'
   - 'Confidence and capability in: design principles for virtual training'
+image: '../../assets/images/courses/train-the-virtual-trainer.webp'
+imageAlt: 'Train the virtual trainer'
 seo:
   title: 'Train The Virtual Trainer'
   description: 'Train The Virtual Trainer from ITD. Develop the skills to deliver engaging virtual training sessions.'

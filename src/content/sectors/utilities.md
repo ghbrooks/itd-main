@@ -3,6 +3,8 @@ title: 'Utilities'
 summary: 'Utility companies play a vital role in the infrastructure of everyday life, and the people who manage and operate these organisations face a distinctive set of challenges. From engaging with regulators and local communities to driving safety culture across dispersed field teams, strong interpersonal skills are essential. ITD works with energy, water, and infrastructure organisations to develop leaders and teams who communicate effectively and drive positive change.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/utilities.webp'
+imageAlt: 'Utility company training'
 seo:
   title: 'Utilities Sector Training | ITD'
   description: 'ITD provides soft skills training for utility companies, helping teams in energy, water, and infrastructure improve leadership, safety communication, and stakeholder engagement.'

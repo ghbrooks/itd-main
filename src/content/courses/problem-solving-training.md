@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: creative solution generation'
   - 'Confidence and capability in: decision-making frameworks'
   - 'Confidence and capability in: implementation planning'
+image: '../../assets/images/courses/problem-solving-training.webp'
+imageAlt: 'Problem Solving Training'
 seo:
   title: 'Problem Solving Training'
   description: 'Problem Solving Training from ITD. Develop structured approaches to solving complex problems.'

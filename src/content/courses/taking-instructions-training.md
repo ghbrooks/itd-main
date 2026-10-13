@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: structuring and recording instructions'
   - 'Confidence and capability in: managing client expectations'
   - 'Confidence and capability in: following up and confirming understanding'
+image: '../../assets/images/courses/taking-instructions-training.webp'
+imageAlt: 'Taking Instructions Training Workshop'
 seo:
   title: 'Taking Instructions Training'
   description: 'Taking Instructions Training from ITD. Master the art of taking clear and complete instructions from clients.'

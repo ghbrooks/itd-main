@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: delegation and development'
   - 'Confidence and capability in: managing performance'
   - 'Confidence and capability in: creating a supportive learning environment'
+image: '../../assets/images/courses/supervising-junior-lawyers-training.webp'
+imageAlt: 'Supervising Junior Lawyers'
 seo:
   title: 'Supervising Junior Lawyers Training'
   description: 'Supervising Junior Lawyers Training from ITD. Develop the skills to supervise and develop junior team members in legal practice.'

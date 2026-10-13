@@ -4,6 +4,7 @@ description: 'Resilience is not about being tough or pushing through adversity. 
 author: 'ITD Team'
 publishedDate: '2024-08-19'
 category: 'Wellbeing'
+draft: true
 seo:
   title: 'Building Resilience in the Modern Workplace | ITD Blog'
   description: 'Learn practical strategies for building resilience at work. Discover how individuals and teams can develop the skills to thrive under pressure and adapt to change.'

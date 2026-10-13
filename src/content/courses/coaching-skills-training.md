@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: grow and other coaching models'
   - 'Confidence and capability in: giving coaching feedback'
   - 'Confidence and capability in: embedding coaching in your management style'
+image: '../../assets/images/courses/coaching-skills-training.webp'
+imageAlt: 'Coaching skills training 2'
 seo:
   title: 'Coaching Skills Training'
   description: 'Coaching Skills Training from ITD. Develop coaching skills to support the growth of your team members.'

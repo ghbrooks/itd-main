@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: impact on individuals and culture'
   - 'Confidence and capability in: strategies for addressing it'
   - 'Confidence and capability in: building a gender-inclusive workplace'
+image: '../../assets/images/courses/micro-misogyny-training.webp'
+imageAlt: 'micro-misogyny training'
 seo:
   title: 'Micro-misogyny Training'
   description: 'Micro-misogyny Training from ITD. Recognise and address micro-misogyny in professional environments.'

@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: body language and presence'
   - 'Confidence and capability in: stepping outside your comfort zone'
   - 'Confidence and capability in: sustaining confidence over time'
+image: '../../assets/images/courses/developing-confidence-training.webp'
+imageAlt: 'developing confidence training'
 seo:
   title: 'Developing Confidence Training'
   description: 'Developing Confidence Training from ITD. Build genuine confidence in your professional capabilities.'

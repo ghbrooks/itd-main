@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: building confidence in your environment'
   - 'Confidence and capability in: practical techniques for your workplace'
   - 'Confidence and capability in: personal assertiveness action plan'
+image: '../../assets/images/courses/tailored-assertiveness-training.webp'
+imageAlt: 'Tailored Assertiveness Training'
 seo:
   title: 'Tailored Assertiveness Training'
   description: 'Tailored Assertiveness Training from ITD. Assertiveness training customised to your organisation''s specific challenges.'

@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: managing energy and recovery'
   - 'Confidence and capability in: reframing challenges positively'
   - 'Confidence and capability in: building long-term resilience habits'
+image: '../../assets/images/courses/resilience-training.webp'
+imageAlt: 'Resilience Training'
 seo:
   title: 'Resilience Training'
   description: 'Resilience Training from ITD. Build personal resilience to thrive under pressure.'

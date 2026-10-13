@@ -8,7 +8,7 @@ import { articleSchema, breadcrumbSchema } from '~/lib/schema';
 import { site } from '~/lib/site';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
   return posts.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
@@ -19,6 +19,15 @@ const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 
+const related = (await getCollection('blog', ({ data: d }) => !d.draft))
+  .filter((p) => p.slug !== entry.slug)
+  .sort((a, b) => {
+    const score = (p: typeof a) =>
+      (p.data.category === data.category ? 2 : 0) + p.data.tags.filter((t) => data.tags.includes(t)).length;
+    return score(b) - score(a) || b.data.publishedDate.getTime() - a.data.publishedDate.getTime();
+  })
+  .slice(0, 3);
+
 const url = `${site.url}/blog/${entry.slug}`;
 const schemas = [
   articleSchema({
@@ -26,7 +35,9 @@ const schemas = [
     description: data.seo.description,
     url,
     publishedDate: data.publishedDate,
+    updatedDate: data.updatedDate,
     author: data.author,
+    image: data.image ? `${site.url}${data.image.src}` : undefined,
   }),
   breadcrumbSchema([
     { name: 'Home', url: '/' },
@@ -34,12 +45,13 @@ const schemas = [
     { name: data.title, url: `/blog/${entry.slug}` },
   ]),
 ];
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
-
 <BaseLayout
   title={data.seo.title}
   description={data.seo.description}
   type="article"
+  image={data.image?.src}
   schemas={schemas}
 >
   <Hero
@@ -47,29 +59,58 @@ const schemas = [
     title={data.title}
     lead={data.description}
     variant="page"
-    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+    image={data.image}
+    imageAlt={data.imageAlt}
   />
 
   <Section size="md" tone="default">
-    <article class="container-narrow prose">
+    <article class="container-narrow prose post">
       <p class="byline">
-        By {data.author} ·{' '}
-        {data.publishedDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
+        By <a href="/about-martin-chapman">{data.author}</a> ·{' '}
+        <time datetime={data.publishedDate.toISOString().slice(0, 10)}>{fmt(data.publishedDate)}</time>
+        {data.updatedDate && <> · Updated {fmt(data.updatedDate)}</>}
       </p>
       <Content />
+      {data.tags.length > 0 && (
+        <p class="post-tags">
+          {data.tags.map((t) => <span>{t}</span>)}
+        </p>
+      )}
     </article>
   </Section>
+
+  {related.length > 0 && (
+    <Section size="md" tone="alt">
+      <div class="container-wide">
+        <header class="related-head">
+          <p class="eyebrow eyebrow-rule">Keep reading</p>
+          <h2>Related articles</h2>
+        </header>
+        <div class="related-grid">
+          {related.map((p) => (
+            <a href={`/blog/${p.slug}`} class="related-card card">
+              <p class="eyebrow">{p.data.category}</p>
+              <h3>{p.data.title}</h3>
+              <p>{p.data.description}</p>
+              <span class="related-card__date">{fmt(p.data.publishedDate)}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
 
   <CTAPanel
     eyebrow="Want training that lands?"
     title="Tell us what your team is working on."
     primary={{ label: 'Start the conversation', href: '/contact' }}
+    secondary={{ label: 'See all courses', href: '/training' }}
     tone="deep"
   />
 </BaseLayout>
 
 <style>
-  .prose { max-width: 70ch; }
+  .post { max-width: 70ch; }
   .byline {
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -77,21 +118,41 @@ const schemas = [
     color: var(--c-muted);
     margin: 0 0 2.5rem;
   }
-  .prose :global(h2) {
+  .byline a { color: var(--c-mid); text-decoration: none; }
+  .post :global(h2) {
     font-size: clamp(1.5rem, 2.4vw, 2rem);
     letter-spacing: -0.02em;
     margin: 2.5rem 0 1rem;
   }
-  .prose :global(h3) {
-    font-size: 1.25rem;
-    margin: 2rem 0 0.75rem;
+  .post :global(h3) { font-size: 1.3rem; margin: 2rem 0 0.75rem; }
+  .post :global(p) { font-size: 1.05rem; line-height: 1.7; margin: 0 0 1.1rem; }
+  .post :global(ul), .post :global(ol) { padding-left: 1.5rem; margin: 0 0 1.25rem; }
+  .post :global(li) { margin: 0.4rem 0; line-height: 1.6; }
+  .post :global(strong) { color: var(--c-deep); font-weight: 600; }
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 2.5rem !important;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--c-rule);
   }
-  .prose :global(p) {
-    font-size: 1.05rem;
-    line-height: 1.65;
-    margin: 0 0 1rem;
+  .post-tags span {
+    font-size: 0.72rem;
+    color: var(--c-mid);
+    background: var(--c-tint);
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
   }
-  .prose :global(ul), .prose :global(ol) { padding-left: 1.5rem; margin: 0 0 1.25rem; }
-  .prose :global(li) { margin: 0.4rem 0; line-height: 1.6; }
-  .prose :global(strong) { color: var(--c-deep); font-weight: 600; }
+  .related-head { margin-bottom: 2rem; }
+  .related-head h2 { margin: 0.6rem 0 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); letter-spacing: -0.025em; }
+  .related-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 800px) { .related-grid { grid-template-columns: repeat(3, 1fr); } }
+  .related-card { display: flex; flex-direction: column; padding: 1.5rem; color: inherit; text-decoration: none; height: 100%; }
+  .related-card h3 { color: var(--c-deep); font-size: 1.15rem; margin: 0.5rem 0 0.6rem; line-height: 1.25; }
+  .related-card p:last-of-type {
+    font-size: 0.9rem; color: var(--c-muted); line-height: 1.5; margin: 0 0 1rem; flex: 1;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .related-card__date { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-muted); }
 </style>

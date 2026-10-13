@@ -4,6 +4,7 @@ description: 'Remote and hybrid working is here to stay. These five practical ti
 author: 'ITD Team'
 publishedDate: '2024-02-22'
 category: 'Communication'
+draft: true
 seo:
   title: '5 Tips for Better Remote Team Communication | ITD Blog'
   description: 'Practical advice for improving communication in remote and hybrid teams. Discover five proven strategies from ITD''s training experts.'

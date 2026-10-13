@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: practice and rehearsal with expert guidance'
   - 'Confidence and capability in: confidence building strategies'
   - 'Confidence and capability in: ongoing support and follow-up'
+image: '../../assets/images/courses/presentation-skills-coaching.webp'
+imageAlt: 'presentation skills coaching'
 seo:
   title: 'Presentation Skills Coaching'
   description: 'Presentation Skills Coaching from ITD. Individual coaching sessions to build your presentation capabilities.'

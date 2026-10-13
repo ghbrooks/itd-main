@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: on-demand access'
   - 'Confidence and capability in: supporting workbooks'
   - 'Confidence and capability in: available via itd video learning platform'
+image: '../../assets/images/courses/video-learning.webp'
+imageAlt: 'Video Learning'
 seo:
   title: 'Video Learning'
   description: 'Video Learning from ITD. Video-based learning content from ITD for on-demand development.'

@@ -1,0 +1,113 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema, personSchema } from '~/lib/schema';
+import { site } from '~/lib/site';
+
+type Props = { page: CollectionEntry<'pages'> };
+const { page } = Astro.props;
+const { data } = page;
+const isPerson = data.layout === 'person';
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: data.title, url: `/${page.slug}` },
+  ]),
+  ...(isPerson
+    ? [
+        personSchema({
+          name: data.title.replace(/^About\s+/i, ''),
+          jobTitle: 'Founder & Managing Director',
+          description: data.description,
+          image: data.image ? `${site.url}${data.image.src}` : undefined,
+          sameAs: [site.social.linkedin],
+        }),
+      ]
+    : []),
+];
+---
+<BaseLayout
+  title={data.seo.title}
+  description={data.seo.description}
+  image={data.image?.src}
+  noindex={data.noindex}
+  schemas={schemas}
+>
+  {isPerson ? (
+    <Hero eyebrow={data.eyebrow} title={data.title.replace(/^About\s+/i, '')} lead={data.description} variant="page"
+      primaryCta={{ label: 'Talk to Martin', href: '/contact' }}
+      secondaryCta={{ label: 'Read the reviews', href: '/reviews' }}
+    />
+  ) : (
+    <Hero eyebrow={data.eyebrow} title={data.title} lead={data.description} variant="page"
+      image={data.image} imageAlt={data.imageAlt}
+      primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+    />
+  )}
+
+  <Section size="md" tone="default">
+    <div class:list={['container-wide', 'page-body', { 'page-body--person': isPerson }]}>
+      {isPerson && data.image && (
+        <figure class="page-portrait">
+          <Image src={data.image} alt={data.imageAlt ?? ''} widths={[420, 640, 900]} sizes="(max-width: 900px) 80vw, 360px" loading="eager" />
+        </figure>
+      )}
+      <article class="prose page-prose">
+        <slot />
+        {data.updatedDate && (
+          <p class="page-updated">Last updated {data.updatedDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}.</p>
+        )}
+      </article>
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Start the conversation"
+    title="Tell us what your team is working on."
+    lead="One short call. We listen, ask the awkward questions, and come back with a proposal you can actually use."
+    primary={{ label: 'Get in touch', href: '/contact' }}
+    secondary={{ label: 'See training fees', href: '/training-fees' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .page-body { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+  .page-body--person { align-items: start; }
+  @media (min-width: 900px) {
+    .page-body--person { grid-template-columns: 360px minmax(0, 1fr); gap: 4rem; }
+  }
+  .page-portrait {
+    margin: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--c-tint);
+    box-shadow: 0 30px 60px -30px rgba(1, 33, 92, 0.45);
+    max-width: 360px;
+  }
+  @media (min-width: 900px) { .page-portrait { position: sticky; top: 120px; } }
+  .page-portrait img { display: block; width: 100%; height: auto; }
+  .page-prose { max-width: 72ch; }
+  .page-prose :global(h2) {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    letter-spacing: -0.02em;
+    margin: 2.5rem 0 1rem;
+  }
+  .page-prose :global(h3) { font-size: 1.25rem; margin: 2rem 0 0.75rem; }
+  .page-prose :global(p) { font-size: 1.05rem; line-height: 1.65; margin: 0 0 1rem; }
+  .page-prose :global(ul), .page-prose :global(ol) { margin: 0 0 1.25rem; }
+  .page-prose :global(li) { margin: 0.4rem 0; line-height: 1.6; }
+  .page-prose :global(strong) { color: var(--c-deep); font-weight: 600; }
+  .page-updated {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--c-rule);
+    font-size: 0.85rem !important;
+    color: var(--c-muted);
+  }
+</style>

@@ -11,6 +11,7 @@ testimonial:
   quote: '“The first presentation course I’ve done where I actually came out with a different way of working — not just notes I’d never look at again.”'
   author: 'Research translation lead, Cancer Research UK'
 publishedDate: 2024-04-22
+subject: 'Presentation Skills'
 seo:
   title: 'Case study — Presenting with Impact at Cancer Research UK'
   description: 'How CRUK research-translation specialists rebuilt the way they present complex science to funders and partners — with measurable impact on funding outcomes.'

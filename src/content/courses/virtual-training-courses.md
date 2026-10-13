@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: breakout rooms and group exercises'
   - 'Confidence and capability in: expert facilitation'
   - 'Confidence and capability in: flexible scheduling options'
+image: '../../assets/images/courses/virtual-training-courses.webp'
+imageAlt: 'virtual training courses'
 seo:
   title: 'Virtual Training Courses'
   description: 'Virtual Training Courses from ITD. Our full range of training courses available in virtual format.'

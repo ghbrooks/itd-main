@@ -7,6 +7,7 @@ challenge: 'Kingsley Napley engaged ITD for a consultancy project to improve sen
 approach: 'ITD facilitated a consultancy project including team profiling, strategy sessions and communication improvement.'
 outcome: 'The senior team reported improved alignment, communication and decision-making effectiveness.'
 publishedDate: 2024-01-15
+subject: 'Consultancy'
 seo:
   title: 'Senior Management Team Consultancy | ITD Case Study'
   description: 'Senior Management Team Consultancy. Kingsley Napley engaged ITD for a consultancy project to improve senior management team effectiveness and alignment.'

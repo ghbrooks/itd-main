@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: networking and visibility strategies'
   - 'Confidence and capability in: online presence and thought leadership'
   - 'Confidence and capability in: brand alignment with firm values'
+image: '../../assets/images/courses/personal-brand-training-for-lawyers.webp'
+imageAlt: 'personal brand training for lawyers'
 seo:
   title: 'Personal Brand Training for Lawyers'
   description: 'Personal Brand Training for Lawyers from ITD. Build a distinctive personal brand within the legal profession.'

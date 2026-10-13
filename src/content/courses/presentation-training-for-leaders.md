@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: board-level presentation skills'
   - 'Confidence and capability in: inspiring and motivating through presentations'
   - 'Confidence and capability in: handling tough questions from stakeholders'
+image: '../../assets/images/courses/presentation-training-for-leaders.webp'
+imageAlt: 'Presentation Training for Leaders'
 seo:
   title: 'Presentation Training for Leaders'
   description: 'Presentation Training for Leaders from ITD. Leadership-specific presentation skills for senior professionals.'

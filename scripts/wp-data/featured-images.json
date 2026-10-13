@@ -1,0 +1,1602 @@
+{
+ "courses": {
+  "assertiveness-training": {
+   "file": "2025/11/Assertiveness-Training.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Assertiveness-Training.jpg",
+   "alt": "Assertiveness Training"
+  },
+  "culture-leadership-training": {
+   "file": "2025/11/Culture-leadership-training-2.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Culture-leadership-training-2.jpg",
+   "alt": "Culture leadership training 2"
+  },
+  "time-management-training-for-lawyers": {
+   "file": "2021/02/stijn-te-strake-e5YjVcIJW-A-unsplash-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/stijn-te-strake-e5YjVcIJW-A-unsplash.jpg",
+   "alt": "Time Management Training Associates - Case Study"
+  },
+  "introduction-to-project-management": {
+   "file": "2021/05/kaleidico-26MJGnCM0Wc-unsplash-scaled.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/05/kaleidico-26MJGnCM0Wc-unsplash.jpg",
+   "alt": "introduction to project management"
+  },
+  "sales-training": {
+   "file": "2021/08/iStock-590290880-1-768x512-1.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/08/iStock-590290880-1-768x512-1.jpg",
+   "alt": "sales training"
+  },
+  "pimp-my-slides": {
+   "file": "2022/03/Pimp-my-slides-2-e1666947706144.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2022/03/Pimp-my-slides-2.jpg",
+   "alt": "Pimp my Slides training"
+  },
+  "soft-skills-training-for-lawyers": {
+   "file": "2025/06/vitaly-gariev-KDWgcgMFFVI-unsplash-e1750238524455.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/06/vitaly-gariev-KDWgcgMFFVI-unsplash.jpg",
+   "alt": "soft skills training for lawyers"
+  },
+  "business-writing-course": {
+   "file": "2020/11/business-writing-course.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/11/business-writing-course.jpg",
+   "alt": "business writing course"
+  },
+  "video-learning": {
+   "file": "2025/02/Video-Learning-2-png.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/02/Video-Learning-2.png",
+   "alt": "Video Learning"
+  },
+  "teamwork-collaboration-training": {
+   "file": "2025/11/teamwork-collaboration-training-workshop.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/teamwork-collaboration-training-workshop.jpg",
+   "alt": "teamwork collaboration training workshop"
+  },
+  "project-management-training-for-law-firms": {
+   "file": "2025/03/Project-Management-Training-for-Law-Firms-2.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/03/Project-Management-Training-for-Law-Firms-2.jpg",
+   "alt": "Project Management Training for Law Firms"
+  },
+  "sales-team-consultation": {
+   "file": "2021/06/real-2697954_1280-e1746016338339.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/06/real-2697954_1280.jpg",
+   "alt": "sales team consultation"
+  },
+  "personality-profile-managing-people-differently": {
+   "file": "2020/06/Personality-profile.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/06/Personality-profile.jpg",
+   "alt": "personality profile"
+  },
+  "personal-development-training": {
+   "file": "2024/04/denys-nevozhai-z0nVqfrOqWA-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2024/04/denys-nevozhai-z0nVqfrOqWA-unsplash.jpg",
+   "alt": "personal development training"
+  },
+  "developing-confidence-in-communication": {
+   "file": "2023/03/arlington-research-kN_kViDchA0-unsplash-e1678183549510.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/03/arlington-research-kN_kViDchA0-unsplash.jpg",
+   "alt": "developing confidence in communication"
+  },
+  "handling-difficult-conversations-training": {
+   "file": "2016/05/Handling-Difficult-Conversations-Training-e1593839252217.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2016/05/Handling-Difficult-Conversations-Training.jpg",
+   "alt": "Difficult Conversations Training"
+  },
+  "how-to-do-more-networking-training-workshop-for-lawyers": {
+   "file": "2023/03/antenna-ZDN-G1xBWHY-unsplash-1.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/03/antenna-ZDN-G1xBWHY-unsplash-1.jpg",
+   "alt": "How to do more networking for lawyers"
+  },
+  "nudge-theory-seminar": {
+   "file": "2025/11/wes-lewis-zt6OxRORM2g-unsplash.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/wes-lewis-zt6OxRORM2g-unsplash.jpg",
+   "alt": "Nudge theory seminar"
+  },
+  "bespoke-training": {
+   "file": "2025/10/sil-group-oshVSMH6JZQ-unsplash.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/sil-group-oshVSMH6JZQ-unsplash.jpg",
+   "alt": "bespoke training"
+  },
+  "how-to-manage-people": {
+   "file": "2025/11/How-to-manage-people-training.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/How-to-manage-people-training.jpg",
+   "alt": "How to manage people training workshop"
+  },
+  "nudge-theory-examples-public-sector": {
+   "file": "2018/03/Nudge-Theory-Examples.png",
+   "guid": "https://itd.com/wp-content/uploads/2018/03/Nudge-Theory-Examples.png",
+   "alt": "Nudge Theory Examples"
+  },
+  "nudge-workshop": {
+   "file": "2025/11/Nudge-Courses.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Nudge-Courses.jpg",
+   "alt": "Nudge Workshop Courses"
+  },
+  "time-management-training": {
+   "file": "2025/11/Time-Management-Training--scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Time-Management-Training-.jpg",
+   "alt": "Time Management Training Workshops"
+  },
+  "advanced-presentation-skills-training": {
+   "file": "2025/04/valery-tenevoy-aCA62ZA1HkA-unsplash-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/04/valery-tenevoy-aCA62ZA1HkA-unsplash.jpg",
+   "alt": "advanced presentation skills training workshop"
+  },
+  "nudge-training-executive-summary": {
+   "file": "2023/04/Nudge-Training-Executive-Summary-e1691500175787.png",
+   "guid": "https://itd.com/wp-content/uploads/2023/04/Nudge-Training-Executive-Summary.png",
+   "alt": "Nudge Training Executive Summary"
+  },
+  "diversity-and-inclusion-training": {
+   "file": "2025/03/Diversity-png-e1745397993870.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/03/Diversity.png",
+   "alt": "diversity and inclusion training"
+  },
+  "presenting-with-impact-training": {
+   "file": "2025/10/Presenting-with-Impact-Training.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/Presenting-with-Impact-Training.jpg",
+   "alt": "Presenting with Impact Training"
+  },
+  "sales-motivation-training": {
+   "file": "2024/04/venti-views-IV7n5Yi_PgY-unsplash-e1746016503454.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2024/04/venti-views-IV7n5Yi_PgY-unsplash.jpg",
+   "alt": "sales motivation training"
+  },
+  "executive-coaching": {
+   "file": "2020/03/online-coaching.png",
+   "guid": "https://itd.com/wp-content/uploads/2020/03/online-coaching.png",
+   "alt": "online coaching"
+  },
+  "practical-management-training": {
+   "file": "2025/11/Practical-Management-Training-Workshop.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Practical-Management-Training-Workshop.jpg",
+   "alt": "Practical Management Training Workshop"
+  },
+  "training-on-the-interview-technique-of-presenting": {
+   "file": "2023/08/christina-wocintechchat-com-eF7HN40WbAQ-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/christina-wocintechchat-com-eF7HN40WbAQ-unsplash.jpg",
+   "alt": "Training on the Interview Technique of Presenting"
+  },
+  "micro-misogyny-training": {
+   "file": "2024/04/tim-mossholder-BjVXDhc-0yI-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2024/04/tim-mossholder-BjVXDhc-0yI-unsplash.jpg",
+   "alt": "micro-misogyny training"
+  },
+  "virtual-teamwork-training": {
+   "file": "2025/11/Virtual-Teamwork-Training-Workshop.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Virtual-Teamwork-Training-Workshop.jpg",
+   "alt": "Virtual Teamwork Training Workshop"
+  },
+  "cold-calling-training": {
+   "file": "2025/06/magnet-me-315vPGsAFUk-unsplash-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/06/magnet-me-315vPGsAFUk-unsplash.jpg",
+   "alt": "cold calling training"
+  },
+  "sales-management-training": {
+   "file": "2021/08/Sales-Management-Training.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/08/Sales-Management-Training.jpg",
+   "alt": "Sales Management Training"
+  },
+  "personal-efficiency-course": {
+   "file": "2021/02/pexels-zen-chung-5749153-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/pexels-zen-chung-5749153.jpg",
+   "alt": "personal efficiency course"
+  },
+  "virtual-management-training": {
+   "file": "2020/07/Virtual-Manager-Training-e1595337280709.png",
+   "guid": "https://itd.com/wp-content/uploads/2020/07/Virtual-Manager-Training.png",
+   "alt": "Virtual Management Training"
+  },
+  "taking-instructions-training": {
+   "file": "2025/11/Taking-Instructions-Training-Workshop-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Taking-Instructions-Training-Workshop.jpg",
+   "alt": "Taking Instructions Training Workshop"
+  },
+  "managing-remote-employees-training": {
+   "file": "2020/06/managing-remote-employees-training-e1593683732156.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/06/managing-remote-employees-training.jpg",
+   "alt": "managing remote employees training"
+  },
+  "tailored-assertiveness-training": {
+   "file": "2026/02/Kairos-Power-logo.avif",
+   "guid": "https://itd.com/wp-content/uploads/2026/02/Kairos-Power-logo.png",
+   "alt": ""
+  },
+  "personality-at-work-training": {
+   "file": "2021/03/Personality-at-work-1-e1746005077718.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Personality-at-work-1.jpg",
+   "alt": "Personality at work training"
+  },
+  "international-sales-training": {
+   "file": "2025/06/hartono-creative-studio-1gW-pzeXX2E-unsplash-e1760607940959.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/06/hartono-creative-studio-1gW-pzeXX2E-unsplash.jpg",
+   "alt": "international sales training"
+  },
+  "presenting-a-webinar": {
+   "file": "2023/10/malte-helmhold-eIDFKcbDxXo-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/10/malte-helmhold-eIDFKcbDxXo-unsplash.jpg",
+   "alt": "Presenting a webinar"
+  },
+  "managing-upwards-training": {
+   "file": "2023/08/linkedin-sales-solutions-oFMI6CdD7yU-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/linkedin-sales-solutions-oFMI6CdD7yU-unsplash.jpg",
+   "alt": "managing upwards training"
+  },
+  "account-management-training-2": {
+   "file": "2025/11/Account-Management-Training.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Account-Management-Training.jpg",
+   "alt": "Account Management Training"
+  },
+  "whatsapp-workcoach": {
+   "file": "2025/06/grant-davies-BUsh6cE8itQ-unsplash-e1749805142477.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/06/grant-davies-BUsh6cE8itQ-unsplash.jpg",
+   "alt": "whatsapp workcoach"
+  },
+  "management-training": {
+   "file": "2020/07/you-x-ventures-0K7GgiA8lVE-unsplash-1-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/07/you-x-ventures-0K7GgiA8lVE-unsplash-1.jpg",
+   "alt": "management training"
+  },
+  "client-conversion-training": {
+   "file": "2021/07/Client-conversion-training.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/07/Client-conversion-training.jpg",
+   "alt": "Client conversion training"
+  },
+  "soft-skills-training": {
+   "file": "2023/08/smartworks-coworking-cW4lLTavU80-unsplash-1-e1713777895739.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/smartworks-coworking-cW4lLTavU80-unsplash-1.jpg",
+   "alt": "soft skills training"
+  },
+  "ai-conversation-conversion": {
+   "file": "2026/01/Conversation-Conversion.avif",
+   "guid": "https://itd.com/wp-content/uploads/2026/01/Conversation-Conversion.jpg",
+   "alt": "Conversation Conversion"
+  },
+  "negotiation-skills-training": {
+   "file": "2025/04/van-tay-media-Dx6lpoMAG-Y-unsplash-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/04/van-tay-media-Dx6lpoMAG-Y-unsplash.jpg",
+   "alt": "negotiation skills training"
+  },
+  "project-management-courses": {
+   "file": "2021/05/Project-methodologies.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/05/Project-methodologies.jpg",
+   "alt": "Project Management Courses"
+  },
+  "training-for-lawyers": {
+   "file": "2021/02/mateus-campos-felipe-PERcXdKzYh0-unsplash-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/mateus-campos-felipe-PERcXdKzYh0-unsplash.jpg",
+   "alt": "training for lawyers"
+  },
+  "online-training-business-skills": {
+   "file": "2020/03/online-training-at-home.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/03/online-training-at-home.jpg",
+   "alt": "online training"
+  },
+  "train-the-virtual-trainer": {
+   "file": "2022/03/Train-the-virtual-trainer.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2022/03/Train-the-virtual-trainer.jpg",
+   "alt": "Train the virtual trainer"
+  },
+  "nudge-training-for-lawyers": {
+   "file": "2023/03/mario-gogh-VBLHICVh-lI-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/03/mario-gogh-VBLHICVh-lI-unsplash.jpg",
+   "alt": "nudge training for lawyers"
+  },
+  "nudge-training": {
+   "file": "2025/11/Nudge-Training-Workshops.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Nudge-Training-Workshops.jpg",
+   "alt": "Nudge Training Workshops"
+  },
+  "international-training-development": {
+   "file": "2025/06/nasa-Q1p7bh3SHj8-unsplash.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/06/nasa-Q1p7bh3SHj8-unsplash.jpg",
+   "alt": "international training and development"
+  },
+  "courses-for-lawyers": {
+   "file": "2023/03/smartworks-coworking-cW4lLTavU80-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/03/smartworks-coworking-cW4lLTavU80-unsplash.jpg",
+   "alt": "courses for lawyers"
+  },
+  "managing-gen-z-training": {
+   "file": "2026/01/managing-gen-z.avif",
+   "guid": "https://itd.com/wp-content/uploads/2026/01/managing-gen-z.jpg",
+   "alt": "managing gen z training"
+  },
+  "open-training": {
+   "file": "2021/02/open-training.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/open-training.jpg",
+   "alt": "open training"
+  },
+  "time-management-managers-training": {
+   "file": "2025/04/microsoft-edge-DNADGmifFsc-unsplash-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/04/microsoft-edge-DNADGmifFsc-unsplash.jpg",
+   "alt": "time management for managers training"
+  },
+  "presentation-training-for-leaders": {
+   "file": "2025/05/the-jopwell-collection-rO7eGpwfHbE-unsplash-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/05/the-jopwell-collection-rO7eGpwfHbE-unsplash.jpg",
+   "alt": "Presentation Training for Leaders"
+  },
+  "presentation-skills-training": {
+   "file": "2025/11/Presentation-Skills-Training.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Presentation-Skills-Training.png",
+   "alt": "Presentation Skills Training"
+  },
+  "client-care-training": {
+   "file": "2022/02/charanjeet-dhiman-mHusyBu4bxM-unsplash.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2022/02/charanjeet-dhiman-mHusyBu4bxM-unsplash.jpg",
+   "alt": "client care training"
+  },
+  "virtual-project-management-training": {
+   "file": "2020/05/Project-Planning.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/05/Project-Planning.jpg",
+   "alt": "virtual project management training"
+  },
+  "presentation-skills-course": {
+   "file": "2021/03/Presentation-Skills-Course-e1750340823260.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Presentation-Skills-Course.jpg",
+   "alt": "Presentation Skills Course"
+  },
+  "financial-awareness-training": {
+   "file": "2025/11/Financial-Awareness-Training.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Financial-Awareness-Training.jpg",
+   "alt": "Financial Awareness Training"
+  },
+  "nudge-course": {
+   "file": "2025/11/Nudge-Course-Workshop.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Nudge-Course-Workshop.jpg",
+   "alt": "Nudge-Course-Workshop"
+  },
+  "working-from-home-time-management-training": {
+   "file": "2021/05/linkedin-sales-solutions-VKJt1EZHlWs-unsplash-scaled.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/05/linkedin-sales-solutions-VKJt1EZHlWs-unsplash.jpg",
+   "alt": "working from home training"
+  },
+  "microaggression-training": {
+   "file": "2024/04/waldemar-rhaS97NhnHg-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2024/04/waldemar-rhaS97NhnHg-unsplash.jpg",
+   "alt": "microaggression training"
+  },
+  "customer-service-training": {
+   "file": "2020/07/proxyclick-visitor-management-system-wsHvGRpT8Eo-unsplash-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/07/proxyclick-visitor-management-system-wsHvGRpT8Eo-unsplash.jpg",
+   "alt": "customer service training"
+  },
+  "retail-sales-training": {
+   "file": "2024/04/blake-wisz-tE6th1h6Bfk-unsplash-e1713937829748.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2024/04/blake-wisz-tE6th1h6Bfk-unsplash.jpg",
+   "alt": "retail sales training"
+  },
+  "bite-size-learning": {
+   "file": "2024/04/Designer-32.jpeg",
+   "guid": "https://itd.com/wp-content/uploads/2024/04/Designer-32.jpeg",
+   "alt": "bite size learning"
+  },
+  "team-leadership-training": {
+   "file": "2021/01/mimi-thian-jxUuXxUFfp4-unsplash-scaled-e1611672658513.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/01/mimi-thian-jxUuXxUFfp4-unsplash.jpg",
+   "alt": "team leadership training"
+  },
+  "presenting-with-impact-virtually-coaching": {
+   "file": "2025/06/surface-HJgaV1qjHS0-unsplash-e1749040249976.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/06/surface-HJgaV1qjHS0-unsplash.jpg",
+   "alt": "presenting with impact virtually coaching"
+  },
+  "negotiating-fees-training": {
+   "file": "2016/08/Fee-Negotiations-e1679850921617.jpg",
+   "guid": "http://beta.itd.com/wp-content/uploads/2016/08/Fee-Negotiations.jpg",
+   "alt": "Negotiating Fees Training"
+  },
+  "virtual-training": {
+   "file": "2020/07/Virtual-Training.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/07/Virtual-Training.jpg",
+   "alt": "Virtual Training"
+  },
+  "telesales-training": {
+   "file": "2025/11/telesales-training.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/telesales-training.jpg",
+   "alt": "telesales training"
+  },
+  "stress-management-training-course": {
+   "file": "2016/05/Stress-management-training-gives-coping-strategies-e1593839839953.jpg",
+   "guid": "http://beta.itd.com/wp-content/uploads/2016/05/Stress-management-training-gives-coping-strategies.jpg",
+   "alt": "Stress management training"
+  },
+  "leadership-development-training": {
+   "file": "2024/04/Designer-27-e1713450697140.jpeg",
+   "guid": "https://itd.com/wp-content/uploads/2024/04/Designer-27.jpeg",
+   "alt": "leadership development training workshops"
+  },
+  "unconscious-bias-training": {
+   "file": "2024/04/james-park-byusInyc910-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2024/04/james-park-byusInyc910-unsplash.jpg",
+   "alt": "unconscious bias training"
+  },
+  "coaching-skills-training": {
+   "file": "2025/11/Coaching-training-2.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Coaching-training-2.jpg",
+   "alt": "Coaching skills training 2"
+  },
+  "virtual-training-courses": {
+   "file": "2020/07/video-conference-5314869_1920-e1595409017753.png",
+   "guid": "https://itd.com/wp-content/uploads/2020/07/video-conference-5314869_1920.png",
+   "alt": "virtual training courses"
+  },
+  "personal-brand-training-for-lawyers": {
+   "file": "2023/07/personal-brand.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/07/personal-brand.jpg",
+   "alt": "personal brand training for lawyers"
+  },
+  "assertiveness-training-business-services": {
+   "file": "2023/08/jenny-ueberberg-BaSeK7rwc1A-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/jenny-ueberberg-BaSeK7rwc1A-unsplash.jpg",
+   "alt": "assertiveness training for business professionals"
+  },
+  "communication-skills-training": {
+   "file": "2016/05/Communication-skills-training-verbal-e1593843812316.jpg",
+   "guid": "http://beta.itd.com/wp-content/uploads/2016/05/Communication-skills-training-verbal.jpg",
+   "alt": "communication training"
+  },
+  "critical-thinking-training": {
+   "file": "2025/06/an-image-of-a-brain-with-a-question-mark-above-it-e1750083177189.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/06/an-image-of-a-brain-with-a-question-mark-above-it.jpeg",
+   "alt": "critical thinking training"
+  },
+  "supervising-junior-lawyers-training": {
+   "file": "2025/11/Supervising-Junior-Lawyers.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Supervising-Junior-Lawyers.jpg",
+   "alt": "Supervising Junior Lawyers"
+  },
+  "law-firm-training-coaching": {
+   "file": "2025/11/law-firm-training-courses.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/law-firm-training-courses.jpg",
+   "alt": ""
+  },
+  "sales-training-courses": {
+   "file": "2025/04/vitaly-gariev-RqR2pnTpmHA-unsplash-e1745575029791.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/04/vitaly-gariev-RqR2pnTpmHA-unsplash.jpg",
+   "alt": "sales training courses"
+  },
+  "delivering-engaging-online-training": {
+   "file": "2025/10/vitaly-gariev-IY4uQgwwun0-unsplash.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/vitaly-gariev-IY4uQgwwun0-unsplash.jpg",
+   "alt": "Delivering Engaging Online Training"
+  },
+  "team-training": {
+   "file": "2024/09/Designer-48.jpeg",
+   "guid": "https://itd.com/wp-content/uploads/2024/09/Designer-48.jpeg",
+   "alt": "Team Training"
+  },
+  "public-speaking-training": {
+   "file": "2025/10/Public-Speaking-Training.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/Public-Speaking-Training.jpg",
+   "alt": "Public Speaking Training"
+  },
+  "virtual-presentation-skills-training-2": {
+   "file": "2020/03/Virtual-Presentation-Skills-Training-course.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/03/Virtual-Presentation-Skills-Training-course.jpg",
+   "alt": "Virtual Presentation Skills Training"
+  },
+  "resilience-training": {
+   "file": "2021/02/Droplet.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Droplet.jpg",
+   "alt": "Resilience Training"
+  },
+  "delegation-skills-training-lawyers": {
+   "file": "2025/11/Delegation-skills-for-lawyers-training.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Delegation-skills-for-lawyers-training.jpg",
+   "alt": "Delegation-skills-for-lawyers-training"
+  },
+  "leadership-training": {
+   "file": "2025/11/Leadership-Training-Workshops.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Leadership-Training-Workshops.jpg",
+   "alt": "Leadership Training Workshops"
+  },
+  "nudge-in-design": {
+   "file": "2023/07/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/07/hal-gatewood-tZc3vjPCk-Q-unsplash.jpg",
+   "alt": "nudge in design training"
+  },
+  "people-management-training": {
+   "file": "2021/01/linkedin-sales-navigator-W3Jl3jREpDY-unsplash-1-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/01/linkedin-sales-navigator-W3Jl3jREpDY-unsplash-1.jpg",
+   "alt": "people management training"
+  },
+  "networking-training-for-lawyers": {
+   "file": "2023/03/campaign-creators-gMsnXqILjp4-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/03/campaign-creators-gMsnXqILjp4-unsplash.jpg",
+   "alt": "Networking training for lawyers"
+  },
+  "territory-management-training": {
+   "file": "2025/11/territory-management.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/territory-management.jpg",
+   "alt": "territory management training"
+  },
+  "one-to-one-training": {
+   "file": "2019/07/one-to-one-learning-sessions.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2019/07/one-to-one-learning-sessions.jpg",
+   "alt": "one-to-one training"
+  },
+  "presenting-with-impact-virtually-training": {
+   "file": "2020/03/iStock-1188456646.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/03/iStock-1188456646.jpg",
+   "alt": "presenting with impact virtually"
+  },
+  "tailored-training": {
+   "file": "2021/02/Tailored-Training.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Tailored-Training.jpg",
+   "alt": "Tailored Training"
+  },
+  "consultancy-projects": {
+   "file": "2021/05/roland-samuel-jsMb895HTxY-unsplash.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/05/roland-samuel-jsMb895HTxY-unsplash.jpg",
+   "alt": "consultancy"
+  },
+  "professional-project-management-training": {
+   "file": "2021/05/iStock-625878764.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/05/iStock-625878764.jpg",
+   "alt": "professional project management training"
+  },
+  "key-account-management-training": {
+   "file": "2025/11/Key-Account-Management-Training-Workshops.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Key-Account-Management-Training-Workshops.jpg",
+   "alt": "Key-Account-Management-Training-Workshops"
+  },
+  "developing-confidence-training": {
+   "file": "2023/07/sydney-rae-geM5lzDj4Iw-unsplash-1.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/07/sydney-rae-geM5lzDj4Iw-unsplash-1.jpg",
+   "alt": "developing confidence training"
+  },
+  "presentation-skills-coaching": {
+   "file": "2021/01/pexels-matilda-wormwood-4099096-scaled-e1611669356116.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/01/pexels-matilda-wormwood-4099096.jpg",
+   "alt": "presentation skills coaching"
+  },
+  "project-management-course": {
+   "file": "2021/05/iStock-487750571.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/05/iStock-487750571.jpg",
+   "alt": "project management course"
+  },
+  "virtual-leadership-training-practical-bite-sized-sessions": {
+   "file": "2020/08/virtual-leadership-training.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2020/08/virtual-leadership-training.jpg",
+   "alt": "virtual leadership training"
+  },
+  "change-management-training": {
+   "file": "2025/10/vitaly-gariev-n_7AYdG97E4-unsplash-scaled-e1760601971159.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/vitaly-gariev-n_7AYdG97E4-unsplash.jpg",
+   "alt": "change management training"
+  },
+  "basic-sales-training": {
+   "file": "2021/06/Basic-Sales-Training-more-square-e1749216604870.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/06/Basic-Sales-Training-more-square.jpg",
+   "alt": "basic sales training"
+  },
+  "project-management-training": {
+   "file": "2024/05/Project-management-training.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2024/05/Project-management-training.jpg",
+   "alt": "Project management training"
+  },
+  "problem-solving-training": {
+   "file": "2021/03/Problem-Solving-Training.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/03/Problem-Solving-Training.jpg",
+   "alt": "Problem Solving Training"
+  },
+  "sales-presentation-skills-training": {
+   "file": "2021/08/Sales-Presentation-Square.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/08/Sales-Presentation-Square.jpg",
+   "alt": ""
+  },
+  "training-needs-analysis": {
+   "file": "2022/10/the-climate-reality-project-Hb6uWq0i4MI-unsplash.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2022/10/the-climate-reality-project-Hb6uWq0i4MI-unsplash.jpg",
+   "alt": "training needs analysis"
+  },
+  "personal-efficiency-training": {
+   "file": "2025/11/Personal-Efficiency-Training-Workshop.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Personal-Efficiency-Training-Workshop.jpg",
+   "alt": "Personal-Efficiency-Training-Workshop"
+  },
+  "bespoke-training-for-events-offsites": {
+   "file": "2025/10/USMMI-2.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/USMMI-2.jpg",
+   "alt": "leadership communication"
+  },
+  "presentation-coaching": {
+   "file": "2024/01/pexels-mikael-blomkvist-6476783-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2024/01/pexels-mikael-blomkvist-6476783.jpg",
+   "alt": "presentation coaching"
+  },
+  "advanced-sales-training": {
+   "file": "2021/06/Advanced-Sales-Training-e1691500237134.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/06/Advanced-Sales-Training-e1473929808387.jpg",
+   "alt": "advanced sales training"
+  },
+  "assertiveness-course": {
+   "file": "2021/02/pexels-ketut-subiyanto-4474047-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/pexels-ketut-subiyanto-4474047.jpg",
+   "alt": "assertiveness course"
+  },
+  "nudge-consultancy": {
+   "file": "2021/02/Nudge-Consultancy-e1614006031308.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Nudge-Consultancy.jpg",
+   "alt": "Nudge Consultancy"
+  },
+  "professional-business-communication-training": {
+   "file": "2021/03/mateus-campos-felipe-zd8px974bC8-unsplash-scaled.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/mateus-campos-felipe-zd8px974bC8-unsplash.jpg",
+   "alt": "professional business communication training"
+  },
+  "written-communication-skills-training": {
+   "file": "2024/09/Written-communications-skills-training-video-1.png",
+   "guid": "https://itd.com/wp-content/uploads/2024/09/Written-communications-skills-training-video-1.png",
+   "alt": "Written communications skills training video"
+  },
+  "asynchronous-training": {
+   "file": "2025/03/bruce-mars-FWVMhUa_wbY-unsplash.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/03/bruce-mars-FWVMhUa_wbY-unsplash.jpg",
+   "alt": "asynchronous training"
+  },
+  "line-manager-training": {
+   "file": "2025/10/microsoft-365-bWL-c09Ys80-unsplash.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/microsoft-365-bWL-c09Ys80-unsplash.jpg",
+   "alt": "Line Manager Training"
+  },
+  "nudge-sales-training": {
+   "file": "2021/06/Nudge-Sales-Training.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/06/Nudge-Sales-Training.jpg",
+   "alt": "Nudge Sales Training"
+  }
+ },
+ "caseStudies": {
+  "case-study-unconscious-bias-microaggression-training-workshop-kayak": {
+   "file": "2022/08/Kayak-logo-for-website.png",
+   "guid": "http://itd.com/wp-content/uploads/2022/08/Kayak-logo-for-website.png",
+   "alt": "kayak"
+  },
+  "law-firm-management-training-case-study": {
+   "file": "2025/11/Walkers-logo-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Walkers-logo.png",
+   "alt": ""
+  },
+  "case-study-personality-at-work-dentons-dubai": {
+   "file": "2025/11/Dentons-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Dentons.png",
+   "alt": ""
+  },
+  "charity-communications-training-case-study-gstt": {
+   "file": "2025/11/GSST-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/GSST.png",
+   "alt": "charity communications training"
+  },
+  "case-study-nudge-training-follow-up-trilegal": {
+   "file": "2025/11/Trilegal-1-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Trilegal-1.png",
+   "alt": ""
+  },
+  "case-study-personal-efficiency-training-newton": {
+   "file": "2019/05/Newton-Waterproofing-with-border.png",
+   "guid": "http://itd.com/wp-content/uploads/2019/05/Newton-Waterproofing-with-border.png",
+   "alt": "Personal Efficiency Newton Waterproofing"
+  },
+  "case-study-finance-for-non-finance-gilead": {
+   "file": "2015/09/Gilead-with-Border-2.png",
+   "guid": "http://itd.com/wp-content/uploads/2015/09/Gilead-with-Border-2.png",
+   "alt": "Gilead logo"
+  },
+  "case-study-nudge-training-british-gas": {
+   "file": "2019/11/British-Gas-Logo-for-website.png",
+   "guid": "https://itd.com/wp-content/uploads/2019/11/British-Gas-Logo-for-website.png",
+   "alt": "Case Study nudge training british gas"
+  },
+  "case-study-virtual-presentation-skills-training-clifford-chance": {
+   "file": "2021/03/Clifford-Chance-logo.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Clifford-Chance-logo.png",
+   "alt": "clifford chance"
+  },
+  "case-study-personality-communication-at-work-trilegal": {
+   "file": "2025/11/Trilegal-1-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Trilegal-1.png",
+   "alt": ""
+  },
+  "personal-efficiency-coaching-case-study": {
+   "file": "2025/11/ESM-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/ESM.png",
+   "alt": ""
+  },
+  "case-study-personality-at-work-conference-training-clarke-willmott": {
+   "file": "2025/11/Clarke-Willmott-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clarke-Willmott.png",
+   "alt": ""
+  },
+  "teamworking-management-team-norgine": {
+   "file": "2025/11/Norgine-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Norgine-169.png",
+   "alt": ""
+  },
+  "case-study-mentoring-training-clarke-willmott": {
+   "file": "2025/11/Clarke-Willmott-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clarke-Willmott.png",
+   "alt": ""
+  },
+  "case-study-team-leader-training-global-collect": {
+   "file": "2021/02/Global-Collect-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Global-Collect-logo.png",
+   "alt": "Global Collect logo"
+  },
+  "case-study-presenting-with-impact-training-cruk": {
+   "file": "2021/03/CRUK-logo.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/CRUK-logo.png",
+   "alt": "CRUK"
+  },
+  "case-study-delegation-communication-skills-sidley": {
+   "file": "2021/02/Sidley-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Sidley-logo.png",
+   "alt": "Sidley"
+  },
+  "case-study-management-training-atp-media": {
+   "file": "2025/11/ATP-Media-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/ATP-Media.png",
+   "alt": ""
+  },
+  "case-study-management-training-and-coaching-ista": {
+   "file": "2025/11/ISTA-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/ISTA.png",
+   "alt": ""
+  },
+  "case-study-virtual-presentation-skills-training-workday": {
+   "file": "2020/10/Workday-logo-for-website.png",
+   "guid": "https://itd.com/wp-content/uploads/2020/10/Workday-logo-for-website.png",
+   "alt": "workday"
+  },
+  "case-study-nudge-training-world-bank-group": {
+   "file": "2025/11/World-Bank-Group-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/World-Bank-Group.png",
+   "alt": ""
+  },
+  "case-study-team-building-gilead": {
+   "file": "2025/11/Gilead-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Gilead-169.png",
+   "alt": ""
+  },
+  "case-study-consultancy-project-ovl-group": {
+   "file": "2021/03/OVL-group.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/OVL-group.jpg",
+   "alt": "OVL group"
+  },
+  "case-study-working-for-multiple-lawyers-wragge-co": {
+   "file": "2021/02/Wragge-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Wragge-logo.png",
+   "alt": "Wragge"
+  },
+  "case-study-personal-awareness-clifford-chance": {
+   "file": "2025/11/Clifford-Chance-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clifford-Chance.png",
+   "alt": ""
+  },
+  "case-study-personal-brand-networking-for-lawyers-reed-smith": {
+   "file": "2025/11/Reed-Smith-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Reed-Smith.png",
+   "alt": ""
+  },
+  "case-study-project-management-course-kingsley-napley": {
+   "file": "2021/03/Kingsley-Napley-with-border.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Kingsley-Napley-with-border.png",
+   "alt": "Kingsley Napley"
+  },
+  "case-study-taking-witness-statements-hugh-james": {
+   "file": "2021/02/Hugh-James-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Hugh-James-logo.png",
+   "alt": "Hugh James logo"
+  },
+  "case-study-how-to-manage-people-cambridge-cognition": {
+   "file": "2025/11/Cambridge-Cognition-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Cambridge-Cognition.png",
+   "alt": ""
+  },
+  "case-study-telephone-sales-training-forfarmers": {
+   "file": "2021/03/ForFarmers-logo.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/ForFarmers-logo.png",
+   "alt": "ForFarmers telesales training"
+  },
+  "change-management-case-study": {
+   "file": "2025/11/Norgine-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Norgine-169.png",
+   "alt": ""
+  },
+  "case-study-project-management-training-baker-mckenzie": {
+   "file": "2021/02/Baker-McKenzie-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Baker-McKenzie-logo.png",
+   "alt": "Baker McKenzie law firm training"
+  },
+  "case-study-telephone-sales-training-red": {
+   "file": "2021/03/Red.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Red.jpg",
+   "alt": "Red"
+  },
+  "case-study-leadership-presentations-norgine": {
+   "file": "2025/11/Norgine-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Norgine-169.png",
+   "alt": ""
+  },
+  "virtual-management-training-case-study-tma-consultants": {
+   "file": "2025/03/TMA-website-logo-png.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/03/TMA-website-logo.png",
+   "alt": "virtual management training"
+  },
+  "case-study-virtual-presentation-skills-training-unversity-of-derby": {
+   "file": "2021/03/Derby-University.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Derby-University.jpg",
+   "alt": "University of Derby"
+  },
+  "case-study-consultative-sales-gilead": {
+   "file": "2015/09/Gilead-with-Border-2.png",
+   "guid": "http://itd.com/wp-content/uploads/2015/09/Gilead-with-Border-2.png",
+   "alt": "Gilead logo"
+  },
+  "case-study-sales-management-training-norgine": {
+   "file": "2025/11/Norgine-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Norgine-169.png",
+   "alt": ""
+  },
+  "case-study-supervisor-skills-clarke-willmott": {
+   "file": "2025/11/Clarke-Willmott-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clarke-Willmott.png",
+   "alt": ""
+  },
+  "case-study-senior-team-consultancy-kingsley-napley": {
+   "file": "2021/03/Kingsley-Napley-with-border.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Kingsley-Napley-with-border.png",
+   "alt": "Kingsley Napley"
+  },
+  "case-study-presenting-a-webinar-van-bael-bellis": {
+   "file": "2025/11/VBB-logo-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/VBB-logo.png",
+   "alt": ""
+  },
+  "case-study-constructing-a-presentation-positively-uk": {
+   "file": "2025/11/Positively-uk-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Positively-uk.png",
+   "alt": ""
+  },
+  "case-study-assertiveness-training-mayer-brown": {
+   "file": "2025/11/Mayer-Brown-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Mayer-Brown.png",
+   "alt": ""
+  },
+  "case-study-director-level-personal-efficiency-training-know-history": {
+   "file": "2025/11/Know-History-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Know-History-169.png",
+   "alt": ""
+  },
+  "time-management-training-for-lawyers-case-study": {
+   "file": "2021/02/OC-logo-with-border-1.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/OC-logo-with-border-1.png",
+   "alt": "Osborne Clarke"
+  },
+  "case-study-resilience-training-reed-smith": {
+   "file": "2025/11/Reed-Smith-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Reed-Smith.png",
+   "alt": ""
+  },
+  "case-study-fee-negotiation-skills-training-kingsley-napley": {
+   "file": "2021/03/Kingsley-Napley-with-border.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Kingsley-Napley-with-border.png",
+   "alt": "Kingsley Napley"
+  },
+  "case-study-virtual-presenting-pimp-my-slides-hilton": {
+   "file": "2025/11/Hilton-169-scaled.avif",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Hilton-169-scaled.png",
+   "alt": ""
+  },
+  "case-study-developing-confidence-in-communication-clarke-willmott": {
+   "file": "2025/11/Clarke-Willmott-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clarke-Willmott.png",
+   "alt": ""
+  },
+  "case-study-written-communication-skills-training-university-of-derby": {
+   "file": "2021/03/Derby-University.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Derby-University.jpg",
+   "alt": "University of Derby"
+  },
+  "case-study-virtual-presentation-skills-training-haman-scandinavia": {
+   "file": "2021/04/Haman-Scandinavia.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/04/Haman-Scandinavia.jpg",
+   "alt": "Haman Scandinavia"
+  },
+  "case-study-virtual-written-communication-skills-marbocote": {
+   "file": "2025/11/Marbocote-1-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Marbocote-1.png",
+   "alt": ""
+  },
+  "time-management-for-trainee-lawyers-case-study": {
+   "file": "2019/11/Cliffor-Chance-logo-for-website.png",
+   "guid": "https://itd.com/wp-content/uploads/2019/11/Cliffor-Chance-logo-for-website.png",
+   "alt": "clifford chance"
+  },
+  "case-study-project-planning-management-bird-bird": {
+   "file": "2021/06/Bird-Bird-logo.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/06/Bird-Bird-logo.png",
+   "alt": "Bird & Bird law firm training"
+  },
+  "case-study-team-working-training-cambridge-cognition": {
+   "file": "2021/01/Cambridge-cognition.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/01/Cambridge-cognition.png",
+   "alt": "practical management training"
+  },
+  "case-study-nudge-training-for-lawyers-trilegal": {
+   "file": "2025/11/Trilegal-1-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Trilegal-1.png",
+   "alt": ""
+  },
+  "case-study-written-communication-training-barts-charity": {
+   "file": "2025/11/Barts-Charity-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Barts-Charity.png",
+   "alt": ""
+  },
+  "case-study-consultancy-project-emtec": {
+   "file": "2021/05/emtec-logo.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/05/emtec-logo.png",
+   "alt": "emtec logo"
+  },
+  "case-study-one-to-one-coaching-training-monckton-chambers": {
+   "file": "2021/02/Monckton-Chambers-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Monckton-Chambers-logo.png",
+   "alt": "Monckton"
+  },
+  "case-study-written-communication-training-lexfield": {
+   "file": "2021/02/Lexfield-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Lexfield-logo.png",
+   "alt": "Lexfield"
+  },
+  "case-study-managing-virtual-matrix-team-hitachi": {
+   "file": "2021/02/Hitachi-3.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Hitachi-3.png",
+   "alt": "Hitachi"
+  },
+  "case-study-people-management-training-carr-lyons": {
+   "file": "2021/03/Carr-Lyons-logo.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Carr-Lyons-logo.png",
+   "alt": "carr-lyons"
+  },
+  "case-study-fee-negotiation-training-van-bael-bellis": {
+   "file": "2025/11/VBB-logo-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/VBB-logo.png",
+   "alt": ""
+  },
+  "case-study-negotiation-skills-training-shearman-sterling": {
+   "file": "2016/08/Shearman-new.png",
+   "guid": "http://itd.com/wp-content/uploads/2016/08/Shearman-new.png",
+   "alt": "Negotiating fees"
+  },
+  "case-study-telephone-sales-torquil-clark": {
+   "file": "2021/02/torquil-clark-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/torquil-clark-logo.png",
+   "alt": "torquil clark logo"
+  },
+  "case-study-personal-efficiency-training-rma-associates": {
+   "file": "2025/11/RMA-Associates-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/RMA-Associates-169.png",
+   "alt": ""
+  },
+  "time-management-training-for-junior-lawyers-case-study": {
+   "file": "2021/02/Houthoff-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Houthoff-logo.png",
+   "alt": "Houthoff time management training"
+  },
+  "case-study-virtual-team-working-gilead": {
+   "file": "2025/11/Gilead-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Gilead-169.png",
+   "alt": ""
+  },
+  "case-study-delegation-skills-for-lawyers-vardags": {
+   "file": "2021/02/Vardags-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Vardags-logo.png",
+   "alt": "Vardags"
+  },
+  "case-study-management-communication-skills-marbocote": {
+   "file": "2025/11/Marbocote-1-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Marbocote-1.png",
+   "alt": ""
+  },
+  "effective-delegation-in-transactions-case-study": {
+   "file": "2025/11/Dentons-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Dentons.png",
+   "alt": ""
+  },
+  "case-study-communication-presentation-workshop-gstt-foundation": {
+   "file": "2025/11/GSST-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/GSST.png",
+   "alt": "charity communications training"
+  },
+  "commvault-virtual-written-communication-skills-training": {
+   "file": "2023/03/Commvault-logo-for-website-1.png",
+   "guid": "https://itd.com/wp-content/uploads/2023/03/Commvault-logo-for-website-1.png",
+   "alt": "writing skills training"
+  },
+  "case-study-nudge-training-deschutes-county": {
+   "file": "2020/11/Deschutes-logo-white-for-website.png",
+   "guid": "https://itd.com/wp-content/uploads/2020/11/Deschutes-logo-white-for-website.png",
+   "alt": "deschutes county nudge"
+  },
+  "embracing-change-case-study": {
+   "file": "2025/11/Clifford-Chance-logo-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clifford-Chance-logo.png",
+   "alt": ""
+  },
+  "bespoke-communication-training-case-study": {
+   "file": "2025/11/USMMI-logo-169-1-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/USMMI-logo-169-1.png",
+   "alt": ""
+  },
+  "case-study-presentation-skills-training-gilead": {
+   "file": "2025/11/Gilead-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Gilead-169.png",
+   "alt": ""
+  },
+  "case-study-project-planning-training-higgs-sons": {
+   "file": "2021/02/Higgs-and-sons-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Higgs-and-sons-logo.png",
+   "alt": "Higgs and sons logo"
+  },
+  "case-study-personal-efficiency-training-topdrill": {
+   "file": "2015/09/Topdrill-logo-with-border.png",
+   "guid": "http://itd.com/wp-content/uploads/2015/09/Topdrill-logo-with-border.png",
+   "alt": "topdrill personal efficiency training"
+  },
+  "case-study-handling-distressed-clients-fieldfisher": {
+   "file": "2021/02/Fieldfisher-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Fieldfisher-logo.png",
+   "alt": "Fieldfisher logo"
+  },
+  "case-study-sales-training-norgine": {
+   "file": "2025/11/Norgine-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Norgine-169.png",
+   "alt": ""
+  },
+  "case-study-people-management-training-gilead": {
+   "file": "2025/11/Gilead-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Gilead-169.png",
+   "alt": ""
+  },
+  "case-study-large-group-session-on-personality-dentons": {
+   "file": "2025/11/Dentons-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Dentons.png",
+   "alt": ""
+  },
+  "case-study-presenting-with-impact-webinar-pepsico": {
+   "file": "2025/11/Pepsico-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Pepsico.png",
+   "alt": ""
+  },
+  "case-study-delegation-skills-for-lawyers-reed-smith": {
+   "file": "2025/11/Reed-Smith-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Reed-Smith.png",
+   "alt": ""
+  },
+  "case-study-nudge-training-seminar-ee": {
+   "file": "2025/11/EE-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/EE.png",
+   "alt": ""
+  },
+  "case-study-communicating-in-a-virtual-world-corpag": {
+   "file": "2025/11/Corpag-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Corpag-169.png",
+   "alt": ""
+  },
+  "case-study-management-training-orrick": {
+   "file": "2021/02/Orrick-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Orrick-logo.png",
+   "alt": "Orrick"
+  },
+  "case-study-taking-instructions-training-vardags": {
+   "file": "2021/02/Vardags-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Vardags-logo.png",
+   "alt": "Vardags"
+  },
+  "case-study-client-care-training-lyons-bowe": {
+   "file": "2025/11/Lyons-Bowe-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Lyons-Bowe.png",
+   "alt": ""
+  },
+  "case-study-project-management-training-clyde-co": {
+   "file": "2021/02/clydelogo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/clydelogo.png",
+   "alt": ""
+  },
+  "case-study-planning-managing-legal-work-burges-salmon": {
+   "file": "2021/02/Burges-Salmon-logo-1.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Burges-Salmon-logo-1.png",
+   "alt": "Burges Salmon logo"
+  },
+  "case-study-nudge-training-hackney-borough-council": {
+   "file": "2019/05/Hackney-logo-with-border-e1713783399202.png",
+   "guid": "http://itd.com/wp-content/uploads/2019/05/Hackney-logo-with-border.png",
+   "alt": "case study nudge training hackney borough council"
+  },
+  "case-study-customer-service-training-clifford-chance": {
+   "file": "2025/11/Clifford-Chance-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clifford-Chance.png",
+   "alt": ""
+  },
+  "virtual-project-management-training-case-study-lawscot": {
+   "file": "2025/03/Lawscot-logo-for-web-png.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/03/Lawscot-logo-for-web.png",
+   "alt": "Law Society of Scotland"
+  },
+  "case-study-assertiveness-training-clifford-chance": {
+   "file": "2025/11/Clifford-Chance-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clifford-Chance.png",
+   "alt": ""
+  },
+  "case-study-engaging-influencing-when-presenting-latham-watkins": {
+   "file": "2025/11/Latham-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Latham.png",
+   "alt": ""
+  },
+  "case-study-wfh-time-management-training-clarke-willmott": {
+   "file": "2025/11/Clarke-Willmott-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clarke-Willmott.png",
+   "alt": ""
+  },
+  "time-and-work-management-training-case-study": {
+   "file": "2016/08/Freshfields-new.png",
+   "guid": "http://itd.com/wp-content/uploads/2016/08/Freshfields-new.png",
+   "alt": "Freshfields"
+  },
+  "case-study-finance-training-appello": {
+   "file": "2025/11/appello-finance-training-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/appello-finance-training.png",
+   "alt": "appello finance training"
+  },
+  "account-manager-sales-training-case-study": {
+   "file": "2025/11/mcalpine-logo-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/mcalpine-logo.png",
+   "alt": "account manager sales training"
+  },
+  "lawyer-management-training-case-study": {
+   "file": "2025/11/VBB-logo-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/VBB-logo.png",
+   "alt": ""
+  },
+  "case-study-consultancy-project-gilead": {
+   "file": "2015/09/Gilead-with-Border-2.png",
+   "guid": "http://itd.com/wp-content/uploads/2015/09/Gilead-with-Border-2.png",
+   "alt": "Gilead logo"
+  },
+  "case-study-business-development-dentons": {
+   "file": "2025/11/Dentons-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Dentons.png",
+   "alt": ""
+  },
+  "microaggression-training-law-firm-case-study-vbb": {
+   "file": "2025/11/VBB-logo-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/VBB-logo.png",
+   "alt": ""
+  },
+  "case-study-nudge-training-campaign-design-ee": {
+   "file": "2025/11/EE-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/EE.png",
+   "alt": ""
+  },
+  "case-study-basic-sales-training-1-to1-yunex-traffic": {
+   "file": "2025/11/Yunex-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Yunex.png",
+   "alt": ""
+  },
+  "case-study-sales-management-training-sse": {
+   "file": "2025/11/SSE-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/SSE.png",
+   "alt": ""
+  },
+  "case-study-personality-at-work-trilegal": {
+   "file": "2025/11/Trilegal-1-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Trilegal-1.png",
+   "alt": ""
+  },
+  "time-management-training-case-study": {
+   "file": "2021/02/CAF-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/CAF-logo.png",
+   "alt": ""
+  },
+  "case-study-delegation-skills-for-associates-reed-smith": {
+   "file": "2025/11/Reed-Smith-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Reed-Smith.png",
+   "alt": ""
+  },
+  "case-study-personal-efficiency-coaching-oxford-advanced-surfaces": {
+   "file": "2021/03/Oxford-advanced-surfaces-logo.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Oxford-advanced-surfaces-logo.jpg",
+   "alt": "Oxford advanced surfaces logo"
+  },
+  "case-study-professional-business-communication-clifford-chance": {
+   "file": "2021/03/Clifford-Chance-logo.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Clifford-Chance-logo.png",
+   "alt": "clifford chance"
+  },
+  "case-study-advanced-presentation-skills-dentons": {
+   "file": "2025/11/Dentons-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Dentons.png",
+   "alt": ""
+  },
+  "case-study-personality-at-work-pankhurst-trust": {
+   "file": "2025/11/Pankhurst-Trust-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Pankhurst-Trust.png",
+   "alt": ""
+  },
+  "case-study-nudge-training-richmond-and-wandsworth-councils": {
+   "file": "2025/11/Richmond-and-Wandsworth-Borough-Councils-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Richmond-and-Wandsworth-Borough-Councils.png",
+   "alt": ""
+  },
+  "case-study-written-communication-skills-commvault": {
+   "file": "2025/11/Commvault-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Commvault.png",
+   "alt": ""
+  },
+  "case-study-one-to-one-career-coaching-kingsley-napley": {
+   "file": "2021/03/Kingsley-Napley-with-border.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Kingsley-Napley-with-border.png",
+   "alt": "Kingsley Napley"
+  },
+  "case-study-impact-and-influence-watson-farley-williams": {
+   "file": "2025/11/Wtason-Farley-williams-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Wtason-Farley-williams.png",
+   "alt": ""
+  },
+  "virtual-written-communications-skills-case-study-jcw-group": {
+   "file": "2025/11/JCW-group-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/JCW-group.png",
+   "alt": ""
+  },
+  "case-study-consultancy-sales-training-edmiston": {
+   "file": "2021/03/Edmiston.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Edmiston.jpg",
+   "alt": "Edmiston"
+  },
+  "case-study-virtual-presentation-skills-malvern-panalytical-global": {
+   "file": "2025/11/Malvern-Panalytical-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Malvern-Panalytical.png",
+   "alt": ""
+  },
+  "case-study-problem-solving-decision-making-reed-smith": {
+   "file": "2025/11/Reed-Smith-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Reed-Smith.png",
+   "alt": ""
+  },
+  "case-study-written-communication-skills-training-iam-roadsmart": {
+   "file": "2021/03/IAM-Roadsmart.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/IAM-Roadsmart.jpg",
+   "alt": "IAM Roadsmart"
+  },
+  "case-study-advanced-negotiating-for-sales-lundbeck": {
+   "file": "2021/02/lundbeck_logo.gif",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/lundbeck_logo.gif",
+   "alt": "lundbeck logo"
+  },
+  "case-study-telephone-prospecting-training-par": {
+   "file": "2021/03/PAR-logo.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/PAR-logo.png",
+   "alt": "PAR"
+  },
+  "case-study-virtual-written-communication-skills-meridian": {
+   "file": "2025/11/Meridian-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Meridian-169.png",
+   "alt": ""
+  },
+  "case-study-networking-training-clarke-willmott": {
+   "file": "2025/11/Clarke-Willmott-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clarke-Willmott.png",
+   "alt": ""
+  },
+  "case-study-delegation-skills-for-senior-lawyers-srz": {
+   "file": "2021/02/SRZ-logo-web.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/SRZ-logo-web.png",
+   "alt": "srz logo"
+  },
+  "case-study-virtual-presentation-skills-for-sales-sse": {
+   "file": "2025/11/SSE-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/SSE.png",
+   "alt": ""
+  },
+  "practical-people-manager-training-case-study": {
+   "file": "2025/10/Rainbow-Nursery.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/Rainbow-Nursery.png",
+   "alt": "Rainbow Nursery"
+  },
+  "case-study-training-consultancy-project-sse": {
+   "file": "2025/11/SSE-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/SSE.png",
+   "alt": ""
+  },
+  "case-study-time-management-training-cadwalader": {
+   "file": "2021/03/Cadwalader-logo.png",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Cadwalader-logo.png",
+   "alt": "cadwalader"
+  },
+  "case-study-coaching-skills-training-norgine": {
+   "file": "2025/11/Norgine-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Norgine-169.png",
+   "alt": ""
+  },
+  "case-study-sales-management-training-gilead": {
+   "file": "2025/11/Gilead-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Gilead-169.png",
+   "alt": ""
+  },
+  "case-study-leadership-training-global-collect": {
+   "file": "2021/02/Global-Collect-logo.png",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/Global-Collect-logo.png",
+   "alt": "Global Collect logo"
+  },
+  "written-communication-skills-training-case-study-kast": {
+   "file": "2025/11/Kast-concrete-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Kast-concrete.png",
+   "alt": "written communication training"
+  },
+  "time-management-associates-case-study": {
+   "file": "2025/11/Clarke-Willmott-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Clarke-Willmott.png",
+   "alt": ""
+  },
+  "case-study-personality-at-work-allan-mcdougall": {
+   "file": "2025/11/Allan-McDougall-169-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Allan-McDougall-169.png",
+   "alt": ""
+  },
+  "case-study-visitor-contact-care-training-catholic-multi-academy-trust": {
+   "file": "2025/11/Catholic-trust-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Catholic-trust.png",
+   "alt": ""
+  },
+  "case-study-personal-efficiency-training-nspcc": {
+   "file": "2021/03/NSPCC-web.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/NSPCC-web.jpg",
+   "alt": "nspcc personal efficiency training"
+  },
+  "case-study-finance-simulation-for-partners-vwv": {
+   "file": "2025/11/VWV-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/VWV.png",
+   "alt": ""
+  }
+ },
+ "sectors": {
+  "manufacturing": {
+   "file": "2026/02/homa-appliances-pWUyHVJgLhg-unsplash.avif",
+   "guid": "https://itd.com/wp-content/uploads/2026/02/homa-appliances-pWUyHVJgLhg-unsplash.jpg",
+   "alt": "manufacturing"
+  },
+  "general-business": {
+   "file": "2021/03/General-Business.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/General-Business.jpg",
+   "alt": "General Business"
+  },
+  "technology": {
+   "file": "2021/03/ramon-salinero-vEE00Hx5d0Q-unsplash-scaled.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/ramon-salinero-vEE00Hx5d0Q-unsplash.jpg",
+   "alt": "technology training"
+  },
+  "market-sector-training": {
+   "file": "2022/02/alexander-schimmeck-2zJhA9RSkys-unsplash-e1646573137844.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2022/02/alexander-schimmeck-2zJhA9RSkys-unsplash.jpg",
+   "alt": "market sector training"
+  },
+  "maritime": {
+   "file": "2025/10/Redwood-Trader-1.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/Redwood-Trader-1.jpg",
+   "alt": "Maritime soft skills training"
+  },
+  "charity": {
+   "file": "2021/03/nick-fewings-C2zhShTnl5I-unsplash-scaled.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/nick-fewings-C2zhShTnl5I-unsplash.jpg",
+   "alt": "charity"
+  },
+  "utilities": {
+   "file": "2021/03/Utility-e1645812178283.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Utility.jpg",
+   "alt": "Utility company training"
+  },
+  "travel": {
+   "file": "2021/04/Travel.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/04/Travel.jpg",
+   "alt": "Travel company training"
+  },
+  "universities": {
+   "file": "2021/03/Universities.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Universities.jpg",
+   "alt": "Universities"
+  },
+  "financial-services": {
+   "file": "2021/03/Financial-Services.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/Financial-Services.jpg",
+   "alt": "Financial Services"
+  },
+  "local-government": {
+   "file": "2021/03/government.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/government.jpg",
+   "alt": "local government"
+  },
+  "law-firm-training": {
+   "file": "2025/11/Law-firms-169.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Law-firms-169.jpg",
+   "alt": "Law firm training workshops"
+  },
+  "pharma-biotech": {
+   "file": "2021/03/cdc-Ek8oxbjnJtQ-unsplash-scaled.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2021/03/cdc-Ek8oxbjnJtQ-unsplash.jpg",
+   "alt": "Pharmaceutical / Biotech"
+  },
+  "media": {
+   "file": "2023/03/carlynn-alarid-_xJqCQgkpLc-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/03/carlynn-alarid-_xJqCQgkpLc-unsplash-1024x576.jpg",
+   "alt": "Media sector training"
+  },
+  "schools": {
+   "file": "2022/08/erika-fletcher-MZxqc6n9qCw-unsplash.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2022/08/erika-fletcher-MZxqc6n9qCw-unsplash.jpg",
+   "alt": "Schools training"
+  },
+  "law": {
+   "file": "2025/11/Law-firms-169.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Law-firms-169.jpg",
+   "alt": "Law firm training workshops"
+  }
+ },
+ "blog": {
+  "is-talent-a-thing": {
+   "file": "2017/02/Talent.jpg",
+   "guid": "http://itd.com/wp-content/uploads/2017/02/Talent.jpg",
+   "alt": "Talent"
+  },
+  "virtual-presentation-skills-course": {
+   "file": "2021/01/matias-islas-Nw0j-2YAnfI-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/01/matias-islas-Nw0j-2YAnfI-unsplash.jpg",
+   "alt": "Virtual Presentation Skills Course"
+  },
+  "virtual-teamwork-training-course-5-top-tips-to-improve-your-teams-performance": {
+   "file": "2021/01/pexels-anna-shvets-4226140-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/01/pexels-anna-shvets-4226140.jpg",
+   "alt": "virtual teamwork training course"
+  },
+  "assertiveness-course-how-could-this-training-help-you": {
+   "file": "2021/01/aziz-acharki-U3C79SeHa7k-unsplash-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/01/aziz-acharki-U3C79SeHa7k-unsplash.jpg",
+   "alt": "assertiveness course"
+  },
+  "working-from-home-time-management-tips": {
+   "file": "2021/01/thought-catalog-Nv-vx3kUR2A-unsplash-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/01/thought-catalog-Nv-vx3kUR2A-unsplash.jpg",
+   "alt": "working from home time management tips"
+  },
+  "how-does-service-excellence-training-improve-the-customer-experience": {
+   "file": "2012/05/true-agency-JwP90y9wgr4-unsplash-scaled-e1611563467188.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2012/05/true-agency-JwP90y9wgr4-unsplash.jpg",
+   "alt": "service excellence training"
+  },
+  "what-is-nudge-theory-what-is-nudge-training": {
+   "file": "2021/02/cenk-batuhan-ozaltun-23GcZ3nmzCE-unsplash-scaled.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2021/02/cenk-batuhan-ozaltun-23GcZ3nmzCE-unsplash.jpg",
+   "alt": "What is Nudge Theory?"
+  },
+  "chatgpt": {
+   "file": "2023/03/Chatgpt.png",
+   "guid": "https://itd.com/wp-content/uploads/2023/03/Chatgpt.png",
+   "alt": ""
+  },
+  "benefits-of-management-training-for-existing-managers": {
+   "file": "2023/08/cowomen-cKQkMFzXHAI-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/cowomen-cKQkMFzXHAI-unsplash.jpg",
+   "alt": "management training"
+  },
+  "how-to-develop-confidence-in-the-workplace": {
+   "file": "2023/08/ruben-ramirez-hglwfa4kj_o-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/ruben-ramirez-hglwfa4kj_o-unsplash.jpg",
+   "alt": "develop confidence in the workplace"
+  },
+  "do-soft-skills-training-courses-for-employees-benefit-employers": {
+   "file": "2023/08/helena-lopes-UZe35tk5UoA-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/helena-lopes-UZe35tk5UoA-unsplash.jpg",
+   "alt": "soft skills training courses"
+  },
+  "working-with-different-styles-direct": {
+   "file": "2013/11/afif-ramdhasuma-RjqCk9MqhNg-unsplash-e1751645513116.webp",
+   "guid": "https://itd.com/wp-content/uploads/2013/11/afif-ramdhasuma-RjqCk9MqhNg-unsplash.jpg",
+   "alt": "Working with different styles – Direct"
+  },
+  "advantages-of-virtual-training": {
+   "file": "2023/08/linkedin-sales-solutions-6ie6OjshvWg-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/linkedin-sales-solutions-6ie6OjshvWg-unsplash.jpg",
+   "alt": "advantages of virtual training"
+  },
+  "the-benefits-of-virtual-training-courses-for-lawyers": {
+   "file": "2023/08/alejandro-escamilla-LNRyGwIJr5c-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/alejandro-escamilla-LNRyGwIJr5c-unsplash.jpg",
+   "alt": "benefits of virtual training courses for lawyers"
+  },
+  "the-benefits-of-a-written-communication-skills-workshop": {
+   "file": "2023/08/daniel-thomas-6_NXEMZbUq0-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/daniel-thomas-6_NXEMZbUq0-unsplash.jpg",
+   "alt": "The Benefits of a Written Communication Skills Workshop"
+  },
+  "benefits-of-unconscious-bias-training": {
+   "file": "2024/04/jr-korpa-AK7rrIAldDg-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2024/04/jr-korpa-AK7rrIAldDg-unsplash.jpg",
+   "alt": "Benefits of unconscious bias training"
+  },
+  "how-to-get-into-good-habits": {
+   "file": "2017/05/drew-beamer-uejtDqpJ7ig-unsplash.webp",
+   "guid": "https://itd.com/wp-content/uploads/2017/05/drew-beamer-uejtDqpJ7ig-unsplash.jpg",
+   "alt": "habits"
+  },
+  "teamwork-is-like-a-jigsaw-puzzle": {
+   "file": "2023/07/sigmund-B-x4VaIriRc-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/07/sigmund-B-x4VaIriRc-unsplash.jpg",
+   "alt": "Teamwork"
+  },
+  "whats-different-about-nudge-training-with-itd": {
+   "file": "2019/07/bozhin-karaivanov-tgFkmZyBamc-unsplash-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2019/07/bozhin-karaivanov-tgFkmZyBamc-unsplash.jpg",
+   "alt": "Nudge"
+  },
+  "challenges-when-presenting-virtually": {
+   "file": "2023/08/linkedin-sales-solutions-1LyBcHrH4J8-unsplash.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2023/08/linkedin-sales-solutions-1LyBcHrH4J8-unsplash.jpg",
+   "alt": "challenges when presenting virtually"
+  },
+  "carrot-stick-motivating": {
+   "file": "2014/10/armando-arauz-R198mTymEFQ-unsplash-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2014/10/armando-arauz-R198mTymEFQ-unsplash.jpg",
+   "alt": "carrot or stick which is best for motivating"
+  },
+  "business-services-managers-managing-motivating-people": {
+   "file": "2013/03/content-pixie-1ID7vPmH8sY-unsplash.webp",
+   "guid": "https://itd.com/wp-content/uploads/2013/03/content-pixie-1ID7vPmH8sY-unsplash.jpg",
+   "alt": "managing & motivating people"
+  },
+  "how-practical-is-fee-negotiation-training": {
+   "file": "2019/06/fee-negotiation-training-e1593841746541.jpg",
+   "guid": "https://itd.com/wp-content/uploads/2019/06/fee-negotiation-training.jpg",
+   "alt": "fee negotiation training"
+  },
+  "how-to-improve-email-impact": {
+   "file": "2015/01/brian-j-tromp-X8ejw0g0C_g-unsplash-scaled-e1750935088248.webp",
+   "guid": "https://itd.com/wp-content/uploads/2015/01/brian-j-tromp-X8ejw0g0C_g-unsplash.jpg",
+   "alt": "how to improve email impact"
+  },
+  "how-to-make-virtual-training-engaging": {
+   "file": "2025/10/How-to-make-virtual-training-engaging.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/10/How-to-make-virtual-training-engaging.jpg",
+   "alt": "How to make virtual training engaging"
+  },
+  "does-virtual-training-lead-to-behavioural-change": {
+   "file": "2025/11/virtual-training-workshop-169.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/virtual-training-workshop-169.jpg",
+   "alt": "virtual training workshop 169"
+  },
+  "how-is-training-tailored": {
+   "file": "2025/11/vitaly-gariev-aoweP90-XwM-unsplash.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/vitaly-gariev-aoweP90-XwM-unsplash.jpg",
+   "alt": "How is training tailored"
+  },
+  "how-can-you-use-the-principles-of-nudge": {
+   "file": "2025/12/office-sign-with-the-word-NUDGE-in-large-text-then-the-words-How-can-you-use-Nudge-principles-.avif",
+   "guid": "https://itd.com/wp-content/uploads/2025/12/office-sign-with-the-word-NUDGE-in-large-text-then-the-words-How-can-you-use-Nudge-principles-.jpeg",
+   "alt": "the principles of Nudge?"
+  }
+ },
+ "pages": {
+  "about-itd": {
+   "file": "2025/06/ITD-Logo-20.10.2015.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/06/ITD-Logo-20.10.2015.png",
+   "alt": "About ITD"
+  },
+  "training-fees": {
+   "file": "2025/11/Training-Fees.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/11/Training-Fees.jpg",
+   "alt": ""
+  },
+  "martin-chapman": {
+   "file": "2025/05/MC-scaled.webp",
+   "guid": "https://itd.com/wp-content/uploads/2025/05/MC-scaled.webp",
+   "alt": "Martin Chapman, founder of ITD"
+  }
+ }
+}

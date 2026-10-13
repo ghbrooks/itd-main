@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: handling buying signals'
   - 'Confidence and capability in: overcoming final objections'
   - 'Confidence and capability in: closing with confidence'
+image: '../../assets/images/courses/client-conversion-training.webp'
+imageAlt: 'Client conversion training'
 seo:
   title: 'Client Conversion Training'
   description: 'Client Conversion Training from ITD. Convert more prospects into paying clients.'

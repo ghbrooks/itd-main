@@ -32,6 +32,8 @@ faqs:
     a: 'Both, but with different framing. A senior version goes harder on managing upwards and disagreeing with the board; a more junior version focuses on holding ground with peers and clients.'
   - q: 'What if some participants are reluctant to bring real situations?'
     a: 'They almost always do once the room warms up — but we always have a bank of realistic scenarios to work from if needed. Nobody is forced to share.'
+image: '../../assets/images/courses/assertiveness-training.webp'
+imageAlt: 'Assertiveness Training'
 seo:
   title: 'Assertiveness Training — be heard without being harsh'
   description: 'Practical assertiveness training for senior professionals. Say no, push back, hold ground in difficult conversations. Used by Clifford Chance and other major firms.'

@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: virtual collaboration tools'
   - 'Confidence and capability in: managing hybrid team challenges'
   - 'Confidence and capability in: maintaining team culture online'
+image: '../../assets/images/courses/virtual-teamwork-training.webp'
+imageAlt: 'Virtual Teamwork Training Workshop'
 seo:
   title: 'Virtual Teamwork Training'
   description: 'Virtual Teamwork Training from ITD. Build effective teamwork in virtual and hybrid environments.'

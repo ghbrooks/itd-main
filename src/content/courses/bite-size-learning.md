@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: immediately applicable learning'
   - 'Confidence and capability in: series of sessions available'
   - 'Confidence and capability in: minimal disruption to work'
+image: '../../assets/images/courses/bite-size-learning.webp'
+imageAlt: 'bite size learning'
 seo:
   title: 'Bite Size Learning'
   description: 'Bite Size Learning from ITD. Short, focused learning sessions for busy professionals.'

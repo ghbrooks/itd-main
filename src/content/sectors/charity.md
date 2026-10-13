@@ -3,6 +3,8 @@ title: 'Charity'
 summary: 'Charities and non-profit organisations operate with a unique combination of passion and constraint. Teams are deeply committed to their cause, but often work with limited resources and face complex stakeholder landscapes that include donors, trustees, beneficiaries, and regulators. ITD helps charity professionals develop the leadership, communication, and influencing skills that enable them to amplify their organisation''s impact and sustain their own wellbeing.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/charity.webp'
+imageAlt: 'charity'
 seo:
   title: 'Charity Sector Training | ITD'
   description: 'ITD supports charities and non-profit organisations with soft skills training that develops leadership, fundraising communication, and stakeholder engagement.'

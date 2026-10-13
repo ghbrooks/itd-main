@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: decision-making under uncertainty'
   - 'Confidence and capability in: communicating vision virtually'
   - 'Confidence and capability in: practical leadership tools and frameworks'
+image: '../../assets/images/courses/virtual-leadership-training-practical-bite-sized-sessions.webp'
+imageAlt: 'virtual leadership training'
 seo:
   title: 'Virtual Leadership Training'
   description: 'Virtual Leadership Training from ITD. Practical leadership development delivered in bite-sized virtual sessions.'

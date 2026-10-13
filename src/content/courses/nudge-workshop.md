@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: testing and iterating nudge approaches'
   - 'Confidence and capability in: case studies from similar organisations'
   - 'Confidence and capability in: action planning for implementation'
+image: '../../assets/images/courses/nudge-workshop.webp'
+imageAlt: 'Nudge Workshop Courses'
 seo:
   title: 'Nudge Workshop'
   description: 'Nudge Workshop from ITD. A practical workshop applying nudge theory to your workplace challenges.'

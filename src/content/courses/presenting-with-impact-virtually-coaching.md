@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: platform-specific tips and techniques'
   - 'Confidence and capability in: practice with expert feedback'
   - 'Confidence and capability in: confidence building for virtual settings'
+image: '../../assets/images/courses/presenting-with-impact-virtually-coaching.webp'
+imageAlt: 'presenting with impact virtually coaching'
 seo:
   title: 'Presenting with Impact Virtually Coaching'
   description: 'Presenting with Impact Virtually Coaching from ITD. One-to-one coaching for virtual presenting excellence.'

@@ -7,6 +7,9 @@ challenge: 'Dentons wanted to take their experienced presenters to the next leve
 approach: 'ITD delivered advanced presentation skills training covering storytelling, audience psychology, handling challenging situations and presenting with authority.'
 outcome: 'Presenters reported a step-change in their presentation capabilities, with outstanding feedback from clients and colleagues.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-advanced-presentation-skills-dentons.webp'
+imageAlt: 'Advanced Presentation Skills Training'
+subject: 'Presentation Skills'
 seo:
   title: 'Advanced Presentation Skills Training | ITD Case Study'
   description: 'Advanced Presentation Skills Training. Dentons wanted to take their experienced presenters to the next level with advanced presentation skills training.'

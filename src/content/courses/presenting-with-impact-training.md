@@ -23,6 +23,8 @@ outcomes:
 relatedCourses:
   - 'advanced-presentation-skills-training'
   - 'public-speaking-training'
+image: '../../assets/images/courses/presenting-with-impact-training.webp'
+imageAlt: 'Presenting with Impact Training'
 seo:
   title: 'Presenting with Impact Training'
   description: 'Presenting with Impact Training from ITD. Learn to present with confidence, clarity and impact in any setting.'

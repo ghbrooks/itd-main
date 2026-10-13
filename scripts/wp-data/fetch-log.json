@@ -1,0 +1,21 @@
+{
+  "sectors": {
+    "ok": 16
+  },
+  "pages": {
+    "small": 1,
+    "ok": 2
+  },
+  "blog": {
+    "ok": 27,
+    "small": 1
+  },
+  "courses": {
+    "ok": 128,
+    "small": 1
+  },
+  "caseStudies": {
+    "ok": 88,
+    "small": 54
+  }
+}

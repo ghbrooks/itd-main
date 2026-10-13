@@ -10,6 +10,9 @@ testimonial:
   quote: 'The combination of group training and individual coaching was exactly what our team leaders needed.'
   author: 'Head of HR, ISTA'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-management-training-and-coaching-ista.webp'
+imageAlt: 'Management Training and Coaching'
+subject: 'Management'
 seo:
   title: 'Management Training and Coaching | ITD Case Study'
   description: 'Management Training and Coaching. ISTA needed a combined management training and coaching approach to develop their newly appointed team leaders.'

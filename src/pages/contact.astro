@@ -3,8 +3,13 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import Section from '~/components/layout/Section.astro';
 import Hero from '~/components/marketing/Hero.astro';
 import ReviewSummary from '~/components/marketing/ReviewSummary.astro';
-import { site } from '~/lib/site';
+import { site, formEndpoint } from '~/lib/site';
 import { breadcrumbSchema } from '~/lib/schema';
+
+// With a relay configured the form posts there; otherwise it opens the
+// visitor's mail client with the fields pre-filled so nothing is lost.
+const formAction = formEndpoint ?? `mailto:${site.email}?subject=${encodeURIComponent('Training enquiry from itd.com')}`;
+const formEnctype = formEndpoint ? undefined : 'text/plain';
 
 const schemas = [
   breadcrumbSchema([
@@ -32,7 +37,7 @@ const schemas = [
 
   <Section size="md" tone="default">
     <div class="container-wide contact-grid">
-      <form class="contact-form" action="#" method="post" novalidate>
+      <form class="contact-form" action={formAction} method="post" enctype={formEnctype}>
         <p class="eyebrow eyebrow-rule">Send a message</p>
         <h2>Where would you like training to land?</h2>
 
@@ -96,7 +101,8 @@ const schemas = [
         <div class="contact-aside__block">
           <p class="eyebrow eyebrow-rule">Direct</p>
           <a href={`mailto:${site.email}`} class="contact-aside__link">{site.email}</a>
-          <a href={`tel:${site.phone.replace(/\s+/g, '')}`} class="contact-aside__link">{site.phone}</a>
+          <a href={`tel:${site.phone.replace(/[\s()]/g, '')}`} class="contact-aside__link">{site.phone}</a>
+          <a href={`tel:${site.phoneDirect.replace(/[\s()]/g, '')}`} class="contact-aside__link contact-aside__link--small">{site.phoneDirect} (direct line)</a>
         </div>
 
         <div class="contact-aside__block">
@@ -251,6 +257,7 @@ const schemas = [
     margin-top: 0.4rem;
   }
   .contact-aside__link:hover { color: var(--c-blue); }
+  .contact-aside__link--small { font-size: 1rem; color: var(--c-muted); }
   .contact-aside__block ol {
     padding-left: 0;
     margin: 0.75rem 0 0;

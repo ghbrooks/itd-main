@@ -10,6 +10,9 @@ testimonial:
   quote: 'The training transformed how our lawyers present. Much more engaging and persuasive.'
   author: 'Business Development Director, Latham & Watkins'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-engaging-influencing-when-presenting-latham-watkins.webp'
+imageAlt: 'Engaging & Influencing When Presenting'
+subject: 'Presentation Skills'
 seo:
   title: 'Engaging & Influencing When Presenting | ITD Case Study'
   description: 'Engaging & Influencing When Presenting. Latham & Watkins wanted their lawyers to present with greater engagement and influence in client meetings and pitches.'

@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: voice projection and body language'
   - 'Confidence and capability in: crafting memorable speeches'
   - 'Confidence and capability in: handling q&a sessions'
+image: '../../assets/images/courses/public-speaking-training.webp'
+imageAlt: 'Public Speaking Training'
 seo:
   title: 'Public Speaking Training'
   description: 'Public Speaking Training from ITD. Develop the confidence and skills to speak effectively to large audiences.'

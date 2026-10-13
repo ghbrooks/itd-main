@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: avoiding cognitive biases in thinking'
   - 'Confidence and capability in: structured decision-making'
   - 'Confidence and capability in: communicating analytical conclusions'
+image: '../../assets/images/courses/critical-thinking-training.webp'
+imageAlt: 'critical thinking training'
 seo:
   title: 'Critical Thinking Training'
   description: 'Critical Thinking Training from ITD. Sharpen your analytical and critical thinking skills.'

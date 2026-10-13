@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: practice with realistic scenarios'
   - 'Confidence and capability in: managing conflict assertively'
   - 'Confidence and capability in: creating lasting behavioural change'
+image: '../../assets/images/courses/assertiveness-course.webp'
+imageAlt: 'assertiveness course'
 seo:
   title: 'Assertiveness Course'
   description: 'Assertiveness Course from ITD. A structured course to develop assertive communication skills.'

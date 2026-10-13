@@ -2,11 +2,12 @@
 title: 'Virtual Presentation Skills Training'
 client: 'Workday'
 sector: 'General Business'
-courseSlug: 'leadership-training'
+courseSlug: 'virtual-presentation-skills-training-2'
 challenge: 'Workday wanted to enhance their team''s virtual presentation delivery for client demonstrations and webinars.'
 approach: 'ITD delivered virtual presentation skills training focused on audience engagement, storytelling and professional online delivery.'
 outcome: 'Webinar and demo quality improved significantly, with increased client engagement and positive feedback.'
 publishedDate: 2024-01-15
+subject: 'Virtual Presentation Skills'
 seo:
   title: 'Virtual Presentation Skills Training | ITD Case Study'
   description: 'Virtual Presentation Skills Training. Workday wanted to enhance their team''s virtual presentation delivery for client demonstrations and webinars.'

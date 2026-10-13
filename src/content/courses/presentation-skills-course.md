@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: visual aids and slide design'
   - 'Confidence and capability in: audience engagement'
   - 'Confidence and capability in: practice with recorded feedback'
+image: '../../assets/images/courses/presentation-skills-course.webp'
+imageAlt: 'Presentation Skills Course'
 seo:
   title: 'Presentation Skills Course'
   description: 'Presentation Skills Course from ITD. A comprehensive course covering all aspects of effective presenting.'

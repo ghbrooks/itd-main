@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: handling complaints effectively'
   - 'Confidence and capability in: service recovery techniques'
   - 'Confidence and capability in: building customer loyalty'
+image: '../../assets/images/courses/customer-service-training.webp'
+imageAlt: 'customer service training'
 seo:
   title: 'Customer Service Training'
   description: 'Customer Service Training from ITD. Deliver exceptional customer service consistently.'

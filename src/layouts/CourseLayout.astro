@@ -13,6 +13,8 @@ import CaseStudyCard from '~/components/marketing/CaseStudyCard.astro';
 import CTAPanel from '~/components/marketing/CTAPanel.astro';
 import { courseSchema, breadcrumbSchema, faqSchema } from '~/lib/schema';
 import { site } from '~/lib/site';
+import { getReviewsForCourse } from '~/lib/reviews';
+import { groupForSlug } from '~/lib/training';
 
 type Course = Awaited<ReturnType<typeof getCollection<'courses'>>>[number];
 
@@ -25,19 +27,27 @@ const { data } = course;
 
 const allCourses = await getCollection('courses');
 const allCaseStudies = await getCollection('caseStudies');
-const allReviews = await getCollection('reviews');
+const group = groupForSlug(course.slug);
+const WORK_STYLES = new Set(['work-styles-model', 'itd-work-styles-model-training', 'personality-at-work-training', 'personality-profile-managing-people-differently']);
 
 const related = (data.relatedCourses ?? [])
   .map((slug) => allCourses.find((c) => c.slug === slug))
   .filter((c): c is Course => Boolean(c));
 
-const relatedStudies = (data.relatedCaseStudies ?? [])
-  .map((slug) => allCaseStudies.find((c) => c.slug === slug))
-  .filter((c): c is NonNullable<typeof allCaseStudies[number]> => Boolean(c));
+// Explicit related studies first, then any case study that links back to this course.
+const linkedStudies = allCaseStudies
+  .filter((c) => c.data.courseSlug === course.slug)
+  .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
+const relatedStudies = [
+  ...(data.relatedCaseStudies ?? [])
+    .map((slug) => allCaseStudies.find((c) => c.slug === slug))
+    .filter((c): c is NonNullable<typeof allCaseStudies[number]> => Boolean(c)),
+  ...linkedStudies,
+]
+  .filter((c, i, arr) => arr.findIndex((x) => x.slug === c.slug) === i)
+  .slice(0, 4);
 
-const courseReviews = allReviews
-  .filter((r) => r.data.courseSlug === course.slug)
-  .slice(0, 3);
+const courseReviews = await getReviewsForCourse(course.slug, 3);
 
 const url = `${site.url}/${course.slug}`;
 const schemas = [
@@ -49,7 +59,8 @@ const schemas = [
   }),
   breadcrumbSchema([
     { name: 'Home', url: '/' },
-    { name: 'Training', url: '/soft-skills-training' },
+    { name: 'Training', url: '/training' },
+    ...(group ? [{ name: group.label, url: `/training#${group.id}` }] : []),
     { name: data.title, url: `/${course.slug}` },
   ]),
   ...(data.faqs && data.faqs.length > 0 ? [faqSchema(data.faqs)] : []),
@@ -60,19 +71,22 @@ const schemas = [
   title={data.seo.title}
   description={data.seo.description}
   type="article"
+  image={data.image?.src}
   schemas={schemas}
 >
   <Hero
-    eyebrow={data.eyebrow ?? 'Training'}
+    eyebrow={data.eyebrow ?? group?.label ?? 'Training'}
     title={data.outcome}
     lead={data.summary}
     variant="course"
+    image={data.image}
+    imageAlt={data.imageAlt}
     primaryCta={{ label: 'Discuss this course', href: '/contact' }}
-    secondaryCta={{ label: 'See all courses', href: '/soft-skills-training' }}
+    secondaryCta={{ label: 'See all courses', href: '/training' }}
     meta={[
       { label: 'Duration', value: data.duration },
       { label: 'Mode', value: data.mode.map((m) => m === 'virtual' ? 'Virtual' : 'In-person').join(' · ') },
-      { label: 'For', value: data.category.replace('-', ' ') },
+      { label: 'Subject area', value: group?.label ?? data.category.replace('-', ' ') },
     ]}
   >
     <div class="course-hero-extras">
@@ -123,6 +137,13 @@ const schemas = [
             <p>{data.methodology}</p>
           </div>
         )}
+
+        {WORK_STYLES.has(course.slug) && (
+          <div class="course-methodology course-callout">
+            <p class="eyebrow eyebrow-rule">Try it now</p>
+            <p>Take the <a href="/work-styles-model-questionnaire">ITD Work Styles Model questionnaire</a>: forty statements, five minutes, scored instantly in your browser.</p>
+          </div>
+        )}
       </div>
     </div>
   </Section>
@@ -133,14 +154,17 @@ const schemas = [
         <header class="course-section-head">
           <p class="eyebrow eyebrow-rule">In their words</p>
           <h2>What participants tell us afterwards.</h2>
+          <a href={`/reviews?subject=${encodeURIComponent(courseReviews[0]?.data.subject ?? '')}`} class="link-anim">More reviews →</a>
         </header>
         <div class="course-reviews">
           {courseReviews.map((r) => (
             <Testimonial
+              title={r.data.title}
               quote={r.data.quote}
               author={r.data.author}
               organisation={r.data.organisation}
               rating={r.data.rating}
+              date={r.data.publishedDate}
             />
           ))}
         </div>
@@ -160,7 +184,7 @@ const schemas = [
             <CaseStudyCard
               href={`/${cs.slug}`}
               client={cs.data.client}
-              sector={cs.data.sector}
+              sector={cs.data.subject}
               title={cs.data.title}
               excerpt={cs.data.outcome.slice(0, 160) + (cs.data.outcome.length > 160 ? '…' : '')}
             />
@@ -296,6 +320,7 @@ const schemas = [
     border-radius: 14px;
     border-left: 3px solid var(--c-blue);
   }
+  .course-callout a { color: var(--c-deep); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
   .course-methodology p:last-child {
     font-size: 1.05rem;
     line-height: 1.55;

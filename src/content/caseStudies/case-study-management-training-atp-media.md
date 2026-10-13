@@ -10,6 +10,9 @@ testimonial:
   quote: 'Practical, relevant and immediately applicable. Our managers are now much more confident in their roles.'
   author: 'Operations Director, ATP Media'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-management-training-atp-media.webp'
+imageAlt: 'Management Training'
+subject: 'Management'
 seo:
   title: 'Management Training | ITD Case Study'
   description: 'Management Training. ATP Media needed to develop management capabilities in their team leaders who had been promoted from technical roles.'

@@ -3,6 +3,8 @@ title: 'General Business'
 summary: 'Regardless of industry, every organisation depends on people who can communicate clearly, lead effectively, and collaborate well. ITD works with businesses of all sizes to develop these foundational capabilities through targeted training programmes that deliver real behavioural change. Our general business programmes are ideal for organisations seeking to raise the overall standard of interpersonal and management skills across departments and functions.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/general-business.webp'
+imageAlt: 'General Business'
 seo:
   title: 'General Business Training | ITD'
   description: 'ITD provides soft skills training for general business environments, helping teams improve communication, leadership, and collaboration across all functions.'

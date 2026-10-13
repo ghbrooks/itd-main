@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: asking effective questions'
   - 'Confidence and capability in: presenting solutions'
   - 'Confidence and capability in: handling objections and closing'
+image: '../../assets/images/courses/basic-sales-training.webp'
+imageAlt: 'basic sales training'
 seo:
   title: 'Basic Sales Training'
   description: 'Basic Sales Training from ITD. Essential sales skills for new and developing salespeople.'

@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: motivation and engagement'
   - 'Confidence and capability in: problem-solving and decision-making'
   - 'Confidence and capability in: creating a positive team culture'
+image: '../../assets/images/courses/how-to-manage-people.webp'
+imageAlt: 'How to manage people training workshop'
 seo:
   title: 'How to Manage People'
   description: 'How to Manage People from ITD. A practical guide to managing people effectively in any setting.'

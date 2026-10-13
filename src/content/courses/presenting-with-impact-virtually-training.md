@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: interactive techniques for virtual audiences'
   - 'Confidence and capability in: technical confidence with platforms'
   - 'Confidence and capability in: practice in a virtual setting'
+image: '../../assets/images/courses/presenting-with-impact-virtually-training.webp'
+imageAlt: 'presenting with impact virtually'
 seo:
   title: 'Presenting with Impact Virtually Training'
   description: 'Presenting with Impact Virtually Training from ITD. Learn to present with impact and confidence in virtual settings.'

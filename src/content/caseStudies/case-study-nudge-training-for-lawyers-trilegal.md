@@ -10,6 +10,9 @@ testimonial:
   quote: 'The nudge training has fundamentally changed how we approach business development. Highly recommended.'
   author: 'Senior Partner, Trilegal'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-nudge-training-for-lawyers-trilegal.webp'
+imageAlt: 'Nudge Training for Lawyers'
+subject: 'Nudge'
 seo:
   title: 'Nudge Training for Lawyers | ITD Case Study'
   description: 'Nudge Training for Lawyers. Trilegal wanted to introduce nudge techniques to their lawyers to improve business development and client relationship m'

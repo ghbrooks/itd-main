@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: building resilience in sales'
   - 'Confidence and capability in: team motivation strategies'
   - 'Confidence and capability in: sustaining momentum long-term'
+image: '../../assets/images/courses/sales-motivation-training.webp'
+imageAlt: 'sales motivation training'
 seo:
   title: 'Sales Motivation Training'
   description: 'Sales Motivation Training from ITD. Reignite motivation and drive within your sales team.'

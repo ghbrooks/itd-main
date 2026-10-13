@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: communication during change'
   - 'Confidence and capability in: managing resistance'
   - 'Confidence and capability in: sustaining change long-term'
+image: '../../assets/images/courses/change-management-training.webp'
+imageAlt: 'change management training'
 seo:
   title: 'Change Management Training'
   description: 'Change Management Training from ITD. Lead and manage change effectively within your organisation.'

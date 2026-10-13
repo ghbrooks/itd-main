@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: confidential learning environment'
   - 'Confidence and capability in: focused skill development'
   - 'Confidence and capability in: ongoing support and accountability'
+image: '../../assets/images/courses/one-to-one-training.webp'
+imageAlt: 'one-to-one training'
 seo:
   title: 'One to One Training'
   description: 'One to One Training from ITD. Personalised training sessions tailored to individual development needs.'

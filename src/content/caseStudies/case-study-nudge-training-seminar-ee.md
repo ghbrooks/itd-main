@@ -10,6 +10,9 @@ testimonial:
   quote: 'Fascinating session that opened our eyes to how small changes can have a big impact on customer behaviour.'
   author: 'Head of Customer Experience, EE'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-nudge-training-seminar-ee.webp'
+imageAlt: 'Nudge Training Seminar'
+subject: 'Nudge'
 seo:
   title: 'Nudge Training Seminar | ITD Case Study'
   description: 'Nudge Training Seminar. EE wanted to explore how nudge theory could improve customer communications and internal processes.'

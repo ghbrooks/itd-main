@@ -1,0 +1,276 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+import { statements, workStyles, styleDescriptions, resultsIntro, closingNote } from '~/data/work-styles';
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Work Styles Model', url: '/work-styles-model' },
+    { name: 'Questionnaire', url: '/work-styles-model-questionnaire' },
+  ]),
+];
+---
+<BaseLayout
+  title="ITD Work Styles Model questionnaire"
+  description="Forty quick statements, four work styles. Complete the ITD Work Styles Model questionnaire and get your Conceptual, Social, Analytical and Direct scores instantly."
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="ITD Work Styles Model"
+    title="Which style drives the way you work?"
+    lead="Forty statements, agree or disagree, about five minutes. Your answers are scored in your browser and never leave your device."
+    variant="page"
+    secondaryCta={{ label: 'About the model', href: '/work-styles-model' }}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-narrow">
+      <form class="wsq" data-wsq novalidate>
+        <div class="wsq__intro">
+          <p>For each statement choose <strong>Agree</strong> if it is more true than not, or <strong>Disagree</strong> if it is more false than not. Go with your first reaction. There are no right answers and no style is better than another.</p>
+          <p class="wsq__progress" aria-live="polite"><span data-progress>0</span> of {statements.length} answered</p>
+        </div>
+
+        <ol class="wsq__list">
+          {statements.map((s, i) => (
+            <li class="wsq__item" data-style={s.style}>
+              <fieldset>
+                <legend><span class="wsq__num">{i + 1}</span> {s.text}</legend>
+                <div class="wsq__choices">
+                  <label><input type="radio" name={`q${s.id}`} value="1" required /><span>Agree</span></label>
+                  <label><input type="radio" name={`q${s.id}`} value="0" required /><span>Disagree</span></label>
+                </div>
+              </fieldset>
+            </li>
+          ))}
+        </ol>
+
+        <div class="wsq__actions">
+          <button type="submit" class="btn btn--primary">See my scores</button>
+          <p class="wsq__hint" data-hint hidden>Please answer every statement — the unanswered ones are highlighted.</p>
+        </div>
+        <noscript><p class="wsq__hint">This questionnaire needs JavaScript to calculate your scores. You can also <a href="/contact">ask us to run it with your team</a>.</p></noscript>
+      </form>
+
+      <section class="wsq-results" data-results hidden aria-live="polite" tabindex="-1">
+        <p class="eyebrow eyebrow-rule">Your results</p>
+        <h2>Thanks for completing the ITD Work Styles Questionnaire.</h2>
+        <p class="wsq-results__lead">The Model describes four Work Styles and various behaviours within each Style. Here are your scores:</p>
+
+        <ul class="wsq-scores">
+          {workStyles.map((s) => (
+            <li data-score-for={s}>
+              <div class="wsq-scores__head"><span>{s}</span><strong><span data-score>0</span> / 10</strong></div>
+              <div class="wsq-scores__bar"><span data-bar style="width:0%"></span></div>
+            </li>
+          ))}
+        </ul>
+        <p class="wsq-results__dominant">Your highest score is <strong data-dominant></strong>.</p>
+
+        <div class="wsq-results__actions">
+          <a href="/contact" class="btn btn--primary">Discuss your results with us</a>
+          <button type="button" class="btn btn--ghost" data-share>Email me my scores</button>
+          <button type="button" class="btn btn--ghost" data-retake>Start again</button>
+        </div>
+
+        <div class="prose wsq-prose">
+          {resultsIntro.map((p) => <p>{p}</p>)}
+          <div data-style-list>
+          {workStyles.map((s) => {
+            const d = styleDescriptions[s];
+            return (
+              <details class="wsq-style" data-style-detail={s}>
+                <summary><h3>{s}</h3><span class="wsq-style__score" data-score-inline></span></summary>
+                <div class="wsq-style__body">
+                  <p><strong>Overview.</strong> {d.overview}</p>
+                  <p><strong>Strengths</strong></p>
+                  <ul>{d.strengths.map((x) => <li>{x}</li>)}</ul>
+                  <p><strong>Weaknesses</strong></p>
+                  <ul>{d.weaknesses.map((x) => <li>{x}</li>)}</ul>
+                  <p><strong>Communication</strong></p>
+                  <ul>{d.communication.map((x) => <li>{x}</li>)}</ul>
+                </div>
+              </details>
+            );
+          })}
+          </div>
+          <p>{closingNote}</p>
+          <p><strong>We hope you enjoy using this tool to reflect and develop.</strong></p>
+        </div>
+      </section>
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Use it with your team"
+    title="The model lands best in the room."
+    lead="We use the Work Styles Model in management, leadership, team, delegation, presentation, time management and sales training. Tell us where it would help."
+    primary={{ label: 'Talk to us', href: '/contact' }}
+    secondary={{ label: 'Work Styles training', href: '/work-styles-model' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .wsq__intro { margin-bottom: 2rem; }
+  .wsq__intro p { margin: 0 0 0.75rem; line-height: 1.6; }
+  .wsq__progress {
+    font-size: 0.85rem;
+    color: var(--c-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+  }
+  .wsq__list { list-style: none; margin: 0; padding: 0; counter-reset: q; }
+  .wsq__item fieldset {
+    border: 0;
+    border-top: 1px solid var(--c-rule);
+    margin: 0;
+    padding: 1.1rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  @media (min-width: 640px) { .wsq__item fieldset { grid-template-columns: 1fr auto; gap: 1.5rem; } }
+  .wsq__item legend { float: left; width: 100%; font-size: 1.02rem; line-height: 1.45; color: var(--c-deep); font-weight: 500; }
+  .wsq__num {
+    display: inline-block;
+    min-width: 2ch;
+    margin-right: 0.5rem;
+    color: var(--c-blue);
+    font-family: var(--font-display);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .wsq__choices { display: inline-flex; gap: 0.5rem; }
+  .wsq__choices label { position: relative; }
+  .wsq__choices input { position: absolute; opacity: 0; inset: 0; }
+  .wsq__choices span {
+    display: inline-block;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--c-rule);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--c-deep);
+    cursor: pointer;
+    transition: background 160ms var(--ease-out-soft), border-color 160ms var(--ease-out-soft), color 160ms var(--ease-out-soft);
+    user-select: none;
+  }
+  .wsq__choices input:checked + span { background: var(--c-deep); border-color: var(--c-deep); color: white; }
+  .wsq__choices input:focus-visible + span { outline: 2px solid var(--c-blue); outline-offset: 2px; }
+  .wsq__item.is-missing fieldset { background: rgba(2, 132, 213, 0.06); border-radius: 10px; padding-inline: 0.75rem; }
+  .wsq__actions { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--c-rule); display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+  .wsq__hint { margin: 0; color: var(--c-mid); font-size: 0.9rem; }
+
+  .wsq-results { margin-top: 1rem; }
+  .wsq-results h2 { margin: 0.6rem 0 0.75rem; font-size: clamp(1.6rem, 2.8vw, 2.3rem); letter-spacing: -0.025em; }
+  .wsq-results__lead { color: var(--c-muted); margin: 0 0 1.75rem; }
+  .wsq-scores { list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid; gap: 0.9rem; }
+  .wsq-scores__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }
+  .wsq-scores__head span { font-family: var(--font-display); font-weight: 600; color: var(--c-deep); font-size: 1.1rem; }
+  .wsq-scores__head strong { font-variant-numeric: tabular-nums; color: var(--c-mid); }
+  .wsq-scores__bar { height: 12px; border-radius: 999px; background: var(--c-tint); overflow: hidden; }
+  .wsq-scores__bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--c-blue), var(--c-mid)); border-radius: inherit; transition: width 600ms var(--ease-out-soft); }
+  .wsq-scores li.is-dominant .wsq-scores__bar span { background: linear-gradient(90deg, var(--c-mid), var(--c-deep)); }
+  .wsq-results__dominant { font-size: 1.1rem; color: var(--c-deep); margin: 0 0 1.5rem; }
+  .wsq-results__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2.5rem; }
+  .wsq-prose p { line-height: 1.65; }
+  .wsq-style { border: 1px solid var(--c-rule); border-radius: 14px; margin: 0.75rem 0; background: var(--c-bg); }
+  .wsq-style.is-dominant { border-color: var(--c-blue); }
+  .wsq-style summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; cursor: pointer; list-style: none; }
+  .wsq-style summary::-webkit-details-marker { display: none; }
+  .wsq-style summary h3 { margin: 0; font-size: 1.2rem; }
+  .wsq-style__score { color: var(--c-mid); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .wsq-style__body { padding: 0 1.25rem 1.25rem; }
+  .wsq-style__body p { margin: 0.75rem 0 0.35rem; }
+  .wsq-style__body ul { margin: 0; }
+</style>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-wsq]');
+  const results = document.querySelector<HTMLElement>('[data-results]');
+  if (form && results) {
+    const items = [...form.querySelectorAll<HTMLLIElement>('.wsq__item')];
+    const progress = form.querySelector<HTMLElement>('[data-progress]');
+    const hint = form.querySelector<HTMLElement>('[data-hint]');
+
+    const answered = (li: HTMLLIElement) => Boolean(li.querySelector<HTMLInputElement>('input:checked'));
+
+    form.addEventListener('change', () => {
+      const n = items.filter(answered).length;
+      if (progress) progress.textContent = String(n);
+      items.forEach((li) => { if (answered(li)) li.classList.remove('is-missing'); });
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const missing = items.filter((li) => !answered(li));
+      if (missing.length) {
+        missing.forEach((li) => li.classList.add('is-missing'));
+        if (hint) hint.hidden = false;
+        missing[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      if (hint) hint.hidden = true;
+
+      const scores: Record<string, number> = {};
+      for (const li of items) {
+        const style = li.dataset.style ?? '';
+        const v = li.querySelector<HTMLInputElement>('input:checked')?.value === '1' ? 1 : 0;
+        scores[style] = (scores[style] ?? 0) + v;
+      }
+      const max = Math.max(...Object.values(scores));
+      const dominant = Object.keys(scores).filter((s) => scores[s] === max);
+
+      for (const [style, score] of Object.entries(scores)) {
+        const row = results.querySelector<HTMLElement>(`[data-score-for="${style}"]`);
+        if (row) {
+          row.querySelector('[data-score]')!.textContent = String(score);
+          (row.querySelector('[data-bar]') as HTMLElement).style.width = `${score * 10}%`;
+          row.classList.toggle('is-dominant', dominant.includes(style));
+        }
+        const detail = results.querySelector<HTMLDetailsElement>(`[data-style-detail="${style}"]`);
+        if (detail) {
+          detail.querySelector('[data-score-inline]')!.textContent = `${score} / 10`;
+          detail.classList.toggle('is-dominant', dominant.includes(style));
+          detail.open = dominant.includes(style);
+        }
+      }
+      results.querySelector('[data-dominant]')!.textContent =
+        dominant.length === 1 ? (dominant[0] ?? '') : `${dominant.slice(0, -1).join(', ')} and ${dominant.at(-1) ?? ''} (a tie)`;
+
+      // Highest-scoring style first in the descriptions.
+      const list = results.querySelector<HTMLElement>('[data-style-list]');
+      if (list) {
+        [...list.querySelectorAll<HTMLDetailsElement>('[data-style-detail]')]
+          .sort((a, b) => (scores[b.dataset.styleDetail ?? ''] ?? 0) - (scores[a.dataset.styleDetail ?? ''] ?? 0))
+          .forEach((d) => list.appendChild(d));
+      }
+
+      form.hidden = true;
+      results.hidden = false;
+      results.focus();
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      results.querySelector<HTMLButtonElement>('[data-share]')?.addEventListener('click', () => {
+        const lines = Object.entries(scores).map(([s, v]) => `${s}: ${v} / 10`).join('%0D%0A');
+        location.href = `mailto:?subject=${encodeURIComponent('My ITD Work Styles scores')}&body=${encodeURIComponent('My ITD Work Styles Model scores:')}%0D%0A%0D%0A${lines}%0D%0A%0D%0A${encodeURIComponent(location.href)}`;
+      }, { once: true });
+    });
+
+    results.querySelector<HTMLButtonElement>('[data-retake]')?.addEventListener('click', () => {
+      form.reset();
+      items.forEach((li) => li.classList.remove('is-missing'));
+      if (progress) progress.textContent = '0';
+      results.hidden = true;
+      form.hidden = false;
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+</script>

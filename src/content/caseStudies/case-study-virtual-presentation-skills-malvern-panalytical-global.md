@@ -2,11 +2,14 @@
 title: 'Virtual Presentation Skills'
 client: 'Malvern Panalytical'
 sector: 'General Business'
-courseSlug: 'leadership-training'
+courseSlug: 'virtual-presentation-skills-training-2'
 challenge: 'Malvern Panalytical needed to upskill their global team in virtual presentation delivery for client meetings and conferences.'
 approach: 'ITD delivered virtual presentation skills training to participants across multiple countries, covering engagement techniques for online audiences.'
 outcome: 'Presentation effectiveness improved globally, with consistent positive feedback from clients on the quality of virtual meetings.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-virtual-presentation-skills-malvern-panalytical-global.webp'
+imageAlt: 'Virtual Presentation Skills'
+subject: 'Virtual Presentation Skills'
 seo:
   title: 'Virtual Presentation Skills | ITD Case Study'
   description: 'Virtual Presentation Skills. Malvern Panalytical needed to upskill their global team in virtual presentation delivery for client meetings and confere'

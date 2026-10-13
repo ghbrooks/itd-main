@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: meeting management and efficiency'
   - 'Confidence and capability in: strategic use of time'
   - 'Confidence and capability in: modelling good time management for your team'
+image: '../../assets/images/courses/time-management-managers-training.webp'
+imageAlt: 'time management for managers training'
 seo:
   title: 'Time Management for Managers'
   description: 'Time Management for Managers from ITD. Time management specifically for people in management roles.'

@@ -4,6 +4,7 @@ description: 'Delegation is one of the most important — and most misunderstood
 author: 'ITD Team'
 publishedDate: '2024-06-12'
 category: 'Management'
+draft: true
 seo:
   title: 'The Art of Effective Delegation | ITD Blog'
   description: 'Learn how to delegate effectively with this practical guide. Discover common delegation pitfalls and strategies for empowering your team.'

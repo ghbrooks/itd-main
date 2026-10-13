@@ -21,6 +21,8 @@ outcomes:
   - 'Confidence and capability in: technical setup and best practice'
 relatedCourses:
   - 'presenting-with-impact-virtually-training'
+image: '../../assets/images/courses/virtual-presentation-skills-training-2.webp'
+imageAlt: 'Virtual Presentation Skills Training'
 seo:
   title: 'Virtual Presentation Skills Training'
   description: 'Virtual Presentation Skills Training from ITD. Master the art of presenting effectively in virtual environments.'

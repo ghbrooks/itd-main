@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: real-world nudge examples'
   - 'Confidence and capability in: applications in your sector'
   - 'Confidence and capability in: discussion and q&a'
+image: '../../assets/images/courses/nudge-theory-seminar.webp'
+imageAlt: 'Nudge theory seminar'
 seo:
   title: 'Nudge Theory Seminar'
   description: 'Nudge Theory Seminar from ITD. An engaging introduction to nudge theory and behavioural science.'

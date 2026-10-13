@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: choice architecture principles'
   - 'Confidence and capability in: designing nudge interventions'
   - 'Confidence and capability in: measuring nudge effectiveness'
+image: '../../assets/images/courses/nudge-course.webp'
+imageAlt: 'Nudge-Course-Workshop'
 seo:
   title: 'Nudge Course'
   description: 'Nudge Course from ITD. A full-day course covering behavioural science and nudge techniques.'

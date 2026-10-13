@@ -23,6 +23,8 @@ outcomes:
 relatedCourses:
   - 'assertiveness-training'
   - 'developing-confidence-training'
+image: '../../assets/images/courses/developing-confidence-in-communication.webp'
+imageAlt: 'developing confidence in communication'
 seo:
   title: 'Developing Confidence in Communication'
   description: 'Developing Confidence in Communication from ITD. Build confidence in your ability to communicate in any professional setting.'

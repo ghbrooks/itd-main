@@ -11,6 +11,8 @@ relevantCourses:
   - 'communication-training'
   - 'managing-upwards-training'
   - 'people-management-training'
+image: '../../assets/images/sectors/law.webp'
+imageAlt: 'Law firm training workshops'
 seo:
   title: 'Soft-skills training for law firms — assertiveness, nudge, presentation'
   description: 'Specialist training for senior associates and partners. Assertiveness, nudge, presentation, communication. Used by Clifford Chance and other major firms.'

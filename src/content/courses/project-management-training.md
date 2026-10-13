@@ -24,6 +24,8 @@ relatedCourses:
   - 'project-management-training-for-law-firms'
   - 'virtual-project-management-training'
   - 'project-management-skills'
+image: '../../assets/images/courses/project-management-training.webp'
+imageAlt: 'Project management training'
 seo:
   title: 'Project Management Training'
   description: 'Practical project management training for all levels. From fundamentals to advanced planning and stakeholder management. Virtual and in-person.'

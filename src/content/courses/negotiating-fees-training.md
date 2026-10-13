@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: handling fee objections'
   - 'Confidence and capability in: maintaining relationships while negotiating'
   - 'Confidence and capability in: creative fee structures'
+image: '../../assets/images/courses/negotiating-fees-training.webp'
+imageAlt: 'Negotiating Fees Training'
 seo:
   title: 'Negotiating Fees Training'
   description: 'Negotiating Fees Training from ITD. Learn to negotiate fees with confidence and maintain value.'

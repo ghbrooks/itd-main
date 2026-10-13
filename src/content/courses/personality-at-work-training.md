@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: adapting to different personalities'
   - 'Confidence and capability in: managing personality clashes'
   - 'Confidence and capability in: building diverse, effective teams'
+image: '../../assets/images/courses/personality-at-work-training.webp'
+imageAlt: 'Personality at work training'
 seo:
   title: 'Personality At Work Training'
   description: 'Personality At Work Training from ITD. Understand personality differences and how to work effectively with others.'

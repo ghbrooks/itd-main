@@ -7,6 +7,9 @@ challenge: 'Trilegal wanted to use personality profiling to improve team dynamic
 approach: 'ITD delivered Personality at Work training helping lawyers understand different working styles and adapt their communication approach accordingly.'
 outcome: 'The team reported improved collaboration and reduced friction in cross-team working situations.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-personality-at-work-trilegal.webp'
+imageAlt: 'Personality at Work'
+subject: 'Personality at Work'
 seo:
   title: 'Personality at Work | ITD Case Study'
   description: 'Personality at Work. Trilegal wanted to use personality profiling to improve team dynamics and communication within their growing firm.'

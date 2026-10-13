@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: technology and platform skills'
   - 'Confidence and capability in: handling technical challenges'
   - 'Confidence and capability in: measuring online training effectiveness'
+image: '../../assets/images/courses/delivering-engaging-online-training.webp'
+imageAlt: 'Delivering Engaging Online Training'
 seo:
   title: 'Delivering Engaging Online Training'
   description: 'Delivering Engaging Online Training from ITD. Learn to create and deliver training that engages online audiences.'

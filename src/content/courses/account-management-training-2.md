@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: regular review and communication'
   - 'Confidence and capability in: identifying client needs'
   - 'Confidence and capability in: retaining and growing revenue'
+image: '../../assets/images/courses/account-management-training-2.webp'
+imageAlt: 'Account Management Training'
 seo:
   title: 'Account Management Training'
   description: 'Account Management Training from ITD. Build the skills to manage and grow client accounts effectively.'

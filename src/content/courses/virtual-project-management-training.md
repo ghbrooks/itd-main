@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: communication in virtual projects'
   - 'Confidence and capability in: monitoring progress remotely'
   - 'Confidence and capability in: virtual collaboration best practice'
+image: '../../assets/images/courses/virtual-project-management-training.webp'
+imageAlt: 'virtual project management training'
 seo:
   title: 'Virtual Project Management Training'
   description: 'Virtual Project Management Training from ITD. Learn to manage projects effectively in virtual environments.'

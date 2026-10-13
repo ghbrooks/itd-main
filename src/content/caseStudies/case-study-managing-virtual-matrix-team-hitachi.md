@@ -7,6 +7,9 @@ challenge: 'Hitachi needed to develop skills in managing virtual and matrix team
 approach: 'ITD delivered training on managing virtual and matrix teams, covering remote leadership, communication across cultures and maintaining team cohesion.'
 outcome: 'Managers reported improved ability to lead their dispersed teams, with better collaboration and team performance.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-managing-virtual-matrix-team-hitachi.webp'
+imageAlt: 'Hitachi'
+subject: 'Management'
 seo:
   title: 'Managing Virtual / Matrix Team | ITD Case Study'
   description: 'Managing Virtual / Matrix Team. Hitachi needed to develop skills in managing virtual and matrix teams across multiple countries and time zones.'

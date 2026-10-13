@@ -1,0 +1,220 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CourseCard from '~/components/marketing/CourseCard.astro';
+import ReviewSummary from '~/components/marketing/ReviewSummary.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+import { trainingGroups, coachingLinks, nudgeLinks } from '~/lib/training';
+
+const courses = await getCollection('courses');
+const bySlug = new Map(courses.map((c) => [c.slug, c]));
+
+// Fail the build if the sitemap references a course that does not exist.
+const missing = [...trainingGroups.flatMap((g) => g.courses), ...coachingLinks, ...nudgeLinks]
+  .map((l) => l.slug)
+  .filter((s) => !bySlug.has(s));
+if (missing.length) throw new Error(`training.ts references unknown course slugs: ${missing.join(', ')}`);
+
+const groups = trainingGroups.map((g) => ({
+  ...g,
+  entries: g.courses.map((l) => ({ label: l.label, entry: bySlug.get(l.slug)! })),
+}));
+
+const inMenu = new Set([
+  ...trainingGroups.flatMap((g) => g.courses.map((c) => c.slug)),
+  ...coachingLinks.map((c) => c.slug),
+  ...nudgeLinks.map((c) => c.slug),
+]);
+// Everything else, so no course is orphaned. Formats and overview pages go last.
+const other = courses
+  .filter((c) => !inMenu.has(c.slug))
+  .sort((a, b) => {
+    const rank = (c: typeof a) => (c.data.category === 'format' ? 1 : 0);
+    return rank(a) - rank(b) || a.data.title.localeCompare(b.data.title);
+  });
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Training', url: '/training' },
+  ]),
+];
+---
+<BaseLayout
+  title="Training courses — soft skills training by subject area"
+  description={`${courses.length} soft skills training courses across leadership and management, communication, personal development and sales. All tailored to your needs, delivered virtually or in person.`}
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="Training"
+    title="Every course, by subject area."
+    lead="All of our training is tailored to the people in the room and delivered virtually or in person. Start with the subject area, then tell us the challenge."
+    variant="page"
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+    secondaryCta={{ label: 'How fees work', href: '/training-fees' }}
+  >
+    <div class="training-hero-extras"><ReviewSummary /></div>
+  </Hero>
+
+  <nav class="training-jump container-wide" aria-label="Subject areas">
+    {groups.map((g) => <a href={`#${g.id}`}>{g.label} <span>{g.entries.length}</span></a>)}
+    <a href="#coaching">Coaching <span>{coachingLinks.length}</span></a>
+    <a href="#nudge">Nudge <span>{nudgeLinks.length}</span></a>
+    <a href="#more">More <span>{other.length}</span></a>
+  </nav>
+
+  {groups.map((g, idx) => (
+    <Section size="md" tone={idx % 2 ? 'alt' : 'default'} id={g.id}>
+      <div class="container-wide">
+        <header class="group-head">
+          <div>
+            <p class="eyebrow eyebrow-rule">Subject area</p>
+            <h2>{g.label}</h2>
+            <p class="group-head__blurb">{g.blurb}</p>
+          </div>
+        </header>
+        <div class="course-grid">
+          {g.entries.map(({ label, entry }) => (
+            <CourseCard
+              href={`/${entry.slug}`}
+              title={label}
+              outcome={entry.data.outcome}
+              duration={entry.data.duration}
+              size="compact"
+            />
+          ))}
+        </div>
+      </div>
+    </Section>
+  ))}
+
+  <Section size="md" tone={groups.length % 2 ? 'alt' : 'default'} id="coaching">
+    <div class="container-wide">
+      <header class="group-head">
+        <div>
+          <p class="eyebrow eyebrow-rule">One to one</p>
+          <h2>Coaching</h2>
+          <p class="group-head__blurb">Focused, confidential development for individuals. <a href="/coaching" class="link-anim">About our coaching →</a></p>
+        </div>
+      </header>
+      <div class="course-grid">
+        {coachingLinks.map((l) => {
+          const e = bySlug.get(l.slug)!;
+          return <CourseCard href={`/${e.slug}`} title={l.label} outcome={e.data.outcome} duration={e.data.duration} size="compact" />;
+        })}
+      </div>
+    </div>
+  </Section>
+
+  <Section size="md" tone={groups.length % 2 ? 'default' : 'alt'} id="nudge">
+    <div class="container-wide">
+      <header class="group-head">
+        <div>
+          <p class="eyebrow eyebrow-rule">Behavioural science</p>
+          <h2>Nudge</h2>
+          <p class="group-head__blurb">Thaler and Sunstein's nudge theory, turned into practical tools for influencing decisions at work.</p>
+        </div>
+      </header>
+      <div class="course-grid">
+        {nudgeLinks.map((l) => {
+          const e = bySlug.get(l.slug)!;
+          return <CourseCard href={`/${e.slug}`} title={l.label} outcome={e.data.outcome} duration={e.data.duration} size="compact" />;
+        })}
+      </div>
+    </div>
+  </Section>
+
+  <Section size="md" tone={groups.length % 2 ? 'alt' : 'default'} id="more">
+    <div class="container-wide">
+      <header class="group-head">
+        <div>
+          <p class="eyebrow eyebrow-rule">Also available</p>
+          <h2>More courses, formats and specialist programmes</h2>
+          <p class="group-head__blurb">Sector-specific versions, formats like bite-size and asynchronous learning, and programmes we run less often but still run well.</p>
+        </div>
+      </header>
+      <ul class="more-list">
+        {other.map((c) => (
+          <li><a href={`/${c.slug}`}>{c.data.title}</a>{c.data.category === 'format' && <span>Format</span>}</li>
+        ))}
+      </ul>
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Not sure where to start?"
+    title="Tell us the challenge. We'll suggest the course."
+    lead="Most clients come to us with a problem, not a course title. That's the better way round."
+    primary={{ label: 'Get in touch', href: '/contact' }}
+    secondary={{ label: 'See case studies', href: '/case-studies' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .training-hero-extras { margin-top: 1.5rem; }
+  .training-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .training-jump a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--c-rule);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--c-deep);
+    background: var(--c-bg);
+    transition: border-color 160ms var(--ease-out-soft), background 160ms var(--ease-out-soft);
+  }
+  .training-jump a:hover { border-color: var(--c-deep); background: var(--c-tint); }
+  .training-jump span {
+    font-size: 0.7rem;
+    color: var(--c-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .group-head { margin-bottom: 2rem; max-width: 64ch; }
+  .group-head h2 { margin: 0.6rem 0 0.5rem; font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -0.025em; }
+  .group-head__blurb { margin: 0; color: var(--c-muted); font-size: 1.05rem; line-height: 1.55; }
+  .course-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) { .course-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .course-grid { grid-template-columns: repeat(3, 1fr); } }
+  .more-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+  .more-list li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--c-rule);
+    font-size: 0.95rem;
+  }
+  .more-list a { color: var(--c-deep); font-weight: 500; }
+  .more-list a:hover { color: var(--c-blue); }
+  .more-list span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--c-muted);
+  }
+</style>

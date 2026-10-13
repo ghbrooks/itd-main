@@ -23,6 +23,8 @@ outcomes:
 relatedCourses:
   - 'business-writing-course'
   - 'professional-business-communication-training'
+image: '../../assets/images/courses/written-communication-skills-training.webp'
+imageAlt: 'Written communications skills training video'
 seo:
   title: 'Written Communication Skills Training'
   description: 'Written Communication Skills Training from ITD. Improve the clarity, impact and professionalism of your written communication.'

@@ -7,6 +7,9 @@ challenge: 'SSE needed to develop consistent sales management practices across t
 approach: 'ITD delivered sales management training tailored to the energy sector, covering sales coaching, performance management and team development.'
 outcome: 'Sales managers implemented new coaching practices that led to improved team performance and morale.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-sales-management-training-sse.webp'
+imageAlt: 'Sales Management Training'
+subject: 'Sales Management'
 seo:
   title: 'Sales Management Training | ITD Case Study'
   description: 'Sales Management Training. SSE needed to develop consistent sales management practices across their energy sales division.'

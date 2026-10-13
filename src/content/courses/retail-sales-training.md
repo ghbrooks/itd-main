@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: upselling and cross-selling'
   - 'Confidence and capability in: handling customer objections'
   - 'Confidence and capability in: creating memorable buying experiences'
+image: '../../assets/images/courses/retail-sales-training.webp'
+imageAlt: 'retail sales training'
 seo:
   title: 'Retail Sales Training'
   description: 'Retail Sales Training from ITD. Develop sales skills specific to retail environments.'

@@ -1,0 +1,201 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import Testimonial from '~/components/marketing/Testimonial.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+import { getReviews, getReviewStats } from '~/lib/reviews';
+
+const reviews = await getReviews();
+const stats = await getReviewStats();
+
+// Subject filter options, most reviewed first.
+const subjectCounts = new Map<string, number>();
+for (const r of reviews) {
+  const s = r.data.subject ?? 'Other';
+  subjectCounts.set(s, (subjectCounts.get(s) ?? 0) + 1);
+}
+const subjects = [...subjectCounts.entries()].sort((a, b) => b[1] - a[1]);
+
+const years = [...new Set(reviews.map((r) => r.data.publishedDate.getFullYear()))].sort((a, b) => b - a);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Reviews', url: '/reviews' },
+  ]),
+];
+---
+<BaseLayout
+  title="Training reviews from participants and clients"
+  description={`${stats.count} reviews from participants and clients of ITD training, coaching and consultancy, rated ${stats.average} out of 5. Read what people say about working with us.`}
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="Reviews"
+    title="In their words."
+    lead={`${stats.count} reviews from participants and clients of our training, coaching and consultancy. Every one is published as written.`}
+    variant="page"
+    meta={[
+      { label: 'Average rating', value: `${stats.average} out of 5` },
+      { label: 'Reviews', value: String(stats.count) },
+      { label: 'Five star', value: `${Math.round((reviews.filter((r) => r.data.rating === 5).length / stats.count) * 100)}%` },
+    ]}
+    primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-wide">
+      <div class="review-filters" data-review-filters>
+        <div class="review-filters__row">
+          <label>
+            <span>Subject</span>
+            <select name="subject" data-filter="subject">
+              <option value="">All subjects ({stats.count})</option>
+              {subjects.map(([s, n]) => <option value={s}>{s} ({n})</option>)}
+            </select>
+          </label>
+          <label>
+            <span>Year</span>
+            <select name="year" data-filter="year">
+              <option value="">All years</option>
+              {years.map((y) => <option value={String(y)}>{y}</option>)}
+            </select>
+          </label>
+          <label class="review-filters__search">
+            <span>Search</span>
+            <input type="search" name="q" placeholder="Course, organisation, keyword…" data-filter="q" />
+          </label>
+        </div>
+        <p class="review-filters__count" aria-live="polite">
+          Showing <strong data-count>{stats.count}</strong> of {stats.count} reviews
+        </p>
+      </div>
+
+      <ul class="review-grid" data-review-list>
+        {reviews.map((r) => (
+          <li
+            data-subject={r.data.subject ?? 'Other'}
+            data-year={String(r.data.publishedDate.getFullYear())}
+            data-text={`${r.data.title ?? ''} ${r.data.quote} ${r.data.author} ${r.data.organisation ?? ''}`.toLowerCase()}
+          >
+            <Testimonial
+              title={r.data.title}
+              quote={r.data.quote}
+              author={r.data.author}
+              role={r.data.role}
+              organisation={r.data.organisation}
+              rating={r.data.rating}
+              date={r.data.publishedDate}
+              courseHref={r.data.courseSlug ? `/${r.data.courseSlug}` : undefined}
+              subject={r.data.subject}
+            />
+          </li>
+        ))}
+      </ul>
+      <p class="review-empty" data-empty hidden>No reviews match those filters.</p>
+    </div>
+  </Section>
+
+  <CTAPanel
+    eyebrow="Join them"
+    title="Tell us what your team is working on."
+    lead="Every one of these reviews started with a short conversation about a specific challenge."
+    primary={{ label: 'Start the conversation', href: '/contact' }}
+    secondary={{ label: 'See the case studies', href: '/case-studies' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .review-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--c-rule);
+  }
+  .review-filters__row { display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; }
+  .review-filters label { display: flex; flex-direction: column; gap: 0.35rem; min-width: 180px; }
+  .review-filters__search { flex: 1; min-width: 220px; }
+  .review-filters label span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--c-muted);
+    font-weight: 600;
+  }
+  .review-filters select,
+  .review-filters input {
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--c-rule);
+    border-radius: 10px;
+    background: var(--c-bg);
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--c-text);
+  }
+  .review-filters select:focus,
+  .review-filters input:focus {
+    outline: none;
+    border-color: var(--c-blue);
+    box-shadow: 0 0 0 4px rgba(2, 132, 213, 0.15);
+  }
+  .review-filters__count { margin: 0; color: var(--c-muted); font-size: 0.9rem; }
+  .review-filters__count strong { color: var(--c-deep); }
+
+  .review-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 700px) { .review-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .review-grid { grid-template-columns: repeat(3, 1fr); } }
+  .review-grid li[hidden] { display: none; }
+  .review-empty { color: var(--c-muted); padding: 3rem 0; text-align: center; }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-review-filters]');
+  const list = document.querySelector<HTMLElement>('[data-review-list]');
+  if (root && list) {
+    const items = [...list.querySelectorAll<HTMLLIElement>('li')];
+    const count = root.querySelector<HTMLElement>('[data-count]');
+    const empty = document.querySelector<HTMLElement>('[data-empty]');
+    const subject = root.querySelector<HTMLSelectElement>('[data-filter="subject"]');
+    const year = root.querySelector<HTMLSelectElement>('[data-filter="year"]');
+    const q = root.querySelector<HTMLInputElement>('[data-filter="q"]');
+
+    const apply = () => {
+      const s = subject?.value ?? '';
+      const y = year?.value ?? '';
+      const needle = (q?.value ?? '').trim().toLowerCase();
+      let shown = 0;
+      for (const li of items) {
+        const ok =
+          (!s || li.dataset.subject === s) &&
+          (!y || li.dataset.year === y) &&
+          (!needle || (li.dataset.text ?? '').includes(needle));
+        li.hidden = !ok;
+        if (ok) shown++;
+      }
+      if (count) count.textContent = String(shown);
+      if (empty) empty.hidden = shown > 0;
+    };
+
+    // Deep-link support: /reviews?subject=Nudge
+    const params = new URLSearchParams(location.search);
+    if (subject && params.get('subject')) subject.value = params.get('subject') ?? '';
+    subject?.addEventListener('change', apply);
+    year?.addEventListener('change', apply);
+    q?.addEventListener('input', apply);
+    apply();
+  }
+</script>

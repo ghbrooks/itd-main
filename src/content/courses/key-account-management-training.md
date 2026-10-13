@@ -22,6 +22,8 @@ outcomes:
   - 'Confidence and capability in: managing complex stakeholder groups'
 relatedCourses:
   - 'account-management-training-2'
+image: '../../assets/images/courses/key-account-management-training.webp'
+imageAlt: 'Key-Account-Management-Training-Workshops'
 seo:
   title: 'Key Account Management Training'
   description: 'Key Account Management Training from ITD. Develop and grow your most important client relationships.'

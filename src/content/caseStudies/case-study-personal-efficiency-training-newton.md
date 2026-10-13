@@ -7,6 +7,7 @@ challenge: 'Newton''s consultancy team needed to manage their time and workload 
 approach: 'ITD delivered personal efficiency training tailored to the consulting environment, covering prioritisation, planning and managing client expectations.'
 outcome: 'Consultants reported improved productivity and better ability to manage competing client demands.'
 publishedDate: 2024-01-15
+subject: 'Personal Efficiency'
 seo:
   title: 'Personal Efficiency Training | ITD Case Study'
   description: 'Personal Efficiency Training. Newton''s consultancy team needed to manage their time and workload more effectively during intense client engagements.'

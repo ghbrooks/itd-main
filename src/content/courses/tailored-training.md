@@ -19,6 +19,8 @@ outcomes:
   - 'Practical skills you can apply immediately'
 relatedCourses:
   - 'bespoke-training'
+image: '../../assets/images/courses/tailored-training.webp'
+imageAlt: 'Tailored Training'
 seo:
   title: 'Tailored Training'
   description: 'All ITD training is tailored to your needs. We adapt our proven programmes to your context, challenges and objectives.'

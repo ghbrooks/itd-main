@@ -23,6 +23,8 @@ outcomes:
 relatedCourses:
   - 'line-manager-training'
   - 'people-management-training'
+image: '../../assets/images/courses/practical-management-training.webp'
+imageAlt: 'Practical Management Training Workshop'
 seo:
   title: 'Practical Management Training'
   description: 'Practical Management Training from ITD. Hands-on management training focused on real workplace challenges.'

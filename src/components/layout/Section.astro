@@ -13,21 +13,21 @@ const {
   as: Tag = 'section',
   id,
   class: className = '',
-} = Astro.props;
+} = Astro.props as Props;
 
-const toneClass = {
+const toneClass: Record<NonNullable<Props['tone']>, string> = {
   default: '',
   alt: 'bg-[var(--c-bg-alt)]',
   tint: 'bg-[var(--c-tint)]',
   deep: 'bg-[var(--c-deep)] text-white',
-}[tone];
+};
 
-const padClass = {
+const padClass: Record<NonNullable<Props['size']>, string> = {
   sm: 'py-12 md:py-16',
   md: 'py-20 md:py-28',
   lg: 'py-24 md:py-36',
-}[size];
+};
 ---
-<Tag id={id} class={`${toneClass} ${padClass} ${className} relative`.trim()}>
+<Tag id={id} class={`${toneClass[tone]} ${padClass[size]} ${className} relative`.trim()}>
   <slot />
 </Tag>

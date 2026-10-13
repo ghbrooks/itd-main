@@ -1,55 +1,75 @@
+import { trainingGroups, coachingLinks, nudgeLinks } from './training';
+
 export type NavItem = {
   label: string;
   href: string;
   description?: string;
+  /** Second level. For the Training item these are groups with their own children. */
   children?: NavItem[];
 };
 
+const toNav = (links: { label: string; slug: string }[]): NavItem[] =>
+  links.map((l) => ({ label: l.label, href: `/${l.slug}` }));
+
+/**
+ * Primary navigation, in the order the client specified.
+ * Training is a three-level mega-menu (item → group → course); every other
+ * dropdown is a flat list.
+ */
 export const primaryNav: NavItem[] = [
   {
     label: 'Training',
-    href: '/soft-skills-training',
-    description: 'Every course, by category.',
-    children: [
-      { label: 'Sales', href: '/sales-training' },
-      { label: 'Communication', href: '/communication-skills-training' },
-      { label: 'Presentation', href: '/presentation-skills-training' },
-      { label: 'Leadership', href: '/leadership-training' },
-      { label: 'Management', href: '/management-training' },
-      { label: 'Personal development', href: '/personal-development-training' },
-      { label: 'Nudge for Lawyers', href: '/nudge-training-for-lawyers' },
-      { label: 'ITD Work Styles', href: '/work-styles-model' },
-    ],
+    href: '/training',
+    description: 'Every course, grouped by subject area. All tailored, all available virtually or in person.',
+    children: trainingGroups.map((g) => ({
+      label: g.label,
+      href: `/training#${g.id}`,
+      description: g.blurb,
+      children: toNav(g.courses),
+    })),
+  },
+  {
+    label: 'Coaching',
+    href: '/coaching',
+    description: 'One-to-one development for leaders, specialists and sales managers.',
+    children: toNav(coachingLinks),
   },
   {
     label: 'Sectors',
     href: '/sectors',
   },
   {
-    label: 'Case studies',
+    label: 'Nudge',
+    href: '/nudge-training',
+    description: 'Behavioural science you can use on Monday morning.',
+    children: toNav(nudgeLinks),
+  },
+  {
+    label: 'Case Studies',
     href: '/case-studies',
+  },
+  {
+    label: 'Reviews',
+    href: '/reviews',
   },
   {
     label: 'About',
     href: '/about',
+    description: 'Who we are, how we work and what it costs.',
     children: [
       { label: 'About ITD', href: '/about' },
+      { label: 'About Martin Chapman', href: '/about-martin-chapman' },
+      { label: 'Training Fees', href: '/training-fees' },
+      { label: 'Bespoke Training', href: '/bespoke-training' },
+      { label: 'Bite Size Learning', href: '/bite-size-learning' },
       { label: 'FAQs', href: '/faqs' },
-      { label: 'Tailored training', href: '/tailored-training' },
-      { label: 'Bespoke training', href: '/bespoke-training' },
-      { label: 'Open courses', href: '/open-training' },
-      { label: 'Where we train', href: '/where-have-itd-trained-in-the-world' },
+      { label: 'Where in the World?', href: '/where-have-itd-trained-in-the-world' },
+      { label: 'Asynchronous Training', href: '/asynchronous-training' },
     ],
   },
   {
-    label: 'Resources',
+    label: 'Blog',
     href: '/blog',
-    children: [
-      { label: 'Blog', href: '/blog' },
-      { label: 'Keynote speaker', href: '/keynote-speaker' },
-      { label: 'Asynchronous training', href: '/asynchronous-training' },
-      { label: 'Bite-size learning', href: '/bite-size-learning' },
-    ],
   },
   {
     label: 'Contact',
@@ -59,60 +79,72 @@ export const primaryNav: NavItem[] = [
 
 export const footerNav: { heading: string; items: NavItem[] }[] = [
   {
-    heading: 'Sales',
+    heading: 'Leadership & management',
     items: [
-      { label: 'Sales training', href: '/sales-training' },
-      { label: 'Advanced sales', href: '/advanced-sales-training' },
-      { label: 'Telesales', href: '/telesales-training' },
-      { label: 'Account management', href: '/account-management-training-2' },
-      { label: 'Key account management', href: '/key-account-management-training' },
-      { label: 'Sales management', href: '/sales-management-training' },
-      { label: 'Client care', href: '/client-care-training' },
+      { label: 'Management training', href: '/management-training' },
+      { label: 'Leadership training', href: '/leadership-training' },
+      { label: 'Line manager training', href: '/line-manager-training' },
+      { label: 'Coaching skills', href: '/coaching-skills-training' },
+      { label: 'Delegation skills', href: '/delegation-skills-training' },
+      { label: 'Team building', href: '/team-building-training' },
+      { label: 'Executive coaching', href: '/executive-coaching' },
     ],
   },
   {
     heading: 'Communication',
     items: [
-      { label: 'Communication', href: '/communication-skills-training' },
+      { label: 'Communication skills', href: '/communication-skills-training' },
+      { label: 'Presentation skills', href: '/presentation-skills-training' },
+      { label: 'Virtual presentation skills', href: '/virtual-presentation-skills-training-2' },
+      { label: 'Public speaking', href: '/public-speaking-training' },
       { label: 'Written communication', href: '/written-communication-skills-training' },
       { label: 'Assertiveness', href: '/assertiveness-training' },
-      { label: 'Presentation skills', href: '/presentation-skills-training' },
-      { label: 'Virtual presentation', href: '/virtual-presentation-skills-training-2' },
-      { label: 'Pimp My Slides', href: '/pimp-my-slides' },
     ],
   },
   {
-    heading: 'Leadership & management',
+    heading: 'Sales & personal development',
     items: [
-      { label: 'Leadership', href: '/leadership-training' },
-      { label: 'Management', href: '/management-training' },
-      { label: 'People management', href: '/people-management-training' },
-      { label: 'Managing upwards', href: '/managing-upwards-training' },
-      { label: 'Executive coaching', href: '/executive-coaching' },
+      { label: 'Sales training', href: '/sales-training' },
+      { label: 'Key account management', href: '/key-account-management-training' },
+      { label: 'Negotiation', href: '/negotiation-skills-training' },
+      { label: 'Time management', href: '/time-management-training' },
+      { label: 'Personal efficiency', href: '/personal-efficiency-training' },
+      { label: 'Resilience', href: '/resilience-training' },
     ],
   },
   {
     heading: 'Specialist',
     items: [
       { label: 'Nudge training', href: '/nudge-training' },
-      { label: 'Nudge for Lawyers', href: '/nudge-training-for-lawyers' },
-      { label: 'ITD Work Styles', href: '/work-styles-model' },
-      { label: 'Diversity & Inclusion', href: '/diversity-and-inclusion-training' },
+      { label: 'Nudge for lawyers', href: '/nudge-training-for-lawyers' },
+      { label: 'ITD Work Styles Model', href: '/work-styles-model' },
+      { label: 'Work Styles questionnaire', href: '/work-styles-model-questionnaire' },
       { label: 'Project management', href: '/project-management-training' },
-      { label: 'Financial awareness', href: '/financial-awareness-training' },
+      { label: 'Finance for non-finance', href: '/finance-for-non-finance-training' },
+      { label: 'Keynote speaker', href: '/keynote-speaker' },
     ],
   },
   {
     heading: 'Company',
     items: [
       { label: 'About ITD', href: '/about' },
+      { label: 'About Martin Chapman', href: '/about-martin-chapman' },
+      { label: 'Training fees', href: '/training-fees' },
       { label: 'Sectors', href: '/sectors' },
       { label: 'Case studies', href: '/case-studies' },
+      { label: 'Reviews', href: '/reviews' },
       { label: 'Blog', href: '/blog' },
       { label: 'FAQs', href: '/faqs' },
-      { label: 'Keynote speaker', href: '/keynote-speaker' },
-      { label: 'Where we train', href: '/where-have-itd-trained-in-the-world' },
+      { label: 'Where in the world?', href: '/where-have-itd-trained-in-the-world' },
       { label: 'Contact', href: '/contact' },
     ],
   },
+];
+
+/** Small print links in the footer bar. All resolve to entries in the `pages` collection. */
+export const legalNav: NavItem[] = [
+  { label: 'Privacy & cookies', href: '/privacy' },
+  { label: 'Equality & diversity', href: '/equality-and-diversity-policy' },
+  { label: 'Modern slavery', href: '/modern-slavery-policy' },
+  { label: 'Supplier code of conduct', href: '/supplier-code-of-conduct-compliance-policy' },
 ];

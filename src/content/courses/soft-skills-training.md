@@ -24,6 +24,8 @@ relatedCourses:
   - 'presentation-skills-training'
   - 'sales-training'
   - 'nudge-training'
+image: '../../assets/images/courses/soft-skills-training.webp'
+imageAlt: 'soft skills training'
 seo:
   title: 'Soft Skills Training'
   description: 'Expert soft skills training workshops to develop interpersonal and behavioural skills. Virtual and in-person, tailored to your needs. ITD has 25+ years of experience.'

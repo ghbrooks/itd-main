@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: motivating different personality types'
   - 'Confidence and capability in: communication preferences'
   - 'Confidence and capability in: building a balanced team'
+image: '../../assets/images/courses/personality-profile-managing-people-differently.webp'
+imageAlt: 'personality profile'
 seo:
   title: 'Personality Profile - Managing People Differently'
   description: 'Personality Profile - Managing People Differently from ITD. Use personality insights to manage each team member more effectively.'

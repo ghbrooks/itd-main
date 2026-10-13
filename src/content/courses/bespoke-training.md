@@ -20,6 +20,8 @@ outcomes:
 relatedCourses:
   - 'tailored-training'
   - 'bespoke-training-for-events-offsites'
+image: '../../assets/images/courses/bespoke-training.webp'
+imageAlt: 'bespoke training'
 seo:
   title: 'Bespoke Training'
   description: 'Fully bespoke training programmes designed from scratch for your organisation. ITD creates tailored content, exercises and case studies.'

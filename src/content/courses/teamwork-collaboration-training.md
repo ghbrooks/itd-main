@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: effective team communication'
   - 'Confidence and capability in: conflict resolution'
   - 'Confidence and capability in: collaborative problem-solving'
+image: '../../assets/images/courses/teamwork-collaboration-training.webp'
+imageAlt: 'teamwork collaboration training workshop'
 seo:
   title: 'Teamwork and Collaboration Training'
   description: 'Teamwork and Collaboration Training from ITD. Build stronger teamwork and collaboration within your teams.'

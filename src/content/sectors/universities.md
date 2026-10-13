@@ -3,6 +3,8 @@ title: 'Universities'
 summary: 'Universities are complex organisations where academic excellence, research ambition, and student experience must all be supported by effective leadership and communication. ITD works with universities across the UK and internationally to develop the soft skills of academic staff, professional services teams, and senior leaders. Our training helps university professionals navigate the unique challenges of higher education while building the collaborative culture that underpins institutional success.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/universities.webp'
+imageAlt: 'Universities'
 seo:
   title: 'University Training | ITD'
   description: 'ITD delivers soft skills training for university staff, supporting academics and professional services teams with leadership, communication, and collaboration skills.'

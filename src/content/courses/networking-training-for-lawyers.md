@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: building authentic relationships'
   - 'Confidence and capability in: follow-up and relationship maintenance'
   - 'Confidence and capability in: measuring networking roi'
+image: '../../assets/images/courses/networking-training-for-lawyers.webp'
+imageAlt: 'Networking training for lawyers'
 seo:
   title: 'Networking Training for Lawyers'
   description: 'Networking Training for Lawyers from ITD. Build your network and win more work through effective networking.'

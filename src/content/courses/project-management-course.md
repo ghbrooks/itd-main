@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: risk assessment and mitigation'
   - 'Confidence and capability in: team leadership in projects'
   - 'Confidence and capability in: project review and lessons learned'
+image: '../../assets/images/courses/project-management-course.webp'
+imageAlt: 'project management course'
 seo:
   title: 'Project Management Course'
   description: 'Project Management Course from ITD. A comprehensive project management course covering all key skills.'

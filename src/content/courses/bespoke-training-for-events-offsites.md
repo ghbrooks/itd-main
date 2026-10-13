@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: flexible format and duration'
   - 'Confidence and capability in: professional facilitation'
   - 'Confidence and capability in: memorable learning experiences'
+image: '../../assets/images/courses/bespoke-training-for-events-offsites.webp'
+imageAlt: 'leadership communication'
 seo:
   title: 'Bespoke Training for Events & Offsites'
   description: 'Bespoke Training for Events & Offsites from ITD. Custom training sessions designed for conferences, events and team offsites.'

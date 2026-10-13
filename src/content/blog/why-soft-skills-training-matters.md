@@ -4,6 +4,7 @@ description: 'In an era of rapid technological change, soft skills have become t
 author: 'ITD Team'
 publishedDate: '2024-01-15'
 category: 'Soft Skills'
+draft: true
 seo:
   title: 'Why Soft Skills Training Matters in 2024 | ITD Blog'
   description: 'Explore why soft skills training is more critical than ever in 2024. Learn how communication, leadership and emotional intelligence drive real business outcomes.'

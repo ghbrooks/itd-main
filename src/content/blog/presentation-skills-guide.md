@@ -4,6 +4,7 @@ description: 'From structuring your message to managing nerves, this comprehensi
 author: 'ITD Team'
 publishedDate: '2024-03-18'
 category: 'Presentation Skills'
+draft: true
 seo:
   title: 'The Complete Guide to Presentation Skills | ITD Blog'
   description: 'Master the art of presenting with this complete guide. Learn how to structure your message, engage your audience and deliver with confidence.'

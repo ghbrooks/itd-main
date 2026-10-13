@@ -10,6 +10,7 @@ testimonial:
   quote: 'A comprehensive programme that raised the bar for professional communication across our associate group.'
   author: 'Head of L&D, Clifford Chance'
 publishedDate: 2024-01-15
+subject: 'Communication Skills'
 seo:
   title: 'Professional Business Communication | ITD Case Study'
   description: 'Professional Business Communication. Clifford Chance wanted to raise the standard of professional business communication across their associates.'

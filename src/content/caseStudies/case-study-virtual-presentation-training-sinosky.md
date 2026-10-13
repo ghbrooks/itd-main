@@ -7,6 +7,7 @@ challenge: 'Sinosky needed their international team to deliver polished virtual 
 approach: 'ITD delivered virtual presentation training addressing cross-cultural communication and engaging diverse international audiences.'
 outcome: 'Presentation quality improved across the organisation, with consistent positive feedback from international clients.'
 publishedDate: 2024-01-15
+subject: 'Presentation Skills'
 seo:
   title: 'Virtual Presentation Training | ITD Case Study'
   description: 'Virtual Presentation Training. Sinosky needed their international team to deliver polished virtual presentations to clients and partners worldwide.'

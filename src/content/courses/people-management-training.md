@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: handling performance issues'
   - 'Confidence and capability in: building trust and engagement'
   - 'Confidence and capability in: managing diverse teams'
+image: '../../assets/images/courses/people-management-training.webp'
+imageAlt: 'people management training'
 seo:
   title: 'People Management Training'
   description: 'People Management Training from ITD. Develop the people skills that make the difference in management.'

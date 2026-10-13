@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: impact on individuals and teams'
   - 'Confidence and capability in: responding to microaggressions'
   - 'Confidence and capability in: creating a culture of respect'
+image: '../../assets/images/courses/microaggression-training.webp'
+imageAlt: 'microaggression training'
 seo:
   title: 'Microaggression Training'
   description: 'Microaggression Training from ITD. Understand and address microaggressions to build an inclusive workplace.'

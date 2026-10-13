@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: virtual selling across time zones'
   - 'Confidence and capability in: building international client relationships'
   - 'Confidence and capability in: managing global sales pipelines'
+image: '../../assets/images/courses/international-sales-training.webp'
+imageAlt: 'international sales training'
 seo:
   title: 'International Sales Training'
   description: 'International Sales Training from ITD. Sell effectively across cultures and international markets.'

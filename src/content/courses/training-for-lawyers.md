@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: presentation and advocacy skills'
   - 'Confidence and capability in: time and work management'
   - 'Confidence and capability in: leadership in legal practice'
+image: '../../assets/images/courses/training-for-lawyers.webp'
+imageAlt: 'training for lawyers'
 seo:
   title: 'Training for Lawyers'
   description: 'Training for Lawyers from ITD. Soft skills training designed specifically for legal professionals.'

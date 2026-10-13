@@ -10,6 +10,9 @@ testimonial:
   quote: 'A genuinely insightful programme that helped our lawyers understand themselves and each other better.'
   author: 'L&D Director, Clifford Chance'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-personal-awareness-clifford-chance.webp'
+imageAlt: 'Personal Awareness Training'
+subject: 'Personality at Work'
 seo:
   title: 'Personal Awareness Training | ITD Case Study'
   description: 'Personal Awareness Training. Clifford Chance wanted to help their lawyers develop greater self-awareness to improve professional effectiveness and re'

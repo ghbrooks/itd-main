@@ -22,6 +22,8 @@ outcomes:
   - 'Confidence and capability in: work-life balance strategies'
 relatedCourses:
   - 'time-management-managers-training'
+image: '../../assets/images/courses/time-management-training.webp'
+imageAlt: 'Time Management Training Workshops'
 seo:
   title: 'Time Management Training'
   description: 'Time Management Training from ITD. Master your time with practical techniques and tools.'

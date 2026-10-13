@@ -1,14 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Hero from '~/components/marketing/Hero.astro';
 import Section from '~/components/layout/Section.astro';
 import CTAPanel from '~/components/marketing/CTAPanel.astro';
 import { breadcrumbSchema } from '~/lib/schema';
 
-const sectors = (await getCollection('sectors')).sort((a, b) =>
-  a.data.title.localeCompare(b.data.title),
-);
+// Two entries are overview pages rather than sectors; list them separately.
+const OVERVIEW = new Set(['market-sector-training', 'general-business']);
+
+const all = await getCollection('sectors');
+const sectors = all
+  .filter((s) => !OVERVIEW.has(s.slug) && s.slug !== 'law')
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+const overview = all.filter((s) => OVERVIEW.has(s.slug));
+
+const studies = await getCollection('caseStudies');
+const countFor = (title: string) =>
+  studies.filter((s) => s.data.sector.toLowerCase() === title.toLowerCase().replace(/ firms?$/, '')).length;
 
 const schemas = [
   breadcrumbSchema([
@@ -17,28 +27,58 @@ const schemas = [
   ]),
 ];
 ---
-
 <BaseLayout
-  title="Sectors | Industry-specific soft-skills training"
-  description="Training tailored to your sector — from law firms and financial services to pharma, charity, media, manufacturing, maritime and the public sector."
+  title="Sectors — industry-specific soft skills training"
+  description="Training tailored to your sector: law firms, financial services, pharma and biotech, charities, technology, manufacturing, maritime, media, education, utilities, travel and local government."
   schemas={schemas}
 >
   <Hero
     eyebrow="Sectors"
-    title="Training tailored to your sector."
-    lead="Every industry has its own pressures, language and communication challenges. Our programmes are designed to speak directly to the realities of your working environment."
+    title="We know your industry. Usually painfully well."
+    lead="Every sector has its own pressures, language and politics. Our programmes are designed to speak directly to the realities of your working environment, with examples and exercises from your world."
     variant="page"
     primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
   />
 
   <Section size="md" tone="default">
-    <div class="container-wide sector-grid">
-      {sectors.map((s) => (
-        <a href={`/${s.slug}`} class="sector-card">
-          <h3>{s.data.title}</h3>
-          <p>{s.data.summary}</p>
-        </a>
-      ))}
+    <div class="container-wide">
+      <div class="sector-grid">
+        {sectors.map((s, i) => {
+          const n = countFor(s.data.title);
+          return (
+            <a href={`/${s.slug}`} class="sector-card card">
+              <div class="sector-card__media">
+                {s.data.image ? (
+                  <Image src={s.data.image} alt={s.data.imageAlt ?? ''} widths={[420, 640, 900]} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" loading={i < 3 ? 'eager' : 'lazy'} />
+                ) : (
+                  <div class="sector-card__placeholder" aria-hidden="true"></div>
+                )}
+              </div>
+              <div class="sector-card__body">
+                <div class="sector-card__head">
+                  <h2>{s.data.title}</h2>
+                  {n > 0 && <span>{n} case {n === 1 ? 'study' : 'studies'}</span>}
+                </div>
+                <p>{s.data.summary}</p>
+                <span class="sector-card__more">Explore <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8m-3-3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      {overview.length > 0 && (
+        <aside class="sector-overview">
+          <p class="eyebrow eyebrow-rule">Not listed?</p>
+          <p>
+            We work across many more industries than this.
+            {overview.map((o, i) => (
+              <>{i > 0 ? ' · ' : ' '}<a href={`/${o.slug}`} class="link-anim">{o.data.title}</a></>
+            ))}
+            {' '}or just <a href="/contact" class="link-anim">tell us about yours</a>.
+          </p>
+        </aside>
+      )}
     </div>
   </Section>
 
@@ -46,6 +86,7 @@ const schemas = [
     eyebrow="Your sector, your room"
     title="Tell us what your team is up against."
     primary={{ label: 'Start the conversation', href: '/contact' }}
+    secondary={{ label: 'See case studies', href: '/case-studies' }}
     tone="deep"
   />
 </BaseLayout>
@@ -53,37 +94,81 @@ const schemas = [
 <style>
   .sector-grid {
     display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
   }
+  @media (min-width: 700px) { .sector-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .sector-grid { grid-template-columns: repeat(3, 1fr); } }
   .sector-card {
-    display: block;
-    padding: 1.75rem;
-    background: var(--c-bg);
-    border: 1px solid var(--c-rule);
-    border-radius: 14px;
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
     color: inherit;
-    transition: transform 0.15s ease, border-color 0.15s ease;
+    text-decoration: none;
+    height: 100%;
   }
-  .sector-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--c-deep);
+  .sector-card__media {
+    aspect-ratio: 16 / 10;
+    background: var(--c-tint);
+    overflow: hidden;
   }
-  .sector-card h3 {
+  .sector-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 600ms var(--ease-out-soft);
+  }
+  .sector-card:hover .sector-card__media img { transform: scale(1.04); }
+  .sector-card__placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--c-tint), var(--c-sky));
+  }
+  .sector-card__body { padding: 1.4rem 1.5rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+  .sector-card__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  .sector-card h2 {
+    font-size: 1.3rem;
     color: var(--c-deep);
-    font-size: 1.2rem;
+    margin: 0;
     letter-spacing: -0.01em;
-    margin: 0 0 0.75rem;
+  }
+  .sector-card__head span {
+    font-size: 0.72rem;
+    color: var(--c-muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
   }
   .sector-card p {
     font-size: 0.95rem;
     line-height: 1.55;
-    color: var(--c-text);
-    margin: 0;
+    color: var(--c-muted);
+    margin: 0 0 1.25rem;
+    flex: 1;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  .sector-card__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--c-deep);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: gap 220ms var(--ease-out-soft);
+  }
+  .sector-card:hover .sector-card__more { gap: 0.7rem; }
+  .sector-overview {
+    margin-top: 3rem;
+    padding: 1.75rem 2rem;
+    background: var(--c-tint);
+    border-radius: 14px;
+  }
+  .sector-overview p:last-child { margin: 0.5rem 0 0; color: var(--c-text); line-height: 1.6; }
 </style>

@@ -27,6 +27,8 @@ relatedCourses:
 faqs:
   - q: 'Is this for first-time managers?'
     a: 'It works for first-time managers and seasoned directors — we tailor pre-course to the room. For genuinely first-time managers, our People Management course is often a better fit.'
+image: '../../assets/images/courses/leadership-training.webp'
+imageAlt: 'Leadership Training Workshops'
 seo:
   title: 'Leadership Training — practical leadership for real teams'
   description: 'Leadership training built around real conversations: trust, direction, accountability, feedback. New leads to senior directors.'

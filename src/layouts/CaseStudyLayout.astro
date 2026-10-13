@@ -5,7 +5,7 @@ import Hero from '~/components/marketing/Hero.astro';
 import Section from '~/components/layout/Section.astro';
 import PullQuote from '~/components/marketing/PullQuote.astro';
 import CTAPanel from '~/components/marketing/CTAPanel.astro';
-import CourseCard from '~/components/marketing/CourseCard.astro';
+import CaseStudyCard from '~/components/marketing/CaseStudyCard.astro';
 import { articleSchema, breadcrumbSchema } from '~/lib/schema';
 import { site } from '~/lib/site';
 
@@ -20,6 +20,10 @@ const allCourses = await getCollection('courses');
 const relatedCourse: Course | undefined = allCourses.find(
   (c) => c.slug === data.courseSlug,
 );
+const siblings = (await getCollection('caseStudies'))
+  .filter((c) => c.slug !== study.slug && c.data.subject === data.subject)
+  .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime())
+  .slice(0, 3);
 
 const url = `${site.url}/${study.slug}`;
 const schemas = [
@@ -33,6 +37,7 @@ const schemas = [
   breadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Case studies', url: '/case-studies' },
+    { name: data.subject, url: `/case-studies?subject=${encodeURIComponent(data.subject)}` },
     { name: data.client, url: `/${study.slug}` },
   ]),
 ];
@@ -45,7 +50,7 @@ const schemas = [
   schemas={schemas}
 >
   <Hero
-    eyebrow={`Case study · ${data.sector}`}
+    eyebrow={`Case study · ${data.subject}`}
     title={data.title}
     variant="case-study"
     primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
@@ -53,7 +58,7 @@ const schemas = [
     meta={[
       { label: 'Client', value: data.client },
       { label: 'Sector', value: data.sector },
-      { label: 'Course', value: relatedCourse?.data.title ?? data.courseSlug },
+      { label: 'Subject', value: data.subject },
     ]}
   />
 
@@ -110,7 +115,11 @@ const schemas = [
           </div>
           <div>
             <dt>Sector</dt>
-            <dd>{data.sector}</dd>
+            <dd><a href={`/case-studies?sector=${encodeURIComponent(data.sector)}`}>{data.sector}</a></dd>
+          </div>
+          <div>
+            <dt>Subject</dt>
+            <dd><a href={`/case-studies?subject=${encodeURIComponent(data.subject)}`}>{data.subject}</a></dd>
           </div>
           <div>
             <dt>Published</dt>
@@ -121,9 +130,25 @@ const schemas = [
     </div>
   </Section>
 
+  {siblings.length > 0 && (
+    <Section size="md" tone="alt">
+      <div class="container-wide">
+        <header class="cs-related-head">
+          <p class="eyebrow eyebrow-rule">More {data.subject.toLowerCase()}</p>
+          <h2>Similar engagements.</h2>
+        </header>
+        <div class="cs-related-grid">
+          {siblings.map((cs) => (
+            <CaseStudyCard href={`/${cs.slug}`} client={cs.data.client} sector={cs.data.sector} title={cs.data.title} excerpt={cs.data.outcome.slice(0, 140) + (cs.data.outcome.length > 140 ? '…' : '')} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
   <CTAPanel
     eyebrow="Different challenge, same approach"
-    title="Your team isn’t Clifford Chance. Good — neither is the next one."
+    title="Your team isn’t this one. Good — neither was the last."
     lead="Every engagement starts with conversations and ends with a course built for the room it’s about to walk into."
     primary={{ label: 'Tell us your challenge', href: '/contact' }}
     secondary={{ label: 'More case studies', href: '/case-studies' }}
@@ -222,4 +247,10 @@ const schemas = [
     padding-top: 2px;
   }
   .cs-meta dd { margin: 0; color: var(--c-deep); }
+  .cs-meta dd a { color: var(--c-deep); }
+  .cs-meta dd a:hover { color: var(--c-blue); }
+  .cs-related-head { margin-bottom: 2rem; }
+  .cs-related-head h2 { margin: 0.6rem 0 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); letter-spacing: -0.025em; }
+  .cs-related-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 800px) { .cs-related-grid { grid-template-columns: repeat(3, 1fr); } }
 </style>

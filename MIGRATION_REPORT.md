@@ -206,3 +206,22 @@ npx tsx scripts/migrate-content.ts
 ```
 
 `scripts/old-data/` — a snapshot of the prior Next.js TS data files with `import type` lines stripped so `tsx` can execute them. Safe to delete once you're confident the migration is final.
+
+---
+
+## 7. Second pass — 2026-10-13 (client feedback round)
+
+Driven by Martin Chapman's review email of 13 October 2026. Source: the WordPress dump `dbs14994489_2026-02-27.sql` (table prefix `nlnu0eujqc`), parsed directly this time rather than via the Next.js intermediate. Sanitised extracts live in `scripts/wp-data/`; `scripts/migrate-wp-extras.mjs` turns them into content and is safe to re-run.
+
+| Area | WordPress | Astro now | Notes |
+|---|---|---|---|
+| Blog posts | 28 published | 28 migrated + 8 drafts | The 8 drafts came from the intermediate build, not itd.com. Yoast title/description, categories, tags and featured images carried over. Old `/slug` URLs redirect to `/blog/slug`. |
+| Reviews | 373 Site Reviews posts (333 five-star, 40 four-star) | 373 | Replaced 17 entries that had no WP source. Average 4.9. |
+| Work Styles questionnaire | QSM quiz id 4: 40 statements, 10 per style | `/work-styles-model-questionnaire` | Scored client-side; results copy migrated verbatim from the quiz's results page. |
+| Training Fees | `/training-fees` | `/training-fees` (pages collection) | |
+| Policies | equality & diversity, modern slavery, supplier code of conduct | same slugs | Plus a new `/privacy`. |
+| Case-study subjects | WP category (e.g. "Written Communication Training") | `subject` field | Previous build had 126/160 as "General Business"; subject now drives the default grouping on `/case-studies`. `courseSlug` re-derived from the category. |
+| Images | `_thumbnail_id` featured images | `src/assets/images/*` | 261 images fetched from the live media library and resized to 1600px WebP: 128 courses, 16 sectors, 27 blog, 2 pages, 88 case studies. |
+| Courses | — | +15 | Named in the new sitemap but absent from WP; written fresh and flagged `needsReview`. |
+
+Not migrated, deliberately: `book-reviews`, `free-downloads`, `make-a-payment`, `products`, `sign-up`, `stripe-checkout-result`, `thank-you`, `training-feedback`, `pre-workshop-questions`, `write-a-review`, `www-itd-com-is-not-for-sale` (plugin and checkout stubs), `itd-soft-skills-training` (old landing page superseded by `/training`), `care-sector-training` and `writing-for-non-academic-audiences` (thin pages; add to `pages/` if wanted).

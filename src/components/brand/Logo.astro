@@ -11,14 +11,18 @@ const {
   ariaLabel = 'itD — International Training and Development',
   class: className = '',
 } = Astro.props;
+// logo.svg viewBox is 508 × 330.3. An explicit width stops the SVG collapsing
+// to 0px inside flex containers (Chrome gives sizeless SVGs no intrinsic width).
+const width = Math.round(height * (508 / 330.3));
 ---
 {variant === 'full' ? (
   <span class={`inline-flex items-center gap-3 ${className}`.trim()} aria-label={ariaLabel}>
     <img
       src="/logo.svg"
       alt=""
+      width={width}
       height={height}
-      style={`height:${height}px;width:auto;display:block;`}
+      style={`height:${height}px;width:${width}px;display:block;`}
       loading="eager"
       decoding="async"
     />
@@ -27,8 +31,9 @@ const {
   <img
     src="/logo.svg"
     alt={ariaLabel}
+    width={width}
     height={height}
-    style={`height:${height}px;width:auto;display:block;`}
+    style={`height:${height}px;width:${width}px;display:block;`}
     loading="eager"
     decoding="async"
     class={className}

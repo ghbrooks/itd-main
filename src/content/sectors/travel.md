@@ -3,6 +3,8 @@ title: 'Travel'
 summary: 'The travel industry is built on people and experiences. Whether your teams are managing complex itineraries, handling customer complaints, or leading operations across multiple time zones, outstanding interpersonal skills are essential. ITD works with travel companies including tour operators, airlines, hospitality groups, and travel management companies to develop the communication, leadership, and customer service skills that drive customer loyalty and operational excellence.'
 namedClients: []
 relevantCourses: []
+image: '../../assets/images/sectors/travel.webp'
+imageAlt: 'Travel company training'
 seo:
   title: 'Travel Industry Training | ITD'
   description: 'ITD delivers soft skills training for the travel industry, helping teams improve customer service, leadership, and communication in a fast-paced environment.'

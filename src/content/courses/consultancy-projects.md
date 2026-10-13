@@ -20,6 +20,8 @@ outcomes:
 relatedCourses:
   - 'nudge-consultancy'
   - 'sales-team-consultation'
+image: '../../assets/images/courses/consultancy-projects.webp'
+imageAlt: 'consultancy'
 seo:
   title: 'Consultancy Projects'
   description: 'Training consultancy projects from ITD. We work alongside your team on longer-term development programmes and organisational challenges.'

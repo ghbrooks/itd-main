@@ -22,6 +22,8 @@ relatedCourses:
   - 'nudge-training-for-lawyers'
   - 'nudge-in-design'
   - 'nudge-consultancy'
+image: '../../assets/images/courses/nudge-training.webp'
+imageAlt: 'Nudge Training Workshops'
 seo:
   title: 'Nudge Training'
   description: 'Nudge training helps professionals influence decisions without pressure using behavioural science. Seminars, workshops and consultancy from ITD.'

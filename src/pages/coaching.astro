@@ -1,0 +1,158 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/marketing/Hero.astro';
+import Section from '~/components/layout/Section.astro';
+import CourseCard from '~/components/marketing/CourseCard.astro';
+import Testimonial from '~/components/marketing/Testimonial.astro';
+import CaseStudyCard from '~/components/marketing/CaseStudyCard.astro';
+import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import { breadcrumbSchema } from '~/lib/schema';
+import { coachingLinks } from '~/lib/training';
+import { getReviews } from '~/lib/reviews';
+
+const courses = await getCollection('courses');
+const bySlug = new Map(courses.map((c) => [c.slug, c]));
+const primary = coachingLinks.map((l) => ({ label: l.label, entry: bySlug.get(l.slug)! }));
+const also = ['presentation-coaching', 'presentation-skills-coaching', 'presenting-with-impact-virtually-coaching', 'whatsapp-workcoach']
+  .map((s) => bySlug.get(s))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+const studies = (await getCollection('caseStudies'))
+  .filter((s) => /coaching/i.test(s.data.subject))
+  .slice(0, 3);
+
+const reviews = (await getReviews()).filter((r) => /coaching|one to one|1-2-1|1:1/i.test(`${r.data.title ?? ''} ${r.data.quote}`)).slice(0, 3);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Coaching', url: '/coaching' },
+  ]),
+];
+---
+<BaseLayout
+  title="Coaching — executive, one-to-one and sales management coaching"
+  description="One-to-one coaching from ITD for leaders, professionals and sales managers. Confidential, practical and built around your goals, virtually or in person."
+  schemas={schemas}
+>
+  <Hero
+    eyebrow="Coaching"
+    title="Development with your name on it."
+    lead="Sometimes a workshop is the wrong tool. Coaching gives one person the trainer's full attention on the situation that matters most to them, with practice, feedback and actions between sessions."
+    variant="page"
+    primaryCta={{ label: 'Discuss coaching', href: '/contact' }}
+    secondaryCta={{ label: 'See training fees', href: '/training-fees' }}
+    meta={[
+      { label: 'Format', value: 'Virtual · In person' },
+      { label: 'Typical length', value: '4 to 6 sessions' },
+      { label: 'Confidential', value: 'Always' },
+    ]}
+  />
+
+  <Section size="md" tone="default">
+    <div class="container-wide">
+      <header class="coach-head">
+        <p class="eyebrow eyebrow-rule">Three ways in</p>
+        <h2>Choose the coaching that fits the person.</h2>
+      </header>
+      <div class="coach-grid">
+        {primary.map(({ label, entry }) => (
+          <CourseCard href={`/${entry.slug}`} title={label} outcome={entry.data.summary} duration={entry.data.duration} category="Coaching" />
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <Section size="md" tone="alt">
+    <div class="container-wide coach-how">
+      <div>
+        <p class="eyebrow eyebrow-rule">How it works</p>
+        <h2>Agree the goal. Work on the real thing. Measure it.</h2>
+      </div>
+      <ol class="coach-steps">
+        <li><strong>A short conversation</strong> to agree what you want to achieve and how we will both know it has worked.</li>
+        <li><strong>Sessions built around your live situations</strong>: the pitch, the team, the relationship, the habit. Practice with direct, constructive feedback.</li>
+        <li><strong>Actions between sessions</strong>, so the coaching keeps moving when we are not in the room.</li>
+        <li><strong>A review</strong> against the original goals, and a decision together about what, if anything, comes next.</li>
+      </ol>
+    </div>
+  </Section>
+
+  {also.length > 0 && (
+    <Section size="md" tone="default">
+      <div class="container-wide">
+        <header class="coach-head">
+          <p class="eyebrow eyebrow-rule">Specialist coaching</p>
+          <h2>Coaching on specific skills.</h2>
+        </header>
+        <div class="coach-grid coach-grid--4">
+          {also.map((c) => (
+            <CourseCard href={`/${c.slug}`} title={c.data.title} outcome={c.data.outcome} duration={c.data.duration} size="compact" />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  {(reviews.length > 0 || studies.length > 0) && (
+    <Section size="md" tone="alt">
+      <div class="container-wide">
+        <header class="coach-head">
+          <p class="eyebrow eyebrow-rule">In practice</p>
+          <h2>What coaching has done for others.</h2>
+        </header>
+        <div class="coach-proof">
+          {reviews.map((r) => (
+            <Testimonial title={r.data.title} quote={r.data.quote} author={r.data.author} organisation={r.data.organisation} rating={r.data.rating} date={r.data.publishedDate} />
+          ))}
+          {studies.map((s) => (
+            <CaseStudyCard href={`/${s.slug}`} client={s.data.client} sector={s.data.subject} title={s.data.title} excerpt={s.data.outcome} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )}
+
+  <CTAPanel
+    eyebrow="Start the conversation"
+    title="Tell us who, and what they're working on."
+    lead="We'll suggest a format and come back with a proposal, usually within a day."
+    primary={{ label: 'Get in touch', href: '/contact' }}
+    tone="deep"
+  />
+</BaseLayout>
+
+<style>
+  .coach-head { max-width: 56ch; margin-bottom: 2rem; }
+  .coach-head h2 { margin: 0.6rem 0 0; font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -0.025em; }
+  .coach-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .coach-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 720px) { .coach-grid--4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .coach-grid--4 { grid-template-columns: repeat(4, 1fr); } }
+  .coach-how { display: grid; gap: 2rem; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 900px) { .coach-how { grid-template-columns: 1fr 1.3fr; gap: 4rem; } }
+  .coach-how h2 { margin: 0.6rem 0 0; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -0.025em; }
+  .coach-steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .coach-steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 1.1rem 0 1.1rem 3.25rem;
+    border-top: 1px solid var(--c-rule);
+    line-height: 1.55;
+    color: var(--c-text);
+  }
+  .coach-steps li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 1.2rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--c-blue);
+    font-variant-numeric: tabular-nums;
+  }
+  .coach-steps strong { color: var(--c-deep); }
+  .coach-proof { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 800px) { .coach-proof { grid-template-columns: repeat(3, 1fr); } }
+</style>

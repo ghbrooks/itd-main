@@ -19,6 +19,8 @@ outcomes:
   - 'Confidence and capability in: building trust at a distance'
   - 'Confidence and capability in: managing performance remotely'
   - 'Confidence and capability in: maintaining team culture virtually'
+image: '../../assets/images/courses/virtual-management-training.webp'
+imageAlt: 'Virtual Management Training'
 seo:
   title: 'Virtual Management Training'
   description: 'Virtual Management Training from ITD. Learn to manage teams effectively in virtual and hybrid environments.'

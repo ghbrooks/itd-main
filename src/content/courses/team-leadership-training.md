@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: managing team dynamics'
   - 'Confidence and capability in: delegating effectively'
   - 'Confidence and capability in: creating a culture of accountability'
+image: '../../assets/images/courses/team-leadership-training.webp'
+imageAlt: 'team leadership training'
 seo:
   title: 'Team Leadership Training'
   description: 'Team Leadership Training from ITD. Develop the skills to lead your team to high performance.'

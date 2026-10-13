@@ -10,6 +10,7 @@ testimonial:
   quote: 'Our team now approaches sales presentations with much more confidence and structure.'
   author: 'Head of Corporate Sales, British Airways'
 publishedDate: 2024-01-15
+subject: 'Presentation Skills'
 seo:
   title: 'Presenting in a Sales Call | ITD Case Study'
   description: 'Presenting in a Sales Call. British Airways needed their corporate sales team to deliver more compelling presentations during sales calls.'

@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: testing and measurement'
   - 'Confidence and capability in: implementation support'
   - 'Confidence and capability in: ongoing advisory services'
+image: '../../assets/images/courses/nudge-consultancy.webp'
+imageAlt: 'Nudge Consultancy'
 seo:
   title: 'Nudge Consultancy'
   description: 'Nudge Consultancy from ITD. Consultancy services applying behavioural science to your organisation''s challenges.'

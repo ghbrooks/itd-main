@@ -7,6 +7,9 @@ challenge: 'The management team needed to lead their teams through a major organ
 approach: 'ITD delivered a tailored change management programme covering communication strategies, stakeholder engagement and team motivation during periods of uncertainty.'
 outcome: 'Managers felt significantly better equipped to lead their teams through the change process, with improved staff morale reported across departments.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/change-management-case-study.webp'
+imageAlt: 'Change Management Training'
+subject: 'Management'
 seo:
   title: 'Change Management Training | ITD Case Study'
   description: 'Change Management Training. The management team needed to lead their teams through a major organisational restructure with minimal disruption.'

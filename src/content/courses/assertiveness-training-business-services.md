@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: speaking up in meetings'
   - 'Confidence and capability in: negotiating workload and deadlines'
   - 'Confidence and capability in: professional boundary-setting'
+image: '../../assets/images/courses/assertiveness-training-business-services.webp'
+imageAlt: 'assertiveness training for business professionals'
 seo:
   title: 'Assertiveness Training for Business Professionals'
   description: 'Assertiveness Training for Business Professionals from ITD. Assertiveness skills tailored for business services professionals.'

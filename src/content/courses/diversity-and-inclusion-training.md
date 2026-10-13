@@ -20,6 +20,8 @@ outcomes:
   - 'Confidence and capability in: inclusive communication'
   - 'Confidence and capability in: allyship and advocacy'
   - 'Confidence and capability in: creating inclusive team cultures'
+image: '../../assets/images/courses/diversity-and-inclusion-training.webp'
+imageAlt: 'diversity and inclusion training'
 seo:
   title: 'Diversity & Inclusion Training'
   description: 'Diversity & Inclusion Training from ITD. Build awareness and skills for creating a diverse and inclusive workplace.'

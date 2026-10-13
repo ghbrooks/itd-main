@@ -7,6 +7,9 @@ challenge: 'GSTT needed to improve their team''s communication skills to better 
 approach: 'ITD delivered tailored communication skills training for the charity sector, covering persuasive writing, stakeholder engagement and presenting the charity''s case.'
 outcome: 'The team reported increased confidence in communications and improved donor engagement metrics.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/charity-communications-training-case-study-gstt.webp'
+imageAlt: 'charity communications training'
+subject: 'Communication Skills'
 seo:
   title: 'Charity Communications Training | ITD Case Study'
   description: 'Charity Communications Training. GSTT needed to improve their team''s communication skills to better engage donors, stakeholders and the public.'

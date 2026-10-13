@@ -10,6 +10,9 @@ testimonial:
   quote: 'The training gave us practical tools we could apply immediately to improve our communications with residents.'
   author: 'Policy Manager, Richmond and Wandsworth Councils'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-nudge-training-richmond-and-wandsworth-councils.webp'
+imageAlt: 'Nudge Training'
+subject: 'Nudge'
 seo:
   title: 'Nudge Training | ITD Case Study'
   description: 'Nudge Training. Richmond and Wandsworth Councils wanted to apply nudge and behavioural science to improve resident engagement and servic'

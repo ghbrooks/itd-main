@@ -22,6 +22,8 @@ outcomes:
   - 'Confidence and capability in: managing upwards and across'
 relatedCourses:
   - 'practical-management-training'
+image: '../../assets/images/courses/line-manager-training.webp'
+imageAlt: 'Line Manager Training'
 seo:
   title: 'Line Manager Training'
   description: 'Line Manager Training from ITD. Essential skills for new and developing line managers.'

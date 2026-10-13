@@ -7,6 +7,9 @@ challenge: 'Following an initial nudge training session, Trilegal wanted to embe
 approach: 'ITD delivered a follow-up nudge training programme building on the foundations, with practical application exercises and real-world case studies from the legal sector.'
 outcome: 'Trilegal reported increased adoption of nudge techniques in client communications and business development activities.'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-nudge-training-follow-up-trilegal.webp'
+imageAlt: 'Nudge Training Follow Up'
+subject: 'Nudge'
 seo:
   title: 'Nudge Training Follow Up | ITD Case Study'
   description: 'Nudge Training Follow Up. Following an initial nudge training session, Trilegal wanted to embed nudge techniques more deeply across their practice'

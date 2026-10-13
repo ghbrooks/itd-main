@@ -7,6 +7,7 @@ challenge: 'Orrick needed to develop management capabilities in their lawyers wh
 approach: 'ITD delivered management training designed for legal professionals, covering delegation, feedback, motivation and performance management.'
 outcome: 'Lawyers in management roles reported significantly increased confidence and effectiveness.'
 publishedDate: 2024-01-15
+subject: 'Management'
 seo:
   title: 'Management Training | ITD Case Study'
   description: 'Management Training. Orrick needed to develop management capabilities in their lawyers who were taking on team leadership responsibilities.'

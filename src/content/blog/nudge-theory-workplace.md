@@ -4,6 +4,7 @@ description: 'Small changes in environment and choice architecture can drive big
 author: 'ITD Team'
 publishedDate: '2024-05-06'
 category: 'Behavioural Science'
+draft: true
 seo:
   title: 'How Nudge Theory Can Transform Your Workplace | ITD Blog'
   description: 'Discover how nudge theory and behavioural science can be applied to workplace training, culture change and employee engagement. Practical insights from ITD.'

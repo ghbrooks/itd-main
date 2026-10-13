@@ -21,6 +21,8 @@ relatedCourses:
   - 'presentation-coaching'
   - 'presentation-skills-coaching'
   - 'one-to-one-training'
+image: '../../assets/images/courses/executive-coaching.webp'
+imageAlt: 'online coaching'
 seo:
   title: 'Executive Coaching & 1-to-1 Training'
   description: 'Personalised executive coaching and 1-to-1 training across all our subject areas. Ideal for senior leaders and professionals seeking targeted development.'

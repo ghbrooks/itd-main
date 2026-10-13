@@ -10,6 +10,9 @@ testimonial:
   quote: 'ITD handled the multicultural dimension brilliantly. Really valuable for our diverse team.'
   author: 'Office Managing Partner, Dentons Dubai'
 publishedDate: 2024-01-15
+image: '../../assets/images/caseStudies/case-study-personality-at-work-dentons-dubai.webp'
+imageAlt: 'Personality at Work'
+subject: 'Personality at Work'
 seo:
   title: 'Personality at Work | ITD Case Study'
   description: 'Personality at Work. Dentons Dubai wanted to improve team cohesion in their multicultural office by exploring personality types and communica'
