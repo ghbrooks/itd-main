@@ -51,6 +51,13 @@ function normaliseHref(href) {
     if (slug === 'training-reviews' || slug === 'reviews') path = '/reviews';
     if (slug === 'about-itd') path = '/about';
     if (slug === 'training-case-studies') path = '/case-studies';
+    // Old WP URLs that no longer exist (itd.com itself redirects or 404s on them).
+    const aliases = {
+      'presenting-with-impact-virtually': '/presenting-with-impact-virtually-coaching',
+      'professional-business-communication': '/professional-business-communication-training',
+      'writing-for-non-academic-audiences': '/business-writing-course', // WP page never migrated; see CONTENT_AUDIT
+    };
+    if (aliases[slug]) path = aliases[slug];
     return path;
   }
   if (/itdmirror|dreamhosters|localhost/i.test(href)) return null;
@@ -70,6 +77,23 @@ function htmlToMarkdown(html, { dropFirstHeading } = {}) {
     .replace(/\[\/?[a-z_-]+[^\]]*\]/gi, '') // shortcodes
     .replace(/<br\s*\/?>/gi, '\n');
   const $ = cheerio.load(`<div id="wp-root">${cleaned}</div>`, null, false);
+  // Elementor "image box" calls to action: an <a> that wraps only an <img>, often
+  // inside a <figure> with a caption. Keep them as text links (caption, else alt)
+  // rather than losing them with the image. The bare home-page logo link is dropped.
+  $('a').each((_, el) => {
+    const a = $(el);
+    if (a.text().trim() || !a.find('img').length) return;
+    const rawHref = a.attr('href') || '';
+    if (/^https?:\/\/(?:www\.)?itd\.com\/?$/i.test(rawHref)) return;
+    const fig = a.closest('figure');
+    const label = (fig.find('figcaption').text() || a.find('img').first().attr('alt') || '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (!label) return;
+    const link = `<p><a href="${rawHref}">${label}</a></p>`;
+    if (fig.length) fig.replaceWith(link);
+    else a.replaceWith(link);
+  });
   $('script, style, img, figure, iframe, video, form, input, button').remove();
   $('span, div:not(#wp-root), section, article, header, footer, font').each((_, el) => {
     $(el).replaceWith($(el).contents());
@@ -177,10 +201,15 @@ function htmlToMarkdown(html, { dropFirstHeading } = {}) {
 
   let out = blocks.filter(Boolean);
   if (dropFirstHeading && out[0] && out[0].startsWith('##')) {
-    const h = out[0].replace(/^#+\s*/, '').toLowerCase();
-    if (h === dropFirstHeading.toLowerCase()) out = out.slice(1);
+    // Drop a leading heading that restates the post title, including the Elementor
+    // pattern where the heading is the title plus a subtitle ("Title: Why It Matters").
+    const norm = (t) => t.toLowerCase().replace(/^the\s+/, '').replace(/[^a-z0-9]+/g, ' ').trim();
+    const h = norm(out[0].replace(/^#+\s*/, ''));
+    const t = norm(dropFirstHeading);
+    if (h === t || h.startsWith(t) || t.startsWith(h)) out = out.slice(1);
   }
-  return out.join('\n\n').trim() + '\n';
+  // WP editors often butt a link straight against the preceding word ("our<a>").
+  return out.join('\n\n').replace(/(\w)\[([^\]]+)\]\(/g, '$1 [$2](').trim() + '\n';
 }
 
 function firstParagraph(md, max = 158) {
@@ -192,7 +221,13 @@ function firstParagraph(md, max = 158) {
 
 function resolveYoastTitle(t, fallback) {
   if (!t) return fallback;
-  const r = t.replace(/%%title%%/g, fallback).replace(/%%[a-z_]+%%/g, '').replace(/\s+/g, ' ').trim();
+  const r = t
+    .replace(/%%title%%/g, fallback)
+    .replace(/%%[a-z_]+%%/g, '')
+    // Yoast appends the WP site name when the title comes from the REST API.
+    .replace(/\s*[-|–—]\s*Soft Skills Training & Coaching Tailored to Your Needs\s*$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
   return r.replace(/[\s|–—-]+$/g, '').trim() || fallback;
 }
 

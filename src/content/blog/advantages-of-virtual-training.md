@@ -50,4 +50,16 @@ In conclusion, virtual training has ushered in a new era of learning that transc
 
 ### Training on the subject of virtual training
 
+[Presenting with Impact Virtually](/virtual-presentation-skills-training-2)
+
+[Personality At Work Training](/personality-at-work-training)
+
+[Written Communication Training](/written-communication-skills-training)
+
+[Managing Remote Teams](/managing-remote-employees-training)
+
 ### Case studies on the subject of virtual training
+
+[Virtual Presentation Skills Training](/case-study-presenting-with-impact-webinar-pepsico)
+
+[Virtual Presenting / Pimp My Slides](/case-study-virtual-presenting-pimp-my-slides-hilton)

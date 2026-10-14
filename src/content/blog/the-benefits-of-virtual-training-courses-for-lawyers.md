@@ -62,6 +62,18 @@ In conclusion, virtual training courses offer an array of benefits that cater sp
 
 To explore a range of training courses for lawyers [click here](/training-for-lawyers).
 
+[Networking Training](/how-to-do-more-networking-training-workshop-for-lawyers)
+
+[Presenting with Impact Virtually](/presenting-with-impact-virtually-coaching)
+
+[WFH Time Management](/working-from-home-time-management-training)
+
+[Professional Business Communication](/professional-business-communication-training)
+
 ### Case studies
 
 To explore a full range of case studies [click here](/case-studies).
+
+[Virtual Presentation Skills](/case-study-virtual-presentation-skills-training-clifford-chance)
+
+[Delegation skills for lawyers](/case-study-delegation-skills-for-lawyers-reed-smith)

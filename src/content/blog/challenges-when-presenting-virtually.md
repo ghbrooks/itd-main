@@ -54,6 +54,14 @@ In conclusion, virtual presentations via platforms like Zoom and Microsoft Teams
 
 ### Check out our training which can help you with the challenges of presenting virtually
 
+[Virtual presentation skills training](/virtual-presentation-skills-training-2)
+
+[Pimp my slides](/pimp-my-slides)
+
 ### Case studies on overcoming the challenges of presenting virtually
+
+[Virtual Presenting Training](/case-study-presenting-with-impact-webinar-pepsico)
+
+[Virtual & in-person training](/case-study-virtual-presenting-pimp-my-slides-hilton)
 
 ### For help with these challenges contact us to arrange training or coaching

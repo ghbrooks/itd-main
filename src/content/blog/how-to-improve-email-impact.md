@@ -46,3 +46,5 @@ Want a reply, a sign-up, or a meeting? Spell it out. Make your CTA specific and 
 By applying these tips on _how to improve email impact_, you’ll boost engagement, strengthen relationships, and drive more meaningful responses. Whether you’re networking, pitching, or following up, mastering email communication is essential to making your message matter.
 
 ### Training on the subject of communication
+
+[Written communication skills training - tablet](/written-communication-skills-training)

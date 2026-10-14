@@ -71,4 +71,16 @@ You could call us in for training:) We train trainers on how to make virtual tra
 
 ### Training on the subject of how to make virtual training engaging
 
+[Train the Virtual Trainer](/train-the-virtual-trainer)
+
+[Virtual Presentation Skills](/virtual-presentation-skills-training-2)
+
+[Presenting with Impact](/presenting-with-impact-virtually-training)
+
+[Sales Presentation Skills](/sales-presentation-skills-training)
+
 ### Case studies on the subject of how to make virtual training engaging
+
+[Presenting with Impact Webinar](/case-study-presenting-with-impact-webinar-pepsico)
+
+[Virtual Presentation Skills Training](/case-study-virtual-presentation-skills-training-clifford-chance)

@@ -17,8 +17,6 @@ seo:
   title: 'Working with different styles - Direct'
   description: 'working with different styles - direct, post gives ideas and tips n how to identify and work with someone who has a dominant direct style'
 ---
-## Working with Different Styles - Direct People
-
 ### Identifying a Direct person
 
 A person with a dominant direct work style, or some of the direct behavioural traits, can be one of the best and most challenging to work with. They are characterised by; focus on getting things done, impatience in meetings, disinterest in chit chat, quick decision making and a determination to get things done quickly. They can also be driven, determined and with a single minded focus on the goal.
@@ -46,3 +44,7 @@ But it is vital to remember that some people, in fact many people, will not be t
 ### Training on working with different people
 
 If you would like to explore training on how to work with different styles, please check out our [Professional Business Skills Training](/professional-business-communication-training)
+
+[Professional Business Communication Training](/professional-business-communication-training)
+
+[Assertiveness Training](/assertiveness-training)

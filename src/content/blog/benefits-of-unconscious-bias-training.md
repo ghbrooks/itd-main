@@ -55,4 +55,10 @@ Unconscious bias training is not a one-time event but rather an ongoing journey 
 
 ### [Click here for more on the benefits of unconscious bias training](/unconscious-bias-training)
 
+[Unconscious Bias Training](/unconscious-bias-training)
+
 ### Case studies on the subject of the benefits of unconscious bias training
+
+[Unconscious Bias Training](/case-study-unconscious-bias-microaggression-training-workshop-kayak)
+
+[Treating Everyone With Respect](/microaggression-training-law-firm-case-study-vbb)

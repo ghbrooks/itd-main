@@ -50,3 +50,5 @@ _"Martin joined Hackney’s HR, OD and Elections teams for a fantastic introduct
 _"The session was indeed an eye-opener in letting people make choices and ''guiding'' them into a certain direction." Jordy Mechelse_
 
 ### Training on the subject of Nudge
+
+[Nudge training - door](/nudge-training)

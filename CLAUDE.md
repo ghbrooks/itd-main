@@ -31,7 +31,7 @@ src/
     caseStudies/*.md         # 160 entries
     sectors/*.md             # 16 entries
     locations/*.md           # 41 entries
-    blog/*.md                # 36 entries (28 from WordPress + 8 drafts)
+    blog/*.md                # 41 entries (33 from WordPress + 8 drafts)
     reviews/*.json           # 373 entries, all from WordPress Site Reviews
     pages/*.md               # standalone pages: fees, policies, Martin Chapman, privacy
   layouts/

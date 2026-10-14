@@ -46,3 +46,5 @@ As one client put it:
 _"The sessions were tailored to our firm’s specific needs and those of the practice areas; each workshop was delivered in collaboration with colleagues from the Finance Team in the firm. The training was very well received and we had very positive feedback from Partners and Senior Associates, with some immediate practical applications of the principles covered."_
 
 ### Training on the subject of negotiating fees
+
+[Negotiating Fees Training](/negotiating-fees-training)

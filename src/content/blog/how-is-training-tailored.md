@@ -11,8 +11,6 @@ seo:
   title: 'How is training tailored?'
   description: 'How is training tailored to create a bespoke soft skills training workshop? An example of how this works with law firm training.'
 ---
-## How is training tailored - an example
-
 **How is training tailored to create a bespoke soft skills training workshop?**
 
 ### Law firm delegation skills
@@ -50,3 +48,7 @@ The objective is to create a learning experience which the associates consider h
 Tailoring training to create a bespoke workshop is interesting and rewarding work as it makes the session so much more engaging.
 
 ### Case studies on the subject of
+
+[Delegation Skills Training](/case-study-delegation-skills-for-associates-reed-smith)
+
+[Delegation Skills for Lawyers](/case-study-delegation-skills-for-lawyers-vardags)

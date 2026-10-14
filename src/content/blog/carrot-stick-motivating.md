@@ -12,8 +12,6 @@ seo:
   title: 'Carrot or stick, which is best for motivating?'
   description: 'Carrot or stick which is best for motivating; post explores these different, polar opposite approaches to motivating people'
 ---
-## Carrot or Stick which is best for Motivating
-
 When it comes to motivating individuals—whether in the office, remotely or across the world—the classic debate resurfaces: _carrot or stick, which is best for motivating?_ The truth isn’t that clear. Both methods can be effective, depending on the context, the personalities involved, and the goals at hand. A balanced perspective helps uncover when to incentivise and when to set boundaries.
 
 ### The Carrot: Motivation Through Reward

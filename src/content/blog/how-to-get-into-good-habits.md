@@ -48,3 +48,5 @@ Finally, prioritise **micro-breaks**. Stepping away from your screen for a few m
 If you do try a new habit set yourself medium term goals, like 30 days+. they say this gives you a better chance of success than just saying from tomorrow I will... Good luck:)
 
 ### Training on the subject of habits - time management training
+
+[time management training](/time-management-training)

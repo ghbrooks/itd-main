@@ -52,4 +52,16 @@ Learning to communicate effectively in writing is a journey of personal growth. 
 
 ### Training on the subject of written communication
 
+[Written Communication Training](/written-communication-skills-training)
+
+[Writing for Non-Academic Audiences](/business-writing-course)
+
+[Nudge Training](/nudge-training)
+
+[Pimp My Slides](/pimp-my-slides)
+
 ### Case studies on the subject of written communication
+
+[Pimp My Slides](/case-study-virtual-presenting-pimp-my-slides-hilton)
+
+[Written Communication Training](/case-study-written-communication-skills-training-iam-roadsmart)

@@ -70,3 +70,23 @@ Automated pass over the built site (454 HTML files). Fixed in code: title suffix
 ## 10. Questionnaire lead capture — 14 Oct 2026
 
 `/work-styles-model-questionnaire` now mirrors the WordPress quiz: name and email are required before scoring, a Cloudflare Turnstile spam check sits above the submit button, and the respondent's details and scores are posted to the form relay. Until `PUBLIC_TURNSTILE_SITE_KEY` and `PUBLIC_QUIZ_ENDPOINT` (or `PUBLIC_FORM_ENDPOINT`) are set, the widget runs on Cloudflare's test key and nothing is sent to ITD; the visitor still sees their scores and gets a mailto button.
+
+## 11. Blog posts published after the database dump — 14 Oct 2026
+
+The WordPress dump is from 27 Feb 2026 and Martin has kept publishing. Five posts (23 Sep – 12 Oct 2026) were pulled from the live site's REST API and migrated through the same script as the other 28, so the blog now carries all 33 live posts:
+
+- `/blog/how-to-say-no-at-work-assertively` (WordPress had this at `/elementor-37392`; that URL redirects)
+- `/blog/examples-of-microaggression-at-work`
+- `/blog/negotiation-skills-training-why-it-matters-and-how-it-improves-results-at-work`
+- `/blog/practical-benefits-of-management-training`
+- `/blog/the-impact-of-virtual-presentation-skills-training`
+
+Side effects of the converter improvements made for them, worth a glance:
+
+- **Recovered calls to action in 20 older posts.** Elementor "image box" links (a course image that links to the course page) were previously dropped with the image. They now render as text links under the post's closing "Training on…" heading, using the caption or alt text as the link text.
+- **Three old links re-pointed** because their WordPress pages no longer exist: `/presenting-with-impact-virtually` → the virtual presenting coaching page (itd.com redirects there too), `/professional-business-communication` → the training page of the same name, and `/writing-for-non-academic-audiences` → `/business-writing-course`.
+- **"Writing for Non-Academic Audiences"** is still a live, published WordPress page (2020) that was never migrated as a course because it is not in the agreed sitemap. Decide whether it should become a course or stay retired.
+- **Category labels** come from WordPress as-is, so two of the new posts show "microaggression" and "Presentation skills" in lower case alongside older "Presentation Skills". Tidy in the frontmatter if it matters.
+- One caption typo from the live site ("Presenitng") was corrected in the snapshot.
+
+Before launch, check `https://itd.com/wp-json/wp/v2/posts?after=2026-10-12T00:00:00` for anything newer and repeat the process.

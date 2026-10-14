@@ -49,4 +49,16 @@ The benefits of management training are not solely for emerging managers; it hol
 
 ### Training on the subject of management
 
+[People Management Training](/people-management-training)
+
+[Managing Remote Employees](/managing-remote-employees-training)
+
+[Managing People By Their Personality](/personality-profile-managing-people-differently)
+
+[Diversity & Inclusion Training](/diversity-and-inclusion-training)
+
 ### Management training case studies
+
+[Management Training](/case-study-management-training-atp-media)
+
+[Managing & Coaching Training](/case-study-management-training-and-coaching-ista)

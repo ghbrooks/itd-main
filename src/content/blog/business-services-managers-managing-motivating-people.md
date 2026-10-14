@@ -43,3 +43,5 @@ Exceptional managers know that people are the engine of progress. They lead with
 Managing and motivating people is both an art and a skill. In a world of evolving expectations, the most impactful managers are those who don’t just focus on output, but on connection, clarity, and culture. They lead not with ego, but with empathy—and their teams thrive because of it.
 
 ### [Training on the subject of Management](/management-training)
+
+[Management Training](/management-training)

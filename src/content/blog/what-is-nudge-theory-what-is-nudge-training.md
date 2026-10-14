@@ -12,8 +12,6 @@ seo:
   title: 'What is Nudge Theory & What is Nudge Training?'
   description: 'What is Nudge Theory & What is Nudge Training? Learn about the benefits of Nudge Theory and how your organisation could use it.'
 ---
-## What is Nudge Theory?
-
 We're often asked, what is Nudge Theory? Maybe you've heard something about it, but many people haven't. In a nutshell it's a way of influencing people to make a specific choice of behaviour. It's about how we communicate a message. This can be at a governmental policy level, but also at an organisational and at an individual level. So you could join many other people who use Nudge in your day to day work. (that was a nudge)
 
 ### How could you use Nudge Theory?
@@ -49,3 +47,9 @@ Nudge Training
 Hopefully now you have part of an answer to the question to What is Nudge. But what about the cakes? In the photo above you can see someone choosing a cake. Is Nudge used here? Absolutely. The display of cakes will position the most popular, tasty and tempting cakes so that they are easy for the customer to see. the Nudge principle of 'make it easy' is at play here. The retailer makes it as easy as possible for the customer to see the most tempting tasty cakes. And they keep the display fresh all day. Yum.
 
 ### Training you might be interested in
+
+[Nudge Training](/nudge-training)
+
+[Online Video Learning](https://itdlive.com/)
+
+[Nudge Consultancy](/nudge-consultancy)

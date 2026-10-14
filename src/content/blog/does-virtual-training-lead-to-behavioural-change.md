@@ -44,3 +44,5 @@ Our initial trials are delivering interesting results. Some people love it, wher
 So what we might say is that, once people get used to Remote Training, it has demonstrated itself as an effective tool for instigating behavioural change. Bearing in mind the time and cost savings, it may well be a useful tool for the Training and HR departments to deliver valuable learning, especially where a client has employees spread across multiple offices and countries.
 
 ### Training on the subject of virtual training
+
+[Virtual Training Courses](/virtual-training-courses)

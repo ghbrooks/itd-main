@@ -58,3 +58,15 @@ Surround yourself with colleagues who support and uplift you. Having a strong ne
 Confidence in the workplace is a vital asset that can propel your career forward. By cultivating self-awareness, setting achievable goals, practicing positive self-talk, and stepping out of your comfort zone, you can gradually build and enhance your confidence. Remember that confidence is not about being without flaws, but about recognising your strengths and capabilities while working on areas that need improvement. With dedication and consistent effort, you can develop the confidence needed to excel in your professional journey.
 
 ### Related training on how to develop confidence in the workplace
+
+[Developing confidence training](/developing-confidence-training)
+
+[Personality at Work Training](/personality-at-work-training)
+
+[Resilience Training](/resilience-training)
+
+[Stress Management Training](/stress-management-training-course)
+
+[Assertiveness Training](/assertiveness-training)
+
+[Presentation Skills Training](/presentation-skills-training)

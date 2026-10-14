@@ -55,4 +55,16 @@ Soft skills training contributes to shaping a company's culture. A culture built
 
 ### Soft skills training courses
 
+[Team Leadership Training](/team-leadership-training)
+
+[Assertiveness Training](/assertiveness-training)
+
+[Written Comunication Training](/written-communication-skills-training)
+
+[Nudge Training](/nudge-training)
+
 ### Case studies on soft skills training courses
+
+[Virtual Presentation Skills Training](/case-study-presenting-with-impact-webinar-pepsico)
+
+[Nudge in Design Training](/case-study-nudge-training-campaign-design-EE)

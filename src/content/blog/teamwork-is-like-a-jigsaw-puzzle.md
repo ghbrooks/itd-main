@@ -43,3 +43,5 @@ Of course some have more responsibility, bigger roles and need to make big decis
 Once we notice that everyone matters just like a jigsaw, we all may treat everyone internally with a bit more equality, sincerity and respect.
 
 ### [Training on the subject of teamwork](/team-training)
+
+[Team Training](/team-training)
