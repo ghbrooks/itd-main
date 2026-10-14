@@ -1,6 +1,6 @@
 ---
-import fs from 'node:fs';
-import path from 'node:path';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 type Props = {
   heading?: string;
@@ -8,20 +8,44 @@ type Props = {
 };
 const { heading = 'Trusted by teams at', tone = 'light' } = Astro.props;
 
-const dir = path.resolve('public/images/clients');
-const files = fs
-  .readdirSync(dir)
-  .filter((f) => /\.(png|webp|jpe?g|svg)$/i.test(f))
-  .sort();
+// Trimmed logos produced by scripts/trim-client-logos.mjs from the raw
+// WordPress files in public/images/clients (which are ~917x693 canvases with
+// the mark in a thin band in the middle).
+const modules = import.meta.glob<{ default: ImageMetadata }>(
+  '../../assets/images/clients/*.{png,webp,jpg,jpeg}',
+  { eager: true },
+);
 
-const logos = files.map((file) => {
-  const base = file.replace(/\.[^.]+$/, '');
-  const alt = base
-    .split('-')
-    .map((w) => (w.length <= 3 ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1)))
-    .join(' ');
-  return { src: `/images/clients/${file}`, alt };
-});
+// Proper names the filename rule can't derive; anything else is title-cased.
+const names: Record<string, string> = {
+  'atp-media': 'ATP Media',
+  'cambridge-cognition': 'Cambridge Cognition',
+  'clyde-co': 'Clyde & Co',
+  'ee': 'EE',
+  'esm': 'European Stability Mechanism',
+  'ista': 'ISTA',
+  'jcw-group': 'JCW Group',
+  'law-society-scotland': 'Law Society of Scotland',
+  'pankhurst': 'Pankhurst Trust',
+  'pepsico': 'PepsiCo',
+  'reed-smith': 'Reed Smith',
+  'rma': 'RMA Associates',
+  'tma': 'TMA',
+  'van-bael-bellis': 'Van Bael & Bellis',
+};
+
+const logos = Object.entries(modules)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([file, mod]) => {
+    const base = file.split('/').pop()!.replace(/\.[^.]+$/, '');
+    const alt =
+      names[base] ??
+      base
+        .split('-')
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
+    return { src: mod.default, alt };
+  });
 ---
 <section class={`logo-strip logo-strip--${tone}`}>
   <div class="container-wide">
@@ -29,7 +53,15 @@ const logos = files.map((file) => {
     <ul class="logo-strip__list">
       {logos.map((logo) => (
         <li>
-          <img src={logo.src} alt={logo.alt} loading="lazy" decoding="async" />
+          <Image
+            src={logo.src}
+            alt={logo.alt}
+            height={160}
+            densities={[1, 2]}
+            format="webp"
+            loading="lazy"
+            decoding="async"
+          />
         </li>
       ))}
     </ul>
@@ -60,28 +92,41 @@ const logos = files.map((file) => {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.75rem 2rem;
+    gap: 2rem 1.5rem;
     align-items: center;
     justify-items: center;
   }
   @media (min-width: 640px) {
+    .logo-strip__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (min-width: 900px) {
     .logo-strip__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .logo-strip__list {
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 2.25rem 2.75rem;
+      gap: 2.5rem 2.5rem;
     }
   }
+  .logo-strip__list li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  /* Each logo gets the same box: wide wordmarks hit the width limit, square
+     marks hit the height limit, and object-fit keeps the aspect ratio. */
   .logo-strip__list img {
-    max-height: 44px;
-    max-width: 150px;
-    width: auto;
-    height: auto;
+    display: block;
+    width: 100%;
+    max-width: 190px;
+    height: 72px;
     object-fit: contain;
     filter: grayscale(100%);
-    opacity: 0.72;
+    opacity: 0.85;
     transition: opacity 220ms var(--ease-out-soft), filter 220ms var(--ease-out-soft);
+  }
+  @media (min-width: 640px) {
+    .logo-strip__list img { height: 80px; max-width: 210px; }
   }
   .logo-strip__list li:hover img {
     opacity: 1;
@@ -89,7 +134,7 @@ const logos = files.map((file) => {
   }
   .logo-strip--dark .logo-strip__list img {
     filter: grayscale(100%) brightness(0) invert(1);
-    opacity: 0.8;
+    opacity: 0.85;
   }
   .logo-strip--dark .logo-strip__list li:hover img {
     opacity: 1;

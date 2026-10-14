@@ -71,6 +71,7 @@ src/
     schema.ts                # JSON-LD builders (organization, article, breadcrumb, course, faq, review, person)
   data/work-styles.ts        # questionnaire statements + style descriptions
   assets/images/{courses,sectors,blog,pages,caseStudies}/*.webp  # hero images from WP, optimised by astro:assets
+  assets/images/clients/*.png  # client logos, trimmed by scripts/trim-client-logos.mjs (what ClientLogoStrip renders)
   styles/globals.css         # Tailwind v4 @theme + base + utilities
 public/
   favicon.svg
@@ -82,6 +83,7 @@ scripts/
   migrate-wp-extras.mjs      # second pass: blog posts, reviews, pages, images, case-study subjects (idempotent)
   fetch-wp-images.mjs        # pulls featured images from the live WP media library into src/assets/images
   make-brand-assets.mjs      # regenerates public/og-default.png and apple-touch-icon.png
+  trim-client-logos.mjs      # trims public/images/clients/* into src/assets/images/clients/ (run after adding a logo)
   make-portable.mjs          # post-build: relative URLs for GitHub Pages / file://
   old-data/                  # snapshot of the prior Next.js intermediate's data
   wp-data/                   # sanitised JSON snapshot of the WordPress tables the second pass reads
@@ -171,6 +173,8 @@ This site replaces a WordPress installation (Spacious theme) previously running 
 **A new blog post**: drop into `src/content/blog/`. Routed via `/blog/[slug]`. Use `draft: true` to keep it out of the build.
 
 **A new review**: drop a JSON file into `src/content/reviews/` with `quote, author, rating, publishedDate` and ideally `subject` + `courseSlug`. The rating badge, footer and schema recompute automatically.
+
+**A new client logo**: drop the raw file into `public/images/clients/`, run `node scripts/trim-client-logos.mjs`, and add the proper name to the `names` map in `ClientLogoStrip.astro` if the filename can't be title-cased into it. The strip reads `src/assets/images/clients/` via `import.meta.glob`.
 
 **A new standalone page** (policy, person, long-form): drop into `src/content/pages/` with `layout: 'prose'` or `'person'`. Routed at `/[slug]`.
 
