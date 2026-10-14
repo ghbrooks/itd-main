@@ -43,7 +43,7 @@ const sectorStudyCount = (title: string) => caseStudies.filter((c) => c.data.sec
 ---
 
 <BaseLayout
-  title={`${site.longName} — Soft skills training that sticks`}
+  title="Soft Skills Training & Coaching | ITD"
   description={site.description}
 >
   <!-- HERO -->
@@ -241,7 +241,7 @@ const sectorStudyCount = (title: string) => caseStudies.filter((c) => c.data.sec
     letter-spacing: -0.025em;
   }
   .props { display: grid; gap: 2.5rem; }
-  @media (min-width: 800px) { .props { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 800px) { .props { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   .prop { position: relative; padding-top: 1.5rem; border-top: 1px solid var(--c-rule); }
   .prop__num {
     font-family: var(--font-display);
@@ -278,27 +278,27 @@ const sectorStudyCount = (title: string) => caseStudies.filter((c) => c.data.sec
   }
 
   /* Course grid — first card spans 2 cols on wide screens (feature) */
-  .course-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-  @media (min-width: 720px) { .course-grid { grid-template-columns: repeat(2, 1fr); } }
+  .course-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 720px) { .course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (min-width: 1024px) {
-    .course-grid { grid-template-columns: repeat(3, 1fr); grid-auto-flow: dense; }
+    .course-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-flow: dense; }
     .course-grid > :first-child { grid-column: span 2; }
   }
 
   /* Case studies — feature card + side stack */
-  .case-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-  @media (min-width: 1024px) { .case-grid { grid-template-columns: 1.4fr 1fr; } }
+  .case-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 1024px) { .case-grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); } }
   .case-grid__side { display: grid; gap: 1rem; }
 
   /* Review grid — feature + 3 inline */
-  .review-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-  @media (min-width: 800px) { .review-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1100px) { .review-grid { grid-template-columns: 1.4fr repeat(3, 1fr); } }
+  .review-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 800px) { .review-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1100px) { .review-grid { grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); } }
 
   /* Sector tiles with imagery */
-  .sector-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-  @media (min-width: 700px) { .sector-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .sector-grid { grid-template-columns: repeat(3, 1fr); } }
+  .sector-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 700px) { .sector-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .sector-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   .sector-tile { display: block; color: inherit; text-decoration: none; }
   .sector-tile__media { aspect-ratio: 16 / 9; background: var(--c-tint); overflow: hidden; }
   .sector-tile__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 600ms var(--ease-out-soft); }

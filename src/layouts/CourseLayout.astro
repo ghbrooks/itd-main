@@ -243,12 +243,12 @@ const schemas = [
 
   .course-body {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
   @media (min-width: 1024px) {
     .course-body {
-      grid-template-columns: 320px 1fr;
+      grid-template-columns: 320px minmax(0, 1fr);
       gap: 4rem;
     }
   }
@@ -283,7 +283,7 @@ const schemas = [
   }
   .course-stat dl div {
     display: grid;
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 90px minmax(0, 1fr);
     gap: 1rem;
   }
   .course-stat dt {
@@ -307,11 +307,11 @@ const schemas = [
 
   .course-grid-two {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
   @media (min-width: 700px) {
-    .course-grid-two { grid-template-columns: 1fr 1fr; }
+    .course-grid-two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   }
 
   .course-methodology {
@@ -340,19 +340,19 @@ const schemas = [
   .course-reviews {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   @media (min-width: 800px) {
-    .course-reviews { grid-template-columns: repeat(3, 1fr); }
+    .course-reviews { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
 
   .course-related-studies {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   @media (min-width: 1024px) {
-    .course-related-studies { grid-template-columns: repeat(2, 1fr); }
+    .course-related-studies { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 
   .course-faq-wrap { max-width: 920px; }
@@ -360,12 +360,12 @@ const schemas = [
   .course-related-grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   @media (min-width: 700px) {
-    .course-related-grid { grid-template-columns: repeat(2, 1fr); }
+    .course-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (min-width: 1024px) {
-    .course-related-grid { grid-template-columns: repeat(3, 1fr); }
+    .course-related-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
 </style>

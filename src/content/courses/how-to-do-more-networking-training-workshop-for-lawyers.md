@@ -23,7 +23,7 @@ outcomes:
 image: '../../assets/images/courses/how-to-do-more-networking-training-workshop-for-lawyers.webp'
 imageAlt: 'How to do more networking for lawyers'
 seo:
-  title: 'Networking Training for Lawyers'
+  title: 'How to Do More Networking: a workshop for lawyers'
   description: 'Networking Training for Lawyers from ITD. Practical networking skills for business development in legal practice.'
 ---
 

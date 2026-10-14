@@ -3,7 +3,9 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import Hero from '~/components/marketing/Hero.astro';
 import Section from '~/components/layout/Section.astro';
 import CTAPanel from '~/components/marketing/CTAPanel.astro';
+import Turnstile from '~/components/forms/Turnstile.astro';
 import { breadcrumbSchema } from '~/lib/schema';
+import { site, quizEndpoint } from '~/lib/site';
 import { statements, workStyles, styleDescriptions, resultsIntro, closingNote } from '~/data/work-styles';
 
 const schemas = [
@@ -22,18 +24,34 @@ const schemas = [
   <Hero
     eyebrow="ITD Work Styles Model"
     title="Which style drives the way you work?"
-    lead="Forty statements, agree or disagree, about five minutes. Your answers are scored in your browser and never leave your device."
+    lead="Forty statements, agree or disagree, about five minutes. Tell us who you are, go with your first reaction, and your scores appear straight away."
     variant="page"
     secondaryCta={{ label: 'About the model', href: '/work-styles-model' }}
   />
 
   <Section size="md" tone="default">
     <div class="container-narrow">
-      <form class="wsq" data-wsq novalidate>
+      <form class="wsq" data-wsq data-endpoint={quizEndpoint} data-mailto={site.email} novalidate>
         <div class="wsq__intro">
           <p>For each statement choose <strong>Agree</strong> if it is more true than not, or <strong>Disagree</strong> if it is more false than not. Go with your first reaction. There are no right answers and no style is better than another.</p>
           <p class="wsq__progress" aria-live="polite"><span data-progress>0</span> of {statements.length} answered</p>
         </div>
+
+        <fieldset class="wsq__about">
+          <legend><span class="eyebrow eyebrow-rule">About you</span></legend>
+          <div class="wsq__fields">
+            <label class="wsq__field">
+              <span>Your first &amp; last name</span>
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label class="wsq__field">
+              <span>Your email</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+          </div>
+          <p class="wsq__consent">We'll send a copy of your scores to this address and may follow up about Work Styles training. See our <a href="/privacy">privacy policy</a>.</p>
+          <p class="wsq__hint" data-about-hint hidden>Please add your name and a valid email address.</p>
+        </fieldset>
 
         <ol class="wsq__list">
           {statements.map((s, i) => (
@@ -49,9 +67,19 @@ const schemas = [
           ))}
         </ol>
 
+        <!-- Honeypot — hidden from humans -->
+        <div class="wsq__honeypot" aria-hidden="true">
+          <label>If you are a human, leave this field blank.
+            <input type="text" name="hp_field" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
+
+        <Turnstile action="work-styles" class="wsq__turnstile" />
+
         <div class="wsq__actions">
-          <button type="submit" class="btn btn--primary">See my scores</button>
+          <button type="submit" class="btn btn--primary" data-submit>See my scores</button>
           <p class="wsq__hint" data-hint hidden>Please answer every statement — the unanswered ones are highlighted.</p>
+          <p class="wsq__hint" data-captcha-hint hidden>Please complete the spam check above.</p>
         </div>
         <noscript><p class="wsq__hint">This questionnaire needs JavaScript to calculate your scores. You can also <a href="/contact">ask us to run it with your team</a>.</p></noscript>
       </form>
@@ -70,6 +98,7 @@ const schemas = [
           ))}
         </ul>
         <p class="wsq-results__dominant">Your highest score is <strong data-dominant></strong>.</p>
+        <p class="wsq-results__sent" data-sent hidden></p>
 
         <div class="wsq-results__actions">
           <a href="/contact" class="btn btn--primary">Discuss your results with us</a>
@@ -125,6 +154,31 @@ const schemas = [
     letter-spacing: 0.12em;
     font-weight: 600;
   }
+  .wsq__about { border: 1px solid var(--c-rule); border-radius: 14px; padding: 1.25rem 1.5rem 1.4rem; margin: 0 0 2rem; background: var(--c-bg); }
+  .wsq__about legend { padding: 0 0.4rem; }
+  .wsq__fields { display: grid; gap: 1rem; margin-top: 0.75rem; }
+  @media (min-width: 640px) { .wsq__fields { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+  .wsq__field { display: grid; gap: 0.4rem; }
+  .wsq__field span { font-size: 0.85rem; font-weight: 600; color: var(--c-deep); }
+  .wsq__field input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    font: inherit;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--c-rule);
+    border-radius: 10px;
+    background: var(--c-bg);
+    color: var(--c-text);
+    transition: border-color 160ms var(--ease-out-soft), box-shadow 160ms var(--ease-out-soft);
+  }
+  .wsq__field input:focus { outline: none; border-color: var(--c-blue); box-shadow: 0 0 0 3px rgba(2, 132, 213, 0.15); }
+  .wsq__field input.is-invalid { border-color: #c0392b; }
+  .wsq__consent { margin: 0.9rem 0 0; font-size: 0.85rem; color: var(--c-muted); line-height: 1.5; }
+  .wsq__consent a { color: var(--c-mid); }
+  .wsq__honeypot { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  .wsq__turnstile { margin-top: 2rem; }
+  .wsq-results__sent { font-size: 0.95rem; color: var(--c-mid); margin: -0.75rem 0 1.5rem; }
   .wsq__list { list-style: none; margin: 0; padding: 0; counter-reset: q; }
   .wsq__item fieldset {
     border: 0;
@@ -132,11 +186,11 @@ const schemas = [
     margin: 0;
     padding: 1.1rem 0;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.75rem;
     align-items: center;
   }
-  @media (min-width: 640px) { .wsq__item fieldset { grid-template-columns: 1fr auto; gap: 1.5rem; } }
+  @media (min-width: 640px) { .wsq__item fieldset { grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem; } }
   .wsq__item legend { float: left; width: 100%; font-size: 1.02rem; line-height: 1.45; color: var(--c-deep); font-weight: 500; }
   .wsq__num {
     display: inline-block;
@@ -199,6 +253,19 @@ const schemas = [
     const items = [...form.querySelectorAll<HTMLLIElement>('.wsq__item')];
     const progress = form.querySelector<HTMLElement>('[data-progress]');
     const hint = form.querySelector<HTMLElement>('[data-hint]');
+    const aboutHint = form.querySelector<HTMLElement>('[data-about-hint]');
+    const captchaHint = form.querySelector<HTMLElement>('[data-captcha-hint]');
+    const nameInput = form.querySelector<HTMLInputElement>('input[name="name"]');
+    const emailInput = form.querySelector<HTMLInputElement>('input[name="email"]');
+    const submitBtn = form.querySelector<HTMLButtonElement>('[data-submit]');
+    const sentNote = results.querySelector<HTMLElement>('[data-sent]');
+    const endpoint = form.dataset.endpoint;
+    const mailto = form.dataset.mailto ?? '';
+    const turnstile = () => (window as unknown as { turnstile?: { reset: () => void } }).turnstile;
+    const captchaToken = () => form.querySelector<HTMLInputElement>('input[name="cf-turnstile-response"]')?.value ?? '';
+    const hasCaptcha = () => Boolean(form.querySelector('[data-turnstile]'));
+
+    [nameInput, emailInput].forEach((el) => el?.addEventListener('input', () => el.classList.remove('is-invalid')));
 
     const answered = (li: HTMLLIElement) => Boolean(li.querySelector<HTMLInputElement>('input:checked'));
 
@@ -208,8 +275,20 @@ const schemas = [
       items.forEach((li) => { if (answered(li)) li.classList.remove('is-missing'); });
     });
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // 1. Who are you? Same two fields the original questionnaire required.
+      const badAbout = [nameInput, emailInput].filter((el) => el && !el.checkValidity());
+      badAbout.forEach((el) => el?.classList.add('is-invalid'));
+      if (aboutHint) aboutHint.hidden = badAbout.length === 0;
+      if (badAbout.length) {
+        badAbout[0]?.focus();
+        badAbout[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // 2. Every statement answered.
       const missing = items.filter((li) => !answered(li));
       if (missing.length) {
         missing.forEach((li) => li.classList.add('is-missing'));
@@ -218,6 +297,15 @@ const schemas = [
         return;
       }
       if (hint) hint.hidden = true;
+
+      // 3. Spam check. The widget fills a hidden input once the visitor passes.
+      if (hasCaptcha() && !captchaToken()) {
+        if (captchaHint) captchaHint.hidden = false;
+        form.querySelector('[data-turnstile]')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      if (captchaHint) captchaHint.hidden = true;
+      if (form.querySelector<HTMLInputElement>('input[name="hp_field"]')?.value) return; // bot
 
       const scores: Record<string, number> = {};
       for (const li of items) {
@@ -258,16 +346,48 @@ const schemas = [
       results.focus();
       results.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
+      const name = nameInput?.value.trim() ?? '';
+      const email = emailInput?.value.trim() ?? '';
+      const summary = Object.entries(scores).map(([s, v]) => `${s}: ${v} / 10`);
+      const dominantText = results.querySelector('[data-dominant]')?.textContent ?? '';
+
       results.querySelector<HTMLButtonElement>('[data-share]')?.addEventListener('click', () => {
-        const lines = Object.entries(scores).map(([s, v]) => `${s}: ${v} / 10`).join('%0D%0A');
-        location.href = `mailto:?subject=${encodeURIComponent('My ITD Work Styles scores')}&body=${encodeURIComponent('My ITD Work Styles Model scores:')}%0D%0A%0D%0A${lines}%0D%0A%0D%0A${encodeURIComponent(location.href)}`;
+        const body = [`${name}'s ITD Work Styles Model scores:`, '', ...summary, '', `Highest: ${dominantText}`, '', location.href.split('?')[0]].join('\r\n');
+        location.href = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent('My ITD Work Styles scores')}&body=${encodeURIComponent(body)}`;
       }, { once: true });
+
+      // 4. Send the lead and scores to ITD. Results are already on screen, so a
+      //    relay failure degrades to the mailto: path rather than losing them.
+      if (!endpoint || !sentNote) return;
+      if (submitBtn) submitBtn.disabled = true;
+      const payload = new FormData();
+      payload.set('form', 'work-styles-questionnaire');
+      payload.set('_subject', `Work Styles questionnaire: ${name}`);
+      payload.set('name', name);
+      payload.set('email', email);
+      payload.set('highest', dominantText);
+      for (const [style, score] of Object.entries(scores)) payload.set(style.toLowerCase(), String(score));
+      payload.set('answers', items.map((li, i) => `${i + 1}. ${li.querySelector<HTMLInputElement>('input:checked')?.value === '1' ? 'Agree' : 'Disagree'}`).join('; '));
+      payload.set('page', location.href.split('?')[0] ?? '');
+      const token = captchaToken();
+      if (token) payload.set('cf-turnstile-response', token);
+      try {
+        const res = await fetch(endpoint, { method: 'POST', body: payload, headers: { Accept: 'application/json' } });
+        if (!res.ok) throw new Error(String(res.status));
+        sentNote.textContent = `A copy of your scores is on its way to ${email}.`;
+      } catch {
+        sentNote.innerHTML = `We couldn't send your scores automatically. Use “Email me my scores” below, or write to <a href="mailto:${mailto}">${mailto}</a>.`;
+      }
+      sentNote.hidden = false;
     });
 
     results.querySelector<HTMLButtonElement>('[data-retake]')?.addEventListener('click', () => {
       form.reset();
       items.forEach((li) => li.classList.remove('is-missing'));
       if (progress) progress.textContent = '0';
+      if (sentNote) sentNote.hidden = true;
+      if (submitBtn) submitBtn.disabled = false;
+      try { turnstile()?.reset(); } catch { /* widget not loaded */ }
       results.hidden = true;
       form.hidden = false;
       form.scrollIntoView({ behavior: 'smooth', block: 'start' });

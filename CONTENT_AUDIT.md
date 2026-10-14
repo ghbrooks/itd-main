@@ -50,3 +50,23 @@ The reviews collection now holds the 373 published Site Reviews entries from Wor
 - **Work Styles questionnaire video.** The WordPress page embedded an MP4 introduction. It was not migrated; add it to `public/` and embed if wanted.
 - **Case-study hero images.** 88 case studies have images fetched from WordPress; they are stored but not yet shown on the case-study page, since many are small stock images.
 - **Legacy redirects.** `astro.config.mjs` lists the old WordPress URLs (blog posts at `/slug`, `/training-reviews`, `/about-itd`, etc.). On GitHub Pages these are meta-refresh stubs; convert them to real 301s when DNS moves to a host that supports them.
+
+## 8. SEO audit — 14 Oct 2026
+
+Automated pass over the built site (454 HTML files). Fixed in code: title suffix shortened to "| ITD" (304 titles were over 70 characters because of the long brand suffix), client name added to every case-study title (18 groups of identical titles), meta descriptions clamped at 160 characters, homepage title now "Soft Skills Training & Coaching | ITD". Canonicals, Open Graph, sitemap coverage, JSON-LD and internal links all pass. Remaining items need content decisions:
+
+- **Two near-duplicate courses**: `/networking-training-for-lawyers` and `/how-to-do-more-networking-training-workshop-for-lawyers` describe the same workshop. The second now has a distinct title, but one should probably redirect to the other.
+- **22 very short titles** (e.g. "Nudge Course | ITD", "Team Training | ITD"). Not an error, but a descriptive phrase after the name (what it is for, who it is for) would earn more clicks.
+- **Location pages are thin** (120–130 words each across 41 pages, e.g. `/training-in-pakistan`). Search engines may treat them as doorway pages. Either add genuine local detail (clients, languages, delivery notes) or fold them into one "Where in the world" page.
+- **Four titles are 71–74 characters** (`/law`, `/nudge-training-for-lawyers`, two long case-study names). Acceptable; shorten if convenient.
+
+## 9. Contact details and external links — 14 Oct 2026
+
+- **Phone**: itd.com's contact page publishes +44 (0)1608 676705, so that is now the primary number (footer, schema, contact page). The freephone 0800 804 8086 appears in 123 old course pages ("call us on 0800 …") and is shown on the contact page as a secondary number. Martin to confirm both are still live.
+- **Email**: info@itd.com (used 75 times in the old content). The live site shows no email address; confirm this inbox is monitored.
+- **LinkedIn**: the live site and the WordPress database contain no LinkedIn URL, so the footer link to linkedin.com/company/itd-uk had no source and has been removed. Add a verified profile to `social` in `src/lib/site.ts` and it reappears in the footer and schema.
+- **External links** now open in a new tab (`rel="noopener noreferrer"`), both in migrated markdown and in templates.
+
+## 10. Questionnaire lead capture — 14 Oct 2026
+
+`/work-styles-model-questionnaire` now mirrors the WordPress quiz: name and email are required before scoring, a Cloudflare Turnstile spam check sits above the submit button, and the respondent's details and scores are posted to the form relay. Until `PUBLIC_TURNSTILE_SITE_KEY` and `PUBLIC_QUIZ_ENDPOINT` (or `PUBLIC_FORM_ENDPOINT`) are set, the widget runs on Cloudflare's test key and nothing is sent to ITD; the visitor still sees their scores and gets a mailto button.

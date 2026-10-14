@@ -65,7 +65,8 @@
 
 html {
   font-family: var(--font-body);
-  font-size: 18px;
+  /* 16px on phones, 18px from ~610px up. Everything in rem follows. */
+  font-size: clamp(16px, 12.5px + 0.9vw, 18px);
   color: var(--c-text);
   background: var(--c-bg);
   -webkit-font-smoothing: antialiased;

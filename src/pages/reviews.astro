@@ -119,9 +119,9 @@ const schemas = [
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--c-rule);
   }
-  .review-filters__row { display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; }
-  .review-filters label { display: flex; flex-direction: column; gap: 0.35rem; min-width: 180px; }
-  .review-filters__search { flex: 1; min-width: 220px; }
+  .review-filters__row { display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; min-width: 0; }
+  .review-filters label { display: flex; flex-direction: column; gap: 0.35rem; min-width: min(180px, 100%); }
+  .review-filters__search { flex: 1; min-width: min(220px, 100%); }
   .review-filters label span {
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -131,6 +131,9 @@ const schemas = [
   }
   .review-filters select,
   .review-filters input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 0.7rem 0.85rem;
     border: 1px solid var(--c-rule);
     border-radius: 10px;
@@ -154,10 +157,10 @@ const schemas = [
     padding: 0;
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
-  @media (min-width: 700px) { .review-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1100px) { .review-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 700px) { .review-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1100px) { .review-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   .review-grid li[hidden] { display: none; }
   .review-empty { color: var(--c-muted); padding: 3rem 0; text-align: center; }
 </style>

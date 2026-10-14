@@ -74,13 +74,13 @@ const {
 
   .cta-panel__inner {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
     align-items: end;
   }
   @media (min-width: 900px) {
     .cta-panel__inner {
-      grid-template-columns: 1.5fr 1fr;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
       gap: 3rem;
     }
   }

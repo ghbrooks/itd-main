@@ -3,6 +3,8 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
+import rehypeExternalLinks from 'rehype-external-links';
+import { unified } from '@astrojs/markdown-remark';
 
 // https://astro.build/config
 // Historical WordPress URLs. Posts lived at /<slug>; they now live under /blog/.
@@ -54,6 +56,13 @@ export default defineConfig({
   redirects: legacyRedirects,
   build: {
     inlineStylesheets: 'auto',
+  },
+  markdown: {
+    // Astro 7 defaults to the Sätteri processor, which has no rehype hook; the
+    // unified() pipeline is kept so links out of itd.com open in a new tab.
+    processor: unified({
+      rehypePlugins: [[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }]],
+    }),
   },
   vite: {
     plugins: [tailwindcss()],

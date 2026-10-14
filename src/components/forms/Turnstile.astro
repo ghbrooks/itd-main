@@ -1,0 +1,36 @@
+---
+/**
+ * Cloudflare Turnstile widget. Renders nothing server-side beyond the mount
+ * point; the widget script runs in the browser and drops a hidden
+ * `cf-turnstile-response` input into the enclosing <form>, which the form
+ * relay must verify with Cloudflare's siteverify endpoint.
+ *
+ * Until PUBLIC_TURNSTILE_SITE_KEY is set, Cloudflare's public always-pass test
+ * key is used so the widget is visible on staging. It offers no protection.
+ */
+import { turnstileSiteKey, turnstileIsTestKey } from '~/lib/site';
+
+interface Props {
+  /** Label reported to the Cloudflare dashboard, e.g. "contact" or "work-styles". */
+  action: string;
+  class?: string;
+}
+const { action, class: className } = Astro.props;
+---
+<div class:list={['turnstile', className]} data-turnstile>
+  <div
+    class="cf-turnstile"
+    data-sitekey={turnstileSiteKey}
+    data-action={action}
+    data-theme="light"
+    data-size="flexible"
+  ></div>
+  {turnstileIsTestKey && <p class="turnstile__note">Spam check in test mode. Set PUBLIC_TURNSTILE_SITE_KEY before launch.</p>}
+</div>
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<style>
+  .turnstile { display: grid; gap: 0.35rem; min-height: 65px; }
+  .turnstile .cf-turnstile { max-width: 420px; }
+  .turnstile__note { margin: 0; font-size: 0.75rem; color: var(--c-muted); }
+</style>

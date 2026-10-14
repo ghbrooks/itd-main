@@ -41,10 +41,14 @@ const schemas = [
     { name: data.client, url: `/${study.id}` },
   ]),
 ];
+/** Several studies share a course title; the client makes each page's title unique. */
+const seoTitle = data.seo.title.includes(data.client)
+  ? data.seo.title
+  : `${data.title}: ${data.client} case study`;
 ---
 
 <BaseLayout
-  title={data.seo.title}
+  title={seoTitle}
   description={data.seo.description}
   type="article"
   schemas={schemas}
@@ -159,11 +163,11 @@ const schemas = [
 <style>
   .cs-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
   @media (min-width: 1024px) {
-    .cs-grid { grid-template-columns: 1fr 320px; gap: 4rem; }
+    .cs-grid { grid-template-columns: minmax(0, 1fr) 320px; gap: 4rem; }
   }
   .cs-grid__main { max-width: 70ch; }
 
@@ -234,7 +238,7 @@ const schemas = [
   }
   .cs-meta div {
     display: grid;
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 90px minmax(0, 1fr);
     gap: 1rem;
     font-size: 0.875rem;
   }
@@ -251,6 +255,6 @@ const schemas = [
   .cs-meta dd a:hover { color: var(--c-blue); }
   .cs-related-head { margin-bottom: 2rem; }
   .cs-related-head h2 { margin: 0.6rem 0 0; font-size: clamp(1.6rem, 2.6vw, 2.2rem); letter-spacing: -0.025em; }
-  .cs-related-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-  @media (min-width: 800px) { .cs-related-grid { grid-template-columns: repeat(3, 1fr); } }
+  .cs-related-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 800px) { .cs-related-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 </style>

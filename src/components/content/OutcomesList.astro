@@ -33,7 +33,7 @@ const { items, title = 'You leave with' } = Astro.props;
   }
   .outcomes li {
     display: grid;
-    grid-template-columns: 28px 1fr;
+    grid-template-columns: 28px minmax(0, 1fr);
     gap: 0.85rem;
     align-items: start;
     line-height: 1.55;

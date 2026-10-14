@@ -23,7 +23,7 @@ export function organizationSchema(rating?: { average: number; count: number }):
       '@type': 'PostalAddress',
       ...site.address,
     },
-    sameAs: Object.values(site.social),
+    ...(Object.keys(site.social).length ? { sameAs: Object.values(site.social) } : {}),
     ...(rating && rating.count > 0
       ? {
           aggregateRating: {

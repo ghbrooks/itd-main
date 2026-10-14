@@ -147,11 +147,15 @@ const isMega = (item: NavItem) => Boolean(item.children?.some((c) => c.children?
   .site-header__inner {
     position: relative;
     display: grid;
-    /* Brand never collapses; nav takes the rest and may wrap its items. */
+    /* Brand never collapses; nav takes the rest on a single line. */
     grid-template-columns: max-content minmax(0, 1fr) max-content;
     align-items: center;
     gap: 1.25rem;
-    min-height: 104px;
+    min-height: 96px;
+  }
+  /* The menu needs more room than the content column on large screens. */
+  @media (min-width: 1480px) {
+    .site-header .site-header__inner { max-width: 1480px; }
   }
   .site-header__brand {
     display: inline-flex;
@@ -164,8 +168,9 @@ const isMega = (item: NavItem) => Boolean(item.children?.some((c) => c.children?
   .site-header__nav { justify-self: center; }
   .site-header__nav > ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
     gap: 0.1rem;
     list-style: none;
     margin: 0;
@@ -188,14 +193,15 @@ const isMega = (item: NavItem) => Boolean(item.children?.some((c) => c.children?
     padding: 0.5rem 0.6rem;
     border-radius: 8px;
     color: var(--c-text);
-    font-size: 0.88rem;
+    /* Scales with the viewport so nine items always fit on one line from 1024px up. */
+    font-size: clamp(0.78rem, 0.42rem + 0.42vw, 0.95rem);
     font-weight: 500;
     white-space: nowrap;
     transition: color 180ms var(--ease-out-soft), background 180ms var(--ease-out-soft);
   }
   @media (min-width: 1480px) {
     .site-header__nav > ul { gap: 0.2rem; }
-    .site-header__nav > ul > li > a { font-size: 0.95rem; padding: 0.55rem 0.8rem; }
+    .site-header__nav > ul > li > a { padding: 0.55rem 0.8rem; }
   }
   .site-header__nav > ul > li > a:hover,
   .site-header__nav > ul > li > a.is-active,
@@ -378,7 +384,7 @@ const isMega = (item: NavItem) => Boolean(item.children?.some((c) => c.children?
   .mobile__sub summary { font-weight: 500; color: var(--c-text); }
   .mobile__all { color: var(--c-mid) !important; font-weight: 500 !important; }
   .mobile__cta { padding-top: 1rem; }
-  .mobile__cta .btn { justify-content: center; width: 100%; }
+  .mobile__cta .btn { justify-content: center; width: 100%; color: #fff; } /* beats the mobile link colour above */
 </style>
 
 <script>

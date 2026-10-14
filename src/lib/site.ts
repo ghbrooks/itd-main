@@ -10,8 +10,10 @@ export const site = {
   url: 'https://itd.com',
   defaultOgImage: '/og-default.png',
   email: 'info@itd.com',
-  phone: '+44 (0)800 804 8086',
-  phoneDirect: '+44 (0)1608 676705',
+  /** The number itd.com publishes on its contact page. Used in the footer, schema and contact page. */
+  phone: '+44 (0)1608 676705',
+  /** Freephone number quoted across the old site's course pages ("call us on 0800 …"). */
+  phoneFreephone: '+44 (0)800 804 8086',
   founded: 2002,
   founder: 'Martin Chapman',
   address: {
@@ -27,9 +29,8 @@ export const site = {
     postalCode: 'OX26 1TD',
     addressCountry: 'GB',
   },
-  social: {
-    linkedin: 'https://www.linkedin.com/company/itd-uk',
-  },
+  /** itd.com publishes no social profiles; add verified URLs here and they flow into the footer and schema. */
+  social: {} as Record<string, string>,
   videoLearningUrl: 'https://video-learning.vhx.tv/',
   namedClients: [
     'Clifford Chance',
@@ -53,3 +54,23 @@ export type SiteConfig = typeof site;
  * so enquiries are never silently dropped.
  */
 export const formEndpoint: string | undefined = import.meta.env.PUBLIC_FORM_ENDPOINT || undefined;
+
+/**
+ * Where the Work Styles questionnaire posts the respondent's details and
+ * scores. Defaults to the contact form relay so one endpoint can serve both.
+ * When neither is set the page still scores in the browser and offers a
+ * mailto: so results are never lost.
+ */
+export const quizEndpoint: string | undefined = import.meta.env.PUBLIC_QUIZ_ENDPOINT || formEndpoint;
+
+/**
+ * Cloudflare Turnstile site key for the forms. Unset = Cloudflare's public
+ * always-pass test key, so the widget renders on staging but protects nothing.
+ * See https://developers.cloudflare.com/turnstile/troubleshooting/testing/
+ */
+const TURNSTILE_TEST_KEY = '1x00000000000000000000AA';
+export const turnstileSiteKey: string = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || TURNSTILE_TEST_KEY;
+export const turnstileIsTestKey = turnstileSiteKey === TURNSTILE_TEST_KEY;
+if (turnstileIsTestKey && import.meta.env.PROD) {
+  console.warn('[itd] PUBLIC_TURNSTILE_SITE_KEY is not set: forms use the Turnstile test key (no spam protection).');
+}

@@ -126,12 +126,12 @@ const schemas = [
 <style>
   .coach-head { max-width: 56ch; margin-bottom: 2rem; }
   .coach-head h2 { margin: 0.6rem 0 0; font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -0.025em; }
-  .coach-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-  @media (min-width: 720px) { .coach-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (min-width: 720px) { .coach-grid--4 { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1100px) { .coach-grid--4 { grid-template-columns: repeat(4, 1fr); } }
-  .coach-how { display: grid; gap: 2rem; grid-template-columns: 1fr; align-items: start; }
-  @media (min-width: 900px) { .coach-how { grid-template-columns: 1fr 1.3fr; gap: 4rem; } }
+  .coach-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 720px) { .coach-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 720px) { .coach-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1100px) { .coach-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .coach-how { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr); align-items: start; }
+  @media (min-width: 900px) { .coach-how { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 4rem; } }
   .coach-how h2 { margin: 0.6rem 0 0; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -0.025em; }
   .coach-steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
   .coach-steps li {
@@ -153,6 +153,6 @@ const schemas = [
     font-variant-numeric: tabular-nums;
   }
   .coach-steps strong { color: var(--c-deep); }
-  .coach-proof { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-  @media (min-width: 800px) { .coach-proof { grid-template-columns: repeat(3, 1fr); } }
+  .coach-proof { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 800px) { .coach-proof { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 </style>

@@ -128,9 +128,9 @@ const schemas = [
     gap: 1rem 2rem;
     margin-bottom: 1.5rem;
   }
-  .cs-filters__row { display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; }
-  .cs-filters label { display: flex; flex-direction: column; gap: 0.35rem; min-width: 170px; }
-  .cs-filters__search { flex: 1; min-width: 220px; }
+  .cs-filters__row { display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; min-width: 0; }
+  .cs-filters label { display: flex; flex-direction: column; gap: 0.35rem; min-width: min(170px, 100%); }
+  .cs-filters__search { flex: 1; min-width: min(220px, 100%); }
   .cs-filters label span {
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -140,6 +140,9 @@ const schemas = [
   }
   .cs-filters select,
   .cs-filters input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 0.7rem 0.85rem;
     border: 1px solid var(--c-rule);
     border-radius: 10px;
@@ -226,7 +229,7 @@ const schemas = [
   .cs-list li[hidden] { display: none; }
   .cs-list a {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas: 'client sector' 'title sector';
     gap: 0.15rem 1rem;
     align-items: center;

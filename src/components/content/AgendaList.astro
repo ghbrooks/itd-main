@@ -32,7 +32,7 @@ const { items, title = 'On the agenda' } = Astro.props;
   .agenda li {
     counter-increment: a;
     display: grid;
-    grid-template-columns: 56px 1fr;
+    grid-template-columns: 56px minmax(0, 1fr);
     gap: 1.25rem;
     align-items: baseline;
     padding: 1.1rem 0;

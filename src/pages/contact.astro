@@ -4,6 +4,7 @@ import Section from '~/components/layout/Section.astro';
 import Hero from '~/components/marketing/Hero.astro';
 import ReviewSummary from '~/components/marketing/ReviewSummary.astro';
 import { site, formEndpoint } from '~/lib/site';
+import Turnstile from '~/components/forms/Turnstile.astro';
 import { breadcrumbSchema } from '~/lib/schema';
 
 // With a relay configured the form posts there; otherwise it opens the
@@ -86,6 +87,8 @@ const schemas = [
           </label>
         </div>
 
+        <Turnstile action="contact" class="contact-turnstile" />
+
         <div class="contact-actions">
           <button type="submit" class="btn btn--primary">
             Send message
@@ -102,7 +105,7 @@ const schemas = [
           <p class="eyebrow eyebrow-rule">Direct</p>
           <a href={`mailto:${site.email}`} class="contact-aside__link">{site.email}</a>
           <a href={`tel:${site.phone.replace(/[\s()]/g, '')}`} class="contact-aside__link">{site.phone}</a>
-          <a href={`tel:${site.phoneDirect.replace(/[\s()]/g, '')}`} class="contact-aside__link contact-aside__link--small">{site.phoneDirect} (direct line)</a>
+          <a href={`tel:${site.phoneFreephone.replace(/[\s()]/g, '')}`} class="contact-aside__link contact-aside__link--small">{site.phoneFreephone} (freephone)</a>
         </div>
 
         <div class="contact-aside__block">
@@ -128,17 +131,18 @@ const schemas = [
 
   .contact-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
   @media (min-width: 1024px) {
     .contact-grid {
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
       gap: 4rem;
     }
   }
 
   .contact-form {
+    min-width: 0;
     padding: clamp(1.75rem, 3vw, 2.5rem);
     background: var(--c-bg);
     border: 1px solid var(--c-rule);
@@ -153,12 +157,12 @@ const schemas = [
 
   .contact-field-row {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.25rem;
     margin-bottom: 1.25rem;
   }
   @media (min-width: 600px) {
-    .contact-field-row { grid-template-columns: 1fr 1fr; }
+    .contact-field-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   }
 
   .contact-field {
@@ -176,6 +180,9 @@ const schemas = [
   .contact-field--optional em { font-style: normal; color: var(--c-muted); font-weight: 400; }
   .contact-field input,
   .contact-field textarea {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 0.85rem 0.95rem;
     border: 1px solid var(--c-rule);
     border-radius: 10px;
@@ -220,6 +227,7 @@ const schemas = [
     width: 16px; height: 16px;
   }
 
+  .contact-turnstile { margin-top: 1.25rem; }
   .contact-honeypot {
     position: absolute;
     left: -9999px;

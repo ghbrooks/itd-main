@@ -129,11 +129,15 @@ Single source of truth for company-level facts. Update this and the change propa
 - `url: https://itd.com`
 - `founded: 2002` (the only year that should appear in "since …" copy)
 - `email: info@itd.com`
-- `phone: +44 (0)800 804 8086` (freephone), `phoneDirect: +44 (0)1608 676705`
+- `phone: +44 (0)1608 676705` (the number itd.com publishes; footer, schema, contact), `phoneFreephone: +44 (0)800 804 8086` (quoted on the old course pages; contact page only)
+- `social: {}` — itd.com publishes no social profiles. Add verified URLs here and the footer row + schema `sameAs` appear automatically. Do not reintroduce the old LinkedIn link without a source.
 - Postal: PO Box 282, Chipping Norton, Oxfordshire OX7 9EE
 - Registered: 3 Bignell Park Barns, Bicester, OX26 1TD
 
 ## Conventions
+
+- **External links open in a new tab.** Markdown links to other domains get `target="_blank" rel="noopener noreferrer"` automatically via `rehype-external-links` in `astro.config.mjs`. In `.astro` templates add the attributes by hand (see the footer social links).
+- **Layouts must shrink.** Grid tracks use `minmax(0, 1fr)`, never bare `1fr`, so content can never force horizontal overflow; flex children that hold text get `min-width: 0`. The header menu is `nowrap` with a viewport-scaled font so it stays on one line from 1024px up. Base font is `clamp(16px, …, 18px)`.
 
 - Content authoring: markdown body uses `##` for section headings; lists become Astro-rendered `<ul>`. The body slot is rendered inside the relevant layout's prose region.
 - Scoped CSS lives in `<style>` blocks at the bottom of each `.astro` file. CSS variables (`--c-deep`, `--c-rule`, `--c-text`, etc.) come from `globals.css`.
@@ -147,7 +151,11 @@ This site replaces a WordPress installation (Spacious theme) previously running 
 
 ## Things still deferred
 
-- **Contact form backend**: set `PUBLIC_FORM_ENDPOINT` (see `.env.example`) to a Formspree/Worker URL. Until then the form falls back to a `mailto:` submission.
+- **Form relay + spam check** (env vars, inlined at build; `.env` is git-ignored):
+  - `PUBLIC_FORM_ENDPOINT` — Formspree form URL or a Worker that emails submissions. Unset = contact form falls back to `mailto:`.
+  - `PUBLIC_QUIZ_ENDPOINT` — where `/work-styles-model-questionnaire` posts name, email and scores. Unset = uses `PUBLIC_FORM_ENDPOINT`; if both unset the scores still display and the visitor gets a mailto button, but ITD receives nothing.
+  - `PUBLIC_TURNSTILE_SITE_KEY` — Cloudflare Turnstile site key (free). Unset = Cloudflare's public always-pass test key, so the widget renders on staging but blocks nothing; the build prints a warning. The relay must verify `cf-turnstile-response` with the matching secret.
+  Both forms carry a honeypot field (`hp_field`) regardless.
 - **Analytics**: no script tag added. Drop Plausible into `BaseHead.astro` and update `/privacy` accordingly.
 - **Host-level 301s**: the meta-refresh redirect stubs should become real redirects once the site leaves GitHub Pages.
 - **Content sign-off**: see `CONTENT_AUDIT.md` for the 15 new courses, 8 draft posts and pages written without a WordPress source.

@@ -51,10 +51,12 @@ const stats = await getReviewStats();
           <dt>Phone</dt>
           <dd><a href={`tel:${site.phone.replace(/[\s()]/g, '')}`}>{site.phone}</a></dd>
         </div>
-        <div>
-          <dt>LinkedIn</dt>
-          <dd><a href={site.social.linkedin} rel="noopener">linkedin.com/company/itd-uk</a></dd>
-        </div>
+        {Object.entries(site.social).map(([name, url]) => (
+          <div>
+            <dt>{name[0]?.toUpperCase() + name.slice(1)}</dt>
+            <dd><a href={url} target="_blank" rel="noopener noreferrer">{url.replace(/^https?:\/\/(www\.)?/, '')}</a></dd>
+          </div>
+        ))}
       </dl>
     </div>
 
@@ -145,13 +147,13 @@ const stats = await getReviewStats();
 
   .site-footer__main {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
     padding: 4rem 0 2.5rem;
   }
   @media (min-width: 1024px) {
     .site-footer__main {
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
       gap: 4rem;
     }
   }
@@ -175,7 +177,7 @@ const stats = await getReviewStats();
   }
   .site-footer__meta div {
     display: grid;
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 90px minmax(0, 1fr);
     gap: 1rem;
     font-size: 0.875rem;
   }
@@ -192,14 +194,14 @@ const stats = await getReviewStats();
 
   .site-footer__cols {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem 1.5rem;
   }
   @media (min-width: 768px) {
-    .site-footer__cols { grid-template-columns: repeat(3, 1fr); }
+    .site-footer__cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
   @media (min-width: 1280px) {
-    .site-footer__cols { grid-template-columns: repeat(5, 1fr); }
+    .site-footer__cols { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   }
 
   .site-footer__cols h3 {
