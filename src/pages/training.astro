@@ -10,7 +10,7 @@ import { breadcrumbSchema } from '~/lib/schema';
 import { trainingGroups, coachingLinks, nudgeLinks } from '~/lib/training';
 
 const courses = await getCollection('courses');
-const bySlug = new Map(courses.map((c) => [c.slug, c]));
+const bySlug = new Map(courses.map((c) => [c.id, c]));
 
 // Fail the build if the sitemap references a course that does not exist.
 const missing = [...trainingGroups.flatMap((g) => g.courses), ...coachingLinks, ...nudgeLinks]
@@ -30,7 +30,7 @@ const inMenu = new Set([
 ]);
 // Everything else, so no course is orphaned. Formats and overview pages go last.
 const other = courses
-  .filter((c) => !inMenu.has(c.slug))
+  .filter((c) => !inMenu.has(c.id))
   .sort((a, b) => {
     const rank = (c: typeof a) => (c.data.category === 'format' ? 1 : 0);
     return rank(a) - rank(b) || a.data.title.localeCompare(b.data.title);
@@ -79,7 +79,7 @@ const schemas = [
         <div class="course-grid">
           {g.entries.map(({ label, entry }) => (
             <CourseCard
-              href={`/${entry.slug}`}
+              href={`/${entry.id}`}
               title={label}
               outcome={entry.data.outcome}
               duration={entry.data.duration}
@@ -103,7 +103,7 @@ const schemas = [
       <div class="course-grid">
         {coachingLinks.map((l) => {
           const e = bySlug.get(l.slug)!;
-          return <CourseCard href={`/${e.slug}`} title={l.label} outcome={e.data.outcome} duration={e.data.duration} size="compact" />;
+          return <CourseCard href={`/${e.id}`} title={l.label} outcome={e.data.outcome} duration={e.data.duration} size="compact" />;
         })}
       </div>
     </div>
@@ -121,7 +121,7 @@ const schemas = [
       <div class="course-grid">
         {nudgeLinks.map((l) => {
           const e = bySlug.get(l.slug)!;
-          return <CourseCard href={`/${e.slug}`} title={l.label} outcome={e.data.outcome} duration={e.data.duration} size="compact" />;
+          return <CourseCard href={`/${e.id}`} title={l.label} outcome={e.data.outcome} duration={e.data.duration} size="compact" />;
         })}
       </div>
     </div>
@@ -138,7 +138,7 @@ const schemas = [
       </header>
       <ul class="more-list">
         {other.map((c) => (
-          <li><a href={`/${c.slug}`}>{c.data.title}</a>{c.data.category === 'format' && <span>Format</span>}</li>
+          <li><a href={`/${c.id}`}>{c.data.title}</a>{c.data.category === 'format' && <span>Format</span>}</li>
         ))}
       </ul>
     </div>

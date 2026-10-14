@@ -12,9 +12,9 @@ const OVERVIEW = new Set(['market-sector-training', 'general-business']);
 
 const all = await getCollection('sectors');
 const sectors = all
-  .filter((s) => !OVERVIEW.has(s.slug) && s.slug !== 'law')
+  .filter((s) => !OVERVIEW.has(s.id) && s.id !== 'law')
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
-const overview = all.filter((s) => OVERVIEW.has(s.slug));
+const overview = all.filter((s) => OVERVIEW.has(s.id));
 
 const studies = await getCollection('caseStudies');
 const countFor = (title: string) =>
@@ -46,7 +46,7 @@ const schemas = [
         {sectors.map((s, i) => {
           const n = countFor(s.data.title);
           return (
-            <a href={`/${s.slug}`} class="sector-card card">
+            <a href={`/${s.id}`} class="sector-card card">
               <div class="sector-card__media">
                 {s.data.image ? (
                   <Image src={s.data.image} alt={s.data.imageAlt ?? ''} widths={[420, 640, 900]} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" loading={i < 3 ? 'eager' : 'lazy'} />
@@ -73,7 +73,7 @@ const schemas = [
           <p>
             We work across many more industries than this.
             {overview.map((o, i) => (
-              <>{i > 0 ? ' · ' : ' '}<a href={`/${o.slug}`} class="link-anim">{o.data.title}</a></>
+              <>{i > 0 ? ' · ' : ' '}<a href={`/${o.id}`} class="link-anim">{o.data.title}</a></>
             ))}
             {' '}or just <a href="/contact" class="link-anim">tell us about yours</a>.
           </p>

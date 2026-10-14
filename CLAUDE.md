@@ -1,13 +1,13 @@
 # itd.com — Astro rebuild
 
-Static rebuild of the WordPress site at `itd.com` for ITD Limited (International Training & Development). Astro 5 + TypeScript (strict) + Tailwind v4 + content collections. Outputs pure static HTML/CSS/JS — no server runtime.
+Static rebuild of the WordPress site at `itd.com` for ITD Limited (International Training & Development). Astro 7 + TypeScript (strict) + Tailwind v4 + content collections (content layer API with glob loaders). Outputs pure static HTML/CSS/JS — no server runtime.
 
 ## Stack
 
-- **Framework**: Astro 5 (static output, no SSR)
+- **Framework**: Astro 7 (static output, no SSR). Requires Node 22.12+ (the deploy workflow uses Node 22).
 - **Language**: TypeScript, strict mode
 - **Styling**: Tailwind v4 (CSS-first `@theme` in `src/styles/globals.css`), scoped `<style>` blocks per `.astro` component
-- **Content**: Astro content collections (`src/content/`) — markdown + JSON
+- **Content**: Astro content collections — schemas + `glob()` loaders in `src/content.config.ts`, files under `src/content/`
 - **Sitemap**: `@astrojs/sitemap` integration
 - **Locale**: `en-GB` throughout
 
@@ -25,8 +25,8 @@ npx astro check      # type + content-schema validation
 
 ```
 src/
+  content.config.ts          # Zod schemas + glob loaders — the data contract (Astro 6+ location)
   content/
-    config.ts                # Zod schemas — the data contract
     courses/*.md             # 154 entries (15 new ones flagged needsReview)
     caseStudies/*.md         # 160 entries
     sectors/*.md             # 16 entries
@@ -87,9 +87,9 @@ scripts/
   wp-data/                   # sanitised JSON snapshot of the WordPress tables the second pass reads
 ```
 
-## Content collections (`src/content/config.ts`)
+## Content collections (`src/content.config.ts`)
 
-Every collection has a strict Zod schema. **Adding new entries**: drop a file in the right folder using the schema; the slug is derived from the filename.
+Every collection has a strict Zod schema and a `glob()` loader pointing at its folder. **Adding new entries**: drop a file in the right folder using the schema; `entry.id` is the filename without extension and is used as the URL slug (there is no `entry.slug` — that was the pre-Astro-6 API). Files starting with `_` are ignored by the loader. Import `z` from `astro/zod`, not `astro:content` (deprecated, removed in Astro 8).
 
 | Collection | Type | Key fields | Routed at |
 |---|---|---|---|

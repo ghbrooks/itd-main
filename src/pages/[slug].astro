@@ -21,11 +21,11 @@ export async function getStaticPaths() {
   ]);
 
   const paths = [
-    ...courses.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'course' as const, entry } })),
-    ...caseStudies.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'caseStudy' as const, entry } })),
-    ...sectors.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'sector' as const, entry } })),
-    ...locations.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'location' as const, entry } })),
-    ...pages.map((entry) => ({ params: { slug: entry.slug }, props: { kind: 'page' as const, entry } })),
+    ...courses.map((entry) => ({ params: { slug: entry.id }, props: { kind: 'course' as const, entry } })),
+    ...caseStudies.map((entry) => ({ params: { slug: entry.id }, props: { kind: 'caseStudy' as const, entry } })),
+    ...sectors.map((entry) => ({ params: { slug: entry.id }, props: { kind: 'sector' as const, entry } })),
+    ...locations.map((entry) => ({ params: { slug: entry.id }, props: { kind: 'location' as const, entry } })),
+    ...pages.map((entry) => ({ params: { slug: entry.id }, props: { kind: 'page' as const, entry } })),
   ];
 
   const seen = new Map<string, string>();

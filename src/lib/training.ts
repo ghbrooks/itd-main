@@ -125,3 +125,20 @@ export const groupBySlug: Record<string, TrainingGroup> = Object.fromEntries(
 export function groupForSlug(slug: string): TrainingGroup | undefined {
   return groupBySlug[slug];
 }
+
+/** Display labels for the `courses.category` enum, for courses outside any sitemap group. */
+export const categoryLabels: Record<string, string> = {
+  sales: 'Sales',
+  communication: 'Communication',
+  presentation: 'Presentation Skills',
+  leadership: 'Leadership',
+  management: 'Management',
+  'personal-development': 'Personal Development',
+  specialist: 'Specialist',
+  format: 'Training Formats',
+};
+
+/** Human label for a course: its sitemap group if it has one, else its category. */
+export function courseCategoryLabel(slug: string, category: string): string {
+  return groupForSlug(slug)?.label ?? categoryLabels[category] ?? category;
+}

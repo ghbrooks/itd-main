@@ -7,6 +7,7 @@ import CourseCard from '~/components/marketing/CourseCard.astro';
 import CaseStudyCard from '~/components/marketing/CaseStudyCard.astro';
 import CTAPanel from '~/components/marketing/CTAPanel.astro';
 import { breadcrumbSchema } from '~/lib/schema';
+import { courseCategoryLabel } from '~/lib/training';
 
 type Sector = Awaited<ReturnType<typeof getCollection<'sectors'>>>[number];
 type Props = { sector: Sector };
@@ -20,14 +21,14 @@ const studies = (await getCollection('caseStudies'))
   .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime())
   .slice(0, 6);
 const relevantCourses = (data.relevantCourses ?? [])
-  .map((s) => allCourses.find((c) => c.slug === s))
+  .map((s) => allCourses.find((c) => c.id === s))
   .filter((c): c is (typeof allCourses)[number] => Boolean(c));
 
 const schemas = [
   breadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Sectors', url: '/sectors' },
-    { name: data.title, url: `/${sector.slug}` },
+    { name: data.title, url: `/${sector.id}` },
   ]),
 ];
 ---
@@ -64,8 +65,8 @@ const schemas = [
             <CourseCard
               title={c.data.title}
               outcome={c.data.outcome}
-              href={`/${c.slug}`}
-              category={c.data.category}
+              href={`/${c.id}`}
+              category={courseCategoryLabel(c.id, c.data.category)}
               duration={c.data.duration}
             />
           ))}
@@ -80,7 +81,7 @@ const schemas = [
         <h2 class="section-title">Case studies in this sector</h2>
         <div class="study-grid">
           {studies.map((cs) => (
-            <CaseStudyCard href={`/${cs.slug}`} client={cs.data.client} sector={cs.data.subject} title={cs.data.title} excerpt={cs.data.outcome.slice(0, 140) + (cs.data.outcome.length > 140 ? '…' : '')} />
+            <CaseStudyCard href={`/${cs.id}`} client={cs.data.client} sector={cs.data.subject} title={cs.data.title} excerpt={cs.data.outcome.slice(0, 140) + (cs.data.outcome.length > 140 ? '…' : '')} />
           ))}
         </div>
         <p class="study-more"><a href={`/case-studies?sector=${encodeURIComponent(data.title.replace(/ firms?$/i, ''))}`} class="link-anim">All case studies →</a></p>

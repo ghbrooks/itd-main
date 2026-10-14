@@ -14,7 +14,7 @@ import CTAPanel from '~/components/marketing/CTAPanel.astro';
 import { courseSchema, breadcrumbSchema, faqSchema } from '~/lib/schema';
 import { site } from '~/lib/site';
 import { getReviewsForCourse } from '~/lib/reviews';
-import { groupForSlug } from '~/lib/training';
+import { groupForSlug, courseCategoryLabel } from '~/lib/training';
 
 type Course = Awaited<ReturnType<typeof getCollection<'courses'>>>[number];
 
@@ -27,29 +27,29 @@ const { data } = course;
 
 const allCourses = await getCollection('courses');
 const allCaseStudies = await getCollection('caseStudies');
-const group = groupForSlug(course.slug);
+const group = groupForSlug(course.id);
 const WORK_STYLES = new Set(['work-styles-model', 'itd-work-styles-model-training', 'personality-at-work-training', 'personality-profile-managing-people-differently']);
 
 const related = (data.relatedCourses ?? [])
-  .map((slug) => allCourses.find((c) => c.slug === slug))
+  .map((slug) => allCourses.find((c) => c.id === slug))
   .filter((c): c is Course => Boolean(c));
 
 // Explicit related studies first, then any case study that links back to this course.
 const linkedStudies = allCaseStudies
-  .filter((c) => c.data.courseSlug === course.slug)
+  .filter((c) => c.data.courseSlug === course.id)
   .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
 const relatedStudies = [
   ...(data.relatedCaseStudies ?? [])
-    .map((slug) => allCaseStudies.find((c) => c.slug === slug))
+    .map((slug) => allCaseStudies.find((c) => c.id === slug))
     .filter((c): c is NonNullable<typeof allCaseStudies[number]> => Boolean(c)),
   ...linkedStudies,
 ]
-  .filter((c, i, arr) => arr.findIndex((x) => x.slug === c.slug) === i)
+  .filter((c, i, arr) => arr.findIndex((x) => x.id === c.id) === i)
   .slice(0, 4);
 
-const courseReviews = await getReviewsForCourse(course.slug, 3);
+const courseReviews = await getReviewsForCourse(course.id, 3);
 
-const url = `${site.url}/${course.slug}`;
+const url = `${site.url}/${course.id}`;
 const schemas = [
   courseSchema({
     name: data.title,
@@ -61,7 +61,7 @@ const schemas = [
     { name: 'Home', url: '/' },
     { name: 'Training', url: '/training' },
     ...(group ? [{ name: group.label, url: `/training#${group.id}` }] : []),
-    { name: data.title, url: `/${course.slug}` },
+    { name: data.title, url: `/${course.id}` },
   ]),
   ...(data.faqs && data.faqs.length > 0 ? [faqSchema(data.faqs)] : []),
 ];
@@ -86,7 +86,7 @@ const schemas = [
     meta={[
       { label: 'Duration', value: data.duration },
       { label: 'Mode', value: data.mode.map((m) => m === 'virtual' ? 'Virtual' : 'In-person').join(' · ') },
-      { label: 'Subject area', value: group?.label ?? data.category.replace('-', ' ') },
+      { label: 'Subject area', value: courseCategoryLabel(course.id, data.category) },
     ]}
   >
     <div class="course-hero-extras">
@@ -138,7 +138,7 @@ const schemas = [
           </div>
         )}
 
-        {WORK_STYLES.has(course.slug) && (
+        {WORK_STYLES.has(course.id) && (
           <div class="course-methodology course-callout">
             <p class="eyebrow eyebrow-rule">Try it now</p>
             <p>Take the <a href="/work-styles-model-questionnaire">ITD Work Styles Model questionnaire</a>: forty statements, five minutes, scored instantly in your browser.</p>
@@ -182,7 +182,7 @@ const schemas = [
         <div class="course-related-studies">
           {relatedStudies.map((cs) => (
             <CaseStudyCard
-              href={`/${cs.slug}`}
+              href={`/${cs.id}`}
               client={cs.data.client}
               sector={cs.data.subject}
               title={cs.data.title}
@@ -216,10 +216,10 @@ const schemas = [
         <div class="course-related-grid">
           {related.map((c) => (
             <CourseCard
-              href={`/${c.slug}`}
+              href={`/${c.id}`}
               title={c.data.title}
               outcome={c.data.outcome}
-              category={c.data.category}
+              category={courseCategoryLabel(c.id, c.data.category)}
               duration={c.data.duration}
             />
           ))}

@@ -10,7 +10,7 @@ import { site } from '~/lib/site';
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   return posts.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
@@ -20,7 +20,7 @@ const { data } = entry;
 const { Content } = await render(entry);
 
 const related = (await getCollection('blog', ({ data: d }) => !d.draft))
-  .filter((p) => p.slug !== entry.slug)
+  .filter((p) => p.id !== entry.id)
   .sort((a, b) => {
     const score = (p: typeof a) =>
       (p.data.category === data.category ? 2 : 0) + p.data.tags.filter((t) => data.tags.includes(t)).length;
@@ -28,7 +28,7 @@ const related = (await getCollection('blog', ({ data: d }) => !d.draft))
   })
   .slice(0, 3);
 
-const url = `${site.url}/blog/${entry.slug}`;
+const url = `${site.url}/blog/${entry.id}`;
 const schemas = [
   articleSchema({
     headline: data.title,
@@ -42,7 +42,7 @@ const schemas = [
   breadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Blog', url: '/blog' },
-    { name: data.title, url: `/blog/${entry.slug}` },
+    { name: data.title, url: `/blog/${entry.id}` },
   ]),
 ];
 const fmt = (d: Date) => d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -88,7 +88,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-GB', { year: 'numeric', month:
         </header>
         <div class="related-grid">
           {related.map((p) => (
-            <a href={`/blog/${p.slug}`} class="related-card card">
+            <a href={`/blog/${p.id}`} class="related-card card">
               <p class="eyebrow">{p.data.category}</p>
               <h3>{p.data.title}</h3>
               <p>{p.data.description}</p>

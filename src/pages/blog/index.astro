@@ -37,7 +37,7 @@ const schemas = [
   <Section size="md" tone="default">
     <div class="container-wide">
       {latest && (
-        <a href={`/blog/${latest.slug}`} class="post-feature card">
+        <a href={`/blog/${latest.id}`} class="post-feature card">
           <div class="post-feature__media">
             {latest.data.image && (
               <Image src={latest.data.image} alt={latest.data.imageAlt ?? ''} widths={[640, 960, 1280]} sizes="(max-width: 900px) 100vw, 55vw" loading="eager" />
@@ -54,7 +54,7 @@ const schemas = [
 
       <div class="post-grid">
         {rest.map((p) => (
-          <a href={`/blog/${p.slug}`} class="post-card card">
+          <a href={`/blog/${p.id}`} class="post-card card">
             <div class="post-card__media">
               {p.data.image ? (
                 <Image src={p.data.image} alt={p.data.imageAlt ?? ''} widths={[420, 640, 900]} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" loading="lazy" />

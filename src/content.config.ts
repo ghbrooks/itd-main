@@ -1,4 +1,15 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
+
+/**
+ * Astro 6+ content layer. Every collection is a folder of flat files under
+ * src/content/; the entry id is the filename without extension and doubles as
+ * the URL slug (e.g. courses/leadership-training.md -> /leadership-training).
+ * Files starting with an underscore are ignored by the loader.
+ */
+const markdown = (dir: string) => glob({ pattern: '**/*.md', base: `./src/content/${dir}` });
+const json = (dir: string) => glob({ pattern: '**/*.json', base: `./src/content/${dir}` });
 
 const seo = z.object({
   title: z.string(),
@@ -6,7 +17,7 @@ const seo = z.object({
 });
 
 const courses = defineCollection({
-  type: 'content',
+  loader: markdown('courses'),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -42,7 +53,7 @@ const courses = defineCollection({
 });
 
 const caseStudies = defineCollection({
-  type: 'content',
+  loader: markdown('caseStudies'),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -64,7 +75,7 @@ const caseStudies = defineCollection({
 });
 
 const sectors = defineCollection({
-  type: 'content',
+  loader: markdown('sectors'),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -78,7 +89,7 @@ const sectors = defineCollection({
 });
 
 const blog = defineCollection({
-  type: 'content',
+  loader: markdown('blog'),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -97,7 +108,7 @@ const blog = defineCollection({
 });
 
 const reviews = defineCollection({
-  type: 'data',
+  loader: json('reviews'),
   schema: z.object({
     /** Headline the reviewer gave, e.g. "Presenting with Impact Virtually". */
     title: z.string().optional(),
@@ -116,7 +127,7 @@ const reviews = defineCollection({
 });
 
 const locations = defineCollection({
-  type: 'content',
+  loader: markdown('locations'),
   schema: z.object({
     title: z.string(),
     country: z.string(),
@@ -127,7 +138,7 @@ const locations = defineCollection({
 
 /** Long-form standalone pages: fees, policies, people. Routed at /[slug]. */
 const pages = defineCollection({
-  type: 'content',
+  loader: markdown('pages'),
   schema: ({ image }) =>
     z.object({
       title: z.string(),

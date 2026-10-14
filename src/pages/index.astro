@@ -22,7 +22,7 @@ const caseStudies = (await getCollection('caseStudies')).sort(
 );
 // Lead with a named, recognisable client rather than "Corporate Client".
 const featured = caseStudies.find((c) => !/corporate client|law firm$/i.test(c.data.client)) ?? caseStudies[0];
-const otherStudies = caseStudies.filter((c) => c.slug !== featured?.slug && !/corporate client|law firm$/i.test(c.data.client)).slice(0, 2);
+const otherStudies = caseStudies.filter((c) => c.id !== featured?.id && !/corporate client|law firm$/i.test(c.data.client)).slice(0, 2);
 
 const courseCount = (await getCollection('courses')).length;
 const categories = [
@@ -38,7 +38,7 @@ const categories = [
 
 const FEATURED_SECTORS = ['law-firm-training', 'financial-services', 'pharma-biotech', 'charity', 'technology', 'local-government'];
 const allSectors = await getCollection('sectors');
-const sectors = FEATURED_SECTORS.map((s) => allSectors.find((x) => x.slug === s)).filter((s): s is NonNullable<typeof s> => Boolean(s));
+const sectors = FEATURED_SECTORS.map((s) => allSectors.find((x) => x.id === s)).filter((s): s is NonNullable<typeof s> => Boolean(s));
 const sectorStudyCount = (title: string) => caseStudies.filter((c) => c.data.sector.toLowerCase() === title.toLowerCase().replace(/ firms?$/, '')).length;
 ---
 
@@ -133,7 +133,7 @@ const sectorStudyCount = (title: string) => caseStudies.filter((c) => c.data.sec
         </header>
         <div class="case-grid">
           <CaseStudyCard
-            href={`/${featured.slug}`}
+            href={`/${featured.id}`}
             client={featured.data.client}
             sector={featured.data.subject}
             title={featured.data.title}
@@ -143,7 +143,7 @@ const sectorStudyCount = (title: string) => caseStudies.filter((c) => c.data.sec
           <div class="case-grid__side">
             {otherStudies.map((cs) => (
               <CaseStudyCard
-                href={`/${cs.slug}`}
+                href={`/${cs.id}`}
                 client={cs.data.client}
                 sector={cs.data.subject}
                 title={cs.data.title}
@@ -198,7 +198,7 @@ const sectorStudyCount = (title: string) => caseStudies.filter((c) => c.data.sec
         {sectors.map((s) => {
           const n = sectorStudyCount(s.data.title);
           return (
-            <a href={`/${s.slug}`} class="sector-tile card">
+            <a href={`/${s.id}`} class="sector-tile card">
               <div class="sector-tile__media">
                 {s.data.image && <Image src={s.data.image} alt={s.data.imageAlt ?? ''} widths={[420, 640]} sizes="(max-width: 700px) 100vw, 33vw" loading="lazy" />}
               </div>

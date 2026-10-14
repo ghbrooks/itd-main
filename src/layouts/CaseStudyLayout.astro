@@ -18,14 +18,14 @@ const { data } = study;
 
 const allCourses = await getCollection('courses');
 const relatedCourse: Course | undefined = allCourses.find(
-  (c) => c.slug === data.courseSlug,
+  (c) => c.id === data.courseSlug,
 );
 const siblings = (await getCollection('caseStudies'))
-  .filter((c) => c.slug !== study.slug && c.data.subject === data.subject)
+  .filter((c) => c.id !== study.id && c.data.subject === data.subject)
   .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime())
   .slice(0, 3);
 
-const url = `${site.url}/${study.slug}`;
+const url = `${site.url}/${study.id}`;
 const schemas = [
   articleSchema({
     headline: data.title,
@@ -38,7 +38,7 @@ const schemas = [
     { name: 'Home', url: '/' },
     { name: 'Case studies', url: '/case-studies' },
     { name: data.subject, url: `/case-studies?subject=${encodeURIComponent(data.subject)}` },
-    { name: data.client, url: `/${study.slug}` },
+    { name: data.client, url: `/${study.id}` },
   ]),
 ];
 ---
@@ -101,7 +101,7 @@ const schemas = [
             <>
               <h3>{relatedCourse.data.title}</h3>
               <p>{relatedCourse.data.outcome}</p>
-              <a href={`/${relatedCourse.slug}`} class="btn btn--ghost">View course</a>
+              <a href={`/${relatedCourse.id}`} class="btn btn--ghost">View course</a>
             </>
           ) : (
             <p>{data.courseSlug}</p>
@@ -139,7 +139,7 @@ const schemas = [
         </header>
         <div class="cs-related-grid">
           {siblings.map((cs) => (
-            <CaseStudyCard href={`/${cs.slug}`} client={cs.data.client} sector={cs.data.sector} title={cs.data.title} excerpt={cs.data.outcome.slice(0, 140) + (cs.data.outcome.length > 140 ? '…' : '')} />
+            <CaseStudyCard href={`/${cs.id}`} client={cs.data.client} sector={cs.data.sector} title={cs.data.title} excerpt={cs.data.outcome.slice(0, 140) + (cs.data.outcome.length > 140 ? '…' : '')} />
           ))}
         </div>
       </div>

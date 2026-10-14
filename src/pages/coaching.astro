@@ -12,7 +12,7 @@ import { coachingLinks } from '~/lib/training';
 import { getReviews } from '~/lib/reviews';
 
 const courses = await getCollection('courses');
-const bySlug = new Map(courses.map((c) => [c.slug, c]));
+const bySlug = new Map(courses.map((c) => [c.id, c]));
 const primary = coachingLinks.map((l) => ({ label: l.label, entry: bySlug.get(l.slug)! }));
 const also = ['presentation-coaching', 'presentation-skills-coaching', 'presenting-with-impact-virtually-coaching', 'whatsapp-workcoach']
   .map((s) => bySlug.get(s))
@@ -58,7 +58,7 @@ const schemas = [
       </header>
       <div class="coach-grid">
         {primary.map(({ label, entry }) => (
-          <CourseCard href={`/${entry.slug}`} title={label} outcome={entry.data.summary} duration={entry.data.duration} category="Coaching" />
+          <CourseCard href={`/${entry.id}`} title={label} outcome={entry.data.summary} duration={entry.data.duration} category="Coaching" />
         ))}
       </div>
     </div>
@@ -88,7 +88,7 @@ const schemas = [
         </header>
         <div class="coach-grid coach-grid--4">
           {also.map((c) => (
-            <CourseCard href={`/${c.slug}`} title={c.data.title} outcome={c.data.outcome} duration={c.data.duration} size="compact" />
+            <CourseCard href={`/${c.id}`} title={c.data.title} outcome={c.data.outcome} duration={c.data.duration} size="compact" />
           ))}
         </div>
       </div>
@@ -107,7 +107,7 @@ const schemas = [
             <Testimonial title={r.data.title} quote={r.data.quote} author={r.data.author} organisation={r.data.organisation} rating={r.data.rating} date={r.data.publishedDate} />
           ))}
           {studies.map((s) => (
-            <CaseStudyCard href={`/${s.slug}`} client={s.data.client} sector={s.data.subject} title={s.data.title} excerpt={s.data.outcome} />
+            <CaseStudyCard href={`/${s.id}`} client={s.data.client} sector={s.data.subject} title={s.data.title} excerpt={s.data.outcome} />
           ))}
         </div>
       </div>

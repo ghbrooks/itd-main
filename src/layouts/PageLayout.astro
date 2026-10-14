@@ -16,7 +16,7 @@ const isPerson = data.layout === 'person';
 const schemas = [
   breadcrumbSchema([
     { name: 'Home', url: '/' },
-    { name: data.title, url: `/${page.slug}` },
+    { name: data.title, url: `/${page.id}` },
   ]),
   ...(isPerson
     ? [
