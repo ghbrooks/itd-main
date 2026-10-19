@@ -35,6 +35,16 @@ export const primaryNav: NavItem[] = [
     children: toNav(coachingLinks),
   },
   {
+    label: 'Consultancy',
+    href: '/consultancy-projects',
+    description: 'Longer-term projects: culture, behavioural assessment and training needs.',
+    children: [
+      { label: 'Culture Development', href: '/culture-leadership-training' },
+      { label: 'Nudge Assessment of your organisation', href: '/nudge-consultancy' },
+      { label: 'Training Needs Analysis', href: '/training-needs-analysis' },
+    ],
+  },
+  {
     label: 'Sectors',
     href: '/sectors',
   },
