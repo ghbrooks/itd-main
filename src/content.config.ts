@@ -37,6 +37,8 @@ const courses = defineCollection({
       duration: z.string(),
       mode: z.array(z.enum(['virtual', 'in-person'])),
       audience: z.string(),
+      /** Group size shown in the hero, e.g. 'Up to 12'. Omitted from the page when unset. */
+      participants: z.string().optional(),
       agenda: z.array(z.string()),
       outcomes: z.array(z.string()),
       methodology: z.string().optional(),

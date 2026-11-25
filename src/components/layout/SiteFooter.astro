@@ -17,7 +17,7 @@ const stats = await getReviewStats();
           <span style="color: var(--c-sky);">We’ll design the training.</span>
         </h2>
         <p class="site-footer__cta-lede">
-          One short conversation. We’ll listen, ask the awkward questions, and tell you honestly whether we can help — and how.
+          One short conversation. We’ll listen, ask questions, and tell you whether we can help and how.
         </p>
         <div class="site-footer__cta-actions">
           <a href="/contact" class="btn btn--primary">
@@ -192,16 +192,17 @@ const stats = await getReviewStats();
   .site-footer__meta a { color: var(--c-sky); }
   .site-footer__meta a:hover { color: white; }
 
+  /* CSS columns, not a grid: the groups differ a lot in length, so short ones stack. */
   .site-footer__cols {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem 1.5rem;
+    columns: 2;
+    column-gap: 1.5rem;
   }
+  .site-footer__cols > div { break-inside: avoid; margin-bottom: 2rem; }
   @media (min-width: 768px) {
-    .site-footer__cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .site-footer__cols { columns: 3; }
   }
   @media (min-width: 1280px) {
-    .site-footer__cols { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .site-footer__cols { columns: 4; }
   }
 
   .site-footer__cols h3 {
@@ -214,8 +215,10 @@ const stats = await getReviewStats();
     margin-bottom: 0.85rem;
   }
   .site-footer__cols ul { list-style: none; margin: 0; padding: 0; }
-  .site-footer__cols li { margin-bottom: 0.4rem; }
+  .site-footer__cols li { margin-bottom: 0.55rem; }
   .site-footer__cols a {
+    display: block;
+    line-height: 1.25; /* wrapped lines sit closer together than separate links */
     color: rgba(255, 255, 255, 0.66);
     font-size: 0.9rem;
     transition: color 180ms var(--ease-out-soft);

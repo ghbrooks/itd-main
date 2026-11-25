@@ -87,6 +87,14 @@ export const primaryNav: NavItem[] = [
   },
 ];
 
+/** Every course in a sitemap group, in the footer's short sentence-case style ("Time management"). */
+const footerCourses = (groupId: string): NavItem[] =>
+  toNav(trainingGroups.find((g) => g.id === groupId)?.courses ?? []).map((i) => {
+    const short = i.label.replace(/ Training$/, '');
+    // shortcut: lower-cases everything after the first letter; hand-list the column if a label gains an acronym or proper noun
+    return { ...i, label: short[0] + short.slice(1).toLowerCase() };
+  });
+
 export const footerNav: { heading: string; items: NavItem[] }[] = [
   {
     heading: 'Leadership & management',
@@ -111,16 +119,10 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
       { label: 'Assertiveness', href: '/assertiveness-training' },
     ],
   },
+  { heading: 'Personal development', items: footerCourses('personal-development') },
   {
-    heading: 'Sales & personal development',
-    items: [
-      { label: 'Sales training', href: '/sales-training' },
-      { label: 'Key account management', href: '/key-account-management-training' },
-      { label: 'Negotiation', href: '/negotiation-skills-training' },
-      { label: 'Time management', href: '/time-management-training' },
-      { label: 'Personal efficiency', href: '/personal-efficiency-training' },
-      { label: 'Resilience', href: '/resilience-training' },
-    ],
+    heading: 'Sales',
+    items: [{ label: 'Sales training', href: '/sales-training' }, ...footerCourses('sales')],
   },
   {
     heading: 'Specialist',

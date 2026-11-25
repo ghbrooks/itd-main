@@ -95,7 +95,7 @@ Every collection has a strict Zod schema and a `glob()` loader pointing at its f
 
 | Collection | Type | Key fields | Routed at |
 |---|---|---|---|
-| `courses` | markdown | `title, category(enum), outcome, summary, duration, mode[], audience, agenda[], outcomes[], image?, needsReview?, seo` | `/[slug]` |
+| `courses` | markdown | `title, category(enum), outcome, summary, duration, mode[], audience, participants?, agenda[], outcomes[], image?, needsReview?, seo` | `/[slug]` |
 | `caseStudies` | markdown | `title, client, sector, subject, courseSlug, challenge, approach, outcome, image?, publishedDate, seo` | `/[slug]` |
 | `sectors` | markdown | `title, summary, namedClients[], relevantCourses[], image?, seo` | `/[slug]` |
 | `locations` | markdown | `title, country, summary, seo` | `/[slug]` |
@@ -131,7 +131,7 @@ Single source of truth for company-level facts. Update this and the change propa
 - `url: https://itd.com`
 - `founded: 2002` (the only year that should appear in "since …" copy)
 - `email: info@itd.com`
-- `phone: +44 (0)1608 676705` (the number itd.com publishes; footer, schema, contact), `phoneFreephone: +44 (0)800 804 8086` (quoted on the old course pages; contact page only)
+- `phone: +44 (0)1608 676705` (the number itd.com publishes; footer, schema, contact). The old 0800 freephone number was dropped at the client's request
 - `social: {}` — itd.com publishes no social profiles. Add verified URLs here and the footer row + schema `sameAs` appear automatically. Do not reintroduce the old LinkedIn link without a source.
 - Postal: PO Box 282, Chipping Norton, Oxfordshire OX7 9EE
 - Registered: 3 Bignell Park Barns, Bicester, OX26 1TD

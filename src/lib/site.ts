@@ -12,8 +12,6 @@ export const site = {
   email: 'info@itd.com',
   /** The number itd.com publishes on its contact page. Used in the footer, schema and contact page. */
   phone: '+44 (0)1608 676705',
-  /** Freephone number quoted across the old site's course pages ("call us on 0800 …"). */
-  phoneFreephone: '+44 (0)800 804 8086',
   founded: 2002,
   founder: 'Martin Chapman',
   address: {

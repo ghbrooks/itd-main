@@ -48,6 +48,8 @@ const relatedStudies = [
   .slice(0, 4);
 
 const courseReviews = await getReviewsForCourse(course.id, 3);
+// Hero pull-quote: the newest review for this course, cut at a word boundary to about two lines.
+const heroQuote = courseReviews[0]?.data.quote.replace(/\s+/g, ' ').trim().replace(/^(.{0,150})\s.*$/, '$1…');
 
 const url = `${site.url}/${course.id}`;
 const schemas = [
@@ -81,16 +83,18 @@ const schemas = [
     variant="course"
     image={data.image}
     imageAlt={data.imageAlt}
-    primaryCta={{ label: 'Discuss this course', href: '/contact' }}
+    primaryCta={{ label: 'Get a quote', href: '/contact' }}
     secondaryCta={{ label: 'See all courses', href: '/training' }}
     meta={[
       { label: 'Duration', value: data.duration },
-      { label: 'Mode', value: data.mode.map((m) => m === 'virtual' ? 'Virtual' : 'In-person').join(' · ') },
+      ...(data.participants ? [{ label: 'Number of participants', value: data.participants }] : []),
       { label: 'Subject area', value: courseCategoryLabel(course.id, data.category) },
+      { label: 'Content', value: 'Tailored to your organisation & needs' },
     ]}
   >
     <div class="course-hero-extras">
       <ReviewSummary />
+      {heroQuote && <p class="course-hero-quote">“{heroQuote}”</p>}
     </div>
   </Hero>
 
@@ -113,9 +117,17 @@ const schemas = [
               <dt>Delivery</dt>
               <dd>{data.mode.map((m) => m === 'virtual' ? 'Virtual' : 'In-person').join(' · ')}</dd>
             </div>
+            <div>
+              <dt>Style</dt>
+              <dd>Workshop with interactions and discussion throughout</dd>
+            </div>
+            <div>
+              <dt>Trainer</dt>
+              <dd><a href="/about-martin-chapman" class="link-anim">Experienced in the subject and workshop style</a></dd>
+            </div>
           </dl>
           <a href="/contact" class="btn btn--primary">
-            Discuss this course
+            Get a quote
             <svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7h8m-3-3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -164,7 +176,6 @@ const schemas = [
               author={r.data.author}
               organisation={r.data.organisation}
               rating={r.data.rating}
-              date={r.data.publishedDate}
             />
           ))}
         </div>
@@ -231,7 +242,7 @@ const schemas = [
   <CTAPanel
     eyebrow="Start the conversation"
     title={`Want this course built for your team?`}
-    lead="Every engagement starts with a short call. We listen, ask the awkward questions, and come back with a proposal you can use."
+    lead="Every engagement starts with a call. We listen, ask questions, and come back to you with a costed proposal."
     primary={{ label: 'Get in touch', href: '/contact' }}
     secondary={{ label: 'See training fees', href: '/training-fees' }}
     tone="deep"
@@ -240,6 +251,13 @@ const schemas = [
 
 <style>
   .course-hero-extras { margin-top: 1.5rem; }
+  .course-hero-quote {
+    margin: 0.9rem 0 0;
+    max-width: 62ch;
+    font-style: italic;
+    color: var(--c-text);
+    line-height: 1.5;
+  }
 
   .course-body {
     display: grid;

@@ -7,8 +7,8 @@ import Section from '~/components/layout/Section.astro';
 import CTAPanel from '~/components/marketing/CTAPanel.astro';
 import { breadcrumbSchema } from '~/lib/schema';
 
-// Two entries are overview pages rather than sectors; list them separately.
-const OVERVIEW = new Set(['market-sector-training', 'general-business']);
+// An overview page rather than a sector; listed separately.
+const OVERVIEW = new Set(['market-sector-training']);
 
 const all = await getCollection('sectors');
 const sectors = all
@@ -34,7 +34,7 @@ const schemas = [
 >
   <Hero
     eyebrow="Sectors"
-    title="We know your industry. Usually painfully well."
+    title="We know your industry. Usually pretty well."
     lead="Every sector has its own pressures, language and politics. Our programmes are designed to speak directly to the realities of your working environment, with examples and exercises from your world."
     variant="page"
     primaryCta={{ label: 'Tell us your challenge', href: '/contact' }}
